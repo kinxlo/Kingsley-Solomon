@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  // border: 1px solid red;
+  // width: 100vw;
+  // height: 100vh;
+  background-color: #3A3A3A !important;
+  background-image: url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1659252078/portfolio/Matrix-1s-1084px_xcrdxw.svg) !important;
+  background-position: center;
+  padding: 0;
+  margin: 0;
+
+  .navBarIcons {
+    border: 1px solid red;
+
+    &:hover {
+      color: green !important
+    }
+  }
+
+  .hoverState {
+    &:hover {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background-color: rgba(255, 255, 255, 0.3) !important;
+      cursor: pointer;
+      //  filter: brightness(50%)
+    }
+  }
+
+  .screen {
+    // border: 1px solid red;
+    width: 100vw;
+    height: calc(100vh - 3rem);
+    position: relative;
+  }
+
+  .accent {
+    color: #34be5b
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+
+  .span-col-4 {
+    grid-column: span 4 / auto;
+  }
+
+  .theme {
+    color: #ffffff;
+    background: rgba(58, 58, 58, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .hide-scrollbar {
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    overflow: -moz-scrollbars-none !important; //for older versions of firefox
+  }
+}
