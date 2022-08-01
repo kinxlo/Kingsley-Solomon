@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Icon } from '@chakra-ui/react';
+import { Grid, Icon, Text } from '@chakra-ui/react';
 
 import CTA from './CTA';
 
@@ -22,9 +22,12 @@ const CTALayout = ({ functions, title }) => {
   });
 
   return (
-    <Grid templateColumns='repeat(4, 1fr)' gap={2}>
-      {boxs}
-    </Grid>
+    <>
+      <Text textAlign={`end`} mt={`1rem`}>APIs</Text>
+      <Grid templateColumns='repeat(4, 1fr)' gap={2}>
+        {boxs}
+      </Grid>
+    </>
   );
 };
 

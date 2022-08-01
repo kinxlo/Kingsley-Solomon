@@ -26,6 +26,8 @@ import {
 } from 'react-icons/io';
 import ProductivityLayout from './ProductivityLayout';
 import Profile from './Profile';
+import NotificationBar from '../drawer/NotificationBar.jsx';
+import ProjectBox from '../drawer/ProjectBox.jsx';
 
 const Start = () => {
   return (
@@ -43,6 +45,7 @@ const Start = () => {
         borderRadius={0}
         className='theme'
         display={`flex`}
+        width={`60rem`}
         minW={{ base: `100vw`, sm: `60rem` }}
         height={{ base: `90vh`, sm: `50rem` }}
         padding={0}
@@ -98,6 +101,18 @@ const Start = () => {
         </Box>
         <Box p={3} w={`35%`}>
           <Profile />
+          {/* PROJECT DISPLAY */}
+          <Box
+            px={3}
+            height={`calc(100% - 32.5%)`}
+            overflow={`scroll`}
+            className={`hide-scrollbar`}
+          >
+            <ProjectBox />
+            <ProjectBox />
+            <ProjectBox />
+            <ProjectBox />
+          </Box>
         </Box>
         <Box
           className='hide-scrollbar '
@@ -106,7 +121,7 @@ const Start = () => {
           overflow={`scroll`}
         >
           <ProductivityLayout
-            title={`Languages`}
+            title={`Languages & Frameworks`}
             document={language}
           />
           <ProductivityLayout

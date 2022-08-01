@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import { Box, Image } from '@chakra-ui/react';
-import {
-  activateFullscreen,
-  deactivateFullscreen,
-} from '../../public/functions.js';
+import { activateFullscreen } from '../../public/functions.js';
 
 const CTA = ({
   width,
@@ -22,16 +19,12 @@ const CTA = ({
     switch (name) {
       case `Fullscreen`:
         activateFullscreen(document.body);
+        // deactivateFullscreen();
         break;
-
       default:
         break;
     }
   };
-
-  // useEffect(() => {
-  //   document.body.requestFullscreen();
-  // }, []);
 
   return (
     <Box

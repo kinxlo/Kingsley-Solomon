@@ -28,8 +28,8 @@ export const functions = [
     },
 ]
 
+// Fullscreen API
 export const activateFullscreen = (component) => {
-    console.log(`fullScreen`);
     if (component.requestFullscreen) {
         component.requestFullscreen();
     }
@@ -45,11 +45,13 @@ export const activateFullscreen = (component) => {
 }
 
 export const deactivateFullscreen = () => {
-    if (document.body.exitFullscreen) {
+    if (document.exitFullscreen) {
         document.exitFullscreen();
-    } else if (document.body.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-    } else if (document.body.webkitExitFullscreen) {
-        document.body.webkitExitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
     }
 };
+
+

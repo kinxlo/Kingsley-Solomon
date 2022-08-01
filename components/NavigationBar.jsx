@@ -3,6 +3,7 @@ import Start from './startMenu/Start';
 import Search from './Search';
 import DrawerExample from './drawer/Drawer';
 import Calendar from './calendar/CalendarApp';
+import BatteryInfo from './BatteryInfo';
 
 export default function NavigationBar() {
   return (
@@ -22,7 +23,12 @@ export default function NavigationBar() {
         <Search />
       </Flex>
       <Flex></Flex>
-      <Flex justifyContent={`end`} paddingRight={`1rem`}>
+      <Flex
+        alignItems={`center`}
+        justifyContent={`end`}
+        paddingRight={`1rem`}
+      >
+        <BatteryInfo />
         <Calendar />
         <DrawerExample />
       </Flex>
