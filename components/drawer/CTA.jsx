@@ -1,25 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Box, Image } from '@chakra-ui/react';
 import { activateFullscreen } from '../../public/functions.js';
+import { AppContext } from '../../context/AppContext.js';
 
-const CTA = ({
-  width,
-  height,
-  // image,
-  name,
-  title,
-  children,
-}) => {
+const CTA = ({ width, height, name, title, children }) => {
+  const { showProjects, showMapOrNotice } =
+    useContext(AppContext);
+
   const handleFunctionClick = (e) => {
     e.stopPropagation();
-    functions(e.currentTarget.innerText);
+    functions(e.currentTarget.innerText.toLowerCase());
   };
 
   const functions = (name) => {
     switch (name) {
-      case `Fullscreen`:
+      case `fullscreen`:
         activateFullscreen(document.body);
-        // deactivateFullscreen();
+        break;
+      case `location`:
+        showMapOrNotice('SHOW_MAP');
+        break;
+      case `notification`:
+        showMapOrNotice('SHOW_NOTICE');
+        break;
+      case `react`:
+        showProjects(name);
+        break;
+      case `javascript`:
+        showProjects(name);
+        break;
+      case `vue`:
+        showProjects(name);
+        break;
+      case `java`:
+        showProjects(name);
+        break;
+      case `next`:
+        showProjects(name);
         break;
       default:
         break;
@@ -29,7 +46,6 @@ const CTA = ({
   return (
     <Box
       className='hoverState'
-      // border={`1px solid rgba(255, 255, 255, 0.18)`}
       textAlign={`center`}
       display={`flex`}
       flexDirection={`column`}

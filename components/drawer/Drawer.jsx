@@ -10,9 +10,13 @@ import CTALayout from './CTALayout';
 import Notification from './Notification';
 import { functions } from '../../public/functions.js';
 import SliderComponent from './SliderComponent';
+import MapView from '../MapView';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 
 export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { toggleMapNotice } = useContext(AppContext);
 
   return (
     <>
@@ -39,8 +43,7 @@ export default function DrawerExample() {
           justifyContent={`end`}
           gap={`2`}
         >
-          {/* <DrawerCloseButton /> */}
-          <Notification />
+          {toggleMapNotice.showMap ? <MapView /> : <Notification />}
           <CTALayout
             functions={functions}
             title={`functions`}

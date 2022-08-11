@@ -4,7 +4,6 @@ import {
   MenuButton,
   MenuList,
   Box,
-  Image,
   Center,
 } from '@chakra-ui/react';
 import language from '../../public/language.js';
@@ -12,21 +11,20 @@ import tools from '../../public/tools';
 import contacts from '../../public/contact';
 
 import React from 'react';
+
 import {
-  MdBubbleChart,
-  MdMenu,
-  MdAccountCircle,
-} from 'react-icons/md';
-import { AiOutlineFile } from 'react-icons/ai';
-import { FcBusinessman } from 'react-icons/fc';
-import {
-  IoMdImages,
-  IoMdCog,
-  IoMdPower,
-} from 'react-icons/io';
+  AiOutlineFile,
+  AiOutlineLinkedin,
+  AiOutlineGithub,
+  AiOutlineTwitter,
+  AiOutlineWhatsApp,
+  AiOutlineGoogle,
+  AiOutlineMenu,
+} from 'react-icons/ai';
+import { TbBrandKickstarter } from 'react-icons/tb';
+
 import ProductivityLayout from './ProductivityLayout';
 import Profile from './Profile';
-import NotificationBar from '../drawer/NotificationBar.jsx';
 import ProjectBox from '../drawer/ProjectBox.jsx';
 
 const Start = () => {
@@ -34,10 +32,11 @@ const Start = () => {
     <Menu placement={`top`} flip gutter={8}>
       <MenuButton>
         <Icon
-          as={MdBubbleChart}
-          w={{ base: `6`, sm: `8` }}
+          as={TbBrandKickstarter}
+          w={{ base: `6`, sm: `7` }}
           h={{ base: `6`, sm: `8` }}
           display={`block`}
+          // fontSize={`1.5rem`}
         />
       </MenuButton>
 
@@ -61,10 +60,11 @@ const Start = () => {
           // w={`5%`}
         >
           <Center>
-            <MdMenu
+            <Icon
+              as={AiOutlineMenu}
               className={`accent`}
               filter={`drop-shadow(1px 5px 3px #010101)`}
-              fontSize={`1.5rem`}
+              fontSize={`1.3rem`}
             />
           </Center>
           <Center
@@ -72,45 +72,60 @@ const Start = () => {
             flexDir={`column`}
             justifyContent={`space-between`}
           >
-            <MdAccountCircle
+            <Icon
+              as={AiOutlineLinkedin}
               filter={`drop-shadow(1px 5px 3px #010101)`}
               className={`accent`}
-              fontSize={`1.5rem`}
+              fontSize={`1.3rem`}
             />
-            <AiOutlineFile
+            <Icon
+              as={AiOutlineFile}
               filter={`drop-shadow(1px 5px 3px #010101)`}
               className={`accent`}
-              fontSize={`1.5rem`}
+              fontSize={`1.3rem`}
             />
-            <IoMdImages
+            <Icon
+              as={AiOutlineGithub}
               filter={`drop-shadow(1px 5px 3px #010101)`}
               className={`accent`}
-              fontSize={`1.5rem`}
+              fontSize={`1.3rem`}
             />
-            <IoMdCog
+            <Icon
+              as={AiOutlineTwitter}
               filter={`drop-shadow(1px 5px 3px #010101)`}
               className={`accent`}
-              fontSize={`1.5rem`}
+              fontSize={`1.3rem`}
             />
-            <IoMdPower
+            <Icon
+              as={AiOutlineWhatsApp}
               filter={`drop-shadow(1px 5px 3px #010101)`}
               className={`accent`}
-              fontSize={`1.5rem`}
+              fontSize={`1.3rem`}
+            />
+            <Icon
+              as={AiOutlineGoogle}
+              filter={`drop-shadow(1px 5px 3px #010101)`}
+              className={`accent`}
+              fontSize={`1.3rem`}
             />
           </Center>
         </Box>
-        <Box p={3} w={`35%`}>
+        <Box
+          px={3}
+          pt={3}
+          display={`flex`}
+          flexDir={`column`}
+          justifyContent={`end`}
+          w={`35%`}
+        >
           <Profile />
           {/* PROJECT DISPLAY */}
           <Box
             px={3}
-            height={`calc(100% - 32.5%)`}
+            height={`100%`}
             overflow={`scroll`}
             className={`hide-scrollbar`}
           >
-            <ProjectBox />
-            <ProjectBox />
-            <ProjectBox />
             <ProjectBox />
           </Box>
         </Box>
@@ -127,10 +142,6 @@ const Start = () => {
           <ProductivityLayout
             title={`Tools`}
             document={tools}
-          />
-          <ProductivityLayout
-            title={`Contacts`}
-            document={contacts}
           />
         </Box>
       </MenuList>

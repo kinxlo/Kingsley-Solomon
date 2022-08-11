@@ -17,7 +17,7 @@ const BatteryInfo = () => {
 
   const fetchBatteryInfo = useCallback(async () => {
     const battery = await navigator.getBattery();
-    
+
     setBatteryCharging(battery.charging);
     setBatteryLevel(`${battery.level * 100}%`);
 

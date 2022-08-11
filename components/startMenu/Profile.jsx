@@ -9,14 +9,15 @@ import React from 'react';
 
 const Profile = () => {
   return (
-    <Container textAlign={`center`} p={0}>
+    <Container textAlign={`center`} p={3}>
       <Avatar
+        // filter={`drop-shadow(1px 0px 5px #010101)`}
         w={`10rem`}
         h={`10rem`}
         size={`2xl`}
         name='Kingsley Solomon'
         background={`#595959`}
-        src=''
+        src='https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile0_dqiv0d.jpg'
       />
       <Box my={`1rem`}>
         <Heading as={`h1`} size={`md`}>

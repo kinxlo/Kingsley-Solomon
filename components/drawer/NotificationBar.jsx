@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import React from 'react';
 import NotificationControls from './NotificationControls';
 
@@ -9,9 +9,8 @@ const NotificationBar = () => {
       display={`flex`}
       justifyContent={`end`}
       width={`100%`}
-      height={`10rem`}
       marginY={`1rem`}
-      padding={`.5rem`}
+      padding={`1rem`}
       gap={3}
       background={`#59595950`}
     >
@@ -19,13 +18,19 @@ const NotificationBar = () => {
         width={`100%`}
         height={`100%`}
         overflow={`scroll`}
+        // margin={`1rem`}
         className={`hide-scrollbar`}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Libero totam eius molestiae quasi voluptatibus
-        non, vero porro impedit, illum repellendus,
-        reiciendis magnam in? Voluptatem fuga et, dicta
-        expedita possimus ipsum.
+        <Text fontWeight={500} fontSize={`2xl`} as={`h1`}>
+          Lorem ipsum dolor sit amet.
+        </Text>
+        <Text>
+          Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Dicta at, dolore natus incidunt voluptas
+          provident deserunt voluptatum quibusdam delectus
+          in. Laudantium accusantium illo quam aliquam
+          asperiores molestias architecto cum in.
+        </Text>
       </Box>
       <NotificationControls />
     </Box>

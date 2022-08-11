@@ -21,7 +21,7 @@ const languages = [
     },
     {
         id: 5,
-        name: `Next.js`,
+        name: `Next`,
         image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659185662/portfolio/nextjs-icon_jgx16m.svg`
     },
     // {

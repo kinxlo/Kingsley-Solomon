@@ -35,6 +35,7 @@ body {
     width: 100vw;
     height: calc(100vh - 3rem);
     position: relative;
+    overflow: hidden;
   }
 
   .accent {
@@ -72,5 +73,70 @@ body {
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
     overflow: -moz-scrollbars-none !important; //for older versions of firefox
+  }
+
+  #map {
+    background-repeat: no-repeat;
+
+    .ol-zoom {
+      display: flex;
+      flex-direction: column;
+      gap: .2rem;
+      width: fit-content;
+      background-color: #ffffff;
+      border-radius: 5px;
+      padding: .1rem;
+
+      .ol-zoom-in,
+      .ol-zoom-out {
+        background-color: #4A74A8;
+        padding: .2rem;
+        width: 2rem;
+        height: 2.5rem;
+      }
+
+      .ol-zoom-in {
+        border-radius: 5px 5px 0 0;
+      }
+
+      .ol-zoom-out {
+        border-radius: 0 0 5px 5px;
+      }
+    }
+
+    .ol-rotate {
+      background-color: #ffffff;
+      border-radius: 5px;
+      padding: .1rem;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: none;
+
+      .ol-rotate-reset {
+        background-color: #4A74A8;
+        padding: .2rem;
+        width: 2rem;
+        height: 2.5rem;
+        border-radius: 5px;
+      }
+    }
+
+    .ol-attribution {
+      // border: 1px solid red;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: none;
+
+      button {
+        background-color: #4A74A8;
+        padding: .2rem;
+        width: 2rem;
+        height: 2.5rem;
+        border-radius: 5px;
+        margin-left: .2rem;
+      }
+    }
   }
 }

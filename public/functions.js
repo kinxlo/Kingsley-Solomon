@@ -1,4 +1,5 @@
 import { MdOutlineLocationOn, MdBluetooth, MdOutlineWbSunny, MdBatteryFull, MdFullscreen } from 'react-icons/md';
+import { BiScreenshot } from 'react-icons/bi'
 
 export const functions = [
     {
@@ -8,22 +9,17 @@ export const functions = [
     },
     {
         id: 2,
-        name: `Bluetooth`,
-        icon: MdBluetooth
+        name: `Fullscreen`,
+        icon: MdFullscreen
     },
     {
         id: 3,
-        name: `Night light`,
-        icon: MdOutlineWbSunny
+        name: `Screen capture`,
+        icon: BiScreenshot
     },
     {
         id: 4,
-        name: `Battery level`,
-        icon: MdBatteryFull
-    },
-    {
-        id: 5,
-        name: `Fullscreen`,
+        name: `Notification`,
         icon: MdFullscreen
     },
 ]

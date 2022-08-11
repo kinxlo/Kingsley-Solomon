@@ -1,6 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react';
 import Start from './startMenu/Start';
-import Search from './Search';
+import Search from './searchBar/Search';
 import DrawerExample from './drawer/Drawer';
 import Calendar from './calendar/CalendarApp';
 import BatteryInfo from './BatteryInfo';
