@@ -141,6 +141,7 @@ export default function DrawerExample() {
     <>
       <Icon
         onClick={handleDialogClick}
+        marginLeft={3}
         as={FcSearch}
         w={6}
         h={6}

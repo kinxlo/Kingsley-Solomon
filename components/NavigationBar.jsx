@@ -12,7 +12,7 @@ export default function NavigationBar() {
 
   return (
     <Box
-      paddingX={`1rem`}
+      paddingX={{ base: 0, md: `1rem` }}
       zIndex={9999}
       pos={`fixed`}
       bottom={0}
@@ -24,7 +24,6 @@ export default function NavigationBar() {
       alignItems={`center`}
     >
       <Flex
-        gap={5}
         justifyContent={`space-between`}
         alignItems={`center`}
       >

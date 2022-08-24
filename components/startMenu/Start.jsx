@@ -28,6 +28,7 @@ export default function DrawerExample() {
   return (
     <>
       <Image
+        marginRight={3}
         boxSize={`1.5rem`}
         onClick={handleClick}
         alt='img'
