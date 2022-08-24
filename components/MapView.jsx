@@ -1,5 +1,14 @@
-import { Box } from '@chakra-ui/react';
-import React, { useEffect, useRef } from 'react';
+import { Box, Button, Icon } from '@chakra-ui/react';
+import React, {
+  useContext,
+  useEffect,
+  useRef,
+} from 'react';
+import {
+  AiOutlineFullscreen,
+  AiOutlineFullscreenExit,
+  AiOutlineScreen,
+} from 'react-icons/ai';
 
 import { Feature, Map, Overlay, View } from 'ol/index';
 import Point from 'ol/geom/Point';
@@ -11,9 +20,12 @@ import {
   Tile as TileLayer,
   Vector as VectorLayer,
 } from 'ol/layer';
+import { AppContext } from '../context/AppContext';
 
 const MapView = () => {
   const mapElement = useRef();
+  const { showMapOrNotice, toggleMapNotice } =
+    useContext(AppContext);
   useGeographic();
 
   const mapInit = () => {
@@ -31,8 +43,6 @@ const MapView = () => {
 
       const yourPlace = [crd.longitude, crd.latitude]; //your place
       const yourPoint = new Point(yourPlace); //your location
-
-
 
       new Map({
         target: mapElement.current,
@@ -80,6 +90,13 @@ const MapView = () => {
     mapInit();
   }, []);
 
+  const showMap = () => {
+    showMapOrNotice(`SHOW_BIG_MAP`);
+  };
+  const hideMap = () => {
+    showMapOrNotice(`SHOW_MAP`);
+  };
+
   return (
     <Box
       id='map'
@@ -88,7 +105,39 @@ const MapView = () => {
       ref={mapElement}
       overflow={`hidden`}
       className='hide-scrollbar'
-    ></Box>
+      position={`relative`}
+    >
+      {toggleMapNotice.showBigMap ? (
+        <Icon
+          className='theme accent'
+          onClick={hideMap}
+          p={2}
+          fontSize={`2.5rem`}
+          borderRadius={`100%`}
+          pos={`absolute`}
+          right={1}
+          bottom={1}
+          zIndex={2}
+          backgroundColor={`#00000060`}
+          as={AiOutlineFullscreenExit}
+          cursor={`pointer`}
+        ></Icon>
+      ) : (
+        <Icon
+          className='theme accent'
+          onClick={showMap}
+          p={2}
+          fontSize={`2.5rem`}
+          borderRadius={`100%`}
+          pos={`absolute`}
+          right={1}
+          bottom={1}
+          zIndex={2}
+          as={AiOutlineFullscreen}
+          cursor={`pointer`}
+        ></Icon>
+      )}
+    </Box>
   );
 };
 

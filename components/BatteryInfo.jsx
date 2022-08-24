@@ -9,6 +9,10 @@ import {
   MdBatteryFull,
   MdBatteryChargingFull,
 } from 'react-icons/md';
+import {
+  FcChargeBattery,
+  FcFullBattery,
+} from 'react-icons/fc';
 
 const BatteryInfo = () => {
   const [batteryLevel, setBatteryLevel] = useState(0);
@@ -45,8 +49,8 @@ const BatteryInfo = () => {
       <Icon
         as={
           isBatteryCharging
-            ? MdBatteryChargingFull
-            : MdBatteryFull
+            ? FcChargeBattery
+            : FcFullBattery
         }
       />
       <Text>{batteryLevel}</Text>

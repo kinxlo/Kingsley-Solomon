@@ -1,26 +1,25 @@
-import { MdOutlineLocationOn, MdBluetooth, MdOutlineWbSunny, MdBatteryFull, MdFullscreen } from 'react-icons/md';
-import { BiScreenshot } from 'react-icons/bi'
+import { RiMap2Line, RiFullscreenLine, RiScreenshot2Line, RiNotification2Line } from "react-icons/ri";
 
 export const functions = [
     {
         id: 1,
         name: `Location`,
-        icon: MdOutlineLocationOn
+        icon: RiMap2Line
     },
     {
         id: 2,
         name: `Fullscreen`,
-        icon: MdFullscreen
+        icon: RiFullscreenLine
     },
     {
         id: 3,
-        name: `Screen capture`,
-        icon: BiScreenshot
+        name: `Capture`,
+        icon: RiScreenshot2Line
     },
     {
         id: 4,
         name: `Notification`,
-        icon: MdFullscreen
+        icon: RiNotification2Line
     },
 ]
 

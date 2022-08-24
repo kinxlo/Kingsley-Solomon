@@ -10,13 +10,14 @@ const ProjectBox = () => {
       return (
         <Box
           // filter={`drop-shadow(1px 1px 2px #010101)`}
+          // borderRadius={`5px`}
+          border={`1px solid rgba(255, 255, 255, 0.18)`}
           display={`flex`}
           justifyContent={`end`}
           width={`100%`}
           height={`10rem`}
           marginY={`1rem`}
           gap={3}
-          borderRadius={`5px`}
           overflow={`hidden`}
           background={`#59595950`}
           key={project.id}
@@ -31,11 +32,7 @@ const ProjectBox = () => {
     });
     return <>{projectList}</>;
   } else {
-    return (
-      <Text textAlign={`center`}>
-        No project at the moment
-      </Text>
-    );
+    return <Text>No project at the moment</Text>;
   }
 };
 

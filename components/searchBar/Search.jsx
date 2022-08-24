@@ -1,8 +1,8 @@
 import {
-  Menu,
+  Drawer,
+  DrawerContent,
+  useDisclosure,
   Icon,
-  MenuButton,
-  MenuList,
   Input,
   Flex,
   Box,
@@ -24,8 +24,11 @@ import ReactPlayer from 'react-player';
 import NewsResultDisplay from './NewsResultDisplay';
 import Fillers from '../Fillers';
 import Loader from '../Loader';
+import { FcSearch } from 'react-icons/fc';
 
-const Start = () => {
+export default function DrawerExample() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const [searchValue, setSearchValue] = useState('');
   const [isLoading, setLoading] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
@@ -126,147 +129,179 @@ const Start = () => {
     );
   });
 
+  const handleDialogClick = () => {
+    if (isOpen) {
+      onClose();
+    } else {
+      onOpen();
+    }
+  };
+
   return (
-    <Menu placement={`top`} gutter={12}>
-      <MenuButton marginX={`1rem`}>
-        <Icon
-          display={`block`}
-          as={MdSearch}
-          w={{ base: `4`, sm: `6` }}
-          h={{ base: `4`, sm: `6` }}
-        />
-      </MenuButton>
-      <MenuList
-        display={`flex`}
-        flexDir={`column`}
-        justifyContent={`end`}
-        borderRadius={0}
-        className='theme'
-        p={0}
-        width={`45rem`}
-        minW={{ base: `100vw`, sm: `45rem` }}
-        height={{ base: `100vh`, sm: `45rem` }}
-        border={0}
-        margin={0}
+    <>
+      <Icon
+        onClick={handleDialogClick}
+        as={FcSearch}
+        w={6}
+        h={6}
+      />
+
+      <Drawer
+        isOpen={isOpen}
+        placement='bottom'
+        onClose={onClose}
       >
-        <Box
-          // border={`2px solid red`}
-          p={`1rem`}
-          width={`100%`}
-          height={`100%`}
-          overflow={`scroll`}
-          className={`hide-scrollbar`}
+        <DrawerContent
+          display={`flex`}
+          flexDir={`column`}
+          justifyContent={`end`}
+          borderRadius={0}
+          className='theme'
+          p={0}
+          pb={`3rem`}
+          width={`45rem`}
+          minW={{ base: `100vw`, md: `45rem` }}
+          height={{ base: `100vh`, md: `45rem` }}
+          border={0}
+          margin={0}
         >
-          <Tabs>
-            <TabList
-              alignItems={`center`}
-              justifyContent={`space-between`}
-            >
-              <Flex>
-                <Tab value={`search`} onClick={handleClick}>
-                  All
-                </Tab>
-                <Tab value={`image`} onClick={handleClick}>
-                  Images
-                </Tab>
-                <Tab value={`news`} onClick={handleClick}>
-                  News
-                </Tab>
-                <Tab value={`video`} onClick={handleClick}>
-                  Videos
-                </Tab>
-              </Flex>
-              <Flex>{isLoading ? <Loader /> : null}</Flex>
-            </TabList>
-            <TabPanels>
-              <TabPanel height={`100%`}>
-                {!searchResult.length ? (
-                  <Fillers
-                    image={searchFillers.allSearch.image}
-                    text={searchFillers.allSearch.text}
-                  />
-                ) : (
-                  showSearchResult
-                )}
-              </TabPanel>
-              <TabPanel>
-                {!imageResult.length ? (
-                  <Fillers
-                    image={searchFillers.imageSearch.image}
-                    text={searchFillers.imageSearch.text}
-                  />
-                ) : (
-                  <Flex
-                    justifyContent={`space-around`}
-                    flexWrap={`wrap`}
-                    gap={3}
+          <Box
+            // border={`2px solid red`}
+            p={`1rem`}
+            width={`100%`}
+            height={`100%`}
+            overflow={`scroll`}
+            className={`hide-scrollbar`}
+          >
+            <Tabs>
+              <TabList
+                alignItems={`center`}
+                justifyContent={`space-between`}
+              >
+                <Flex>
+                  <Tab
+                    value={`search`}
+                    onClick={handleClick}
+                    className={`accent`}
                   >
-                    {showImageResult}
-                  </Flex>
-                )}
-              </TabPanel>
-              <TabPanel>
-                {!newsResult.length ? (
-                  <Fillers
-                    image={searchFillers.newsSearch.image}
-                    text={searchFillers.newsSearch.text}
-                  />
-                ) : (
-                  showNewsResult
-                )}
-              </TabPanel>
-              <TabPanel>
-                <Grid
-                  templateColumns='repeat(3, 1fr)'
-                  gap={3}
-                >
-                  {!videoResult.length ? (
+                    All
+                  </Tab>
+                  <Tab
+                    value={`image`}
+                    onClick={handleClick}
+                    className={`accent`}
+                  >
+                    Images
+                  </Tab>
+                  <Tab
+                    value={`news`}
+                    onClick={handleClick}
+                    className={`accent`}
+                  >
+                    News
+                  </Tab>
+                  <Tab
+                    value={`video`}
+                    onClick={handleClick}
+                    className={`accent`}
+                  >
+                    Videos
+                  </Tab>
+                </Flex>
+                <Flex>{isLoading ? <Loader /> : null}</Flex>
+              </TabList>
+              <TabPanels>
+                <TabPanel height={`100%`}>
+                  {!searchResult.length ? (
                     <Fillers
-                      image={
-                        searchFillers.videoSearch.image
-                      }
-                      text={searchFillers.videoSearch.text}
+                      image={searchFillers.allSearch.image}
+                      text={searchFillers.allSearch.text}
                     />
                   ) : (
-                    showVideoResult
+                    showSearchResult
                   )}
-                </Grid>
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
-        </Box>
-        <form onSubmit={handleSearch}>
-          <Flex
-            border={`2px solid green`}
-            alignItems={`center`}
-            background={`#fff`}
-            p={`1px`}
-          >
-            <Icon
-              p={3}
-              fontSize={`3rem`}
-              className={`accent`}
-              as={MdSearch}
-            />
-            <Input
-              value={searchValue}
-              onChange={(e) => {
-                setSearchValue(e.target.value);
-              }}
-              p={0}
-              borderRadius={0}
-              focusBorderColor={`none`}
-              // className={`accent`}
-              color={`#000`}
-              variant={`filled`}
-              background={`transparent`}
-              placeholder={`Type here to search`}
-            />
-          </Flex>
-        </form>
-      </MenuList>
-    </Menu>
+                </TabPanel>
+                <TabPanel>
+                  {!imageResult.length ? (
+                    <Fillers
+                      image={
+                        searchFillers.imageSearch.image
+                      }
+                      text={searchFillers.imageSearch.text}
+                    />
+                  ) : (
+                    <Flex
+                      justifyContent={`space-around`}
+                      flexWrap={`wrap`}
+                      gap={3}
+                    >
+                      {showImageResult}
+                    </Flex>
+                  )}
+                </TabPanel>
+                <TabPanel>
+                  {!newsResult.length ? (
+                    <Fillers
+                      image={searchFillers.newsSearch.image}
+                      text={searchFillers.newsSearch.text}
+                    />
+                  ) : (
+                    showNewsResult
+                  )}
+                </TabPanel>
+                <TabPanel>
+                  <Grid
+                    templateColumns='repeat(3, 1fr)'
+                    gap={3}
+                  >
+                    {!videoResult.length ? (
+                      <Fillers
+                        image={
+                          searchFillers.videoSearch.image
+                        }
+                        text={
+                          searchFillers.videoSearch.text
+                        }
+                      />
+                    ) : (
+                      showVideoResult
+                    )}
+                  </Grid>
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
+          </Box>
+          <form onSubmit={handleSearch}>
+            <Flex
+              border={`2px solid green`}
+              alignItems={`center`}
+              background={`#fff`}
+              p={`1px`}
+            >
+              <Icon
+                p={3}
+                fontSize={`3rem`}
+                className={`accent`}
+                as={MdSearch}
+              />
+              <Input
+                value={searchValue}
+                onChange={(e) => {
+                  setSearchValue(e.target.value);
+                }}
+                p={0}
+                borderRadius={0}
+                focusBorderColor={`none`}
+                // className={`accent`}
+                color={`#000`}
+                variant={`filled`}
+                background={`transparent`}
+                placeholder={`Type here to search`}
+              />
+            </Flex>
+          </form>
+        </DrawerContent>
+      </Drawer>
+    </>
   );
-};
-
-export default Start;
+}

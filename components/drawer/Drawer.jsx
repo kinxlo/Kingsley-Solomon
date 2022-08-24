@@ -5,7 +5,7 @@ import {
   Icon,
 } from '@chakra-ui/react';
 
-import { MdAnnouncement } from 'react-icons/md';
+import { FcAbout } from 'react-icons/fc';
 import CTALayout from './CTALayout';
 import Notification from './Notification';
 import { functions } from '../../public/functions.js';
@@ -18,13 +18,21 @@ export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { toggleMapNotice } = useContext(AppContext);
 
+  const handleClick = () => {
+    if (isOpen) {
+      onClose();
+    } else {
+      onOpen();
+    }
+  };
+
   return (
     <>
       <Icon
-        as={MdAnnouncement}
-        onClick={onOpen}
-        w={{ base: `4`, sm: `6` }}
-        h={{ base: `4`, sm: `6` }}
+        as={FcAbout}
+        onClick={handleClick}
+        w={6}
+        h={6}
       />
 
       <Drawer
@@ -37,18 +45,22 @@ export default function DrawerExample() {
           maxW={{ base: `100vw`, md: `30rem` }}
           maxH={`100vh`}
           padding={`.5rem`}
-          paddingBottom={`3rem`}
+          paddingBottom={`3.4rem`}
           display={`flex`}
           flexDir={`column`}
           justifyContent={`end`}
           gap={`2`}
         >
-          {toggleMapNotice.showMap ? <MapView /> : <Notification />}
+          {toggleMapNotice.showMap ? (
+            <MapView />
+          ) : (
+            <Notification />
+          )}
           <CTALayout
             functions={functions}
             title={`functions`}
           />
-          <SliderComponent />
+          {/* <SliderComponent /> */}
         </DrawerContent>
       </Drawer>
     </>

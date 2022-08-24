@@ -22,7 +22,7 @@ const ProductivityLayout = ({ title, document }) => {
   });
   return (
     <>
-      <Heading pb={3} size={`sm`}>
+      <Heading pb={3} fontSize={`24px`}>
         {title}
       </Heading>
       <Grid templateColumns='repeat(3, 1fr)' gap={1} mb={3}>

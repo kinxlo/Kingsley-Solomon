@@ -1,28 +1,34 @@
+import { RiGithubLine, RiLinkedinLine, RiMailSendLine, RiTwitterLine, RiWhatsappLine } from 'react-icons/ri'
 const contacts = [
     {
         id: 1,
         name: `LinkedIn`,
-        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659192059/portfolio/icons8-linkedin-circled-512_gudfbd.svg`
+        icon: RiLinkedinLine,
+        link: `https://www.linkedin.com/in/kingsley-solomon-b90339b2/`
     },
     {
         id: 2,
         name: `GitHub`,
-        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659192487/portfolio/icons8-github-512_nk9kts.svg`
+        icon: RiGithubLine,
+        link: `https://github.com/kinxlo`
     },
     {
         id: 3,
         name: `Twitter`,
-        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659192077/portfolio/icons8-twitter-circled-512_e2n0cm.svg`
+        icon: RiTwitterLine,
+        link: `https://twitter.com/kinxlo`
     },
     {
         id: 4,
         name: `whatsapp`,
-        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659192096/portfolio/icons8-whatsapp-512_ikytbd.svg`
+        icon: RiWhatsappLine,
+        link: ``
     },
     {
         id: 5,
         name: `Google`,
-        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659194648/portfolio/icons8-google-plus-512_hkuroz.svg`
+        icon: RiMailSendLine,
+        link: `mailto:kinxly@gmail.com`
     },
 ]
 

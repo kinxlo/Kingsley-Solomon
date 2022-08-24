@@ -1,6 +1,13 @@
-import { Box, Text } from '@chakra-ui/react';
+import {
+  Avatar,
+  Box,
+  Flex,
+  Icon,
+  Text,
+} from '@chakra-ui/react';
 import React from 'react';
 import NotificationControls from './NotificationControls';
+import { BsDot } from 'react-icons/bs';
 
 const NotificationBar = () => {
   return (
@@ -20,19 +27,42 @@ const NotificationBar = () => {
         overflow={`scroll`}
         // margin={`1rem`}
         className={`hide-scrollbar`}
+        display={`flex`}
+        alignItems={`top`}
+        gap={3}
       >
-        <Text fontWeight={500} fontSize={`2xl`} as={`h1`}>
-          Lorem ipsum dolor sit amet.
-        </Text>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Dicta at, dolore natus incidunt voluptas
-          provident deserunt voluptatum quibusdam delectus
-          in. Laudantium accusantium illo quam aliquam
-          asperiores molestias architecto cum in.
-        </Text>
+        <Avatar
+          name='Dan Abrahmov'
+          src='https://bit.ly/dan-abramov'
+          size={`lg`}
+          marginY={2}
+        />
+        <Box>
+          <Flex alignItems={`center`}>
+            <Text fontSize={`16px`} fontWeight={600}>
+              Kingsley Solomon
+            </Text>
+            <Icon as={BsDot} />
+            <Text fontSize={`14px`} fontWeight={200}>
+              Frontend Developer
+            </Text>
+          </Flex>
+          <Text
+            textAlign={`justify`}
+            fontSize={`14px`}
+            fontWeight={200}
+          >
+            Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Sapiente, molestias obcaecati
+            quod dolorum possimus fugit, natus impedit
+            ratione deserunt perspiciatis sint magnam
+            praesentium laboriosam animi, similique
+            laudantium? Delectus praesentium nihil nemo, nam
+            voluptate itaque
+          </Text>
+        </Box>
       </Box>
-      <NotificationControls />
+      {/* <NotificationControls /> */}
     </Box>
   );
 };

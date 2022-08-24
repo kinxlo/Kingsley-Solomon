@@ -5,16 +5,38 @@ import {
   MenuList,
   Divider,
   Box,
+  DrawerContent,
+  Icon,
+  Drawer,
+  useDisclosure,
 } from '@chakra-ui/react';
 import Calendar from 'react-calendar';
-import React, { useEffect, useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import Time from './Time';
+import WeatherApp from '../WeatherApp';
+import { FcAbout } from 'react-icons/fc';
+import { AppContext } from '../../context/AppContext';
 
 const CalendarApp = () => {
   const [timeMin, setTimeMin] = useState(null);
   const [timeFull, setTimeFull] = useState(null);
   const [session, setSession] = useState(null);
   const [value, onChange] = useState(new Date());
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { toggleMapNotice } = useContext(AppContext);
+
+  const handleClick = () => {
+    if (isOpen) {
+      onClose();
+    } else {
+      onOpen();
+    }
+  };
 
   const getTime = () => {
     let date = new Date();
@@ -49,41 +71,45 @@ const CalendarApp = () => {
   useEffect(() => {
     getTime();
   });
-
   return (
-    <Menu placement={`top`} gutter={12}>
-      <MenuButton marginX={`1rem`}>
-        <Text
-          fontWeight={`medium`}
-          fontSize={{ base: '10', sm: 'md' }}
-        >
-          {timeMin}
-        </Text>
-      </MenuButton>
-      <MenuList
-        borderRadius={0}
-        className='theme'
-        minW={{ base: `100vw`, sm: `30rem` }}
-        height={{ base: `100vh`, sm: `50rem` }}
-        display={`flex`}
-        flexDir={`column`}
-        alignItems={`stretch`}
-        border={0}
-        margin={0}
+    <>
+      <Text
+        onClick={handleClick}
+        fontWeight={`medium`}
+        cursor={`pointer`}
+        mx={5}
       >
-        <Box padding={`1rem`}>
-          <Time time={timeFull} session={session} />
-        </Box>
-        <Divider />
-        <Box
-          fontSize={{ base: `10px`, md: '14px' }}
-          padding={{ base: '0', md: `1rem` }}
+        {timeMin}
+      </Text>
+
+      <Drawer
+        isOpen={isOpen}
+        placement='right'
+        onClose={onClose}
+      >
+        <DrawerContent
+          className='theme'
+          maxW={{ base: `100vw`, md: `27rem` }}
+          display={`flex`}
+          flexDir={`column`}
+          justifyContent={`end`}
+          gap={`2`}
         >
-          <Calendar onChange={onChange} value={value} />
-        </Box>
-        <Divider />
-      </MenuList>
-    </Menu>
+          <Box padding={`1rem`}>
+            <Time time={timeFull} session={session} />
+          </Box>
+          <Divider />
+          <Box
+            fontSize={{ base: `10px`, md: '14px' }}
+            padding={{ base: '0', md: `1rem` }}
+          >
+            <Calendar onChange={onChange} value={value} />
+          </Box>
+          <Divider />
+          <WeatherApp />
+        </DrawerContent>
+      </Drawer>
+    </>
   );
 };
 

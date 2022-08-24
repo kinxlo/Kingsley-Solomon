@@ -1,17 +1,23 @@
-import { Icon, Text } from '@chakra-ui/react';
+import { Box, Icon, Text } from '@chakra-ui/react';
 import NavigationBar from '../components/NavigationBar';
 import { DiWindows } from 'react-icons/di'
-// import MapView from '../components/MapView';
+import MapView from '../components/MapView';
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+import DigitalResume from '../components/resume/DigitalResume';
 
 export default function Home() {
+  const { toggleMapNotice, showResume } = useContext(AppContext)
   return (
     <>
-      <section className='screen hide-scrollbar'>
-        {/* <MapView /> */}
-        <Text display={`flex`} alignItems={`center`} as={`p`} color={`#fff`} pos={`absolute`} right={3} bottom={3} textTransform={`Capitalize`}>Inspired by Windows
+      <Box className={`screen hide-scrollbar ${showResume ? `screen-overlay` : null}`} overflow={showResume ? `scroll` : `hidden`}>
+        {toggleMapNotice.showBigMap && <MapView />}
+        {showResume && <DigitalResume />}
+
+        <Text display={`flex`} alignItems={`center`} as={`p`} color={`#fff`} pos={`fixed`} right={3} top={0} textTransform={`Capitalize`}>Inspired by Windows
           <Icon className='accent' as={DiWindows} fontSize={`2rem`} ml={`.3rem`} />
         </Text>
-      </section>
+      </Box>
       <NavigationBar />
     </>
   )

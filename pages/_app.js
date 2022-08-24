@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import '../styles/globals.scss'
-import '../styles/Calendar.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import '../axios/global.js'
 import AppContextProvider from '../context/AppContext';

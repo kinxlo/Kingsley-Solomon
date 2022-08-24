@@ -1,33 +1,127 @@
+:root {
+  --mainTextColor-light: #000;
+  --secondaryTextColor-light: #333333;
+  --mainLinkColor-light: #0da2b8;
+  --mainBorderColor-light: #dadada;
+  --mainBgColor-light: #f9fafb;
+
+  --mainTextColor-dark: #fff;
+  --secondaryTextColor-dark: #adb0b1;
+  --mainLinkColor-dark: #1ebed6;
+  --mainBorderColor-dark: #2b3031;
+  --mainBgColor-dark: #131415;
+
+  --mainTextColor: var(--mainTextColor-dark);
+  --secondaryTextColor: var(--secondaryTextColor-dark);
+  --mainLinkColor: var(--mainLinkColor-dark);
+  --mainBorderColor: var(--mainBorderColor-dark);
+  --mainBgColor: var(--mainBgColor-dark);
+
+  // --mainTextColor: var(--mainTextColor-light);
+  // --secondaryTextColor: var(--secondaryTextColor-light);
+  // --mainLinkColor: var(--mainLinkColor-light);
+  // --mainBorderColor: var(--mainBorderColor-light);
+  // --mainBgColor: var(--mainBgColor-light);
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+@import '../components/resume/index.scss';
+@import './Calendar.css';
+
+
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: 'Readex Pro';
+  font-size: small;
+}
+
+.accent {
+  color: var(--mainLinkColor) !important;
+}
+
+h1,
+h2,
+strong {
+  color: var(--mainTextColor) !important;
 }
 
 html,
 body {
-  // border: 1px solid red;
-  // width: 100vw;
-  // height: 100vh;
-  background-color: #3A3A3A !important;
+  background-color: var(--mainBgColor) !important;
   background-image: url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1659252078/portfolio/Matrix-1s-1084px_xcrdxw.svg) !important;
   background-position: center;
-  padding: 0;
-  margin: 0;
-
-  .navBarIcons {
-    border: 1px solid red;
-
-    &:hover {
-      color: green !important
-    }
-  }
 
   .hoverState {
     &:hover {
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background-color: rgba(255, 255, 255, 0.3) !important;
+      border: 1px solid #ffffff2e;
+      background-color: #ffffff4d !important;
       cursor: pointer;
       //  filter: brightness(50%)
     }
+  }
+
+  @-webkit-keyframes kenburns {
+    0% {
+      -webkit-transform-origin: bottom left;
+      transform-origin: bottom left;
+      transform: scale(1);
+      -ms-transform: scale(1);
+      /* IE 9 */
+      -webkit-transform: scale(1);
+      /* Safari and Chrome */
+      -o-transform: scale(1);
+      /* Opera */
+      -moz-transform: scale(1);
+      /* Firefox */
+    }
+
+    100% {
+      transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      /* IE 9 */
+      -webkit-transform: scale(1.2);
+      /* Safari and Chrome */
+      -o-transform: scale(1.2);
+      /* Opera */
+      -moz-transform: scale(1.2);
+      /* Firefox */
+    }
+  }
+
+  @keyframes kenburns {
+    0% {
+      -webkit-transform-origin: bottom left;
+      transform-origin: bottom left;
+      transform: scale(1);
+      -ms-transform: scale(1);
+      /* IE 9 */
+      -webkit-transform: scale(1);
+      /* Safari and Chrome */
+      -o-transform: scale(1);
+      /* Opera */
+      -moz-transform: scale(1);
+      /* Firefox */
+    }
+
+    100% {
+      transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      /* IE 9 */
+      -webkit-transform: scale(1.2);
+      /* Safari and Chrome */
+      -o-transform: scale(1.2);
+      /* Opera */
+      -moz-transform: scale(1.2);
+      /* Firefox */
+    }
+  }
+
+  .cc-overlay {
+    -webkit-animation: kenburns 15s linear 2s infinite;
+    animation: kenburns 15s linear 2s infinite;
   }
 
   .screen {
@@ -35,15 +129,25 @@ body {
     width: 100vw;
     height: calc(100vh - 3rem);
     position: relative;
-    overflow: hidden;
   }
 
-  .accent {
-    color: #34be5b
+  .screen-overlay {
+    &::after {
+      content: '';
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      // background-color: var(--mainBgColor);
+      backdrop-filter: blur(10px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      // opacity: 0.8;
+      z-index: 1;
+    }
   }
 
   a {
-    color: inherit;
     text-decoration: none;
   }
 
@@ -58,12 +162,12 @@ body {
   }
 
   .theme {
-    color: #ffffff;
-    background: rgba(58, 58, 58, 0.85);
-    backdrop-filter: blur(16px) saturate(180%);
+    background: #00000099;
+    backdrop-filter: blur(10px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
+
 
   .hide-scrollbar {
     &::-webkit-scrollbar {
@@ -75,6 +179,26 @@ body {
     overflow: -moz-scrollbars-none !important; //for older versions of firefox
   }
 
+  .weatherApp {
+    position: relative;
+    background:
+      url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1660223626/portfolio/wolf-zimmermann-6sf5rf8QYFE-unsplash_l5c3aa.jpg) no-repeat center;
+    background-size: cover;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: var(--mainBgColor);
+      opacity: 70%;
+      // filter: blur(10px);
+      z-index: 1;
+    }
+  }
+
   #map {
     background-repeat: no-repeat;
 
@@ -83,13 +207,13 @@ body {
       flex-direction: column;
       gap: .2rem;
       width: fit-content;
-      background-color: #ffffff;
+      background-color: var(--mainTextColor);
       border-radius: 5px;
       padding: .1rem;
 
       .ol-zoom-in,
       .ol-zoom-out {
-        background-color: #4A74A8;
+        background-color: var(--mainLinkColor);
         padding: .2rem;
         width: 2rem;
         height: 2.5rem;
@@ -105,7 +229,7 @@ body {
     }
 
     .ol-rotate {
-      background-color: #ffffff;
+      background-color: var(--mainLinkColor);
       border-radius: 5px;
       padding: .1rem;
       position: absolute;
@@ -114,7 +238,7 @@ body {
       display: none;
 
       .ol-rotate-reset {
-        background-color: #4A74A8;
+        background-color: var(--mainLinkColor);
         padding: .2rem;
         width: 2rem;
         height: 2.5rem;
@@ -130,7 +254,7 @@ body {
       display: none;
 
       button {
-        background-color: #4A74A8;
+        background-color: var(--mainLinkColor);
         padding: .2rem;
         width: 2rem;
         height: 2.5rem;
@@ -138,5 +262,11 @@ body {
         margin-left: .2rem;
       }
     }
+  }
+}
+
+@media screen and (min-width: 520px) {
+  * {
+    font-size: initial;
   }
 }
