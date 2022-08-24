@@ -12,7 +12,7 @@ export default function NavigationBar() {
 
   return (
     <Box
-      paddingX={{ base: 0, md: `1rem` }}
+      paddingX={3}
       zIndex={9999}
       pos={`fixed`}
       bottom={0}
@@ -34,7 +34,6 @@ export default function NavigationBar() {
       <Flex
         alignItems={`center`}
         justifyContent={`end`}
-        paddingRight={`1rem`}
       >
         {weatherInfo && (
           <Flex
