@@ -9,7 +9,6 @@ import { FcAbout } from 'react-icons/fc';
 import CTALayout from './CTALayout';
 import Notification from './Notification';
 import { functions } from '../../public/functions.js';
-import SliderComponent from './SliderComponent';
 import MapView from '../MapView';
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
@@ -43,9 +42,9 @@ export default function DrawerExample() {
         <DrawerContent
           className='theme'
           maxW={{ base: `100vw`, md: `30rem` }}
-          maxH={`100vh`}
+          maxH={{ base: `100vh`, md: `95vh` }}
           padding={`.5rem`}
-          paddingBottom={`3.4rem`}
+          // paddingBottom={`3.4rem`}
           display={`flex`}
           flexDir={`column`}
           justifyContent={`end`}

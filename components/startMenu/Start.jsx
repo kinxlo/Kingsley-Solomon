@@ -39,6 +39,7 @@ export default function DrawerExample() {
         isOpen={isOpen}
         placement='bottom'
         onClose={onClose}
+        autoFocus={false}
       >
         <DrawerContent
           className='theme'
@@ -47,7 +48,7 @@ export default function DrawerExample() {
           border={0}
           margin={0}
           padding={0}
-          paddingBottom={`3rem`}
+          pb={`3rem`}
           borderRadius={0}
           width={`60rem`}
           w={{ base: `100vw`, md: `60rem` }}

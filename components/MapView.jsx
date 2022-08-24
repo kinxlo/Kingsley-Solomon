@@ -1,4 +1,4 @@
-import { Box, Button, Icon } from '@chakra-ui/react';
+import { Box, Icon } from '@chakra-ui/react';
 import React, {
   useContext,
   useEffect,
@@ -7,14 +7,14 @@ import React, {
 import {
   AiOutlineFullscreen,
   AiOutlineFullscreenExit,
-  AiOutlineScreen,
+
 } from 'react-icons/ai';
 
 import { Feature, Map, Overlay, View } from 'ol/index';
 import Point from 'ol/geom/Point';
 import { Circle, Fill, Style } from 'ol/style';
 import TileJSON from 'ol/source/TileJSON';
-import { OSM, Vector as VectorSource } from 'ol/source';
+import { Vector as VectorSource } from 'ol/source';
 import { useGeographic, fromLonLat } from 'ol/proj';
 import {
   Tile as TileLayer,
@@ -37,7 +37,6 @@ const MapView = () => {
 
     function success(pos) {
       const crd = pos.coords;
-
       const myPlace = [3.436, 55.3781]; //my place
       const myPoint = new Point(myPlace); //my location
 

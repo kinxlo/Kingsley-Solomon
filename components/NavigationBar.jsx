@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 export default function NavigationBar() {
-  const { weatherInfo } = useContext(AppContext);
+  const { weatherData } = useContext(AppContext);
 
   return (
     <Box
@@ -31,11 +31,9 @@ export default function NavigationBar() {
         <Search />
       </Flex>
       <Flex></Flex>
-      <Flex
-        alignItems={`center`}
-        justifyContent={`end`}
-      >
-        {weatherInfo && (
+      <Flex alignItems={`center`} justifyContent={`end`}>
+        {!weatherData && <Text>LOADING...</Text>}
+        {weatherData && (
           <Flex
             display={{ base: `none`, sm: `flex` }}
             marginX={`1rem`}
@@ -44,14 +42,14 @@ export default function NavigationBar() {
             <Image
               width={`2rem`}
               height={`2rem`}
-              src={weatherInfo.current.condition.icon}
+              src={weatherData.current.condition.icon}
               alt='icon'
             />
             <Text fontSize={`md`}>
-              {weatherInfo.current.temp_c}&deg;C
+              {weatherData.current.temp_c}&deg;C
             </Text>
             <Text ml={1}>
-              {weatherInfo.current.condition.text}
+              {weatherData.current.condition.text}
             </Text>
           </Flex>
         )}

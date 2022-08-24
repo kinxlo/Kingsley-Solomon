@@ -15,7 +15,7 @@ import {
   Image,
 } from '@chakra-ui/react';
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { MdSearch } from 'react-icons/md';
 import { axiosInstance } from '../../axios/global';
 import MediaResultDisplay from './MediaResultDisplay';
@@ -30,7 +30,6 @@ export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [searchValue, setSearchValue] = useState('');
-  const [isLoading, setLoading] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
   const [imageResult, setImageResult] = useState([]);
   const [newsResult, setNewsResult] = useState([]);
@@ -57,24 +56,20 @@ export default function DrawerExample() {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    setLoading(true);
     const url = `https://google-search3.p.rapidapi.com/api/v1/search/q=${searchValue}`;
     const res = await axiosInstance.get(url);
     if (res.status === 200) {
-      setLoading(false);
       setSearchResult([...res.data.results]);
       console.log(res.data);
     }
   };
 
   const handleClick = async (e) => {
-    setLoading(true);
     const category = e.currentTarget.value;
     const url = `https://google-search3.p.rapidapi.com/api/v1/${category}/q=${searchValue}`;
     const res = await axiosInstance.get(url);
 
     if (res.status === 200) {
-      setLoading(false);
       switch (category) {
         case `search`:
           setSearchResult([...res.data.results]);
@@ -151,6 +146,7 @@ export default function DrawerExample() {
         isOpen={isOpen}
         placement='bottom'
         onClose={onClose}
+        autoFocus={false}
       >
         <DrawerContent
           display={`flex`}
@@ -209,7 +205,6 @@ export default function DrawerExample() {
                     Videos
                   </Tab>
                 </Flex>
-                <Flex>{isLoading ? <Loader /> : null}</Flex>
               </TabList>
               <TabPanels>
                 <TabPanel height={`100%`}>

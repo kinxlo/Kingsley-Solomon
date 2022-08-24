@@ -3,9 +3,10 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const WeatherApp = () => {
-  const { weatherInfo } = useContext(AppContext);
+  const { weatherData } = useContext(AppContext);
 
-  if (weatherInfo) {
+  if(!weatherData) return <Text>LOADING...</Text>
+  if (weatherData) {
     return (
       <Box
         className='weatherApp'
@@ -24,7 +25,7 @@ const WeatherApp = () => {
         >
           <Text
             textAlign={`center`}
-          >{`${weatherInfo.location.name}, ${weatherInfo.location.country}`}</Text>
+          >{`${weatherData.location.name}, ${weatherData.location.country}`}</Text>
 
           <Flex
             justifyContent={`center`}
@@ -34,14 +35,14 @@ const WeatherApp = () => {
             <Image
               width={`6rem`}
               height={`6rem`}
-              src={weatherInfo.current.condition.icon}
+              src={weatherData.current.condition.icon}
               alt={`img`}
             />
             <Text
               className='calendarAppText'
               fontSize={`3xl`}
             >
-              {weatherInfo.current.condition.text}
+              {weatherData.current.condition.text}
             </Text>
           </Flex>
           <Flex justifyContent={`center`} gap={10}>
@@ -49,13 +50,13 @@ const WeatherApp = () => {
               className='calendarAppText'
               fontSize={`4xl`}
             >
-              {weatherInfo.current.temp_c}&deg;C
+              {weatherData.current.temp_c}&deg;C
             </Text>
             <Text
               className='calendarAppText'
               fontSize={`4xl`}
             >
-              {weatherInfo.current.temp_f}&#x2109;
+              {weatherData.current.temp_f}&#x2109;
             </Text>
           </Flex>
         </Box>

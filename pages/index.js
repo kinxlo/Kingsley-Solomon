@@ -10,6 +10,7 @@ export default function Home() {
   const { toggleMapNotice, showResume } = useContext(AppContext)
   return (
     <>
+      <NavigationBar />
       <Box className={`screen hide-scrollbar ${showResume ? `screen-overlay` : null}`} overflow={showResume ? `scroll` : `hidden`}>
         {toggleMapNotice.showBigMap && <MapView />}
         {showResume && <DigitalResume />}
@@ -18,7 +19,6 @@ export default function Home() {
           <Icon className='accent' as={DiWindows} fontSize={`2rem`} ml={`.3rem`} />
         </Text>
       </Box>
-      <NavigationBar />
     </>
   )
 }

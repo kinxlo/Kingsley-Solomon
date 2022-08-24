@@ -14,11 +14,6 @@ const tools = [
         name: `Sass`,
         image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659187756/portfolio/icons8-sass-480_o7pxk6.svg`
     },
-    // {
-    //     id: 4,
-    //     name: `Sanity.io`,
-    //     image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659188089/portfolio/logo_bhtnqa.png`
-    // },
     {
         id: 5,
         name: `Firebase`,

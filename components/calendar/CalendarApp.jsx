@@ -90,6 +90,7 @@ const CalendarApp = () => {
         <DrawerContent
           className='theme'
           maxW={{ base: `100vw`, md: `27rem` }}
+          height={{base: `100vh`, md: `95vh`}}
           display={`flex`}
           flexDir={`column`}
           justifyContent={`end`}

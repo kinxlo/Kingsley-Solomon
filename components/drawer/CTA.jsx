@@ -1,11 +1,15 @@
-import React, { useContext, useEffect } from 'react';
-import { Box, Image } from '@chakra-ui/react';
-import { activateFullscreen } from '../../public/functions.js';
+import React, {
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { Box } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext.js';
 
 const CTA = ({ width, height, name, title, children }) => {
   const { showProjects, showMapOrNotice } =
     useContext(AppContext);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleFunctionClick = (e) => {
     e.stopPropagation();
@@ -15,7 +19,7 @@ const CTA = ({ width, height, name, title, children }) => {
   const functions = (name) => {
     switch (name) {
       case `fullscreen`:
-        activateFullscreen(document.body);
+        return;
         break;
       case `location`:
         showMapOrNotice('SHOW_MAP');
@@ -42,6 +46,23 @@ const CTA = ({ width, height, name, title, children }) => {
         break;
     }
   };
+
+  useEffect(() => {
+    function onFullscreenChange() {
+      setIsFullscreen(Boolean(document.fullscreenElement));
+    }
+
+    document.addEventListener(
+      'fullscreenchange',
+      onFullscreenChange
+    );
+
+    return () =>
+      document.removeEventListener(
+        'fullscreenchange',
+        onFullscreenChange
+      );
+  }, []);
 
   return (
     <Box
