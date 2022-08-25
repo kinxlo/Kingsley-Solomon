@@ -56,13 +56,18 @@
 }
 
 .nav-btn {
+  // background-color: transparent !important;
 
-  &:focus,
-  &:active {
+  &:hover {
     // border: 1px solid red !important;
     background-color: transparent !important;
-    color: red !important;
+    color: rgb(208, 0, 255) !important;
   }
+}
+
+.active {
+  background-color: transparent !important;
+  color: rgb(208, 0, 255) !important;
 }
 
 h1,
@@ -78,14 +83,14 @@ body {
   background-image: url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1659252078/portfolio/Matrix-1s-1084px_xcrdxw.svg) !important;
   background-position: center;
 
-  .hoverState {
-    &:hover {
-      border: 1px solid #ffffff2e;
-      background-color: #ffffff4d !important;
-      cursor: pointer;
-      //  filter: brightness(50%)
-    }
-  }
+  // .hoverState {
+  //   &:hover {
+  //     border: 1px solid #ffffff2e;
+  //     background-color: #ffffff4d !important;
+  //     cursor: pointer;
+  //     //  filter: brightness(50%)
+  //   }
+  // }
 
   @-webkit-keyframes kenburns {
     0% {

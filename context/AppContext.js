@@ -12,9 +12,10 @@ const initialState = {
         showBigMap: false
     },
     weatherData: null,
-    switchView: '',
+    switchView: 'profile',
     showResume: false,
-    showControls: true
+    showControls: true,
+    isActive: { name: `profile`, active: true }
 }
 
 const weatherFetcher = async () => {

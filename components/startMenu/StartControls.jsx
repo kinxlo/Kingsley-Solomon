@@ -21,8 +21,12 @@ import { AppContext } from '../../context/AppContext';
 import contacts from '../../public/contact.js';
 
 const StartControls = () => {
-  const { switchContent, toggleControls, getResume } =
+  const { switchContent, toggleControls, switchView } =
     useContext(AppContext);
+  const [active] = useState({
+    backgroundColor: `transparent !important`,
+    color: `rgb(208, 0, 255) !important`,
+  });
 
   const handleClick = (e) => {
     switchContent(e.currentTarget.getAttribute(`name`));
@@ -37,7 +41,7 @@ const StartControls = () => {
       >
         <Icon
           as={social.icon}
-          className={`accent`}
+          className={`accent nav-btn`}
           fontSize={`1.5rem`}
         />
       </Link>
@@ -74,6 +78,10 @@ const StartControls = () => {
           name='profile'
           onClick={handleClick}
           className={`accent nav-btn`}
+          isActive={switchView == `profile` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
           size={`xs`}
         >
           <Icon as={AiOutlineUser} fontSize={`1.5rem`} />
@@ -85,6 +93,10 @@ const StartControls = () => {
           name='resume'
           onClick={handleClick}
           className={`accent nav-btn`}
+          isActive={switchView == `resume` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
           size={`xs`}
         >
           <Icon
@@ -101,6 +113,10 @@ const StartControls = () => {
           name='projects'
           onClick={handleClick}
           className={`accent nav-btn`}
+          isActive={switchView == `projects` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
           size={`xs`}
         >
           <Icon as={AiOutlineProject} fontSize={`1.5rem`} />
@@ -112,6 +128,10 @@ const StartControls = () => {
           name='tools'
           onClick={handleClick}
           className={`accent nav-btn`}
+          isActive={switchView == `tools` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
           size={`xs`}
         >
           <Icon as={RiToolsLine} fontSize={`1.5rem`} />

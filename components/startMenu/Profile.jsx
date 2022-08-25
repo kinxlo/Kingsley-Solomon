@@ -40,6 +40,7 @@ const Profile = () => {
           Frontend <br /> Developer.
         </Text>
         <Text
+
           mt={5}
           fontSize={{ base: `16px`, md: `24px` }}
         >
