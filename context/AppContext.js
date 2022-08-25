@@ -12,7 +12,8 @@ const initialState = {
         showBigMap: false
     },
     weatherData: null,
-    showResume: false
+    switchView: '',
+    showControls: true
 }
 
 const weatherFetcher = async () => {
@@ -56,9 +57,16 @@ const AppContextProvider = ({ children }) => {
     const showMapOrNotice = (type) => {
         dispatch({ type: type, payload: true })
     }
+    const toggleControls = (type) => {
+        dispatch({ type: 'SHOW_CONTROLS', payload: state.showControls })
+    }
+    const switchContent = (display) => {
+        console.log(display);
+        dispatch({ type: 'SWITCH_VIEW', payload: display })
+    }
 
     return (
-        <AppContext.Provider value={{ ...state, showProjects, showMapOrNotice, getResume }}>
+        <AppContext.Provider value={{ ...state, showProjects, showMapOrNotice, getResume, switchContent, toggleControls }}>
             {children}
         </AppContext.Provider>
     )

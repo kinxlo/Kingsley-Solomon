@@ -24,6 +24,11 @@ export const AppReducer = (state, action) => {
                 ...state, showResume: !action.payload
             }
 
+        case 'SHOW_CONTROLS':
+            return {
+                ...state, showControls: !action.payload
+            }
+
         case 'SHOW_BIG_MAP':
             return {
                 ...state, toggleMapNotice: {
@@ -40,6 +45,10 @@ export const AppReducer = (state, action) => {
                     showNotice: action.payload,
                     showBigMap: false
                 }
+            }
+        case 'SWITCH_VIEW':
+            return {
+                ...state, switchView: action.payload
             }
 
     }

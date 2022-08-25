@@ -26,6 +26,7 @@ export default function NavigationBar() {
       <Flex
         justifyContent={`space-between`}
         alignItems={`center`}
+        gap={7}
       >
         <Start />
         <Search />

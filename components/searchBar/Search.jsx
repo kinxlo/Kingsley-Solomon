@@ -13,6 +13,7 @@ import {
   TabPanel,
   Grid,
   Image,
+  Button,
 } from '@chakra-ui/react';
 
 import React, { useContext, useState } from 'react';
@@ -23,8 +24,12 @@ import SearchResultDisplay from './SearchResultDisplay';
 import ReactPlayer from 'react-player';
 import NewsResultDisplay from './NewsResultDisplay';
 import Fillers from '../Fillers';
-import Loader from '../Loader';
 import { FcSearch } from 'react-icons/fc';
+import {
+  AiOutlineSearch,
+  AiOutlineLeftCircle,
+  AiOutlineLeft,
+} from 'react-icons/ai';
 
 export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -136,7 +141,6 @@ export default function DrawerExample() {
     <>
       <Icon
         onClick={handleDialogClick}
-        marginLeft={3}
         as={FcSearch}
         w={6}
         h={6}
@@ -155,7 +159,7 @@ export default function DrawerExample() {
           borderRadius={0}
           className='theme'
           p={0}
-          pb={`3rem`}
+          pb={{ base: 0, md: `3rem` }}
           width={`45rem`}
           minW={{ base: `100vw`, md: `45rem` }}
           height={{ base: `100vh`, md: `45rem` }}
@@ -175,6 +179,15 @@ export default function DrawerExample() {
                 alignItems={`center`}
                 justifyContent={`space-between`}
               >
+                {/* back button */}
+
+                <Icon
+                  onClick={handleDialogClick}
+                  className={`accent`}
+                  boxSize={`1.5rem`}
+                  as={AiOutlineLeft}
+                />
+
                 <Flex>
                   <Tab
                     value={`search`}

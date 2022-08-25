@@ -1,20 +1,22 @@
-import {
-  Box,
-  Center,
-  Icon,
-  Image,
-  Link,
-} from '@chakra-ui/react';
+import { Box, Center, Icon, Link } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import {
   AiOutlineFileText,
   AiOutlineMenu,
+  AiOutlineProject,
+  AiOutlineUser,
 } from 'react-icons/ai';
 import { AppContext } from '../../context/AppContext';
 import contacts from '../../public/contact.js';
+import Search from '../searchBar/Search';
 
 const StartControls = () => {
-  const { getResume } = useContext(AppContext);
+  const { switchContent, toggleControls } = useContext(AppContext);
+
+  const handleClick = (e) => {
+    switchContent(e.currentTarget.getAttribute(`name`));
+  };
+
   let socialContacts = contacts.map((social) => {
     return (
       <Link
@@ -38,20 +40,42 @@ const StartControls = () => {
       justifyContent={`space-between`}
       padding={3}
     >
-      <Center display={`flex`} flexDir={`column`} gap={5}>
+      <Center display={`flex`} flexDir={`column`} gap={7}>
         <Icon
+          name='menu'
+          onClick={toggleControls}
           as={AiOutlineMenu}
           cursor={`pointer`}
           className={`accent`}
           fontSize={`1.3rem`}
         />
         <Icon
-          onClick={getResume}
+          name='profile'
+          onClick={handleClick}
+          display={{ base: `block`, sm: `none` }}
+          cursor={`pointer`}
+          as={AiOutlineUser}
+          className={`accent`}
+          fontSize={`1.3rem`}
+        />
+        <Icon
+          name='resume'
+          onClick={handleClick}
           cursor={`pointer`}
           as={AiOutlineFileText}
           className={`accent`}
           fontSize={`1.3rem`}
         />
+        <Icon
+          name='projects'
+          onClick={handleClick}
+          display={{ base: `block`, sm: `none` }}
+          cursor={`pointer`}
+          as={AiOutlineProject}
+          className={`accent`}
+          fontSize={`1.3rem`}
+        />
+        <Search />
       </Center>
       <Center
         height={`40%`}

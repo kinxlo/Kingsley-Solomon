@@ -19,7 +19,7 @@ const CTA = ({ width, height, name, title, children }) => {
   const functions = (name) => {
     switch (name) {
       case `fullscreen`:
-        return;
+        // return;
         break;
       case `location`:
         showMapOrNotice('SHOW_MAP');
