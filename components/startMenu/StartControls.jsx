@@ -44,7 +44,13 @@ const StartControls = () => {
   return (
     <Box
       // background={`#595959`}
+      position={{
+        base: `sticky !important`,
+        sm: `initial`,
+      }}
+      top={0}
       display={`flex`}
+      height={{ base: `100vh`, sm: `initial` }}
       flexDir={`column`}
       justifyContent={`space-between`}
       padding={3}

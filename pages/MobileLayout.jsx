@@ -44,7 +44,19 @@ const MobileLayout = () => {
       case `search`:
         return <Search />;
       default:
-        return <DigitalResume />;
+        return (
+          <>
+            <Profile />
+            <ProductivityLayout
+              title={`Languages & Frameworks`}
+              document={language}
+            />
+            <ProductivityLayout
+              title={`Tools`}
+              document={tools}
+            />
+          </>
+        );
     }
   };
   return (
@@ -54,8 +66,6 @@ const MobileLayout = () => {
         display={`flex`}
         flexDir={`row`}
         border={`none !important`}
-        w={`100vw`}
-        h={`100vh`}
       >
         {showControls ? (
           <StartControls />
@@ -89,7 +99,7 @@ const MobileLayout = () => {
           }
           display={`flex`}
           flexDir={`column`}
-          height={`100%`}
+          //   height={`100%`}
           overflow={`auto`}
           className={`hide-scrollbar`}
         >
