@@ -51,6 +51,7 @@ const MobileLayout = () => {
     <>
       <Box
         className='theme'
+        position={`fixed`}
         display={`flex`}
         flexDir={`row`}
         border={`1px solid red`}
