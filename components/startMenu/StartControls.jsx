@@ -6,17 +6,21 @@ import {
   IconButton,
   Link,
 } from '@chakra-ui/react';
-import React, { useContext } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import {
   AiOutlineFileText,
-  AiOutlineMenu,
   AiOutlineProject,
   AiOutlineUser,
 } from 'react-icons/ai';
+import { RiToolsLine } from 'react-icons/ri';
+import {TbMenu} from 'react-icons/tb'
 import { AppContext } from '../../context/AppContext';
 import contacts from '../../public/contact.js';
-import DrawerExample from '../drawer/Drawer';
-import Search from '../searchBar/Search';
+
 
 const StartControls = () => {
   const { switchContent, toggleControls, getResume } =
@@ -25,6 +29,8 @@ const StartControls = () => {
   const handleClick = (e) => {
     switchContent(e.currentTarget.getAttribute(`name`));
   };
+
+
 
   let socialContacts = contacts.map((social) => {
     return (
@@ -41,6 +47,7 @@ const StartControls = () => {
       </Link>
     );
   });
+
   return (
     <Box
       // background={`#595959`}
@@ -65,7 +72,7 @@ const StartControls = () => {
           className={`accent nav-btn`}
           size={`xs`}
         >
-          <Icon fontSize={`1.5rem`} as={AiOutlineMenu} />
+          <Icon fontSize={`1.5rem`} as={TbMenu} />
         </Button>
         <Button
           p={0}
@@ -112,23 +119,22 @@ const StartControls = () => {
           />
         </Button>
         {/* end of icon switch */}
+
         <Button
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
-          name='projects'
+          name='tools'
           onClick={handleClick}
           className={`accent nav-btn`}
           size={`xs`}
         >
           <Icon
             display={{ base: `block`, sm: `none` }}
-            as={AiOutlineProject}
+            as={RiToolsLine}
             fontSize={`1.5rem`}
           />
         </Button>
-        {window.innerWidth <= 520 && <Search />}
-        {window.innerWidth <= 520 && <DrawerExample />}
       </Center>
       <Center
         height={`40%`}

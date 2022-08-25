@@ -56,23 +56,22 @@ export default function DrawerExample() {
         >
           <StartControls />
           <Box
-            px={3}
-            pt={3}
+            p={3}
             display={{ base: `none`, md: `flex` }}
-            flexDir={`column`}
-            justifyContent={`end`}
+            // flexDir={`column`}
+            // justifyContent={`end`}
             w={`35%`}
           >
             <Profile />
             {/* PROJECT DISPLAY */}
-            <Box
+            {/* <Box
               px={3}
               height={`100%`}
               overflow={`scroll`}
               className={`hide-scrollbar`}
             >
               <ProjectBox />
-            </Box>
+            </Box> */}
           </Box>
           <Box
             className='hide-scrollbar'

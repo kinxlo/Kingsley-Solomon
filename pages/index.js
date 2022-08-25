@@ -11,6 +11,5 @@ export default function Home() {
   }, []);
 
   if (windowSize <= 520) return <MobileLayout />
-
   if (windowSize => 521) return <DesktopLayout /> //*Inspired by windows 10
 }

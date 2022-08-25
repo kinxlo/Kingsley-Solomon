@@ -24,29 +24,16 @@ const MobileLayout = () => {
   const display = () => {
     switch (switchView) {
       case `profile`:
-        return (
-          <>
-            <Profile />
-            <ProductivityLayout
-              title={`Languages & Frameworks`}
-              document={language}
-            />
-            <ProductivityLayout
-              title={`Tools`}
-              document={tools}
-            />
-          </>
-        );
+        return <Profile />;
       case `resume`:
         return <DigitalResume />;
       case `projects`:
         return <ProjectBox />;
       case `search`:
         return <Search />;
-      default:
+      case `tools`:
         return (
           <>
-            <Profile />
             <ProductivityLayout
               title={`Languages & Frameworks`}
               document={language}
@@ -57,6 +44,8 @@ const MobileLayout = () => {
             />
           </>
         );
+      default:
+        return <Profile />;
     }
   };
   return (
@@ -99,7 +88,7 @@ const MobileLayout = () => {
           }
           display={`flex`}
           flexDir={`column`}
-          //   height={`100%`}
+          height={`100vh`}
           overflow={`auto`}
           className={`hide-scrollbar`}
         >
