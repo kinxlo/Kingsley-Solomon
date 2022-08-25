@@ -33,7 +33,7 @@ const Profile = () => {
         <Text
           className='accent'
           as={`h2`}
-          fontSize={{ base: `3.3rem`, md: `8rem` }}
+          fontSize={{ base: `4rem`, md: `8rem` }}
           lineHeight={1.2}
           fontWeight={700}
         >
