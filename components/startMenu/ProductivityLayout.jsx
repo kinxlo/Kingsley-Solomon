@@ -1,4 +1,9 @@
-import { Grid, Heading, Image, Text } from '@chakra-ui/react';
+import {
+  Grid,
+  Heading,
+  Image,
+  Text,
+} from '@chakra-ui/react';
 import React from 'react';
 import CTA from '../drawer/CTA';
 
@@ -22,7 +27,13 @@ const ProductivityLayout = ({ title, document }) => {
   });
   return (
     <>
-      <Text mt={10} mb={2} className='heading'>
+      <Text
+        textAlign={`right`}
+        mt={10}
+        mb={2}
+        className='heading accent'
+        fontWeight={700}
+      >
         {title}
       </Text>
       <Grid templateColumns='repeat(3, 1fr)' gap={3}>

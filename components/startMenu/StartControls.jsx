@@ -124,6 +124,21 @@ const StartControls = () => {
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
+          name='projects'
+          onClick={handleClick}
+          className={`accent nav-btn`}
+          size={`xs`}
+        >
+          <Icon
+            display={{ base: `block`, sm: `none` }}
+            as={AiOutlineProject}
+            fontSize={`1.5rem`}
+          />
+        </Button>
+        <Button
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
           name='tools'
           onClick={handleClick}
           className={`accent nav-btn`}

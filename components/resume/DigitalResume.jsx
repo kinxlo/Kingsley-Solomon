@@ -98,7 +98,7 @@ const DigitalResume = () => {
         <h2 className='h2'>Skills & Qualifications</h2>
         <ul id='qualifications--list'>
           <li>
-            ✔️ 3 Years experience with frontend development
+            ✔️ Over 5 Years experience with frontend development
           </li>
           <li>✔️ Experience with Java and its framework</li>
           <li>✔️ Good knowledge in API Implementation.</li>
