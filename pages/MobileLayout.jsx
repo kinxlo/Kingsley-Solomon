@@ -51,12 +51,9 @@ const MobileLayout = () => {
     <>
       <Box
         className='theme'
-        position={`fixed`}
-        top={0}
-        left={0}
         display={`flex`}
         flexDir={`row`}
-        border={`1px solid red`}
+        border={`none !important`}
         w={`100vw`}
         h={`100vh`}
       >
@@ -78,7 +75,18 @@ const MobileLayout = () => {
           />
         )}
         <Container
-          // border={`1px solid red`}
+          p={
+            switchView === `projects` ||
+            switchView === `resume`
+              ? 0
+              : `1rem`
+          }
+          //   borderLeft={`1px solid rgba(255, 255, 255, 0.18)`}
+          borderLeft={
+            switchView === `projects`
+              ? `1px solid rgba(255, 255, 255, 0.18)`
+              : `none`
+          }
           display={`flex`}
           flexDir={`column`}
           height={`100%`}

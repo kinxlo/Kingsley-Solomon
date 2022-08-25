@@ -1,4 +1,11 @@
-import { Box, Center, Icon, Link } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Center,
+  Icon,
+  IconButton,
+  Link,
+} from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import {
   AiOutlineFileText,
@@ -8,10 +15,12 @@ import {
 } from 'react-icons/ai';
 import { AppContext } from '../../context/AppContext';
 import contacts from '../../public/contact.js';
+import DrawerExample from '../drawer/Drawer';
 import Search from '../searchBar/Search';
 
 const StartControls = () => {
-  const { switchContent, toggleControls } = useContext(AppContext);
+  const { switchContent, toggleControls, getResume } =
+    useContext(AppContext);
 
   const handleClick = (e) => {
     switchContent(e.currentTarget.getAttribute(`name`));
@@ -27,7 +36,7 @@ const StartControls = () => {
         <Icon
           as={social.icon}
           className={`accent`}
-          fontSize={`1.3rem`}
+          fontSize={`1.5rem`}
         />
       </Link>
     );
@@ -41,41 +50,79 @@ const StartControls = () => {
       padding={3}
     >
       <Center display={`flex`} flexDir={`column`} gap={7}>
-        <Icon
+        <Button
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
           name='menu'
           onClick={toggleControls}
-          as={AiOutlineMenu}
-          cursor={`pointer`}
-          className={`accent`}
-          fontSize={`1.3rem`}
-        />
-        <Icon
+          className={`accent nav-btn`}
+          size={`xs`}
+        >
+          <Icon fontSize={`1.5rem`} as={AiOutlineMenu} />
+        </Button>
+        <Button
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
           name='profile'
           onClick={handleClick}
+          className={`accent nav-btn`}
           display={{ base: `block`, sm: `none` }}
-          cursor={`pointer`}
-          as={AiOutlineUser}
-          className={`accent`}
-          fontSize={`1.3rem`}
-        />
-        <Icon
+          size={`xs`}
+        >
+          <Icon as={AiOutlineUser} fontSize={`1.5rem`} />
+        </Button>
+
+        {/* icon switch */}
+        <Button
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
+          name='resume'
+          onClick={getResume}
+          className={`accent nav-btn`}
+          size={`xs`}
+          display={{ base: `none`, sm: `block` }}
+        >
+          <Icon
+            as={AiOutlineFileText}
+            fontSize={`1.5rem`}
+          />
+        </Button>
+        <Button
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
           name='resume'
           onClick={handleClick}
-          cursor={`pointer`}
-          as={AiOutlineFileText}
-          className={`accent`}
-          fontSize={`1.3rem`}
-        />
-        <Icon
+          className={`accent nav-btn`}
+          size={`xs`}
+          display={{ base: `block`, sm: `none` }}
+        >
+          <Icon
+            as={AiOutlineFileText}
+            fontSize={`1.5rem`}
+          />
+        </Button>
+        {/* end of icon switch */}
+        <Button
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
           name='projects'
           onClick={handleClick}
-          display={{ base: `block`, sm: `none` }}
-          cursor={`pointer`}
-          as={AiOutlineProject}
-          className={`accent`}
-          fontSize={`1.3rem`}
-        />
-        <Search />
+          className={`accent nav-btn`}
+          size={`xs`}
+        >
+          <Icon
+            display={{ base: `block`, sm: `none` }}
+            as={AiOutlineProject}
+            fontSize={`1.5rem`}
+          />
+        </Button>
+        {window.innerWidth <= 520 && <Search />}
+        {window.innerWidth <= 520 && <DrawerExample />}
       </Center>
       <Center
         height={`40%`}

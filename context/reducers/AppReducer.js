@@ -7,7 +7,7 @@ export const AppReducer = (state, action) => {
                 return project.language === action.payload
             })
 
-            state = { ...state, projects: newProjectList }
+            state = { ...state, projects: newProjectList, switchView: `projects` }
             return state
 
         case 'SHOW_MAP':

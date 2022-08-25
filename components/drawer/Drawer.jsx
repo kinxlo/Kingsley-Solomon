@@ -12,6 +12,7 @@ import { functions } from '../../public/functions.js';
 import MapView from '../MapView';
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
+import { AiOutlineLeft } from 'react-icons/ai';
 
 export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -50,6 +51,16 @@ export default function DrawerExample() {
           justifyContent={`end`}
           gap={`2`}
         >
+          <Icon
+            onClick={handleClick}
+            position={`absolute`}
+            top={2}
+            left={2}
+            className={`accent`}
+            boxSize={`1.5rem`}
+            as={AiOutlineLeft}
+          />
+
           {toggleMapNotice.showMap ? (
             <MapView />
           ) : (

@@ -9,6 +9,6 @@ export default function Home() {
     setWindowSize(window.innerWidth)
   }, []);
 
-  if (windowSize <= 500) return <MobileLayout />
-  if (windowSize => 501) return <DesktopLayout /> //*Inspired by windows 10
+  if (windowSize <= 520) return <MobileLayout />
+  if (windowSize => 521) return <DesktopLayout /> //*Inspired by windows 10
 }

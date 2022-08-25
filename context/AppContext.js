@@ -13,6 +13,7 @@ const initialState = {
     },
     weatherData: null,
     switchView: '',
+    showResume: false,
     showControls: false
 }
 
