@@ -42,12 +42,16 @@
   cursor: pointer;
   color: var(--mainLinkColor) !important;
 }
+.heading {
+  font-size:18px;
+}
 
 h1,
 h2,
 strong {
   color: var(--mainTextColor) !important;
 }
+
 
 html,
 body {
@@ -163,7 +167,7 @@ body {
   }
 
   .theme {
-    background: #00000099;
+    background: transparent;
     backdrop-filter: blur(10px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -269,5 +273,16 @@ body {
 @media screen and (min-width: 520px) {
   * {
     font-size: initial;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .theme {
+    background: #00000099 !important;
+    backdrop-filter: blur(10px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
 }

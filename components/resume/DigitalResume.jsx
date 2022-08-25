@@ -2,6 +2,7 @@ import {
   Avatar,
   Box,
   Icon,
+  IconButton,
   Image,
   Link,
   Text,
@@ -19,19 +20,20 @@ const DigitalResume = () => {
       zIndex={3}
       id='container--main'
     >
-      <Icon
-        color={`red`}
-        borderRadius={`100%`}
-        padding={`0.5rem`}
-        backgroundColor={`#ffffff`}
-        boxSize={`3rem`}
-        position={`fixed`}
-        bottom={`4rem`}
-        right={`1rem`}
-        cursor={`pointer`}
+      <IconButton
         onClick={getResume}
-        as={FcLeft}
+        position={`fixed`}
+        display={{ base: `none`, md: `block` }}
+        right={5}
+        bottom={20}
+        variant='outline'
+        className='accent'
+        aria-label='Call Sage'
+        borderRadius={`100%`}
+        fontSize='20px'
+        icon={<FcLeft />}
       />
+
       <section id='wrapper--hero' className='section--page'>
         {/* <Image boxSize={`7rem`} alt='pp' src='https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile0_dqiv0d.jpg' /> */}
         <div>

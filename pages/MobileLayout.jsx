@@ -44,7 +44,7 @@ const MobileLayout = () => {
       case `search`:
         return <Search />;
       default:
-        return <Profile />;
+        return <DigitalResume />;
     }
   };
   return (

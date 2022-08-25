@@ -1,4 +1,4 @@
-import { Grid, Heading, Image } from '@chakra-ui/react';
+import { Grid, Heading, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 import CTA from '../drawer/CTA';
 
@@ -7,7 +7,7 @@ const ProductivityLayout = ({ title, document }) => {
     return (
       <CTA
         name={box.name}
-        height={`9rem`}
+        height={{ base: `7rem`, sm: `9rem` }}
         key={box.id}
         title={title}
       >
@@ -22,10 +22,10 @@ const ProductivityLayout = ({ title, document }) => {
   });
   return (
     <>
-      <Heading pb={3} fontSize={`24px`}>
+      <Text mt={10} mb={2} className='heading'>
         {title}
-      </Heading>
-      <Grid templateColumns='repeat(3, 1fr)' gap={1} mb={3}>
+      </Text>
+      <Grid templateColumns='repeat(3, 1fr)' gap={3}>
         {boxs}
       </Grid>
     </>
@@ -33,4 +33,3 @@ const ProductivityLayout = ({ title, document }) => {
 };
 
 export default ProductivityLayout;
-4;

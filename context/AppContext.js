@@ -13,7 +13,7 @@ const initialState = {
     },
     weatherData: null,
     switchView: '',
-    showControls: true
+    showControls: false
 }
 
 const weatherFetcher = async () => {
