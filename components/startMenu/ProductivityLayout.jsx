@@ -1,4 +1,7 @@
 import {
+  Box,
+  Container,
+  Flex,
   Grid,
   Heading,
   Image,
@@ -12,7 +15,7 @@ const ProductivityLayout = ({ title, document }) => {
     return (
       <CTA
         name={box.name}
-        height={{ base: `7rem`, sm: `9rem` }}
+        height={{ base: `7rem`, sm: `9rem`, md: `15rem` }}
         key={box.id}
         title={title}
       >
@@ -27,18 +30,35 @@ const ProductivityLayout = ({ title, document }) => {
   });
   return (
     <>
-      <Text
-        textAlign={`right`}
+      <Flex
+        display={`flex`}
+        justifyContent={`end`}
+        alignItems={`center`}
+        // textAlign={`right`}
         mt={10}
         mb={2}
-        className='heading accent'
-        fontWeight={700}
+        // fontWeight={700}
       >
-        {title}
-      </Text>
-      <Grid templateColumns='repeat(3, 1fr)' gap={3}>
-        {boxs}
-      </Grid>
+        <hr className='line' />
+
+        <Text
+          width={`fit-content`}
+          className='heading accent'
+        >
+          {title}
+        </Text>
+        {/* <Box> */}
+        {/* </Box> */}
+      </Flex>
+      <Container p={0} margin={`0 0 0 auto`} maxW={`900px`}>
+        <Grid
+          // margin={`0 auto`}
+          templateColumns='repeat(3, 1fr)'
+          gap={3}
+        >
+          {boxs}
+        </Grid>
+      </Container>
     </>
   );
 };

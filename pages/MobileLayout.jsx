@@ -74,6 +74,7 @@ const MobileLayout = () => {
           />
         )}
         <Container
+          maxW={`1440px`}
           p={
             switchView === `projects` ||
             switchView === `resume`

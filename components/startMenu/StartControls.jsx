@@ -3,7 +3,6 @@ import {
   Button,
   Center,
   Icon,
-  IconButton,
   Link,
 } from '@chakra-ui/react';
 import React, {
@@ -17,10 +16,9 @@ import {
   AiOutlineUser,
 } from 'react-icons/ai';
 import { RiToolsLine } from 'react-icons/ri';
-import {TbMenu} from 'react-icons/tb'
+import { TbMenu } from 'react-icons/tb';
 import { AppContext } from '../../context/AppContext';
 import contacts from '../../public/contact.js';
-
 
 const StartControls = () => {
   const { switchContent, toggleControls, getResume } =
@@ -29,8 +27,6 @@ const StartControls = () => {
   const handleClick = (e) => {
     switchContent(e.currentTarget.getAttribute(`name`));
   };
-
-
 
   let socialContacts = contacts.map((social) => {
     return (
@@ -51,13 +47,10 @@ const StartControls = () => {
   return (
     <Box
       // background={`#595959`}
-      position={{
-        base: `sticky !important`,
-        sm: `initial`,
-      }}
+      position={`sticky !important`}
       top={0}
       display={`flex`}
-      height={{ base: `100vh`, sm: `initial` }}
+      height={`100vh`}
       flexDir={`column`}
       justifyContent={`space-between`}
       padding={3}
@@ -81,27 +74,9 @@ const StartControls = () => {
           name='profile'
           onClick={handleClick}
           className={`accent nav-btn`}
-          display={{ base: `block`, sm: `none` }}
           size={`xs`}
         >
           <Icon as={AiOutlineUser} fontSize={`1.5rem`} />
-        </Button>
-
-        {/* icon switch */}
-        <Button
-          p={0}
-          borderRadius={`100%`}
-          backgroundColor={`transparent`}
-          name='resume'
-          onClick={getResume}
-          className={`accent nav-btn`}
-          size={`xs`}
-          display={{ base: `none`, sm: `block` }}
-        >
-          <Icon
-            as={AiOutlineFileText}
-            fontSize={`1.5rem`}
-          />
         </Button>
         <Button
           p={0}
@@ -111,7 +86,6 @@ const StartControls = () => {
           onClick={handleClick}
           className={`accent nav-btn`}
           size={`xs`}
-          display={{ base: `block`, sm: `none` }}
         >
           <Icon
             as={AiOutlineFileText}
@@ -129,11 +103,7 @@ const StartControls = () => {
           className={`accent nav-btn`}
           size={`xs`}
         >
-          <Icon
-            display={{ base: `block`, sm: `none` }}
-            as={AiOutlineProject}
-            fontSize={`1.5rem`}
-          />
+          <Icon as={AiOutlineProject} fontSize={`1.5rem`} />
         </Button>
         <Button
           p={0}
@@ -144,11 +114,7 @@ const StartControls = () => {
           className={`accent nav-btn`}
           size={`xs`}
         >
-          <Icon
-            display={{ base: `block`, sm: `none` }}
-            as={RiToolsLine}
-            fontSize={`1.5rem`}
-          />
+          <Icon as={RiToolsLine} fontSize={`1.5rem`} />
         </Button>
       </Center>
       <Center

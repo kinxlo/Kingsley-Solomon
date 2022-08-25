@@ -15,7 +15,7 @@ const DigitalResume = () => {
   const { getResume } = useContext(AppContext);
   return (
     <Box
-      className='resume_wildCard'
+      // className='resume_wildCard'
       position={`relative`}
       zIndex={3}
       id='container--main'

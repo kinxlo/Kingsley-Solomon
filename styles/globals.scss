@@ -45,10 +45,20 @@
 
 .heading {
   font-size: 18px;
+
+}
+
+.line {
+  // color: var(--mainLinkColor) !important;
+  margin-right: 1rem;
+  flex: 1;
+  // height: 10px;
 }
 
 .nav-btn {
-  &:focus, &:active {
+
+  &:focus,
+  &:active {
     // border: 1px solid red !important;
     background-color: transparent !important;
     color: red !important;

@@ -158,8 +158,6 @@ export default function DrawerExample() {
           justifyContent={`end`}
           borderRadius={0}
           className='theme'
-          p={0}
-          pb={{ base: 0, md: `3rem` }}
           width={`45rem`}
           minW={{ base: `100vw`, md: `45rem` }}
           height={{ base: `100vh`, md: `45rem` }}
