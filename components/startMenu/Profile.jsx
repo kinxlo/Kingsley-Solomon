@@ -1,26 +1,19 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Text,
+} from '@chakra-ui/react';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
+import BatteryInfo from '../BatteryInfo';
+import CalendarApp from '../calendar/CalendarApp';
 import DrawerExample from '../drawer/Drawer';
 import Search from '../searchBar/Search';
 
 const Profile = () => {
-  const [displayApi, setDisplayApi] = useState(null);
-
-  const checkWindowSize = () => {
-    if (window.innerWidth <= 520) {
-      setDisplayApi(
-        <>
-          <Search />
-          <DrawerExample />
-        </>
-      );
-    }
-  };
-
-  useEffect(() => {
-    checkWindowSize();
-  }, []);
-
+  const { weatherData } = useContext(AppContext);
   return (
     <Flex
       position={`relative`}
@@ -30,9 +23,9 @@ const Profile = () => {
       height={`100%`}
     >
       <Heading
-        fontSize={`24px`}
+        fontSize={{ base: `24px`, md: `48px` }}
         letterSpacing={1}
-        className='accent'
+        // className='accent'
       >
         Kingsley Solomon
       </Heading>
@@ -40,18 +33,22 @@ const Profile = () => {
         <Text
           className='accent'
           as={`h2`}
-          fontSize={`3.3rem`}
+          fontSize={{ base: `4rem`, md: `8rem` }}
           lineHeight={1.2}
           fontWeight={700}
         >
           Frontend <br /> Developer.
         </Text>
-        <Text mt={5} fontSize={`16px`}>
+        <Text
+          fontStyle={`italic`}
+          mt={5}
+          fontSize={{ base: `16px`, md: `24px` }}
+        >
           I like to craft solid and scalable frontend
           products with great user experiences.
         </Text>
       </Box>
-      <Flex gap={5} fontSize={{ base: `10px`, md: `12px` }}>
+      <Flex gap={5} fontSize={{ base: `10px`, md: `16px` }}>
         <Text flex={1}>
           Highly skilled at progressive enhancement, design
           systems & UI Engineering.
@@ -62,12 +59,38 @@ const Profile = () => {
         </Text>
       </Flex>
       <Flex
-        gap={10}
-        position={`absolute`}
-        bottom={0}
-        left={0}
+      gap={10}
+        flexDirection={{ base: `column`, md: `row` }}
+        justifyContent={`space-between`}
+        alignItems={`start`}
       >
-        {displayApi}
+        <Search />
+        <Flex alignItems={`center`} justifyContent={`end`}>
+          {!weatherData && <Text>LOADING...</Text>}
+          {weatherData && (
+            <Flex
+              display={{ base: `none`, sm: `flex` }}
+              marginX={`1rem`}
+              alignItems={`center`}
+            >
+              <Image
+                width={`2rem`}
+                height={`2rem`}
+                src={weatherData.current.condition.icon}
+                alt='icon'
+              />
+              <Text fontSize={`md`}>
+                {weatherData.current.temp_c}&deg;C
+              </Text>
+              <Text ml={1}>
+                {weatherData.current.condition.text}
+              </Text>
+            </Flex>
+          )}
+          <BatteryInfo />
+          <CalendarApp />
+          <DrawerExample />
+        </Flex>
       </Flex>
     </Flex>
   );

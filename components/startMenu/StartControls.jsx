@@ -3,7 +3,6 @@ import {
   Button,
   Center,
   Icon,
-  IconButton,
   Link,
 } from '@chakra-ui/react';
 import React, {
@@ -17,20 +16,21 @@ import {
   AiOutlineUser,
 } from 'react-icons/ai';
 import { RiToolsLine } from 'react-icons/ri';
-import {TbMenu} from 'react-icons/tb'
+import { TbMenu } from 'react-icons/tb';
 import { AppContext } from '../../context/AppContext';
 import contacts from '../../public/contact.js';
 
-
 const StartControls = () => {
-  const { switchContent, toggleControls, getResume } =
+  const { switchContent, toggleControls, switchView } =
     useContext(AppContext);
+  const [active] = useState({
+    backgroundColor: `transparent !important`,
+    color: `rgb(208, 0, 255) !important`,
+  });
 
   const handleClick = (e) => {
     switchContent(e.currentTarget.getAttribute(`name`));
   };
-
-
 
   let socialContacts = contacts.map((social) => {
     return (
@@ -41,8 +41,8 @@ const StartControls = () => {
       >
         <Icon
           as={social.icon}
-          className={`accent`}
-          fontSize={`1.5rem`}
+          className={`accent nav-btn`}
+          fontSize={`1.3rem`}
         />
       </Link>
     );
@@ -51,18 +51,20 @@ const StartControls = () => {
   return (
     <Box
       // background={`#595959`}
-      position={{
-        base: `sticky !important`,
-        sm: `initial`,
-      }}
+      position={`sticky !important`}
       top={0}
       display={`flex`}
-      height={{ base: `100vh`, sm: `initial` }}
+      height={`100vh`}
       flexDir={`column`}
       justifyContent={`space-between`}
       padding={3}
     >
-      <Center display={`flex`} flexDir={`column`} gap={7}>
+      <Center
+        // className='line-h'
+        display={`flex`}
+        flexDir={`column`}
+        gap={7}
+      >
         <Button
           p={0}
           borderRadius={`100%`}
@@ -72,7 +74,7 @@ const StartControls = () => {
           className={`accent nav-btn`}
           size={`xs`}
         >
-          <Icon fontSize={`1.5rem`} as={TbMenu} />
+          <Icon fontSize={`1.3rem`} as={TbMenu} />
         </Button>
         <Button
           p={0}
@@ -81,27 +83,13 @@ const StartControls = () => {
           name='profile'
           onClick={handleClick}
           className={`accent nav-btn`}
-          display={{ base: `block`, sm: `none` }}
+          isActive={switchView == `profile` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
           size={`xs`}
         >
-          <Icon as={AiOutlineUser} fontSize={`1.5rem`} />
-        </Button>
-
-        {/* icon switch */}
-        <Button
-          p={0}
-          borderRadius={`100%`}
-          backgroundColor={`transparent`}
-          name='resume'
-          onClick={getResume}
-          className={`accent nav-btn`}
-          size={`xs`}
-          display={{ base: `none`, sm: `block` }}
-        >
-          <Icon
-            as={AiOutlineFileText}
-            fontSize={`1.5rem`}
-          />
+          <Icon as={AiOutlineUser} fontSize={`1.3rem`} />
         </Button>
         <Button
           p={0}
@@ -110,12 +98,15 @@ const StartControls = () => {
           name='resume'
           onClick={handleClick}
           className={`accent nav-btn`}
+          isActive={switchView == `resume` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
           size={`xs`}
-          display={{ base: `block`, sm: `none` }}
         >
           <Icon
             as={AiOutlineFileText}
-            fontSize={`1.5rem`}
+            fontSize={`1.3rem`}
           />
         </Button>
         {/* end of icon switch */}
@@ -127,13 +118,13 @@ const StartControls = () => {
           name='projects'
           onClick={handleClick}
           className={`accent nav-btn`}
+          isActive={switchView == `projects` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
           size={`xs`}
         >
-          <Icon
-            display={{ base: `block`, sm: `none` }}
-            as={AiOutlineProject}
-            fontSize={`1.5rem`}
-          />
+          <Icon as={AiOutlineProject} fontSize={`1.3rem`} />
         </Button>
         <Button
           p={0}
@@ -142,19 +133,21 @@ const StartControls = () => {
           name='tools'
           onClick={handleClick}
           className={`accent nav-btn`}
+          isActive={switchView == `tools` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
           size={`xs`}
         >
-          <Icon
-            display={{ base: `block`, sm: `none` }}
-            as={RiToolsLine}
-            fontSize={`1.5rem`}
-          />
+          <Icon as={RiToolsLine} fontSize={`1.3rem`} />
         </Button>
       </Center>
       <Center
-        height={`40%`}
+        className='line-h'
+        height={`50%`}
         flexDir={`column`}
         justifyContent={`space-between`}
+        gap={7}
       >
         {socialContacts}
       </Center>

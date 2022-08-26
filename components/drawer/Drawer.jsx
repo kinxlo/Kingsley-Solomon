@@ -43,9 +43,7 @@ export default function DrawerExample() {
         <DrawerContent
           className='theme'
           maxW={{ base: `100vw`, md: `30rem` }}
-          maxH={{ base: `100vh`, md: `95vh` }}
           padding={`.5rem`}
-          // paddingBottom={`3.4rem`}
           display={`flex`}
           flexDir={`column`}
           justifyContent={`end`}

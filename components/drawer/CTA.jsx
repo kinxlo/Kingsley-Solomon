@@ -74,7 +74,7 @@ const CTA = ({ width, height, name, title, children }) => {
       alignItems={`center`}
       width={width}
       height={height}
-      background={`#595959`}
+      background={`#59595920`}
       onClick={handleFunctionClick}
     >
       {/* <section> */}

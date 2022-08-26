@@ -36,6 +36,7 @@
   box-sizing: border-box;
   font-family: 'Readex Pro' !important;
   font-size: small;
+  text-decoration: none !important;
 }
 
 .accent {
@@ -45,15 +46,114 @@
 
 .heading {
   font-size: 18px;
+
+}
+
+.line {
+  // color: var(--mainLinkColor) !important;
+  margin-right: 1rem;
+  flex: 1;
+  // height: 10px;
+}
+
+.line-h {
+  &:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12rem;
+    margin: 0px auto;
+    background-color: var(--mainLinkColor);
+
+  }
+}
+
+.line-h2 {
+  position: relative;
+  z-index: 999;
+  color: #fff;
+
+  &:hover {
+    color: rgb(208, 0, 255) !important;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 5rem;
+    margin: 0px auto;
+    background-color: var(--mainLinkColor);
+
+  }
+}
+
+.rotate-90 {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
 }
 
 .nav-btn {
-  &:focus, &:active {
+
+  // background-color: transparent !important;
+  &:hover {
     // border: 1px solid red !important;
     background-color: transparent !important;
-    color: red !important;
+    color: rgb(208, 0, 255) !important;
   }
 }
+
+.active {
+  background-color: transparent !important;
+  color: #d000ff !important;
+}
+
+.project_ {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px) sepia(100%) !important;
+    -webkit-backdrop-filter: blur(3px) sepia(100%) !important;
+  }
+
+  .project_desc {
+    position: relative;
+    z-index: 2 !important;
+    // transform: translateX(-10rem);
+  }
+
+  // .project_box {
+  //   box-shadow: 0 10px 30px -15px #ffffff40;
+  //   padding: 25px;
+  //   border-radius: 5px;
+  //   background-color: #1ebed630;
+  //   backdrop-filter: blur(10px) saturate(180%) !important;
+  //   -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  // }
+
+  .blur {
+    backdrop-filter: blur(10px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  }
+
+  .project_img {
+    filter: sepia(70%) brightness(30%) blur(3px);
+    transition: all .3s;
+
+    &:hover {
+      filter: sepia(0) brightness(70%) blur(0);
+    }
+  }
+}
+
+
 
 h1,
 h2,
@@ -67,15 +167,6 @@ body {
   background-color: var(--mainBgColor) !important;
   background-image: url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1659252078/portfolio/Matrix-1s-1084px_xcrdxw.svg) !important;
   background-position: center;
-
-  .hoverState {
-    &:hover {
-      border: 1px solid #ffffff2e;
-      background-color: #ffffff4d !important;
-      cursor: pointer;
-      //  filter: brightness(50%)
-    }
-  }
 
   @-webkit-keyframes kenburns {
     0% {
@@ -293,5 +384,22 @@ body {
     backdrop-filter: blur(10px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
     border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .project_ {
+    &:after {
+      content: none;
+    }
+
+    .project_box {
+      box-shadow: 0 10px 30px -15px #ffffff40;
+      padding: 25px;
+      border-radius: 5px;
+      background-color: #1ebed630;
+      backdrop-filter: blur(10px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    }
   }
 }

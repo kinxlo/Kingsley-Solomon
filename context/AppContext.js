@@ -2,19 +2,22 @@ import React, { createContext, useReducer } from 'react'
 import { AppReducer } from './reducers/AppReducer'
 import { axiosInstance } from '../axios/global.js';
 import useSWR from 'swr';
+import projects from '../public/projects'
 
 export const AppContext = createContext()
 const initialState = {
-    projects: [],
+    projects: [...projects],
     toggleMapNotice: {
         showMap: false,
         showNotice: false,
         showBigMap: false
     },
     weatherData: null,
-    switchView: '',
+    switchView: 'profile',
     showResume: false,
-    showControls: true
+    showControls: true,
+    isActive: { name: `profile`, active: true },
+    language: ''
 }
 
 const weatherFetcher = async () => {

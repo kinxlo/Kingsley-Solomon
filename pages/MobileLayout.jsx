@@ -1,8 +1,11 @@
 import {
   Box,
   Container,
+  Flex,
   Icon,
   IconButton,
+  Link,
+  Text,
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import ProjectBox from '../components/drawer/ProjectBox';
@@ -56,6 +59,28 @@ const MobileLayout = () => {
         flexDir={`row`}
         border={`none !important`}
       >
+        <Flex
+          alignItems={`center`}
+          justifyContent={`center`}
+          pos={`fixed`}
+          display={{
+            base:
+              switchView !== `profile` ? `none` : `initial`,
+            '2xl': `initial`,
+          }}
+          fontSize={{ base: `12px`, md: `14px` }}
+          right={{ base: 5, md: `10rem` }}
+          top={switchView == `tools` ? `25%` : 5}
+          className={` line-h2`}
+        >
+          <Link
+            fontSize={{ base: `8px`, md: `14px` }}
+            letterSpacing={2}
+            className='rotate-90'
+          >
+            kinxly@gmail.com
+          </Link>
+        </Flex>
         {showControls ? (
           <StartControls />
         ) : (
@@ -65,8 +90,8 @@ const MobileLayout = () => {
             zIndex={999}
             right={5}
             bottom={5}
-            variant='outline'
-            className='accent'
+            backgroundColor={`#1ebed6`}
+            // className='accent'
             aria-label='Call Sage'
             borderRadius={`100%`}
             fontSize='20px'
@@ -74,19 +99,17 @@ const MobileLayout = () => {
           />
         )}
         <Container
+          maxW={
+            switchView === `tools` ? `1200px` : `1440px`
+          }
           p={
             switchView === `projects` ||
             switchView === `resume`
               ? 0
               : `1rem`
           }
-          //   borderLeft={`1px solid rgba(255, 255, 255, 0.18)`}
-          borderLeft={
-            switchView === `projects`
-              ? `1px solid rgba(255, 255, 255, 0.18)`
-              : `none`
-          }
           display={`flex`}
+          position={`relative`}
           flexDir={`column`}
           height={`100vh`}
           overflow={`auto`}

@@ -1,39 +1,20 @@
 import {
-  Avatar,
   Box,
-  Icon,
-  IconButton,
-  Image,
   Link,
   Text,
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
-import { FcLeft } from 'react-icons/fc';
 import { AppContext } from '../../context/AppContext';
 
 const DigitalResume = () => {
   const { getResume } = useContext(AppContext);
   return (
     <Box
-      className='resume_wildCard'
+      // className='resume_wildCard'
       position={`relative`}
       zIndex={3}
       id='container--main'
     >
-      <IconButton
-        onClick={getResume}
-        position={`fixed`}
-        display={{ base: `none`, md: `block` }}
-        right={5}
-        bottom={20}
-        variant='outline'
-        className='accent'
-        aria-label='Call Sage'
-        borderRadius={`100%`}
-        fontSize='20px'
-        icon={<FcLeft />}
-      />
-
       <section id='wrapper--hero' className='section--page'>
         {/* <Image boxSize={`7rem`} alt='pp' src='https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile0_dqiv0d.jpg' /> */}
         <div>
