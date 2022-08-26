@@ -44,22 +44,32 @@ const Profile = () => {
           mt={5}
           fontSize={{ base: `16px`, md: `24px` }}
         >
-          I like to craft solid and scalable frontend
-          products with great user experiences.
+          Integrating{' '}
+          <Text color={`#d000ff`} as={`span`}>
+            Science,
+          </Text>
+          {` `}
+          <Text color={`#d000ff`} as={`span`}>
+            Art,
+          </Text>
+          {` `}
+          and {` `}
+          <Text color={`#d000ff`} as={`span`}>
+            APIs.
+          </Text>
         </Text>
       </Box>
       <Flex gap={5} fontSize={{ base: `10px`, md: `16px` }}>
         <Text flex={1}>
-          Highly skilled at progressive enhancement, design
-          systems & UI Engineering.
+          Highly skilled at design patterns & responsive
+          design.
         </Text>
         <Text flex={1}>
-          Over 5 of experience building products for
-          clients.
+          Over 3 Years experience with frontend development
         </Text>
       </Flex>
       <Flex
-      gap={10}
+        gap={10}
         flexDirection={{ base: `column`, md: `row` }}
         justifyContent={`space-between`}
         alignItems={`start`}

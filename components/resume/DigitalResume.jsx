@@ -1,8 +1,5 @@
-import {
-  Box,
-  Link,
-  Text,
-} from '@chakra-ui/react';
+/* eslint-disable react/no-unescaped-entities */
+import { Box, Link, Text } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 
@@ -28,7 +25,7 @@ const DigitalResume = () => {
             Ifijeh Kingsley Solomon
           </Text>
           <Text id='bio'>
-            Software developer - Frontend developer at{' '}
+            Frontend developer at{' '}
             <Link
               className='link'
               href='https://www.wewetube.com'
@@ -36,6 +33,14 @@ const DigitalResume = () => {
             >
               Wewetube.
             </Link>
+          </Text>
+          <Text my={2}>
+            Innovative Web Developer with 5 years of
+            experience in software development and
+            Demonstrated talent for frontend web development
+            to optimize online presence. A maestro in
+            frameworks such as React and Vue, as well as
+            scripting languages such as JavaScript.
           </Text>
           <Text mt={`1.5rem`}>👉 kinxly@gmail.com</Text>
         </div>
@@ -79,7 +84,8 @@ const DigitalResume = () => {
         <h2 className='h2'>Skills & Qualifications</h2>
         <ul id='qualifications--list'>
           <li>
-            ✔️ Over 5 Years experience with frontend development
+            ✔️ Over 3 Years experience with frontend
+            development
           </li>
           <li>✔️ Experience with Java and its framework</li>
           <li>✔️ Good knowledge in API Implementation.</li>
@@ -114,55 +120,158 @@ const DigitalResume = () => {
 
         <div className='line-break'></div>
         <div className='card--work-history'>
-          <strong>🚧 FRONTEND DEVELOPER | WEWETUBE</strong>
-          <p>9/2021 - Present</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Ab minus veniam facilis ipsum
-            dolorum fuga maiores cumque sequi corporis
-            officia?
-          </p>
+          <strong>
+            🚧 FRONTEND ENGINEER (contract) | ClapMi
+          </strong>
+          <p>2021-10 - Current</p>
           <Text as={`ul`} pl={10}>
             <li>
-              Handled development and integration of new
-              features into already existing products.
+              Actively listened to customers' requests,
+              confirming full understanding before
+              addressing concerns.
             </li>
             <li>
-              Deployed production ready applications within
-              my first five months
+              Created plans and communicated deadlines to
+              complete projects on time.
             </li>
             <li>
-              Maintaining and improving quality of exiting
-              projects
+              Created UX strategies, including detailed
+              wireframes and mockups.
+            </li>
+            <li>
+              Collaborated with team members to achieve
+              target results.
+            </li>
+            <li>
+              Translated UX and business requirements into
+              elegant code solutions.
+            </li>
+          </Text>
+        </div>
+        <div className='line-break'></div>
+        <div className='card--work-history'>
+          <strong>🚧WEB DEVELOPER| WEWETUBE</strong>
+          <p>2021-09 - Current</p>
+          <Text as={`ul`} pl={10}>
+            <li>
+              Planned website development, converting
+              mockups into usable web presence with HTML,
+              JavaScript, AJAX and JSON coding.
+            </li>
+            <li>
+              Engaged with clients to plan and optimize site
+              issues and queries.
+            </li>
+            <li>
+              Oversaw technical issues and troubleshooting
+              requests to resolve user problems.
+            </li>
+            <li>
+              Collaborated with stakeholders during
+              development processes to confirm creative
+              proposals and design best practices.
+            </li>
+            <li>
+              Multi-tasked across multiple functions and
+              roles to meet deadlines and organizational
+              expectations.
+            </li>
+            <li>
+              Collaborated with stakeholders during
+              development processes to confirm creative
+              proposals and design best practices.
+            </li>
+            <li>
+              Contributed to projects within Scrum project
+              management environments.
+            </li>
+            <li>
+              Transformed native applications into
+              mobile-friendly products
             </li>
           </Text>
         </div>
         <div className='line-break'></div>
         <div className='card--work-history'>
           <strong>
-            🚧 FRONTEND DEVELOPER | TECHSTUDIO NG
+            🚧FRONTEND DEVELOPER| Strategic Dots
+            (TechStudio) Ltd, Lagos, Nigeria
           </strong>
-          <p>6/2020 - 9/2021</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Dolorem minus, distinctio nisi
-            mollitia aliquam vero doloribus laborum eligendi
-            fugiat quod?
-          </p>
+          <p>2021-09 - Current</p>
           <Text as={`ul`} pl={10}>
             <li>
-              Teaching students the basics of frontend
-              development. i.e HTML, CSS Bootstrap and
-              Javascript and React
+              Coded using HTML, CSS and JavaScript to
+              develop features for both mobile and desktop
+              platforms.
             </li>
             <li>
-              Worked on the frontend of websites and Apps
+              Made recommendations for new technology
+              integration based on suitability and alignment
+              to business goals.
+            </li>
+            <li>
+              Performed user experience quality assurance
+              testing to identify and remedy shortcomings
+            </li>
+            <li>
+              Took part in pre-project analysis and
+              technical evaluations to create user-friendly
+              interface and appropriate functionality to
+              achieve corporate objectives.
+            </li>
+          </Text>
+        </div>
+        <div className='line-break'></div>
+        <div className='card--work-history'>
+          <strong>
+            🚧CODE INSTRUCTOR| Strategic Dots (TechStudio
+            Academy) Ltd, Lagos, Nigeria
+          </strong>
+          <p>2021-09 - Current</p>
+          <Text as={`ul`} pl={10}>
+            <li>
+              Teaching students basics of frontend
+              development. i.e HTML, CSS Bootstrap and
+              Javascript and React.
+            </li>
+            <li>
+              Collaborated with students to complete
+              homework assignments, identify lagging skills
+              and correct weaknesses.
+            </li>
+            <li>
+              Supported students with helpful study habits
+              and strategies to reduce "code block" through
+              critical thinking.
+            </li>
+            <li>
+              Facilitated online Frontend development
+              classes.
+            </li>
+          </Text>
+        </div>
+        <div className='line-break'></div>
+        <div className='card--work-history'>
+          <strong>
+            🚧WEB DEVELOPER (contract)| Darex Engineering,
+            Lagos
+          </strong>
+          <p>2021-09 - Current</p>
+          <Text as={`ul`} pl={10}>
+            <li>
+              Used critical thinking to break down problems,
+              evaluate solutions and make decisions.
+            </li>
+            <li>
+              Actively listened to customers' requests,
+              confirming full understanding before
+              addressing concerns.
             </li>
           </Text>
         </div>
       </section>
 
-      <section className='section--page'>
+      {/* <section className='section--page'>
         <h2 className='h2'>Projects & Accomplishments</h2>
 
         <div className='card--project'>
@@ -192,7 +301,7 @@ const DigitalResume = () => {
             project
           </Link>
         </div>
-      </section>
+      </section> */}
     </Box>
   );
 };
