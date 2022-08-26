@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Flex,
   Icon,
@@ -19,6 +20,7 @@ import { AppContext } from '../context/AppContext';
 import language from '../public/language';
 import tools from '../public/tools';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { TbMenu } from 'react-icons/tb';
 
 const MobileLayout = () => {
   const { switchView, showControls, toggleControls } =
@@ -84,19 +86,19 @@ const MobileLayout = () => {
         {showControls ? (
           <StartControls />
         ) : (
-          <IconButton
+          <Button
             onClick={toggleControls}
             position={`fixed`}
             zIndex={999}
             right={5}
             bottom={5}
-            backgroundColor={`#1ebed6`}
-            // className='accent'
-            aria-label='Call Sage'
+            backgroundColor={`#ffffff50`}
+            className={`accent blur`}
             borderRadius={`100%`}
-            fontSize='20px'
-            icon={<AiOutlineMenu />}
-          />
+            boxSize={`4rem`}
+          >
+            <Icon fontSize={`1.5rem`} as={TbMenu} />
+          </Button>
         )}
         <Container
           maxW={

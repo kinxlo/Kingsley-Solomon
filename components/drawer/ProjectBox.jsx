@@ -22,7 +22,7 @@ const ProjectBox = () => {
           width={{ base: `100%`, xl: `70rem` }}
           margin={`2rem auto`}
           key={project.id}
-          p={{base: 10}}
+          p={{ base: 10 }}
           backgroundImage={{
             base: project.image,
             xl: `none`,
@@ -63,7 +63,6 @@ const ProjectBox = () => {
               width={{ base: `100%`, xl: `30rem` }}
             >
               <Text
-
                 color={{ base: `#ffff`, xl: `grey` }}
                 textTransform={`lowercase`}
               >
@@ -95,13 +94,24 @@ const ProjectBox = () => {
     });
     return (
       <>
-        <Flex justifyContent={`end`} alignItems={`end`}>
-          <Text
-            position={{ base: `static`, md: `absolute` }}
-            left={10}
+        <Flex
+          flexDir={`column-reverse`}
+          justifyContent={`end`}
+          alignItems={`end`}
+        >
+          <Flex
+            px={2}
+            width={`100%`}
+            justifyContent={`start`}
           >
-            {language}
-          </Text>
+            <Text
+              fontWeight={`bolder`}
+              textTransform={`capitalize`}
+              letterSpacing={2}
+            >
+              {language}
+            </Text>
+          </Flex>
           <Text
             textTransform={`capitalize`}
             fontWeight={700}
@@ -112,7 +122,7 @@ const ProjectBox = () => {
               md: `64px`,
             }}
             my={`5rem`}
-            px={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
+            mx={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
           >
             projects worth <br /> sharing.
           </Text>
