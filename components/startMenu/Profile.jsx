@@ -25,7 +25,7 @@ const Profile = () => {
       <Heading
         fontSize={{ base: `24px`, md: `48px` }}
         letterSpacing={1}
-        className='accent'
+        // className='accent'
       >
         Kingsley Solomon
       </Heading>
@@ -40,7 +40,7 @@ const Profile = () => {
           Frontend <br /> Developer.
         </Text>
         <Text
-
+          fontStyle={`italic`}
           mt={5}
           fontSize={{ base: `16px`, md: `24px` }}
         >
@@ -48,7 +48,7 @@ const Profile = () => {
           products with great user experiences.
         </Text>
       </Box>
-      <Flex gap={5} fontSize={{ base: `10px`, md: `14px` }}>
+      <Flex gap={5} fontSize={{ base: `10px`, md: `16px` }}>
         <Text flex={1}>
           Highly skilled at progressive enhancement, design
           systems & UI Engineering.

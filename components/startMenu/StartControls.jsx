@@ -59,7 +59,12 @@ const StartControls = () => {
       justifyContent={`space-between`}
       padding={3}
     >
-      <Center display={`flex`} flexDir={`column`} gap={7}>
+      <Center
+        // className='line-h'
+        display={`flex`}
+        flexDir={`column`}
+        gap={7}
+      >
         <Button
           p={0}
           borderRadius={`100%`}
@@ -138,9 +143,11 @@ const StartControls = () => {
         </Button>
       </Center>
       <Center
-        height={`40%`}
+        className='line-h'
+        height={`50%`}
         flexDir={`column`}
         justifyContent={`space-between`}
+        gap={7}
       >
         {socialContacts}
       </Center>
