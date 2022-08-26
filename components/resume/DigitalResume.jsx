@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Box, Link, Text } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
