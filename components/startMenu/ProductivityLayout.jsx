@@ -42,13 +42,14 @@ const ProductivityLayout = ({ title, document }) => {
         <hr className='line' />
 
         <Text
+          fontSize={{ base: `1.5rem`, md: `3rem` }}
+          fontWeight={700}
           width={`fit-content`}
-          className='heading accent'
+          className='accent'
+          py={{ base: `2rem`, md: `5rem` }}
         >
           {title}
         </Text>
-        {/* <Box> */}
-        {/* </Box> */}
       </Flex>
       <Container p={0} margin={`0 0 0 auto`} maxW={`900px`}>
         <Grid

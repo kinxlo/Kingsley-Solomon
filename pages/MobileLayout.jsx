@@ -71,12 +71,12 @@ const MobileLayout = () => {
           fontSize={{ base: `12px`, md: `14px` }}
           right={{ base: 5, md: `10rem` }}
           top={switchView == `tools` ? `25%` : 5}
-          className={` line-h`}
+          className={` line-h2`}
         >
           <Link
-            letterSpacing={3}
-            pb={3}
-            className='rotate-90 accent'
+            fontSize={{ base: `8px`, md: `14px` }}
+            letterSpacing={2}
+            className='rotate-90'
           >
             kinxly@gmail.com
           </Link>
@@ -90,8 +90,8 @@ const MobileLayout = () => {
             zIndex={999}
             right={5}
             bottom={5}
-            variant='outline'
-            className='accent'
+            backgroundColor={`#1ebed6`}
+            // className='accent'
             aria-label='Call Sage'
             borderRadius={`100%`}
             fontSize='20px'
@@ -99,19 +99,15 @@ const MobileLayout = () => {
           />
         )}
         <Container
-          maxW={`1440px`}
+          maxW={
+            switchView === `tools` ? `1200px` : `1440px`
+          }
           p={
             switchView === `projects` ||
             switchView === `resume`
               ? 0
               : `1rem`
           }
-          //   borderLeft={`1px solid rgba(255, 255, 255, 0.18)`}
-          // borderLeft={
-          //   switchView === `projects`
-          //     ? `1px solid rgba(255, 255, 255, 0.18)`
-          //     : `none`
-          // }
           display={`flex`}
           position={`relative`}
           flexDir={`column`}

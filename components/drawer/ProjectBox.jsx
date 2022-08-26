@@ -7,16 +7,11 @@ import {
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 
-import {
-  RiGithubFill,
-  RiGithubLine,
-  RiLink,
-  RiMacbookFill,
-} from 'react-icons/ri';
+import { RiGithubLine, RiLink } from 'react-icons/ri';
 import { AppContext } from '../../context/AppContext';
 
 const ProjectBox = () => {
-  const { projects } = useContext(AppContext);
+  const { projects, language } = useContext(AppContext);
 
   if (projects.length) {
     let projectList = projects.map((project) => {
@@ -27,7 +22,7 @@ const ProjectBox = () => {
           width={{ base: `100%`, xl: `70rem` }}
           margin={`2rem auto`}
           key={project.id}
-          p={3}
+          p={{base: 10}}
           backgroundImage={{
             base: project.image,
             xl: `none`,
@@ -68,7 +63,8 @@ const ProjectBox = () => {
               width={{ base: `100%`, xl: `30rem` }}
             >
               <Text
-                color={{ base: `#ffffff`, xl: `grey` }}
+
+                color={{ base: `#ffff`, xl: `grey` }}
                 textTransform={`lowercase`}
               >
                 Lorem ipsum dolor sit amet consectetur
@@ -97,7 +93,33 @@ const ProjectBox = () => {
         </Flex>
       );
     });
-    return <>{projectList}</>;
+    return (
+      <>
+        <Flex justifyContent={`end`} alignItems={`end`}>
+          <Text
+            position={{ base: `static`, md: `absolute` }}
+            left={10}
+          >
+            {language}
+          </Text>
+          <Text
+            textTransform={`capitalize`}
+            fontWeight={700}
+            textAlign={`right`}
+            fontSize={{
+              base: `32`,
+              sm: `52px`,
+              md: `64px`,
+            }}
+            my={`5rem`}
+            px={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
+          >
+            projects worth <br /> sharing.
+          </Text>
+        </Flex>
+        {projectList}
+      </>
+    );
   } else {
     return <Text>No project at the moment</Text>;
   }

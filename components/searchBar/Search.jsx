@@ -13,7 +13,7 @@ import {
   TabPanel,
   Grid,
   Image,
-  Button,
+  Text,
 } from '@chakra-ui/react';
 
 import React, { useContext, useState } from 'react';
@@ -25,11 +25,8 @@ import ReactPlayer from 'react-player';
 import NewsResultDisplay from './NewsResultDisplay';
 import Fillers from '../Fillers';
 import { FcSearch } from 'react-icons/fc';
-import {
-  AiOutlineSearch,
-  AiOutlineLeftCircle,
-  AiOutlineLeft,
-} from 'react-icons/ai';
+import { GiCog } from 'react-icons/gi';
+import { AiOutlineLeft } from 'react-icons/ai';
 
 export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -139,12 +136,27 @@ export default function DrawerExample() {
 
   return (
     <>
-      <Icon
+      {/* <Icon
         onClick={handleDialogClick}
         as={FcSearch}
         w={6}
         h={6}
-      />
+      /> */}
+      <Text
+        gap={3}
+        display={`flex`}
+        alignItems={`center`}
+        border={`1px solid`}
+        padding={{ base: `5px 20px`, md: `10px 40px` }}
+        _hover={{
+          color: `rgb(208, 0, 255) !important`,
+        }}
+        cursor={`pointer`}
+        onClick={handleDialogClick}
+        fontSize={{ base: `10px`, md: `14px` }}
+      >
+        Test my search Api <Icon as={GiCog} />
+      </Text>
 
       <Drawer
         isOpen={isOpen}

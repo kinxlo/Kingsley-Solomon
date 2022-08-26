@@ -42,7 +42,7 @@ const StartControls = () => {
         <Icon
           as={social.icon}
           className={`accent nav-btn`}
-          fontSize={`1.5rem`}
+          fontSize={`1.3rem`}
         />
       </Link>
     );
@@ -74,7 +74,7 @@ const StartControls = () => {
           className={`accent nav-btn`}
           size={`xs`}
         >
-          <Icon fontSize={`1.5rem`} as={TbMenu} />
+          <Icon fontSize={`1.3rem`} as={TbMenu} />
         </Button>
         <Button
           p={0}
@@ -89,7 +89,7 @@ const StartControls = () => {
           _focus={active}
           size={`xs`}
         >
-          <Icon as={AiOutlineUser} fontSize={`1.5rem`} />
+          <Icon as={AiOutlineUser} fontSize={`1.3rem`} />
         </Button>
         <Button
           p={0}
@@ -106,7 +106,7 @@ const StartControls = () => {
         >
           <Icon
             as={AiOutlineFileText}
-            fontSize={`1.5rem`}
+            fontSize={`1.3rem`}
           />
         </Button>
         {/* end of icon switch */}
@@ -124,7 +124,7 @@ const StartControls = () => {
           _focus={active}
           size={`xs`}
         >
-          <Icon as={AiOutlineProject} fontSize={`1.5rem`} />
+          <Icon as={AiOutlineProject} fontSize={`1.3rem`} />
         </Button>
         <Button
           p={0}
@@ -139,7 +139,7 @@ const StartControls = () => {
           _focus={active}
           size={`xs`}
         >
-          <Icon as={RiToolsLine} fontSize={`1.5rem`} />
+          <Icon as={RiToolsLine} fontSize={`1.3rem`} />
         </Button>
       </Center>
       <Center

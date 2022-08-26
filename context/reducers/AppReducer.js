@@ -1,13 +1,15 @@
-import projects from '../../public/projects.js'
+import projects from '../../public/projects'
 
 export const AppReducer = (state, action) => {
     switch (action.type) {
         case 'SHOW_PROJECTS':
             let newProjectList = projects.filter((project) => {
-                return project.language === action.payload
+                return project.language == action.payload
             })
 
-            state = { ...state, projects: newProjectList, switchView: `projects` }
+            state = { ...state, projects: newProjectList,
+                language: action.payload,
+                switchView: `projects` }
             return state
 
         case 'SHOW_MAP':

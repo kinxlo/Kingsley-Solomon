@@ -36,6 +36,7 @@
   box-sizing: border-box;
   font-family: 'Readex Pro' !important;
   font-size: small;
+  text-decoration: none !important;
 }
 
 .accent {
@@ -67,6 +68,26 @@
   }
 }
 
+.line-h2 {
+  position: relative;
+  z-index: 999;
+  color: #fff;
+
+  &:hover {
+    color: rgb(208, 0, 255) !important;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 5rem;
+    margin: 0px auto;
+    background-color: var(--mainLinkColor);
+
+  }
+}
+
 .rotate-90 {
   writing-mode: vertical-rl;
   -webkit-writing-mode: vertical-rl;
@@ -84,7 +105,7 @@
 
 .active {
   background-color: transparent !important;
-  color: rgb(208, 0, 255) !important;
+  color: #d000ff !important;
 }
 
 .project_ {
@@ -97,7 +118,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #00000090;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px) sepia(100%) !important;
+    -webkit-backdrop-filter: blur(3px) sepia(100%) !important;
   }
 
   .project_desc {
@@ -106,14 +129,14 @@
     // transform: translateX(-10rem);
   }
 
-  .project_box {
-    box-shadow: 0 10px 30px -15px #ffffff40;
-    padding: 25px;
-    border-radius: 5px;
-    background-color: #1ebed630;
-    backdrop-filter: blur(10px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-  }
+  // .project_box {
+  //   box-shadow: 0 10px 30px -15px #ffffff40;
+  //   padding: 25px;
+  //   border-radius: 5px;
+  //   background-color: #1ebed630;
+  //   backdrop-filter: blur(10px) saturate(180%) !important;
+  //   -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  // }
 
   .blur {
     backdrop-filter: blur(10px) saturate(180%) !important;
@@ -364,10 +387,19 @@ body {
   }
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1200px) {
   .project_ {
     &:after {
       content: none;
+    }
+
+    .project_box {
+      box-shadow: 0 10px 30px -15px #ffffff40;
+      padding: 25px;
+      border-radius: 5px;
+      background-color: #1ebed630;
+      backdrop-filter: blur(10px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
     }
   }
 }

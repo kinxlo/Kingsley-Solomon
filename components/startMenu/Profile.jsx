@@ -58,7 +58,12 @@ const Profile = () => {
           clients.
         </Text>
       </Flex>
-      <Flex justifyContent={`space-between`}>
+      <Flex
+      gap={10}
+        flexDirection={{ base: `column`, md: `row` }}
+        justifyContent={`space-between`}
+        alignItems={`start`}
+      >
         <Search />
         <Flex alignItems={`center`} justifyContent={`end`}>
           {!weatherData && <Text>LOADING...</Text>}
