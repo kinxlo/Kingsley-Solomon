@@ -6,7 +6,14 @@ import React, {
 import { Box } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext.js';
 
-const CTA = ({ width, height, name, title, children }) => {
+const CTA = ({
+  width,
+  height,
+  name,
+  title,
+  bgColor,
+  children,
+}) => {
   const { showProjects, showMapOrNotice } =
     useContext(AppContext);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -74,7 +81,7 @@ const CTA = ({ width, height, name, title, children }) => {
       alignItems={`center`}
       width={width}
       height={height}
-      background={`#59595920`}
+      background={bgColor}
       onClick={handleFunctionClick}
     >
       {/* <section> */}

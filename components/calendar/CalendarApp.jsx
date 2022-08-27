@@ -9,6 +9,7 @@ import {
   Icon,
   Drawer,
   useDisclosure,
+  Flex,
 } from '@chakra-ui/react';
 import Calendar from 'react-calendar';
 import React, {
@@ -20,6 +21,7 @@ import Time from './Time';
 import WeatherApp from '../WeatherApp';
 import { FcAbout } from 'react-icons/fc';
 import { AppContext } from '../../context/AppContext';
+import { AiOutlineLeft } from 'react-icons/ai';
 
 const CalendarApp = () => {
   const [timeMin, setTimeMin] = useState(null);
@@ -77,7 +79,7 @@ const CalendarApp = () => {
         onClick={handleClick}
         fontWeight={`medium`}
         cursor={`pointer`}
-        mx={5}
+        _hover={{ color: `#d000ff` }}
       >
         {timeMin}
       </Text>
@@ -90,15 +92,25 @@ const CalendarApp = () => {
         <DrawerContent
           className='theme'
           maxW={{ base: `100vw`, md: `27rem` }}
-          height={{base: `100vh`, md: `95vh`}}
+          height={`100vh`}
           display={`flex`}
           flexDir={`column`}
           justifyContent={`end`}
           gap={`2`}
         >
-          <Box padding={`1rem`}>
+          <Flex
+            justifyContent={`space-between`}
+            alignItems={`center`}
+            padding={`1rem`}
+          >
+            <Icon
+              onClick={handleClick}
+              className={`accent`}
+              boxSize={`1.5rem`}
+              as={AiOutlineLeft}
+            />
             <Time time={timeFull} session={session} />
-          </Box>
+          </Flex>
           <Divider />
           <Box
             fontSize={{ base: `10px`, md: '14px' }}

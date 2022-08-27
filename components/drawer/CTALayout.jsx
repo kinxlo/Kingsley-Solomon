@@ -11,6 +11,7 @@ const CTALayout = ({ functions, title }) => {
         height={`5.5rem`}
         key={box.id}
         title={title}
+        bgColor={`#ffffff50`}
       >
         <Icon
           className={`accent`}
