@@ -23,7 +23,7 @@ const Profile = () => {
       height={`100%`}
     >
       <Heading
-        fontSize={{ base: `24px`, md: `48px` }}
+        fontSize={{ base: `24px`, sm: `42px` }}
         letterSpacing={1}
         // className='accent'
       >
@@ -40,26 +40,26 @@ const Profile = () => {
           Frontend <br /> Developer.
         </Text>
         <Text
+          lineHeight={`1rem`}
           fontStyle={`italic`}
-          mt={5}
-          fontSize={{ base: `16px`, md: `24px` }}
+          fontSize={{
+            base: `12px`,
+            sm: `16px`,
+            lg: `20px`,
+          }}
         >
-          Integrating{' '}
-          <Text color={`#d000ff`} as={`span`}>
-            Science,
-          </Text>
+          Integrating <Text as={`span`}>Science,</Text>
           {` `}
-          <Text color={`#d000ff`} as={`span`}>
-            Art,
-          </Text>
+          <Text as={`span`}>Art,</Text>
           {` `}
           and {` `}
-          <Text color={`#d000ff`} as={`span`}>
-            APIs.
-          </Text>
+          <Text as={`span`}>APIs.</Text>
         </Text>
       </Box>
-      <Flex gap={5} fontSize={{ base: `10px`, md: `16px` }}>
+      <Flex
+        gap={5}
+        fontSize={{ base: `10px`, sm: `14px`, md: `16px` }}
+      >
         <Text flex={1}>
           Highly skilled at design patterns & responsive
           design.
@@ -70,36 +70,44 @@ const Profile = () => {
       </Flex>
       <Flex
         gap={10}
-        flexDirection={{ base: `column`, md: `row` }}
+        flexDirection={{ base: `column`, xl: `row` }}
         justifyContent={`space-between`}
-        alignItems={`start`}
+        alignItems={{ base: `start`, lg: `center` }}
       >
         <Search />
-        <Flex alignItems={`center`} justifyContent={`end`}>
-          {!weatherData && <Text>LOADING...</Text>}
-          {weatherData && (
-            <Flex
-              display={{ base: `none`, sm: `flex` }}
-              marginX={`1rem`}
-              alignItems={`center`}
-            >
-              <Image
-                width={`2rem`}
-                height={`2rem`}
-                src={weatherData.current.condition.icon}
-                alt='icon'
-              />
-              <Text fontSize={`md`}>
-                {weatherData.current.temp_c}&deg;C
-              </Text>
-              <Text ml={1}>
-                {weatherData.current.condition.text}
-              </Text>
+        <Flex
+          flexDir={{ base: `column`, sm: `row` }}
+          alignItems={{ base: `initial`, sm: `center` }}
+          justifyContent={`end`}
+        >
+          <Flex
+            flexDir={{ base: `column`, md: `row` }}
+            alignItems={{ base: `initial`, md: `center` }}
+            gap={3}
+          >
+            <Flex gap={5} alignItems={`center`}>
+              <BatteryInfo />
+              <CalendarApp />
+              {!weatherData && <Text>LOADING...</Text>}
+              {weatherData && (
+                <Flex alignItems={`center`}>
+                  <Image
+                    width={`2rem`}
+                    height={`2rem`}
+                    src={weatherData.current.condition.icon}
+                    alt='icon'
+                  />
+                  <Text fontSize={`md`}>
+                    {weatherData.current.temp_c}&deg;C
+                  </Text>
+                  <Text ml={1}>
+                    {weatherData.current.condition.text}
+                  </Text>
+                </Flex>
+              )}
             </Flex>
-          )}
-          <BatteryInfo />
-          <CalendarApp />
-          <DrawerExample />
+            <DrawerExample />
+          </Flex>
         </Flex>
       </Flex>
     </Flex>

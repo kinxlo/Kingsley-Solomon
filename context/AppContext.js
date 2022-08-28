@@ -15,7 +15,7 @@ const initialState = {
     weatherData: null,
     switchView: 'profile',
     showResume: false,
-    showControls: true,
+    showControls: false,
     isActive: { name: `profile`, active: true },
     language: ''
 }

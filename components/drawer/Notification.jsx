@@ -14,13 +14,6 @@ const Notification = () => {
       h={`100%`}
       overflow={`scroll`}
     >
-      <Text
-        textAlign={`right`}
-        as={`h3`}
-        className={`accent`}
-      >
-        Notificaions
-      </Text>
       {noticeBox}
     </Box>
   );

@@ -47,6 +47,10 @@ const MobileLayout = () => {
               title={`Tools`}
               document={tools}
             />
+            <ProductivityLayout
+              title={`Tools`}
+              document={tools}
+            />
           </>
         );
       default:

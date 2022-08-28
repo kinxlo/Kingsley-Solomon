@@ -17,26 +17,27 @@ const ProjectBox = () => {
     let projectList = projects.map((project) => {
       return (
         <Flex
+          position={`relative`}
           alignItems={`center`}
           className='project_'
-          width={{ base: `100%`, xl: `70rem` }}
-          margin={`2rem auto`}
+          margin={`5rem auto`}
+          width={{ base: `100%`, lg: `80%` }}
+          height={{ base: `50rem` }}
+          p={10}
           key={project.id}
-          p={{ base: 10 }}
           backgroundImage={{
             base: project.image,
-            xl: `none`,
+            lg: `none`,
           }}
           backgroundSize={`cover`}
           backgroundPosition={`right`}
           backgroundRepeat={`no-repeat`}
         >
           <Box
-            transform={`translateX(5rem)`}
-            width={{ base: ``, xl: `40rem` }}
-            height={{ base: ``, xl: `25rem` }}
+            width={{ lg: `32rem`, xl: `50rem` }}
+            height={{ lg: `20rem`, xl: `30rem` }}
             className={`project_img`}
-            display={{ base: `none`, xl: `block` }}
+            display={{ base: `none`, lg: `block` }}
           >
             <Image
               boxSize={`100%`}
@@ -46,9 +47,9 @@ const ProjectBox = () => {
             />
           </Box>
           <Flex
-            position={`relative`}
-            zIndex={999}
-            className='project_desc'
+            position={{ base: `relative`, lg: `absolute` }}
+            zIndex={2}
+            right={0}
             textTransform={`capitalize`}
             flexDir={`column`}
             textAlign={`right`}
@@ -60,7 +61,7 @@ const ProjectBox = () => {
             <Box
               my={5}
               className='project_box'
-              width={{ base: `100%`, xl: `30rem` }}
+              width={{ base: `100%`, lg: `30rem` }}
             >
               <Text
                 color={{ base: `#ffff`, xl: `grey` }}
@@ -99,19 +100,6 @@ const ProjectBox = () => {
           justifyContent={`end`}
           alignItems={`end`}
         >
-          <Flex
-            px={2}
-            width={`100%`}
-            justifyContent={`start`}
-          >
-            <Text
-              fontWeight={`bolder`}
-              textTransform={`capitalize`}
-              letterSpacing={2}
-            >
-              {language}
-            </Text>
-          </Flex>
           <Text
             textTransform={`capitalize`}
             fontWeight={700}
@@ -124,6 +112,13 @@ const ProjectBox = () => {
             my={`5rem`}
             mx={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
           >
+            <Text
+              fontWeight={`bolder`}
+              textTransform={`capitalize`}
+              letterSpacing={2}
+            >
+              {language}
+            </Text>{' '}
             projects worth <br /> sharing.
           </Text>
         </Flex>
