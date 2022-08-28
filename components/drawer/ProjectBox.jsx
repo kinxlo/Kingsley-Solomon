@@ -20,7 +20,7 @@ const ProjectBox = () => {
           position={`relative`}
           alignItems={`center`}
           className='project_'
-          margin={`2rem auto`}
+          margin={`5rem auto`}
           width={{ base: `100%`, lg: `80%` }}
           height={{ base: `50rem` }}
           p={10}
