@@ -114,7 +114,7 @@
 .project_ {
   position: relative;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -123,16 +123,16 @@
     left: 0px;
     transition: all .2s;
     background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px) grayscale(100%) !important;
-    -webkit-backdrop-filter: blur(5px) sepia(100%) !important;
-    border-bottom: 1px solid var(--mainLinkColor) !important;
+    backdrop-filter: blur(5px) sapia(100%);
+    -webkit-backdrop-filter: blur(5px) sepia(100%);
+    border-bottom: 1px solid var(--mainLinkColor);
   }
 
   &:hover:before {
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(0) grayscale(0) !important;
-    -webkit-backdrop-filter: blur(0) sepia(0) !important;
-    border-bottom: 1px solid var(--mainActiveColor) !important;
+    // background-color: rgba(0, 0, 0, 0.8);
+    // backdrop-filter: blur(0) grayscale(0);
+    // -webkit-backdrop-filter: blur(0) sepia(0);
+    // border-bottom: 1px solid var(--mainActiveColor);
   }
 }
 
@@ -227,10 +227,8 @@ body {
       top: 0;
       width: 100%;
       height: 100%;
-      // background-color: var(--mainBgColor);
       backdrop-filter: blur(10px) saturate(180%) !important;
       -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-      // opacity: 0.8;
       z-index: 1;
     }
   }
@@ -378,9 +376,20 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-
   //lg
   .project_ {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      transition: all .2s;
+      background-color: transparent !important;
+      border-bottom: none !important;
+    }
+
 
     .project_img {
       filter: sepia(70%) brightness(30%) blur(3px);

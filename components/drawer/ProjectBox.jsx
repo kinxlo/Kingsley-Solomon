@@ -100,19 +100,6 @@ const ProjectBox = () => {
           justifyContent={`end`}
           alignItems={`end`}
         >
-          <Flex
-            px={2}
-            width={`100%`}
-            justifyContent={`start`}
-          >
-            <Text
-              fontWeight={`bolder`}
-              textTransform={`capitalize`}
-              letterSpacing={2}
-            >
-              {language}
-            </Text>
-          </Flex>
           <Text
             textTransform={`capitalize`}
             fontWeight={700}
@@ -125,6 +112,13 @@ const ProjectBox = () => {
             my={`5rem`}
             mx={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
           >
+            <Text
+              fontWeight={`bolder`}
+              textTransform={`capitalize`}
+              letterSpacing={2}
+            >
+              {language}
+            </Text>{' '}
             projects worth <br /> sharing.
           </Text>
         </Flex>
