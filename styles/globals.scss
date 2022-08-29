@@ -136,6 +136,42 @@
   }
 }
 
+.profile-pic {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid var(--mainLinkColor);
+    transform: translate(-10px, -10px);
+    transition: all 0.2s;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--mainLinkColor);
+    filter: opacity(50%);
+    transition: all 0.2s;
+  }
+
+  &:hover:before {
+    transform: translate(0px, 0px);
+  }
+  &:hover:after {
+    filter: opacity(0);
+  }
+}
+
 
 
 h1,
@@ -384,7 +420,7 @@ body {
       content: "";
       position: static;
     }
-    
+
     .project_img {
       filter: sepia(70%) brightness(30%) blur(3px);
       transition: all .3s;

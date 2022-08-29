@@ -75,7 +75,7 @@ const MobileLayout = () => {
             '2xl': `initial`,
           }}
           fontSize={{ base: `12px`, md: `14px` }}
-          right={{ base: 5, md: `10rem` }}
+          right={5}
           top={switchView == `tools` ? `25%` : 5}
           className={` line-h2`}
         >

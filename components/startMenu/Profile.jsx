@@ -18,56 +18,94 @@ const Profile = () => {
     <Flex
       position={`relative`}
       flexDir={`column`}
-      justifyContent={`space-evenly`}
+      // justifyContent={{ base: `space-evenly`, xl: `end`, '2xl': `space-evenly` }}
+      justifyContent={{ base: `space-evenly` }}
+      // gap={{ base: 0, xl: `5rem` }}
       p={0}
       height={`100%`}
     >
       <Heading
         fontSize={{ base: `24px`, sm: `42px` }}
         letterSpacing={1}
-        // className='accent'
       >
         Kingsley Solomon
       </Heading>
-      <Box>
-        <Text
-          className='accent'
-          as={`h2`}
-          fontSize={{ base: `4rem`, md: `8rem` }}
-          lineHeight={1.2}
-          fontWeight={700}
+      <Box marginRight={{ base: 0, xl: `5rem`, '2xl': 0 }}>
+        <Flex
+          gap={10}
+          flexDir={{ base: `column`, xl: `row` }}
+          justifyContent={{ base: `space-between` }}
         >
-          Frontend <br /> Developer.
-        </Text>
-        <Text
-          lineHeight={`1rem`}
+          <Box>
+            <Text
+              className='accent'
+              as={`h2`}
+              fontSize={{ base: `4rem`, md: `8rem` }}
+              lineHeight={1.2}
+              fontWeight={700}
+            >
+              Frontend <br /> Developer.
+            </Text>
+            <Text
+              lineHeight={`1rem`}
+              fontStyle={`italic`}
+              fontSize={{
+                base: `10px`,
+                sm: `12px`,
+                md: `15px`,
+                xl: `18px`,
+              }}
+            >
+              Integrating <Text as={`span`}>Science,</Text>
+              {` `}
+              <Text as={`span`}>Art,</Text>
+              {` `}
+              and {` `}
+              <Text as={`span`}>APIs.</Text>
+            </Text>
+          </Box>
+          <Box
+            display={{ base: `none`, xl: `block` }}
+            className='profile-pic'
+            height={{
+              base: `10rem`,
+              md: `15rem`,
+              xl: `20rem`,
+            }}
+            width={{
+              base: `9rem`,
+              md: `14rem`,
+              xl: `20rem`,
+            }}
+          >
+            <Image
+              height={`100%`}
+              objectFit={`cover`}
+              alt='profile-img'
+              src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile1_wqaris.jpg`}
+            />
+          </Box>
+        </Flex>
+        <Flex
+          mt={{ base: `5rem`, xl: `1rem` }}
+          flexDir={`column`}
+          alignItems={`end`}
           fontStyle={`italic`}
           fontSize={{
-            base: `12px`,
-            sm: `16px`,
-            lg: `20px`,
+            base: `10px`,
+            sm: `12px`,
+            xl: `15px`,
           }}
         >
-          Integrating <Text as={`span`}>Science,</Text>
-          {` `}
-          <Text as={`span`}>Art,</Text>
-          {` `}
-          and {` `}
-          <Text as={`span`}>APIs.</Text>
-        </Text>
+          <Text>
+            Skilled at design patterns & responsive design.
+          </Text>
+          <Text>
+            Over 3 Years experience with frontend
+            development.
+          </Text>
+        </Flex>
       </Box>
-      <Flex
-        gap={5}
-        fontSize={{ base: `10px`, sm: `14px`, md: `16px` }}
-      >
-        <Text flex={1}>
-          Highly skilled at design patterns & responsive
-          design.
-        </Text>
-        <Text flex={1}>
-          Over 3 Years experience with frontend development
-        </Text>
-      </Flex>
       <Flex
         gap={10}
         flexDirection={{ base: `column`, xl: `row` }}
