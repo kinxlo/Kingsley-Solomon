@@ -21,6 +21,7 @@ import language from '../public/language';
 import tools from '../public/tools';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { TbMenu } from 'react-icons/tb';
+import ProductivityCarousel from '../components/carousel/ProductivityCarousel';
 
 const MobileLayout = () => {
   const { switchView, showControls, toggleControls } =
@@ -37,22 +38,7 @@ const MobileLayout = () => {
       case `search`:
         return <Search />;
       case `tools`:
-        return (
-          <>
-            <ProductivityLayout
-              title={`Languages & Frameworks`}
-              document={language}
-            />
-            <ProductivityLayout
-              title={`Tools`}
-              document={tools}
-            />
-            <ProductivityLayout
-              title={`Tools`}
-              document={tools}
-            />
-          </>
-        );
+        return <ProductivityCarousel />;
       default:
         return <Profile />;
     }
@@ -105,9 +91,7 @@ const MobileLayout = () => {
           </Button>
         )}
         <Container
-          maxW={
-            switchView === `tools` ? `1200px` : `1440px`
-          }
+          maxW={`1440px`}
           p={
             switchView === `projects` ||
             switchView === `resume`
@@ -115,6 +99,9 @@ const MobileLayout = () => {
               : `1rem`
           }
           display={`flex`}
+          // justifyContent={
+          //   switchView === `projects` ? null : `center`
+          // }
           position={`relative`}
           flexDir={`column`}
           height={`100vh`}

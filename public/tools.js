@@ -7,7 +7,7 @@ const tools = [
     {
         id: 2,
         name: `Gsap`,
-        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659187679/portfolio/tweenmax.png.cf27916e926fbb328ff214f66b4c8429_hjq9si.png`
+        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1661780315/portfolio/packages-0701062001407339578_scrocj.png`
     },
     {
         id: 3,

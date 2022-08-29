@@ -31,6 +31,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
 @import '../components/resume/index.scss';
 @import './Calendar.css';
+@import '../components/carousel/carousel.scss';
 
 
 * {
@@ -56,6 +57,7 @@
   // color: var(--mainLinkColor) !important;
   margin-right: 1rem;
   flex: 1;
+  opacity: 10%;
   // height: 10px;
 }
 
@@ -67,6 +69,7 @@
     height: 12rem;
     margin: 0px auto;
     background-color: var(--mainLinkColor);
+    opacity: 50%;
 
   }
 }
@@ -87,7 +90,7 @@
     height: 5rem;
     margin: 0px auto;
     background-color: var(--mainLinkColor);
-
+    opacity: 50%;
   }
 }
 
@@ -167,6 +170,7 @@
   &:hover:before {
     transform: translate(0px, 0px);
   }
+
   &:hover:after {
     filter: opacity(0);
   }
@@ -445,6 +449,4 @@ body {
 
 @media screen and (min-width: 1536px) {
   //2xl
-
-
 }

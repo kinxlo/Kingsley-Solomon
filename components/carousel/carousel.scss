@@ -1,0 +1,26 @@
+.control-arrow {
+    position: absolute;
+    top: 87% !important;
+    background: none;
+    z-index: 999 !important;
+    border: 0;
+    border-radius: 100%;
+    padding: .2rem 1rem !important;
+    height: fit-content !important;
+    border: 5px double var(--mainBorderColor) !important;
+    background-color: var(--mainLinkColor) !important;
+}
+
+.carousel {
+    height: 100vh !important;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    //2xl
+    .control-arrow {
+        // top: 50% !important;
+        padding: .4rem 1rem !important;
+    }
+}

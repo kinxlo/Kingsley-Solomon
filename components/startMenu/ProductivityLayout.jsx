@@ -21,8 +21,9 @@ const ProductivityLayout = ({ title, document }) => {
         bgColor={`#ffffff10`}
       >
         <Image
+          border={`1px solid red`}
           filter={`drop-shadow(1px 8px 5px #00000080)`}
-          boxSize={`40.5%`}
+          maxW={`30%`}
           src={box.image}
           alt='language'
         />
@@ -30,15 +31,18 @@ const ProductivityLayout = ({ title, document }) => {
     );
   });
   return (
-    <>
+    <Flex
+      maxW={`1200px`}
+      margin={`0 auto`}
+      flexDir={`column`}
+      justifyContent={`center`}
+      py={`5rem`}
+    >
       <Flex
         display={`flex`}
         justifyContent={`end`}
         alignItems={`center`}
-        // textAlign={`right`}
-        mt={10}
-        mb={2}
-        // fontWeight={700}
+        marginY={`3rem`}
       >
         <hr className='line' />
 
@@ -47,21 +51,16 @@ const ProductivityLayout = ({ title, document }) => {
           fontWeight={700}
           width={`fit-content`}
           className='accent'
-          py={{ base: `2rem`, md: `5rem` }}
         >
           {title}
         </Text>
       </Flex>
-      <Container p={0} margin={`0 0 0 auto`} maxW={`900px`}>
-        <Grid
-          // margin={`0 auto`}
-          templateColumns='repeat(3, 1fr)'
-          gap={3}
-        >
+      <Container maxW={`900px`} margin={`0 0 0 auto`} p={0}>
+        <Grid templateColumns='repeat(3, 1fr)' gap={3}>
           {boxs}
         </Grid>
       </Container>
-    </>
+    </Flex>
   );
 };
 
