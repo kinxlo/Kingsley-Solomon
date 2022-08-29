@@ -126,23 +126,7 @@ const Profile = () => {
             <Flex gap={5} alignItems={`center`}>
               <BatteryInfo />
               <CalendarApp />
-              {!weatherData && <Text>LOADING...</Text>}
-              {weatherData && (
-                <Flex alignItems={`center`}>
-                  <Image
-                    width={`2rem`}
-                    height={`2rem`}
-                    src={weatherData.current.condition.icon}
-                    alt='icon'
-                  />
-                  <Text fontSize={`md`}>
-                    {weatherData.current.temp_c}&deg;C
-                  </Text>
-                  <Text ml={1}>
-                    {weatherData.current.condition.text}
-                  </Text>
-                </Flex>
-              )}
+              {/* <Text fontWeight={`medium`}>{timeMin}</Text> */}
             </Flex>
             <DrawerExample />
           </Flex>

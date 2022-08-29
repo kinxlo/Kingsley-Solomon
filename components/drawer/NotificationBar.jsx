@@ -9,7 +9,8 @@ import React from 'react';
 import NotificationControls from './NotificationControls';
 import { BsDot } from 'react-icons/bs';
 
-const NotificationBar = () => {
+const NotificationBar = ({ comment }) => {
+  const { name, image, job, review } = comment;
   return (
     <Box
       width={`100%`}
@@ -34,7 +35,7 @@ const NotificationBar = () => {
             fontSize={{ base: `12px`, md: `12px` }}
             fontWeight={700}
           >
-            Kingsley Solomon
+            {name}
           </Text>
           <Icon color={`#fff`} as={BsDot} />
           <Text
@@ -42,19 +43,14 @@ const NotificationBar = () => {
             fontSize={{ base: `10px`, md: `12px` }}
             fontWeight={200}
           >
-            Frontend Developer
+            {job}
           </Text>
         </Flex>
         <Text
           mt={1}
           fontSize={{ base: `10px`, md: `12px` }}
         >
-          Lorem, ipsum dolor sit amet consectetur
-          adipisicing elit. Sapiente, molestias obcaecati
-          quod dolorum possimus fugit, natus impedit ratione
-          deserunt perspiciatis sint magnam praesentium
-          laboriosam animi, similique laudantium? Delectus
-          praesentium nihil nemo, nam voluptate itaque
+          {review}
         </Text>
       </Box>
       {/* <NotificationControls /> */}

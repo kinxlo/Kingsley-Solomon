@@ -1,10 +1,16 @@
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
+import { reviews } from '../../public/reviews';
 import NotificationBar from './NotificationBar';
 
 const Notification = () => {
-  let noticeBox = [0, 0, 0, 0, 0].map((box, index) => {
-    return <NotificationBar key={index}></NotificationBar>;
+  let noticeBox = reviews.map((review, index) => {
+    return (
+      <NotificationBar
+        comment={review}
+        key={index}
+      ></NotificationBar>
+    );
   });
 
   return (

@@ -17,9 +17,7 @@ import Search from '../components/searchBar/Search';
 import Profile from '../components/startMenu/Profile';
 import StartControls from '../components/startMenu/StartControls';
 import { AppContext } from '../context/AppContext';
-import language from '../public/language';
-import tools from '../public/tools';
-import { AiOutlineMenu } from 'react-icons/ai';
+
 import { TbMenu } from 'react-icons/tb';
 import ProductivityCarousel from '../components/carousel/ProductivityCarousel';
 

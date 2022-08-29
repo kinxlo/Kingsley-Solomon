@@ -9,28 +9,36 @@ import React, { useEffect, useState } from 'react';
 import ProductivityLayout from '../startMenu/ProductivityLayout';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import languages from '../../public/language';
-import tools from '../../public/tools';
+
+import {
+  programming_languages,
+  libraries_framework,
+  tools_platform,
+} from '../../public/tools';
 
 const ProductivityCarousel = () => {
   return (
-    <Carousel renderIndicator={false} infiniteLoop showThumbs={false}>
+    <Carousel
+      renderIndicator={false}
+      infiniteLoop
+      showThumbs={false}
+    >
       <Box>
         <ProductivityLayout
-          title={`Programming Languages`}
-          document={languages}
+          title={`Languages`}
+          document={programming_languages}
         />
       </Box>
       <Box>
         <ProductivityLayout
-          title={`Programming Languages`}
-          document={tools}
+          title={`Libraries & Frameworks`}
+          document={libraries_framework}
         />
       </Box>
       <Box>
         <ProductivityLayout
-          title={`Programming Languages`}
-          document={languages}
+          title={`Tools & Platforms`}
+          document={tools_platform}
         />
       </Box>
     </Carousel>

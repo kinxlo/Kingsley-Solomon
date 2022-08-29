@@ -42,7 +42,7 @@ export default function DrawerExample() {
         cursor={`pointer`}
         _hover={{ color: `#d000ff` }}
       >
-        See what people are saying about me
+        Reviews
       </Text>
 
       <Drawer

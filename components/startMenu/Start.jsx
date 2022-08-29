@@ -7,8 +7,7 @@ import {
   Image,
 } from '@chakra-ui/react';
 
-import language from '../../public/language.js';
-import tools from '../../public/tools';
+import { programming_languages } from '../../public/tools';
 import ProjectBox from '../drawer/ProjectBox';
 import ProductivityLayout from './ProductivityLayout';
 import Profile from './Profile';

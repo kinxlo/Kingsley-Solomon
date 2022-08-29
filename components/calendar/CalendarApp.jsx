@@ -10,6 +10,7 @@ import {
   Drawer,
   useDisclosure,
   Flex,
+  Image,
 } from '@chakra-ui/react';
 import Calendar from 'react-calendar';
 import React, {
@@ -24,6 +25,7 @@ import { AppContext } from '../../context/AppContext';
 import { AiOutlineLeft } from 'react-icons/ai';
 
 const CalendarApp = () => {
+  const { weatherData } = useContext(AppContext);
   const [timeMin, setTimeMin] = useState(null);
   const [timeFull, setTimeFull] = useState(null);
   const [session, setSession] = useState(null);
@@ -75,14 +77,30 @@ const CalendarApp = () => {
   });
   return (
     <>
-      <Text
-        onClick={handleClick}
-        fontWeight={`medium`}
-        cursor={`pointer`}
-        _hover={{ color: `#d000ff` }}
-      >
-        {timeMin}
-      </Text>
+      <Text fontWeight={`medium`}>{timeMin}</Text>
+      {!weatherData && <Text>LOADING...</Text>}
+      {weatherData && (
+        <Flex
+          onClick={handleClick}
+          marginX={`1rem`}
+          alignItems={`center`}
+          cursor={`pointer`}
+          _hover={{ color: `#d000ff` }}
+        >
+          <Image
+            width={`2rem`}
+            height={`2rem`}
+            src={weatherData.current.condition.icon}
+            alt='icon'
+          />
+          <Text fontSize={`md`}>
+            {weatherData.current.temp_c}&deg;C
+          </Text>
+          <Text ml={1}>
+            {weatherData.current.condition.text}
+          </Text>
+        </Flex>
+      )}
 
       <Drawer
         isOpen={isOpen}
