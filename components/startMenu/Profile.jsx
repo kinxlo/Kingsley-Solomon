@@ -3,6 +3,7 @@ import {
   Flex,
   Heading,
   Image,
+  Link,
   Text,
 } from '@chakra-ui/react';
 import { useContext } from 'react';
@@ -112,7 +113,29 @@ const Profile = () => {
         justifyContent={`space-between`}
         alignItems={{ base: `start`, lg: `center` }}
       >
-        <Search />
+        <Flex
+          justifyContent={`space-between`}
+          gap={10}
+        >
+          <Search />
+          <Link
+            download
+            rel='noopener noreferrer'
+            href='/KingsleySolomon_Ifijeh_Resume.PDF'
+            display={`flex`}
+            alignItems={`center`}
+            opacity={`70%`}
+            border={`1px solid`}
+            color={`#fff`}
+            padding={{ base: `5px 20px`, md: `10px 40px` }}
+            _hover={{
+              color: `rgb(208, 0, 255) !important`,
+            }}
+            fontSize={{ base: `10px`, md: `14px` }}
+          >
+            Resume
+          </Link>
+        </Flex>
         <Flex
           flexDir={{ base: `column`, sm: `row` }}
           alignItems={{ base: `initial`, sm: `center` }}

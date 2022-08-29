@@ -83,10 +83,10 @@ export default function DrawerExample() {
           ) : (
             <Notification />
           )}
-          <CTALayout
+          {/* <CTALayout
             functions={functions}
             title={`functions`}
-          />
+          /> */}
           {/* <SliderComponent /> */}
         </DrawerContent>
       </Drawer>

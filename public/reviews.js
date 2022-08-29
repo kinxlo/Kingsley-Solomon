@@ -25,7 +25,7 @@ export const reviews = [
         id: 4,
         name: `Torohmo`,
         image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1659187886/portfolio/icons8-google-firebase-console-480_er4lgs.svg`,
-        job: `Backend developer`,
+        job: `Technical Content Specialist`,
         review: `Kingsley’s professionalism is top-notch as he takes his times to give a walk-down of what is needed and what needs to be done. Highly recommended to anyone that need his professional skills.`
     },
     {

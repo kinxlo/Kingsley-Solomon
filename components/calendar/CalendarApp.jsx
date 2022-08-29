@@ -82,10 +82,9 @@ const CalendarApp = () => {
       {weatherData && (
         <Flex
           onClick={handleClick}
-          marginX={`1rem`}
+          // marginX={`1rem`}
           alignItems={`center`}
           cursor={`pointer`}
-          _hover={{ color: `#d000ff` }}
         >
           <Image
             width={`2rem`}
@@ -93,10 +92,12 @@ const CalendarApp = () => {
             src={weatherData.current.condition.icon}
             alt='icon'
           />
-          <Text fontSize={`md`}>
-            {weatherData.current.temp_c}&deg;C
-          </Text>
-          <Text ml={1}>
+          <Text
+            _hover={{ color: `var(--mainActiveColor)` }}
+            fontSize={{ base: `sm`, md: `md` }}
+            ml={1}
+          >
+            {weatherData.current.temp_c}&deg;C{' '}
             {weatherData.current.condition.text}
           </Text>
         </Flex>
