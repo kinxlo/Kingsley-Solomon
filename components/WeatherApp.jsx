@@ -24,7 +24,7 @@ const WeatherApp = () => {
           justifyContent={`space-around`}
         >
           <Text
-            fontSize={`24px`}
+            fontSize={{ base: `14px`, md: `24px` }}
             fontWeight={`bold`}
             textAlign={`center`}
           >{`${weatherData.location.name}, ${weatherData.location.country}`}</Text>
@@ -42,7 +42,7 @@ const WeatherApp = () => {
             />
             <Text
               className='calendarAppText'
-              fontSize={`3xl`}
+              fontSize={`1xl`}
             >
               {weatherData.current.condition.text}
             </Text>

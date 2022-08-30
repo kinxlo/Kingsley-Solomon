@@ -19,7 +19,7 @@ export const reviews = [
         image: null,
         job: ` Web Developer`,
         review: `I got introduced to Kingsley through my tutor at tech studio where I took my 4months full stack web development certificate program.
-        He’s been an amazing mentor and a lot of help towards helping me position myself best in the tech space and I always get the best learning from him`
+        He’s been an amazing mentor and a lot of help towards helping me position myself best in the tech space and I always get the best learning from him.`
     },
     {
         id: 4,

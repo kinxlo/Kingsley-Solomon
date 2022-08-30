@@ -85,9 +85,9 @@ const DigitalResume = () => {
         <ul id='qualifications--list'>
           <li>
             ✔️ Over 3 Years experience with frontend
-            development
+            development.
           </li>
-          <li>✔️ Experience with Java and its framework</li>
+          {/* <li>✔️ Experience with Java and its framework</li> */}
           <li>✔️ Good knowledge in API Implementation.</li>
         </ul>
       </section>
@@ -203,7 +203,7 @@ const DigitalResume = () => {
             🚧FRONTEND DEVELOPER| Strategic Dots
             (TechStudio) Ltd, Lagos, Nigeria
           </strong>
-          <p>2021-09 - Current</p>
+          <p>2020-07 - 2021-09</p>
           <Text as={`ul`} pl={10}>
             <li>
               Coded using HTML, CSS and JavaScript to
@@ -233,7 +233,7 @@ const DigitalResume = () => {
             🚧CODE INSTRUCTOR| Strategic Dots (TechStudio
             Academy) Ltd, Lagos, Nigeria
           </strong>
-          <p>2021-09 - Current</p>
+          <p>2020-07 - 2021-09</p>
           <Text as={`ul`} pl={10}>
             <li>
               Teaching students basics of frontend
@@ -262,7 +262,7 @@ const DigitalResume = () => {
             🚧WEB DEVELOPER (contract)| Darex Engineering,
             Lagos
           </strong>
-          <p>2021-09 - Current</p>
+          <p>2021-02 - 2021-05</p>
           <Text as={`ul`} pl={10}>
             <li>
               Used critical thinking to break down problems,

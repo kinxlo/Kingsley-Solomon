@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Flex,
   Heading,
@@ -20,18 +21,37 @@ const Profile = () => {
     <Flex
       position={`relative`}
       flexDir={`column`}
-      // justifyContent={{ base: `space-evenly`, xl: `end`, '2xl': `space-evenly` }}
-      justifyContent={{ base: `space-evenly` }}
-      // gap={{ base: 0, xl: `5rem` }}
+      gap={{ base: `5rem`, sm: `10rem` }}
       p={0}
-      height={`100%`}
+      margin={`auto 0`}
     >
-      <Heading
-        fontSize={{ base: `24px`, sm: `42px` }}
-        letterSpacing={1}
-      >
-        Kingsley Solomon
-      </Heading>
+      <Flex alignItems={`center`}>
+        <Avatar
+          name='kingsley solomon'
+          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile1_wqaris.jpg`}
+          size={`md`}
+        />{' '}
+        <Heading
+          fontSize={{
+            base: `24px`,
+            sm: `32px`,
+            md: `42px`,
+          }}
+          letterSpacing={1}
+          borderLeft={`1px solid`}
+          pl={2}
+          ml={2}
+        >
+          <Text
+            opacity={`70%`}
+            fontSize={`sm`}
+            className='font-mono accent'
+          >
+            Hello I&apos;m
+          </Text>
+          Kingsley Solomon
+        </Heading>
+      </Flex>
       <Box marginRight={{ base: 0, xl: `5rem`, '2xl': 0 }}>
         <Flex
           gap={10}
@@ -40,6 +60,7 @@ const Profile = () => {
         >
           <Box>
             <Text
+              opacity={`80%`}
               className='accent'
               as={`h2`}
               fontSize={{ base: `4rem`, md: `8rem` }}
@@ -92,7 +113,7 @@ const Profile = () => {
         <Flex
           mt={{ base: `5rem`, xl: `1rem` }}
           flexDir={`column`}
-          alignItems={`end`}
+          alignItems={{ base: `end`, lg: `end` }}
           fontStyle={`italic`}
           fontSize={{
             base: `10px`,
@@ -101,13 +122,29 @@ const Profile = () => {
           }}
         >
           <Text display={`flex`} alignItems={`center`}>
-            Skilled at design patterns & responsive design{' '}
-            <Icon className='accent' as={BsDot}></Icon>
+            Good knowledge in API Implementation.
+            <Icon
+              display={{ base: `none`, lg: `block` }}
+              className='accent'
+              as={BsDot}
+            ></Icon>
+          </Text>
+          <Text display={`flex`} alignItems={`center`}>
+            Skilled at design patterns & responsive design.{' '}
+            <Icon
+              display={{ base: `none`, lg: `block` }}
+              className='accent'
+              as={BsDot}
+            ></Icon>
           </Text>
           <Text display={`flex`} alignItems={`center`}>
             Over 3 Years experience with frontend
-            development{' '}
-            <Icon className='accent' as={BsDot}></Icon>
+            development.{' '}
+            <Icon
+              display={{ base: `none`, lg: `block` }}
+              className='accent'
+              as={BsDot}
+            ></Icon>
           </Text>
         </Flex>
       </Box>

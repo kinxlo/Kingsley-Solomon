@@ -61,7 +61,9 @@ const ProjectBox = () => {
             >
               {project.category}
             </Text>
-            <Text fontWeight={`bolder`} fontSize={`24px`}>{project.name}</Text>
+            <Text fontWeight={`bolder`} fontSize={`24px`}>
+              {project.name}
+            </Text>
             <Box
               my={5}
               className='project_box'
@@ -130,13 +132,7 @@ const ProjectBox = () => {
             my={`5rem`}
             mx={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
           >
-            <Text
-              fontWeight={`bolder`}
-              textTransform={`capitalize`}
-              letterSpacing={2}
-            >
-              {language}
-            </Text>{' '}
+            {language} <br />
             projects worth <br /> sharing.
           </Text>
         </Flex>

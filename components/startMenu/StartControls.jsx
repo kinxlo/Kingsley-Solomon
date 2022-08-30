@@ -109,8 +109,6 @@ const StartControls = () => {
             fontSize={`1.3rem`}
           />
         </Button>
-        {/* end of icon switch */}
-
         <Button
           p={0}
           borderRadius={`100%`}

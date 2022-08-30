@@ -20,6 +20,7 @@ import { AppContext } from '../context/AppContext';
 
 import { TbMenu } from 'react-icons/tb';
 import ProductivityCarousel from '../components/carousel/ProductivityCarousel';
+import { AiOutlineFullscreen } from 'react-icons/ai';
 
 const MobileLayout = () => {
   const { switchView, showControls, toggleControls } =
@@ -41,6 +42,7 @@ const MobileLayout = () => {
         return <Profile />;
     }
   };
+
   return (
     <>
       <Box

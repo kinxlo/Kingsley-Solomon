@@ -100,7 +100,11 @@ const CalendarApp = () => {
             ml={1}
           >
             {weatherData.current.temp_c}&deg;C{' '}
-            {weatherData.current.condition.text}
+            {weatherData.current.condition.text.slice(
+              0,
+              15
+            )}
+            ...
           </Text>
         </Flex>
       )}
