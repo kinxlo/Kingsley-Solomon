@@ -46,7 +46,13 @@ const CTA = ({
       case `java`:
         showProjects(name);
         break;
-      case `next`:
+      case `html`:
+        showProjects(name);
+        break;
+      case `css`:
+        showProjects(name);
+        break;
+      case `scss`:
         showProjects(name);
         break;
       default:

@@ -4,11 +4,9 @@ import Search from './searchBar/Search';
 import DrawerExample from './drawer/Drawer';
 import Calendar from './calendar/CalendarApp';
 import BatteryInfo from './BatteryInfo';
-import { useContext } from 'react';
-import { AppContext } from '../context/AppContext';
 
 export default function NavigationBar() {
- 
+
 
   return (
     <Box

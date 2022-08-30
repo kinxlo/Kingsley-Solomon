@@ -59,10 +59,7 @@ export default function DrawerExample() {
           justifyContent={`end`}
           gap={`2`}
         >
-          <Flex
-            py={5}
-            justifyContent={`space-between`}
-          >
+          <Flex py={5} justifyContent={`space-between`}>
             <Icon
               onClick={handleClick}
               className={`accent`}
@@ -74,7 +71,7 @@ export default function DrawerExample() {
               as={`h3`}
               className={`accent`}
             >
-              Notificaions
+              Reviews
             </Text>
           </Flex>
 

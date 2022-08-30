@@ -3,6 +3,7 @@ import {
   Flex,
   Icon,
   Image,
+  Link,
   Text,
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
@@ -55,9 +56,9 @@ const ProjectBox = () => {
             textAlign={`right`}
           >
             <Text fontSize={`14px`} className={`accent`}>
-              Lorem, ipsum.
+              {project.category}
             </Text>
-            <Text fontSize={`24px`}>Lorem, ipsum.</Text>
+            <Text fontSize={`24px`}>{project.name}</Text>
             <Box
               my={5}
               className='project_box'
@@ -67,27 +68,37 @@ const ProjectBox = () => {
                 color={{ base: `#ffff`, xl: `grey` }}
                 textTransform={`lowercase`}
               >
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Sequi, debitis amet eaque
-                quam aut accusantium laudantium? Pariatur
-                minima dignissimos facilis tempore quaerat
-                molestias maiores esse alias, ipsum placeat
-                reiciendis necessitatibus!
+                {project.desc}
               </Text>
             </Box>
-            <Flex mb={5} justifyContent={`end`}>
-              <Text>lorem</Text>
-              <Text>Lorem ipsum</Text>
-              <Text>lorem</Text>
-              <Text>lorem</Text>
+            <Flex mb={5} gap={4} justifyContent={`end`}>
+              {project.language.map(function (code, index) {
+                return <Text key={index}>{code}</Text>;
+              })}
             </Flex>
             <Flex
               justifyContent={`end`}
               color={`#fff`}
               gap={3}
             >
-              <Icon fontSize={`2rem`} as={RiGithubLine} />
-              <Icon fontSize={`2rem`} as={RiLink} />
+              <Link
+                _hover={{
+                  color: `rgb(208, 0, 255) !important`,
+                }}
+                target={`_blank`}
+                href={project.github}
+              >
+                <Icon fontSize={`2rem`} as={RiGithubLine} />
+              </Link>
+              <Link
+                _hover={{
+                  color: `rgb(208, 0, 255) !important`,
+                }}
+                target={`_blank`}
+                href={project.url}
+              >
+                <Icon fontSize={`2rem`} as={RiLink} />
+              </Link>
             </Flex>
           </Flex>
         </Flex>

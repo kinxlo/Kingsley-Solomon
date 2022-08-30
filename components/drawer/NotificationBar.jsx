@@ -24,8 +24,8 @@ const NotificationBar = ({ comment }) => {
       gap={3}
     >
       <Avatar
-        name='Dan Abrahmov'
-        src='https://bit.ly/dan-abramov'
+        name={name}
+        src={image}
         size={`lg`}
         marginY={2}
       />

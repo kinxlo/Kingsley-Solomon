@@ -2,44 +2,68 @@ const projects = [
     {
         id: 1,
         name: `Audiophile`,
-        language: `react`,
+        language: [`html`, `scss`, `react`],
+        majorTool: ``,
         image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/v1629540936/hng/audiophile_rjzmca.png',
-        url: `https://k-audiophile.netlify.app`
+        url: `https://k-audiophile.netlify.app`,
+        github: `https://github.com/kinxlo/audiophile`,
+        desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
+        category: `E-Commerce`
     },
     {
         id: 2,
         name: `missing-person`,
-        language: `javascript`,
+        language: [`html`, `css`, `javascript`, `bootstrap`],
+        majorTool: ``,
         image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/v1629540940/hng/missing_ek5bji.png',
-        url: `https://dreamy-bhaskara-d01fbc.netlify.app`
+        url: `https://dreamy-bhaskara-d01fbc.netlify.app`,
+        github: null,
+        desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
+        category: `Security`
     },
     {
         id: 3,
         name: `periodic-table`,
-        language: `react`,
+        language: [`react`, `scss`, `bootstrap`],
+        majorTool: ``,
         image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/v1629540938/hng/periodic_table_hx2tdl.png',
-        url: `https://ks-periodic-table.netlify.app`
+        url: `https://ks-periodic-table.netlify.app`,
+        github: `https://github.com/kinxlo/Elements`,
+        desc: `The periodic table of element implemented using react`,
+        category: `Academics`
     },
     {
         id: 4,
-        name: `v-banking`,
-        language: `react`,
+        name: `Darex Engineering`,
+        language: [`html`, `css`, `javascript`, `bootstrap`],
+        majorTool: ``,
         image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/v1629540940/hng/darex_bsti4i.png',
-        url: `https://vbanking.netlify.app`
+        url: `https://darexengineering.com`,
+        github: null,
+        desc: `A Client project written in standard html css and bootstrap-3`,
+        category: `Business`
     },
     {
         id: 5,
         name: `copy-app`,
-        language: `javascript`,
+        language: [`html`, `bootstrap`],
+        majorTool: ``,
         image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/v1629614467/hng/fylo_okf9hd.png',
-        url: `https://kinxlo.github.io/copyAppLP`
+        url: `https://kinxlo.github.io/copyAppLP`,
+        github: `https://github.com/kinxlo/copyAppLP`,
+        desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
+        category: `Landing Page`
     },
     {
         id: 6,
         name: `global-chef`,
-        language: `javascript`,
+        language: [`html`, `scss`, `javascript`, `bootstrap`],
+        majorTool: ``,
         image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/v1629540939/hng/globalchef_uatyes.png',
-        url: `https://kinxlo.github.io/globalChef/`
+        url: `https://kinxlo.github.io/globalChef/`,
+        github: `https://github.com/kinxlo/globalChef`,
+        desc: `A website that about chefs and there foods.`,
+        category: `Food`
     },
 ]
 

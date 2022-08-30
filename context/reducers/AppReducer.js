@@ -4,12 +4,16 @@ export const AppReducer = (state, action) => {
     switch (action.type) {
         case 'SHOW_PROJECTS':
             let newProjectList = projects.filter((project) => {
-                return project.language == action.payload
+                if (project.language.includes(action.payload)) {
+                    return project
+                }
             })
 
-            state = { ...state, projects: newProjectList,
+            state = {
+                ...state, projects: newProjectList,
                 language: action.payload,
-                switchView: `projects` }
+                switchView: `projects`
+            }
             return state
 
         case 'SHOW_MAP':
