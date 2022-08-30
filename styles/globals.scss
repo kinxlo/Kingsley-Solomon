@@ -54,11 +54,9 @@
 }
 
 .line {
-  // color: var(--mainLinkColor) !important;
   margin-right: 1rem;
   flex: 1;
   opacity: 10%;
-  // height: 10px;
 }
 
 .line-h {
@@ -100,10 +98,7 @@
 }
 
 .nav-btn {
-
-  // background-color: transparent !important;
   &:hover {
-    // border: 1px solid red !important;
     background-color: transparent !important;
     color: var(--mainActiveColor) !important;
   }
@@ -132,7 +127,6 @@
   }
 
   &:hover:before {
-    // background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(0) grayscale(0);
     -webkit-backdrop-filter: blur(0) sepia(0);
     border-bottom: 1px solid var(--mainActiveColor);
@@ -253,7 +247,6 @@ body {
   }
 
   .screen {
-    // border: 1px solid red;
     width: 100vw;
     height: calc(100vh - 3rem);
     position: relative;
@@ -320,7 +313,6 @@ body {
       height: 100%;
       background-color: var(--mainBgColor);
       opacity: 70%;
-      // filter: blur(10px);
       z-index: 1;
     }
   }
@@ -373,7 +365,7 @@ body {
     }
 
     .ol-attribution {
-      // border: 1px solid red;
+
       position: absolute;
       left: 0;
       bottom: 0;
