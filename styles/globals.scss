@@ -153,52 +153,55 @@
   }
 }
 
-.profile-pic {
-  position: relative;
-  filter: grayscale(50%);
+.profile_layout {
+  .profile-pic {
+    position: relative;
+    filter: grayscale(50%);
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-right: 1px solid var(--mainLinkColor);
-    border-bottom: 1px solid var(--mainLinkColor);
-    transform: translate(10px, 10px);
-    transition: all 0.2s;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-right: 1px solid var(--mainLinkColor);
+      border-bottom: 1px solid var(--mainLinkColor);
+      transform: translate(10px, 10px);
+      transition: all 0.2s;
 
-  }
+    }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-top: 1px solid var(--mainLinkColor);
-    border-left: 1px solid var(--mainLinkColor);
-    transform: translate(-10px, -10px);
-    background-color: var(--mainLinkColor);
-    filter: opacity(50%);
-    transition: all 0.2s;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-top: 1px solid var(--mainLinkColor);
+      border-left: 1px solid var(--mainLinkColor);
+      transform: translate(-10px, -10px);
+      background-color: var(--mainLinkColor);
+      filter: opacity(50%);
+      transition: all 0.2s;
 
-  }
+    }
 
-  &:hover {
-    filter: grayscale(0);
-  }
+    &:hover {
+      filter: grayscale(0);
+    }
 
-  &:hover:before {
-    transform: translate(0px, 0px);
-  }
+    &:hover:before {
+      transform: translate(0px, 0px);
+    }
 
-  &:hover:after {
-    filter: opacity(0) grayscale(0);
+    &:hover:after {
+      filter: opacity(0) grayscale(0);
+    }
   }
 }
+
 
 
 
@@ -376,6 +379,15 @@ body {
       }
     }
   }
+}
+
+@media screen and (min-width: 400px) {
+
+  //sm
+  .profile_layout {
+    margin: 5rem 0 10rem !important;
+  }
+
 }
 
 @media screen and (min-width: 480px) {

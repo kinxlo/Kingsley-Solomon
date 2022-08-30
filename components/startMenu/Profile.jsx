@@ -19,7 +19,10 @@ const Profile = () => {
   return (
     <Container maxW={`100%`}>
       {/* profile */}
-      <Box my={`10rem`}>
+      <Box
+        m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
+        className={`profile_layout`}
+      >
         <Flex mb={`5rem`} alignItems={`center`}>
           <Avatar
             name='kingsley solomon'
@@ -150,6 +153,7 @@ const Profile = () => {
       </Box>
       {/* APIs */}
       <Flex
+        mb={{ base: `1rem`, xl: 0 }}
         gap={10}
         flexDirection={{ base: `column`, xl: `row` }}
         justifyContent={`space-between`}
