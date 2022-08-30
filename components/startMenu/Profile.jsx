@@ -2,11 +2,13 @@ import {
   Box,
   Flex,
   Heading,
+  Icon,
   Image,
   Link,
   Text,
 } from '@chakra-ui/react';
 import { useContext } from 'react';
+import { BsDot } from 'react-icons/bs';
 import { AppContext } from '../../context/AppContext';
 import BatteryInfo from '../BatteryInfo';
 import CalendarApp from '../calendar/CalendarApp';
@@ -14,7 +16,6 @@ import DrawerExample from '../drawer/Drawer';
 import Search from '../searchBar/Search';
 
 const Profile = () => {
-  const { weatherData } = useContext(AppContext);
   return (
     <Flex
       position={`relative`}
@@ -48,6 +49,7 @@ const Profile = () => {
               Frontend <br /> Developer.
             </Text>
             <Text
+              className='font-mono'
               lineHeight={`1rem`}
               fontStyle={`italic`}
               fontSize={{
@@ -98,12 +100,14 @@ const Profile = () => {
             xl: `15px`,
           }}
         >
-          <Text>
-            Skilled at design patterns & responsive design.
+          <Text display={`flex`} alignItems={`center`}>
+            Skilled at design patterns & responsive design{' '}
+            <Icon className='accent' as={BsDot}></Icon>
           </Text>
-          <Text>
+          <Text display={`flex`} alignItems={`center`}>
             Over 3 Years experience with frontend
-            development.
+            development{' '}
+            <Icon className='accent' as={BsDot}></Icon>
           </Text>
         </Flex>
       </Box>
@@ -113,12 +117,10 @@ const Profile = () => {
         justifyContent={`space-between`}
         alignItems={{ base: `start`, lg: `center` }}
       >
-        <Flex
-          justifyContent={`space-between`}
-          gap={10}
-        >
+        <Flex justifyContent={`space-between`} gap={10}>
           <Search />
           <Link
+            className='font-mono'
             download
             rel='noopener noreferrer'
             href='/KingsleySolomon_Ifijeh_Resume.PDF'

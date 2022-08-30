@@ -93,7 +93,9 @@ const CTA = ({
     >
       {/* <section> */}
       {children}
-      {title === `Contacts` ? null : <p>{name}</p>}
+      {title === `Contacts` ? null : (
+        <p className='font-mono'>{name}</p>
+      )}
       {/* </section> */}
     </Box>
   );

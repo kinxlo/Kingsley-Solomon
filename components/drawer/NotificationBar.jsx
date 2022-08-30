@@ -39,7 +39,7 @@ const NotificationBar = ({ comment }) => {
           </Text>
           <Icon color={`#fff`} as={BsDot} />
           <Text
-            className='accent'
+            className='accent font-mono'
             fontSize={{ base: `10px`, md: `12px` }}
             fontWeight={200}
           >

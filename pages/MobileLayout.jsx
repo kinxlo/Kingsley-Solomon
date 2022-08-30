@@ -66,7 +66,7 @@ const MobileLayout = () => {
           <Link
             fontSize={{ base: `8px`, md: `14px` }}
             letterSpacing={2}
-            className='rotate-90'
+            className='rotate-90 font-mono'
           >
             kinxly@gmail.com
           </Link>

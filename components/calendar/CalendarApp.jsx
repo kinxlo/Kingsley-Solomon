@@ -77,7 +77,9 @@ const CalendarApp = () => {
   });
   return (
     <>
-      <Text fontWeight={`medium`}>{timeMin}</Text>
+      <Text className='font-mono' fontWeight={`medium`}>
+        {timeMin}
+      </Text>
       {!weatherData && <Text>LOADING...</Text>}
       {weatherData && (
         <Flex
@@ -123,8 +125,8 @@ const CalendarApp = () => {
             padding={`1rem`}
           >
             <Icon
+              color={`#fff`}
               onClick={handleClick}
-              className={`accent`}
               boxSize={`1.5rem`}
               as={AiOutlineLeft}
             />

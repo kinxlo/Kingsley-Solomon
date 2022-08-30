@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext';
 const WeatherApp = () => {
   const { weatherData } = useContext(AppContext);
 
-  if(!weatherData) return <Text>LOADING...</Text>
+  if (!weatherData) return <Text>LOADING...</Text>;
   if (weatherData) {
     return (
       <Box
@@ -24,6 +24,8 @@ const WeatherApp = () => {
           justifyContent={`space-around`}
         >
           <Text
+            fontSize={`24px`}
+            fontWeight={`bold`}
             textAlign={`center`}
           >{`${weatherData.location.name}, ${weatherData.location.country}`}</Text>
 
@@ -47,13 +49,15 @@ const WeatherApp = () => {
           </Flex>
           <Flex justifyContent={`center`} gap={10}>
             <Text
-              className='calendarAppText'
+              fontWeight={`bold`}
+              className='calendarAppText font-mono'
               fontSize={`4xl`}
             >
               {weatherData.current.temp_c}&deg;C
             </Text>
             <Text
-              className='calendarAppText'
+              fontWeight={`bold`}
+              className='calendarAppText font-mono'
               fontSize={`4xl`}
             >
               {weatherData.current.temp_f}&#x2109;

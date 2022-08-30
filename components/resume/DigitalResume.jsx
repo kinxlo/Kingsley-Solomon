@@ -97,17 +97,23 @@ const DigitalResume = () => {
 
         <div id='wrapper--techstack__items'>
           <div className='card--techstack'>
-            <span>HTML, CSS, javascript</span>
+            <span className='font-mono'>
+              HTML, CSS, javascript
+            </span>
           </div>
           <div className='card--techstack'>
-            <span>Java, Spring</span>
+            <span className='font-mono'>Java, Spring</span>
           </div>
           <div className='card--techstack'>
-            <span>React, chakra, Next JS</span>
+            <span className='font-mono'>
+              React, chakra, Next JS
+            </span>
           </div>
 
           <div className='card--techstack'>
-            <span>Vue, Vuetify, Nuxt JS</span>
+            <span className='font-mono'>
+              Vue, Vuetify, Nuxt JS
+            </span>
           </div>
         </div>
       </section>
@@ -125,7 +131,7 @@ const DigitalResume = () => {
           </strong>
           <p>2021-10 - Current</p>
           <Text as={`ul`} pl={10}>
-            <li>
+            <li className='font-mono'>
               Actively listened to customers' requests,
               confirming full understanding before
               addressing concerns.

@@ -143,6 +143,7 @@ export default function DrawerExample() {
         h={6}
       /> */}
       <Text
+        className='font-mono'
         gap={3}
         display={`flex`}
         alignItems={`center`}

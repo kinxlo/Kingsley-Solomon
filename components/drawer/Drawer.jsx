@@ -37,6 +37,7 @@ export default function DrawerExample() {
         h={6}
       /> */}
       <Text
+        className='font-mono'
         onClick={handleClick}
         fontWeight={`bolder`}
         cursor={`pointer`}
@@ -61,15 +62,16 @@ export default function DrawerExample() {
         >
           <Flex py={5} justifyContent={`space-between`}>
             <Icon
+              color={`#fff`}
               onClick={handleClick}
-              className={`accent`}
               boxSize={`1.5rem`}
               as={AiOutlineLeft}
             />
             <Text
+              fontWeight={`bold`}
+              color={`#fff`}
               textAlign={`right`}
               as={`h3`}
-              className={`accent`}
             >
               Reviews
             </Text>

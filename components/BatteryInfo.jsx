@@ -53,7 +53,7 @@ const BatteryInfo = () => {
             : FcFullBattery
         }
       />
-      <Text>{batteryLevel}</Text>
+      <Text >{batteryLevel}</Text>
     </Flex>
   );
 };

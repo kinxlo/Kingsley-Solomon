@@ -50,7 +50,6 @@ const ProductivityLayout = ({ title, document }) => {
           fontSize={{ base: `1.5rem`, md: `3rem` }}
           fontWeight={700}
           width={`fit-content`}
-          className='accent'
         >
           {title}
         </Text>

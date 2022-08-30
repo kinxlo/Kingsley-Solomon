@@ -55,10 +55,13 @@ const ProjectBox = () => {
             flexDir={`column`}
             textAlign={`right`}
           >
-            <Text fontSize={`14px`} className={`accent`}>
+            <Text
+              fontSize={`14px`}
+              className={`accent font-mono`}
+            >
               {project.category}
             </Text>
-            <Text fontSize={`24px`}>{project.name}</Text>
+            <Text fontWeight={`bolder`} fontSize={`24px`}>{project.name}</Text>
             <Box
               my={5}
               className='project_box'
@@ -73,7 +76,11 @@ const ProjectBox = () => {
             </Box>
             <Flex mb={5} gap={4} justifyContent={`end`}>
               {project.language.map(function (code, index) {
-                return <Text key={index}>{code}</Text>;
+                return (
+                  <Text className='font-mono' key={index}>
+                    {code}
+                  </Text>
+                );
               })}
             </Flex>
             <Flex
