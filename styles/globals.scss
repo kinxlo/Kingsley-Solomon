@@ -1,4 +1,17 @@
 :root {
+  --font-sans:
+    "Raleway",
+    "Inter",
+    "Nunito Sans",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  --font-mono:
+    "JetBrains Mono",
+    "Inconsolata",
+    "Fira Mono",
+    monospace;
+
   --mainTextColor-light: #000;
   --secondaryTextColor-light: #333333;
   --mainLinkColor-light: #0da2b8;
@@ -19,18 +32,6 @@
   --mainBorderColor: var(--mainBorderColor-dark);
   --mainBgColor: var(--mainBgColor-dark);
   --mainActiveColor: var(--mainActiveColor-dark);
-  --font-sans:
-    "Raleway",
-    "Inter",
-    "Nunito Sans",
-    -apple-system,
-    system-ui,
-    sans-serif;
-  --font-mono:
-    "JetBrains Mono",
-    "Inconsolata",
-    "Fira Mono",
-    monospace;
 
   // --mainTextColor: var(--mainTextColor-light);
   // --secondaryTextColor: var(--secondaryTextColor-light);
@@ -154,6 +155,7 @@
 
 .profile-pic {
   position: relative;
+  filter: grayscale(50%);
 
   &::before {
     content: '';
@@ -162,10 +164,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border: 1px solid var(--mainLinkColor);
-    transform: translate(-10px, -10px);
+    border-right: 1px solid var(--mainLinkColor);
+    border-bottom: 1px solid var(--mainLinkColor);
+    transform: translate(10px, 10px);
     transition: all 0.2s;
-    z-index: -1;
+
   }
 
   &::after {
@@ -175,9 +178,17 @@
     bottom: 0;
     left: 0;
     right: 0;
+    border-top: 1px solid var(--mainLinkColor);
+    border-left: 1px solid var(--mainLinkColor);
+    transform: translate(-10px, -10px);
     background-color: var(--mainLinkColor);
     filter: opacity(50%);
     transition: all 0.2s;
+
+  }
+
+  &:hover {
+    filter: grayscale(0);
   }
 
   &:hover:before {
@@ -185,7 +196,7 @@
   }
 
   &:hover:after {
-    filter: opacity(0);
+    filter: opacity(0) grayscale(0);
   }
 }
 
@@ -201,8 +212,8 @@ strong {
 html,
 body {
   background-color: var(--mainBgColor) !important;
-  background-image: url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1659252078/portfolio/Matrix-1s-1084px_xcrdxw.svg) !important;
-  background-position: center;
+  // background-image: url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1659252078/portfolio/Matrix-1s-1084px_xcrdxw.svg) !important;
+  // background-position: center;
 
   @-webkit-keyframes kenburns {
     0% {

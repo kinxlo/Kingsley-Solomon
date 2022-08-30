@@ -5,11 +5,7 @@ import {
   Icon,
   Link,
 } from '@chakra-ui/react';
-import React, {
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useContext, useState } from 'react';
 import {
   AiOutlineFileText,
   AiOutlineProject,
@@ -50,8 +46,9 @@ const StartControls = () => {
 
   return (
     <Box
-      // background={`#595959`}
-      position={`sticky !important`}
+      width={`3rem`}
+      position={`fixed`}
+      zIndex={999}
       top={0}
       display={`flex`}
       height={`100vh`}
