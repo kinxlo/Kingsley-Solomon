@@ -70,12 +70,13 @@ const MobileLayout = () => {
           onClick={toggleControls}
           position={`fixed`}
           zIndex={999}
-          right={5}
+          right={switchView == `profile` || switchView == `tools` ? `50%` : 5}
           bottom={5}
           backgroundColor={`#ffffff50`}
           className={`accent blur`}
           borderRadius={`100%`}
           boxSize={`4rem`}
+          transform={switchView == `profile` || switchView == `tools` ? `translate(50%, 0)` : `translate(0)`}
         >
           <Icon fontSize={`1.5rem`} as={TbMenu} />
         </Button>
