@@ -1,14 +1,10 @@
 
-p,
-span,
-li {
-    color: var(--secondaryTextColor);
-    font-size: 1em;
-}
-
-p{
-    margin: 5rem 0;
-}
+// p,
+// span,
+// li {
+//     color: var(--secondaryTextColor);
+//     font-size: 1em;
+// }
 
 .h2 {
     display: block;
@@ -31,7 +27,7 @@ li {
 }
 
 #container--main {
-    max-width: 700px;
+    max-width: 768px;
     margin: 0 auto;
     padding: 1em;
 }

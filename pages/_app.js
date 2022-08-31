@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import AppContextProvider from '../context/AppContext';
 
 
+
 export default function MyApp({ Component, pageProps }) {
 
   return (

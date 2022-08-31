@@ -1,14 +1,15 @@
 :root {
   --font-sans:
+    "Ubuntu",
     "Raleway",
-    "Inter",
     "Nunito Sans",
+    "Ubuntu Condensed",
     -apple-system,
     system-ui,
     sans-serif;
   --font-mono:
+    "Ubuntu Mono",
     "JetBrains Mono",
-    "Inconsolata",
     "Fira Mono",
     monospace;
 
@@ -202,19 +203,9 @@
   }
 }
 
-
-
-
-h1,
-h2,
-strong {
-  color: var(--mainTextColor) !important;
-}
-
-
 html,
 body {
-  background-color: var(--mainBgColor) !important;
+  // background-color: var(--mainBgColor) !important;
   // background-image: url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1659252078/portfolio/Matrix-1s-1084px_xcrdxw.svg) !important;
   // background-position: center;
 

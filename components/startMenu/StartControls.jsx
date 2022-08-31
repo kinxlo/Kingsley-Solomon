@@ -4,6 +4,7 @@ import {
   Center,
   Icon,
   Link,
+  useColorMode,
 } from '@chakra-ui/react';
 import React, { useContext, useState } from 'react';
 import {
@@ -11,12 +12,17 @@ import {
   AiOutlineProject,
   AiOutlineUser,
 } from 'react-icons/ai';
-import { RiToolsLine } from 'react-icons/ri';
+import {
+  RiMoonClearFill,
+  RiSunFill,
+  RiToolsLine,
+} from 'react-icons/ri';
 import { TbMenu } from 'react-icons/tb';
 import { AppContext } from '../../context/AppContext';
 import contacts from '../../public/contact.js';
 
 const StartControls = () => {
+  const { toggleColorMode } = useColorMode();
   const { switchContent, toggleControls, switchView } =
     useContext(AppContext);
   const [active] = useState({
@@ -135,6 +141,22 @@ const StartControls = () => {
           size={`xs`}
         >
           <Icon as={RiToolsLine} fontSize={`1.3rem`} />
+        </Button>
+      </Center>
+      <Center>
+        <Button
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
+          name='theme'
+          onClick={toggleColorMode}
+          _hover={active}
+          size={`xs`}
+        >
+          <Icon
+            as={2 > 3 ? RiMoonClearFill : RiSunFill}
+            fontSize={`1.3rem`}
+          />
         </Button>
       </Center>
       <Center
