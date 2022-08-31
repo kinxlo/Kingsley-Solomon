@@ -18,10 +18,9 @@ const ProductivityLayout = ({ title, document }) => {
         height={{ base: `7rem`, sm: `9rem`, md: `15rem` }}
         key={box.id}
         title={title}
-        bgColor={`#ffffff10`}
+        bgColor={`#1ebed620`}
       >
         <Image
-          border={`1px solid red`}
           filter={`drop-shadow(1px 8px 5px #00000080)`}
           maxW={`30%`}
           src={box.image}

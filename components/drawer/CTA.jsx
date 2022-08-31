@@ -88,7 +88,6 @@ const CTA = ({
       width={width}
       height={height}
       background={bgColor}
-      // padding={`2rem`}
       onClick={handleFunctionClick}
     >
       {/* <section> */}

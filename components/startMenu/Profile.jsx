@@ -168,9 +168,7 @@ const Profile = () => {
             href='/KingsleySolomon_Ifijeh_Resume.PDF'
             display={`flex`}
             alignItems={`center`}
-            opacity={`70%`}
             border={`1px solid`}
-            color={`#fff`}
             padding={{ base: `5px 20px`, md: `10px 40px` }}
             _hover={{
               color: `rgb(208, 0, 255) !important`,
