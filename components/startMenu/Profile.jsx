@@ -17,7 +17,7 @@ import Search from '../searchBar/Search';
 
 const Profile = () => {
   return (
-    <Container maxW={`100%`}>
+    <Container className='profile-view' maxW={`100%`}>
       {/* profile */}
       <Box
         m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
@@ -122,7 +122,7 @@ const Profile = () => {
               xl: `15px`,
             }}
           >
-            <Text display={`flex`} alignItems={`center`}>
+            <Text  display={`flex`} alignItems={`center`}>
               Good knowledge in API Implementation.
               <Icon
                 display={{ base: `none`, lg: `block` }}
@@ -162,6 +162,7 @@ const Profile = () => {
         <Flex justifyContent={`space-between`} gap={10}>
           <Search />
           <Link
+            fontWeight={`bold`}
             className='font-mono'
             download
             rel='noopener noreferrer'

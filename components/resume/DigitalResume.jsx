@@ -5,7 +5,7 @@ import React from 'react';
 const DigitalResume = () => {
   return (
     <Box
-      // className='resume_wildCard'
+      className='resume-view'
       position={`relative`}
       zIndex={3}
       id='container--main'

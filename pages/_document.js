@@ -6,7 +6,6 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <meta name="description" content="Portfolio" />
-                    <meta name="viewport" content="initial-scale=1, width=device-width" />
                     <meta name="apple-mobile-web-app-capable" content="yes" />
                     <meta name="mobile-web-app-capable" content="yes" />
                     < link rel="preconnect" href="https://fonts.googleapis.com" />

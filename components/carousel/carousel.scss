@@ -16,6 +16,23 @@
     height: 100vh !important;
 }
 
+.skills-view {
+    &::before {
+        content: 'Skills.';
+        top: 0;
+        left: -4rem;
+        position: fixed;
+        font-size: 10rem;
+        font-weight: bolder;
+        z-index: -999;
+        opacity: 3%;
+        writing-mode: vertical-rl;
+        -webkit-writing-mode: vertical-rl;
+        letter-spacing: 10px;
+    }
+}
+
+
 
 @media screen and (min-width: 768px) {
 
@@ -23,5 +40,25 @@
     .control-arrow {
         // top: 50% !important;
         padding: .4rem 1rem !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .skills-view {
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            content: 'Skills.';
+            bottom: -9rem;
+            left: 0;
+            position: fixed;
+            font-size: 25rem;
+            z-index: -999;
+            opacity: 3%;
+            letter-spacing: 10px;
+            font-weight: bolder;
+        }
     }
 }

@@ -22,7 +22,7 @@ import { AppContext } from '../../context/AppContext';
 import contacts from '../../public/contact.js';
 
 const StartControls = () => {
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   const { switchContent, toggleControls, switchView } =
     useContext(AppContext);
   const [active] = useState({
@@ -74,7 +74,7 @@ const StartControls = () => {
           backgroundColor={`transparent`}
           name='menu'
           onClick={toggleControls}
-          className={`accent nav-btn`}
+          className={`nav-btn`}
           size={`xs`}
         >
           <Icon fontSize={`1.3rem`} as={TbMenu} />
@@ -154,7 +154,7 @@ const StartControls = () => {
           size={`xs`}
         >
           <Icon
-            as={2 > 3 ? RiMoonClearFill : RiSunFill}
+            as={colorMode == `light` ? RiMoonClearFill : RiSunFill}
             fontSize={`1.3rem`}
           />
         </Button>

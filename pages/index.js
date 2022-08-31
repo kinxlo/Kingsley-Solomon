@@ -52,7 +52,7 @@ const MobileLayout = () => {
         fontSize={{ base: `12px`, md: `14px` }}
         right={5}
         top={switchView == `tools` ? `25%` : 5}
-        className={` line-h2`}
+        className={` line-v2`}
       >
         <Link
           fontSize={{ base: `8px`, md: `14px` }}

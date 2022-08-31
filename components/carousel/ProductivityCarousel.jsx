@@ -19,23 +19,24 @@ import {
 const ProductivityCarousel = () => {
   return (
     <Carousel
+      className='skills-view'
       renderIndicator={false}
       infiniteLoop
       showThumbs={false}
     >
-      <Box>
+      <Box className='languages-view'>
         <ProductivityLayout
           title={`Languages`}
           document={programming_languages}
         />
       </Box>
-      <Box>
+      <Box className='frameworks-view'>
         <ProductivityLayout
           title={`Libraries & Frameworks`}
           document={libraries_framework}
         />
       </Box>
-      <Box>
+      <Box className='platforms-view'>
         <ProductivityLayout
           title={`Tools & Platforms`}
           document={tools_platform}

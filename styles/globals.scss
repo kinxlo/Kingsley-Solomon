@@ -1,3 +1,31 @@
+// --mainTextColor-light: #000;
+// --mainLinkColor-light: #0da2b8;
+// --mainBgColor-light: #f9fafb;
+// --secondaryTextColor-light: #333333;
+// --mainActiveColor-light: rgb(208, 0, 255);
+
+// --mainTextColor-dark: #fff;
+// --secondaryTextColor-dark: #adb0b1;
+// --mainLinkColor-dark: #1ebed6;
+// --mainBorderColor-dark: #2b3031;
+// --mainBgColor-dark: #131415;
+// --mainActiveColor-dark: rgb(208, 0, 255);
+
+// --mainTextColor: var(--mainTextColor-dark);
+// --secondaryTextColor: var(--secondaryTextColor-dark);
+// --mainLinkColor: var(--mainLinkColor-dark);
+// --mainBorderColor: var(--mainBorderColor-dark);
+// --mainBgColor: var(--mainBgColor-dark);
+// --mainActiveColor: var(--mainActiveColor-dark);
+
+// --mainTextColor: var(--mainTextColor-light);
+// --secondaryTextColor: var(--secondaryTextColor-light);
+// --mainLinkColor: var(--mainLinkColor-light);
+// --mainBorderColor: var(--mainBorderColor-light);
+// --mainBgColor: var(--mainBgColor-light);
+
+
+
 :root {
   --font-sans:
     "Ubuntu",
@@ -13,32 +41,14 @@
     "Fira Mono",
     monospace;
 
-  --mainTextColor-light: #000;
-  --secondaryTextColor-light: #333333;
-  --mainLinkColor-light: #0da2b8;
+  --mainLinkColor-light: #f09491;
   --mainBorderColor-light: #dadada;
-  --mainBgColor-light: #f9fafb;
   --mainActiveColor-light: rgb(208, 0, 255);
 
-  --mainTextColor-dark: #fff;
-  --secondaryTextColor-dark: #adb0b1;
-  --mainLinkColor-dark: #1ebed6;
-  --mainBorderColor-dark: #2b3031;
-  --mainBgColor-dark: #131415;
-  --mainActiveColor-dark: rgb(208, 0, 255);
+  --mainLinkColor: var(--mainLinkColor-light);
+  --mainBorderColor: var(--mainBorderColor-light);
+  --mainActiveColor: var(--mainActiveColor-light);
 
-  // --mainTextColor: var(--mainTextColor-dark);
-  // --secondaryTextColor: var(--secondaryTextColor-dark);
-  // --mainLinkColor: var(--mainLinkColor-dark);
-  // --mainBorderColor: var(--mainBorderColor-dark);
-  // --mainBgColor: var(--mainBgColor-dark);
-  // --mainActiveColor: var(--mainActiveColor-dark);
-
-  // --mainTextColor: var(--mainTextColor-light);
-  // --secondaryTextColor: var(--secondaryTextColor-light);
-  // --mainLinkColor: var(--mainLinkColor-light);
-  // --mainBorderColor: var(--mainBorderColor-light);
-  // --mainBgColor: var(--mainBgColor-light);
 
 }
 
@@ -56,47 +66,10 @@
   text-decoration: none !important;
 }
 
-.font-mono {
-  font-family: var(--font-mono) !important;
-}
 
-.font-sans {
-  font-family: var(--font-sans) !important;
-}
-
-.accent {
-  cursor: pointer;
-  color: var(--mainLinkColor) !important;
-}
-
-.heading {
-  font-size: 18px;
-
-}
-
-.line {
-  margin-right: 1rem;
-  flex: 1;
-  opacity: 10%;
-}
-
-.line-h {
-  &:after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 12rem;
-    margin: 0px auto;
-    background-color: var(--mainLinkColor);
-    opacity: 50%;
-
-  }
-}
-
-.line-h2 {
+.line-v2 {
   position: relative;
   z-index: 999;
-  color: #fff;
 
   &:hover {
     color: rgb(208, 0, 255) !important;
@@ -113,101 +86,185 @@
   }
 }
 
-.rotate-90 {
-  writing-mode: vertical-rl;
-  -webkit-writing-mode: vertical-rl;
-}
 
-.nav-btn {
-  &:hover {
+body {
+
+  .profile-view {
+    &::before {
+      content: 'Hello!';
+      top: 0;
+      right: -4rem;
+      position: fixed;
+      font-size: 10rem;
+      z-index: -999;
+      font-weight: bolder;
+      opacity: 3%;
+      writing-mode: vertical-rl;
+      -webkit-writing-mode: vertical-rl;
+      letter-spacing: 10px;
+    }
+  }
+
+  .resume-view {
+    &::before {
+      content: 'Resume.';
+      top: 0;
+      right: -4rem;
+      position: fixed;
+      font-size: 10rem;
+      font-weight: bolder;
+      z-index: -999;
+      opacity: 3%;
+      writing-mode: vertical-rl;
+      -webkit-writing-mode: vertical-rl;
+      letter-spacing: 10px;
+    }
+  }
+
+  .project-view {
+    &::before {
+      content: 'Accolades.';
+      top: 0;
+      left: -4rem;
+      position: fixed;
+      font-size: 10rem;
+      font-weight: bolder;
+      z-index: -999;
+      opacity: 3%;
+      writing-mode: vertical-rl;
+      -webkit-writing-mode: vertical-rl;
+      letter-spacing: 10px;
+    }
+  }
+
+  .font-mono {
+    font-family: var(--font-mono) !important;
+  }
+
+  .font-sans {
+    font-family: var(--font-sans) !important;
+  }
+
+  .accent {
+    cursor: pointer;
+    color: var(--mainLinkColor) !important;
+  }
+
+  .heading {
+    font-size: 18px;
+
+  }
+
+  .line {
+    margin-right: 1rem;
+    flex: 1;
+    opacity: 10%;
+  }
+
+  .line-h {
+    &:after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 12rem;
+      margin: 0px auto;
+      background-color: var(--mainLinkColor);
+      opacity: 50%;
+
+    }
+  }
+
+
+
+  .rotate-90 {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+  }
+
+  .nav-btn {
+    &:hover {
+      background-color: transparent !important;
+      color: var(--mainActiveColor) !important;
+    }
+  }
+
+  .active {
     background-color: transparent !important;
     color: var(--mainActiveColor) !important;
   }
-}
 
-.active {
-  background-color: transparent !important;
-  color: var(--mainActiveColor) !important;
-}
-
-.project_ {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    transition: all .2s;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px) sepia(100%);
-    -webkit-backdrop-filter: blur(5px) sepia(100%);
-    border-bottom: 1px solid var(--mainLinkColor);
-  }
-
-  &:hover:before {
-    backdrop-filter: blur(0) grayscale(0);
-    -webkit-backdrop-filter: blur(0) sepia(0);
-    border-bottom: 1px solid var(--mainActiveColor);
-  }
-}
-
-.profile_layout {
-  .profile-pic {
+  .project_ {
     position: relative;
-    filter: grayscale(50%);
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border-right: 1px solid var(--mainLinkColor);
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      transition: all .2s;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px) sepia(100%);
+      -webkit-backdrop-filter: blur(5px) sepia(100%);
       border-bottom: 1px solid var(--mainLinkColor);
-      transform: translate(10px, 10px);
-      transition: all 0.2s;
-
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border-top: 1px solid var(--mainLinkColor);
-      border-left: 1px solid var(--mainLinkColor);
-      transform: translate(-10px, -10px);
-      background-color: var(--mainLinkColor);
-      filter: opacity(50%);
-      transition: all 0.2s;
-
-    }
-
-    &:hover {
-      filter: grayscale(0);
     }
 
     &:hover:before {
-      transform: translate(0px, 0px);
-    }
-
-    &:hover:after {
-      filter: opacity(0) grayscale(0);
+      backdrop-filter: blur(0) grayscale(0);
+      -webkit-backdrop-filter: blur(0) sepia(0);
+      border-bottom: 1px solid var(--mainActiveColor);
     }
   }
-}
 
-html,
-body {
-  // background-color: var(--mainBgColor) !important;
-  // background-image: url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1659252078/portfolio/Matrix-1s-1084px_xcrdxw.svg) !important;
-  // background-position: center;
+  .profile_layout {
+    .profile-pic {
+      position: relative;
+      filter: grayscale(50%);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-right: 1px solid var(--mainLinkColor);
+        border-bottom: 1px solid var(--mainLinkColor);
+        transform: translate(10px, 10px);
+        transition: all 0.2s;
+
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid var(--mainLinkColor);
+        border-left: 1px solid var(--mainLinkColor);
+        transform: translate(-10px, -10px);
+        background-color: var(--mainLinkColor);
+        filter: opacity(50%);
+        transition: all 0.2s;
+
+      }
+
+      &:hover {
+        filter: grayscale(0);
+      }
+
+      &:hover:before {
+        transform: translate(0px, 0px);
+      }
+
+      &:hover:after {
+        filter: opacity(0) grayscale(0);
+      }
+    }
+  }
 
   @-webkit-keyframes kenburns {
     0% {
@@ -269,8 +326,8 @@ body {
     text-decoration: none;
   }
 
-  .theme {
-    background: transparent;
+  .blur {
+    background: #00000090;
     backdrop-filter: blur(10px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -396,16 +453,64 @@ body {
   .heading {
     font-size: 24px;
   }
-
-  .theme {
-    background: #00000099 !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-  }
 }
 
 @media screen and (min-width: 992px) {
+
+  .profile-view {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      content: 'Hello!';
+      position: fixed;
+      bottom: -9rem;
+      left: 0;
+      font-size: 25rem;
+      font-weight: bolder;
+      z-index: -999;
+      opacity: 3%;
+      letter-spacing: 10px;
+      // color: var(--mainLinkColor);
+    }
+  }
+
+  .resume-view {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      content: 'Resume.';
+      position: fixed;
+      bottom: -9rem;
+      left: 0;
+      font-size: 25rem;
+      font-weight: bolder;
+      z-index: -999;
+      opacity: 3%;
+      letter-spacing: 10px;
+    }
+  }
+
+  .project-view {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      content: 'Accolades.';
+      position: fixed;
+      top: -9rem;
+      left: 0;
+      font-size: 25rem;
+      font-weight: bolder;
+      z-index: -999;
+      opacity: 3%;
+      letter-spacing: 10px;
+    }
+  }
 
   //lg
   .project_ {
@@ -413,9 +518,14 @@ body {
     &::before {
       content: "";
       position: static;
+      background-color: transparent !important;
+      backdrop-filter: blur(0) sepia(0) !important;
+      -webkit-backdrop-filter: blur(0) sepia(0) !important;
+      border: none !important;
     }
 
     .project_img {
+      box-shadow: 0 10px 30px -10px #000000a0;
       filter: sepia(70%) brightness(30%) blur(3px);
       transition: all .3s;
 
@@ -425,7 +535,7 @@ body {
     }
 
     .project_box {
-      box-shadow: 0 10px 30px -15px #ffffff40;
+      box-shadow: 0 10px 30px -10px #000000a0;
       padding: 25px;
       border-radius: 5px;
       background-color: #1ebed630;

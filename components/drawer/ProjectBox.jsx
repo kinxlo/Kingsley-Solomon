@@ -115,6 +115,7 @@ const ProjectBox = () => {
     return (
       <>
         <Flex
+        className='project-view'
           flexDir={`column-reverse`}
           justifyContent={`end`}
           alignItems={`end`}

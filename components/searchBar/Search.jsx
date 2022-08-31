@@ -143,6 +143,7 @@ export default function DrawerExample() {
         h={6}
       /> */}
       <Text
+      fontWeight={`bold`}
         className='font-mono'
         gap={3}
         display={`flex`}
@@ -170,7 +171,6 @@ export default function DrawerExample() {
           flexDir={`column`}
           justifyContent={`end`}
           borderRadius={0}
-          className='theme'
           width={`45rem`}
           minW={{ base: `100vw`, md: `45rem` }}
           height={{ base: `100vh`, md: `45rem` }}
@@ -194,7 +194,7 @@ export default function DrawerExample() {
 
                 <Icon
                   onClick={handleDialogClick}
-                  className={`accent`}
+                  // className={`accent`}
                   boxSize={`1.5rem`}
                   as={AiOutlineLeft}
                 />
@@ -203,28 +203,28 @@ export default function DrawerExample() {
                   <Tab
                     value={`search`}
                     onClick={handleClick}
-                    className={`accent`}
+                    // className={`accent`}
                   >
                     All
                   </Tab>
                   <Tab
                     value={`image`}
                     onClick={handleClick}
-                    className={`accent`}
+                    // className={`accent`}
                   >
                     Images
                   </Tab>
                   <Tab
                     value={`news`}
                     onClick={handleClick}
-                    className={`accent`}
+                    // className={`accent`}
                   >
                     News
                   </Tab>
                   <Tab
                     value={`video`}
                     onClick={handleClick}
-                    className={`accent`}
+                    // className={`accent`}
                   >
                     Videos
                   </Tab>
