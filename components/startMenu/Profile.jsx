@@ -80,13 +80,7 @@ const Profile = () => {
                   xl: `18px`,
                 }}
               >
-                Integrating{' '}
-                <Text as={`span`}>Science,</Text>
-                {` `}
-                <Text as={`span`}>Art,</Text>
-                {` `}
-                and {` `}
-                <Text as={`span`}>APIs.</Text>
+                Integrating Science, Art, and APIs.
               </Text>
             </Box>
             <Box
@@ -116,13 +110,16 @@ const Profile = () => {
             flexDir={`column`}
             alignItems={{ base: `end`, lg: `end` }}
             fontStyle={`italic`}
-            fontSize={{
-              base: `10px`,
-              sm: `12px`,
-              xl: `15px`,
-            }}
           >
-            <Text  display={`flex`} alignItems={`center`}>
+            <Text
+              fontSize={{
+                base: `10px`,
+                sm: `12px`,
+                xl: `15px`,
+              }}
+              display={`flex`}
+              alignItems={`center`}
+            >
               Good knowledge in API Implementation.
               <Icon
                 display={{ base: `none`, lg: `block` }}
@@ -130,7 +127,15 @@ const Profile = () => {
                 as={BsDot}
               ></Icon>
             </Text>
-            <Text display={`flex`} alignItems={`center`}>
+            <Text
+              fontSize={{
+                base: `10px`,
+                sm: `12px`,
+                xl: `15px`,
+              }}
+              display={`flex`}
+              alignItems={`center`}
+            >
               Skilled at design patterns & responsive
               design.{' '}
               <Icon
@@ -139,7 +144,15 @@ const Profile = () => {
                 as={BsDot}
               ></Icon>
             </Text>
-            <Text display={`flex`} alignItems={`center`}>
+            <Text
+              fontSize={{
+                base: `10px`,
+                sm: `12px`,
+                xl: `15px`,
+              }}
+              display={`flex`}
+              alignItems={`center`}
+            >
               Over 3 Years experience with frontend
               development.{' '}
               <Icon

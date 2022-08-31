@@ -79,6 +79,7 @@ const CTA = ({
 
   return (
     <Box
+      boxShadow={`0 10px 30px -10px #00000050`}
       className='hoverState'
       textAlign={`center`}
       display={`flex`}
