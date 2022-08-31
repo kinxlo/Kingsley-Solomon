@@ -23,8 +23,7 @@ const ProjectBox = () => {
           className='project_'
           margin={`5rem auto`}
           width={{ base: `100%`, lg: `80%` }}
-          height={{ base: `50rem` }}
-          p={10}
+          p={{ base: 10, '2xl': `5rem` }}
           key={project.id}
           backgroundImage={{
             base: project.image,

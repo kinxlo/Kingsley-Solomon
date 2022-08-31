@@ -1,10 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Box, Link, Text } from '@chakra-ui/react';
-import React, { useContext } from 'react';
-import { AppContext } from '../../context/AppContext';
+import React from 'react';
 
 const DigitalResume = () => {
-  const { getResume } = useContext(AppContext);
   return (
     <Box
       // className='resume_wildCard'
@@ -131,7 +129,7 @@ const DigitalResume = () => {
           </strong>
           <p>2021-10 - Current</p>
           <Text as={`ul`} pl={10}>
-            <li className='font-mono'>
+            <li>
               Actively listened to customers' requests,
               confirming full understanding before
               addressing concerns.

@@ -82,7 +82,7 @@ const MobileLayout = () => {
         </Button>
       )}
       <Container
-        p={0}
+        p={switchView == `tools` ? `1rem!` : 0}
         pl={showControls ? `3rem!` : `initial`}
         maxW={`1440px`}
         className={`hide-scrollbar`}
