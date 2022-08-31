@@ -52,6 +52,7 @@ export default function DrawerExample() {
         onClose={onClose}
       >
         <DrawerContent
+          className='blur'
           maxW={{ base: `100vw`, md: `30rem` }}
           padding={`0 1rem 1rem`}
           display={`flex`}
