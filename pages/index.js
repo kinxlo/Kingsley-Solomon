@@ -52,7 +52,7 @@ const MobileLayout = () => {
         fontSize={{ base: `12px`, md: `14px` }}
         right={5}
         top={switchView == `tools` ? `25%` : 5}
-        className={` line-v2`}
+        className={`line-v2`}
       >
         <Link
           fontSize={{ base: `8px`, md: `14px` }}
@@ -71,8 +71,8 @@ const MobileLayout = () => {
           zIndex={999}
           right={switchView == `profile` || switchView == `tools` ? `50%` : 5}
           bottom={5}
-          backgroundColor={`#ffffff50`}
-          className={`accent blur`}
+          color={`accent!`}
+          className={`blur`}
           borderRadius={`100%`}
           boxSize={`4rem`}
           transform={switchView == `profile` || switchView == `tools` ? `translate(50%, 0)` : `translate(0)`}

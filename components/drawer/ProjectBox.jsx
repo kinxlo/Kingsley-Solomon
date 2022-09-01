@@ -5,14 +5,20 @@ import {
   Image,
   Link,
   Text,
+  useColorMode,
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 
 import { RiGithubLine, RiLink } from 'react-icons/ri';
 import { AppContext } from '../../context/AppContext';
+import {
+  darkSticker,
+  lightSticker,
+} from '../../theme/customTheme';
 
 const ProjectBox = () => {
   const { projects, language } = useContext(AppContext);
+  const { colorMode } = useColorMode();
 
   if (projects.length) {
     let projectList = projects.map((project) => {
@@ -56,7 +62,8 @@ const ProjectBox = () => {
           >
             <Text
               fontSize={`14px`}
-              className={`accent font-mono`}
+              color={`accent`}
+              className={`font-mono`}
             >
               {project.category}
             </Text>
@@ -68,27 +75,24 @@ const ProjectBox = () => {
               className='project_box box-shadow'
               width={{ base: `100%`, lg: `30rem` }}
             >
-              <Text
-                color={{ base: `#ffff`, xl: `grey` }}
-                textTransform={`lowercase`}
-              >
+              <Text textTransform={`lowercase`}>
                 {project.desc}
               </Text>
             </Box>
             <Flex mb={5} gap={4} justifyContent={`end`}>
               {project.language.map(function (code, index) {
                 return (
-                  <Text className='font-mono' key={index}>
+                  <Text
+                    color={`accent`}
+                    className='font-mono'
+                    key={index}
+                  >
                     {code}
                   </Text>
                 );
               })}
             </Flex>
-            <Flex
-              justifyContent={`end`}
-              color={`#fff`}
-              gap={3}
-            >
+            <Flex justifyContent={`end`} gap={3}>
               <Link
                 _hover={{
                   color: `rgb(208, 0, 255) !important`,
@@ -115,7 +119,17 @@ const ProjectBox = () => {
     return (
       <>
         <Flex
-        className='project-view'
+          _before={
+            colorMode == `light`
+              ? lightSticker
+              : darkSticker
+          }
+          _after={
+            colorMode == `light`
+              ? lightSticker
+              : darkSticker
+          }
+          className='project-view'
           flexDir={`column-reverse`}
           justifyContent={`end`}
           alignItems={`end`}

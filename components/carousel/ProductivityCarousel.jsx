@@ -19,12 +19,20 @@ import {
 const ProductivityCarousel = () => {
   return (
     <Carousel
-      className='skills-view'
+      // className='skills-view'
       renderIndicator={false}
       infiniteLoop
       showThumbs={false}
     >
-      <Box className='languages-view'>
+      <Box
+        _before={{
+          content: '"skills"',
+          position: `fixed`,
+          // top: 0,
+          // left: `-100px`,
+        }}
+        // className='skills-view'
+      >
         <ProductivityLayout
           title={`Languages`}
           document={programming_languages}

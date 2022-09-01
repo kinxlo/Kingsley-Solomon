@@ -19,11 +19,15 @@ const NotificationBar = ({ comment }) => {
       display={`flex`}
       alignItems={`top`}
       padding={`2rem`}
-      // background={{ base: `#00000090`, md: `none` }}
       mb={3}
       gap={3}
     >
-      <Avatar className='box-shadow' name={name} src={image} size={`lg`} />
+      <Avatar
+        className='box-shadow'
+        name={name}
+        src={image}
+        size={`lg`}
+      />
       <Box>
         <Flex alignItems={`center`}>
           <Text
@@ -32,9 +36,10 @@ const NotificationBar = ({ comment }) => {
           >
             {name}
           </Text>
-          <Icon color={`#fff`} as={BsDot} />
+          <Icon as={BsDot} />
           <Text
-            className='accent font-mono'
+            color={`accent`}
+            className='font-mono'
             fontSize={{ base: `10px`, md: `12px` }}
             fontWeight={200}
           >

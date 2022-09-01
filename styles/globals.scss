@@ -1,31 +1,3 @@
-// --mainTextColor-light: #000;
-// --mainLinkColor-light: #0da2b8;
-// --mainBgColor-light: #f9fafb;
-// --secondaryTextColor-light: #333333;
-// --mainActiveColor-light: rgb(208, 0, 255);
-
-// --mainTextColor-dark: #fff;
-// --secondaryTextColor-dark: #adb0b1;
-// --mainLinkColor-dark: #1ebed6;
-// --mainBorderColor-dark: #2b3031;
-// --mainBgColor-dark: #131415;
-// --mainActiveColor-dark: rgb(208, 0, 255);
-
-// --mainTextColor: var(--mainTextColor-dark);
-// --secondaryTextColor: var(--secondaryTextColor-dark);
-// --mainLinkColor: var(--mainLinkColor-dark);
-// --mainBorderColor: var(--mainBorderColor-dark);
-// --mainBgColor: var(--mainBgColor-dark);
-// --mainActiveColor: var(--mainActiveColor-dark);
-
-// --mainTextColor: var(--mainTextColor-light);
-// --secondaryTextColor: var(--secondaryTextColor-light);
-// --mainLinkColor: var(--mainLinkColor-light);
-// --mainBorderColor: var(--mainBorderColor-light);
-// --mainBgColor: var(--mainBgColor-light);
-
-
-
 :root {
   --font-sans:
     "Ubuntu",
@@ -43,7 +15,7 @@
 
   --mainLinkColor-light: #f09491;
   --mainBorderColor-light: #dadada;
-  --mainActiveColor-light: rgb(208, 0, 255);
+  --mainActiveColor-light: #d000ff;
 
   --mainLinkColor: var(--mainLinkColor-light);
   --mainBorderColor: var(--mainBorderColor-light);
@@ -72,7 +44,7 @@
   z-index: 999;
 
   &:hover {
-    color: rgb(208, 0, 255) !important;
+    color: var(--mainActiveColor) !important;
   }
 
   &:after {
@@ -87,10 +59,6 @@
 }
 
 body {
-
-  .theme{
-     background-color: red !important;
-  }
 
   .box-shadow {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
@@ -114,7 +82,6 @@ body {
       font-size: 10rem;
       z-index: -999;
       font-weight: bolder;
-      opacity: 3%;
       writing-mode: vertical-rl;
       -webkit-writing-mode: vertical-rl;
       letter-spacing: 10px;
@@ -130,7 +97,7 @@ body {
       font-size: 10rem;
       font-weight: bolder;
       z-index: -999;
-      opacity: 3%;
+
       writing-mode: vertical-rl;
       -webkit-writing-mode: vertical-rl;
       letter-spacing: 10px;
@@ -146,7 +113,7 @@ body {
       font-size: 10rem;
       font-weight: bolder;
       z-index: -999;
-      opacity: 3%;
+
       writing-mode: vertical-rl;
       -webkit-writing-mode: vertical-rl;
       letter-spacing: 10px;
@@ -161,10 +128,6 @@ body {
     font-family: var(--font-sans) !important;
   }
 
-  .accent {
-    cursor: pointer;
-    color: var(--mainLinkColor) !important;
-  }
 
   .heading {
     font-size: 18px;
@@ -177,7 +140,7 @@ body {
     opacity: 10%;
   }
 
-  .line-h {
+  .line-v1 {
     &:after {
       content: "";
       display: block;
@@ -190,23 +153,9 @@ body {
     }
   }
 
-
-
   .rotate-90 {
     writing-mode: vertical-rl;
     -webkit-writing-mode: vertical-rl;
-  }
-
-  .nav-btn {
-    &:hover {
-      background-color: transparent !important;
-      color: var(--mainActiveColor) !important;
-    }
-  }
-
-  .active {
-    background-color: transparent !important;
-    color: var(--mainActiveColor) !important;
   }
 
   .project_ {
@@ -339,10 +288,6 @@ body {
     }
   }
 
-  a {
-    text-decoration: none;
-  }
-
   .hide-scrollbar {
     &::-webkit-scrollbar {
       display: none !important;
@@ -366,7 +311,7 @@ body {
       content: '';
       width: 100%;
       height: 100%;
-      background-color: var(--mainBgColor);
+      background-color: rgba(0, 0, 0, 0.99);
       opacity: 70%;
       z-index: 1;
     }
@@ -479,9 +424,7 @@ body {
       font-size: 25rem;
       font-weight: bolder;
       z-index: -999;
-      opacity: 3%;
       letter-spacing: 10px;
-      // color: var(--mainLinkColor);
     }
   }
 
@@ -498,7 +441,6 @@ body {
       font-size: 25rem;
       font-weight: bolder;
       z-index: -999;
-      opacity: 3%;
       letter-spacing: 10px;
     }
   }
@@ -516,7 +458,6 @@ body {
       font-size: 25rem;
       font-weight: bolder;
       z-index: -999;
-      opacity: 3%;
       letter-spacing: 10px;
     }
   }

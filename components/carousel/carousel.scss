@@ -14,21 +14,21 @@
 
 .carousel {
     height: 80vh !important;
+    
 }
 
 .skills-view {
     &::before {
         content: 'Skills';
         bottom: 0;
-        right: -3rem;
+        // right: -3rem;
         position: fixed;
-        font-size: 10rem;
-        font-weight: bolder;
-        z-index: -999;
-        opacity: 3%;
-        writing-mode: vertical-rl;
-        -webkit-writing-mode: vertical-rl;
-        letter-spacing: 10px;
+        // font-size: 10rem;
+        // font-weight: bolder;
+        // z-index: -999;
+        // writing-mode: vertical-rl;
+        // -webkit-writing-mode: vertical-rl;
+        // letter-spacing: 10px;
     }
 }
 
@@ -56,7 +56,6 @@
             position: fixed;
             font-size: 25rem;
             z-index: -999;
-            opacity: 3%;
             letter-spacing: 10px;
             font-weight: bolder;
         }
