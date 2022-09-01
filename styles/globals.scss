@@ -159,27 +159,28 @@ body {
   }
 
   .project_ {
-    position: relative;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      transition: all .2s;
-      background-color: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px) sepia(100%);
-      -webkit-backdrop-filter: blur(5px) sepia(100%);
-      border-bottom: 1px solid var(--mainLinkColor);
-    }
+     background-: multiply !important;
 
-    &:hover:before {
-      backdrop-filter: blur(0) grayscale(0);
-      -webkit-backdrop-filter: blur(0) sepia(0);
-      border-bottom: 1px solid var(--mainActiveColor);
-    }
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0px;
+    //   right: 0px;
+    //   bottom: 0px;
+    //   left: 0px;
+    //   transition: all .2s;
+    //   background-color: rgba(0, 0, 0, 0.8);
+    //   backdrop-filter: blur(10px) sepia(100%);
+    //   -webkit-backdrop-filter: blur(5px) sepia(100%);
+    //   border-bottom: 1px solid var(--mainLinkColor);
+    // }
+
+    // &:hover:before {
+    //   backdrop-filter: blur(0) grayscale(0);
+    //   -webkit-backdrop-filter: blur(0) sepia(0);
+    //   border-bottom: 1px solid var(--mainActiveColor);
+    // }
   }
 
   .profile_layout {

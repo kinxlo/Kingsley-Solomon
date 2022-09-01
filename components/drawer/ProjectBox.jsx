@@ -25,27 +25,35 @@ const ProjectBox = () => {
     let projectList = projects.map((project) => {
       return (
         <Flex
+          my={5}
+          className='section project_'
+          key={project.id}
           position={`relative`}
           alignItems={`center`}
-          className='project_ section'
-          // margin={`5rem auto`}
-          // width={{ base: `100%`, lg: `80%` }}
-          // p={{ base: 10, '2xl': `5rem` }}
-          key={project.id}
           backgroundImage={{
             base: project.image,
             lg: `none`,
           }}
-          backgroundSize={`cover`}
-          backgroundPosition={`right`}
-          backgroundRepeat={`no-repeat`}
+          bgSize={`cover`}
+          bgPosition={`right`}
+          bgRepeat={`no-repeat`}
+          bgColor={{ base: `accent`, lg: `initial` }}
+          bgBlendMode={`multiply`}
+          filter={`grayscale(50%)`}
+          _hover={{
+            bgBlendMode: `normal`,
+            filter: `grayscale(0)`,
+          }}
         >
           <Box
-            width={{ lg: `32rem`, xl: `50rem` }}
-            height={{ lg: `20rem`, xl: `30rem` }}
+            width={{ lg: `32rem`, '2xl': `50rem` }}
+            height={{ lg: `20rem`, '2xl': `30rem` }}
             className={`project_img_box box-shadow`}
             display={{ base: `none`, lg: `block` }}
-            transform={`translateX(-10rem)`}
+            transform={{
+              base: `translateX(0)`,
+              lg: `translateX(-10rem)`,
+            }}
             bg={`accent`}
           >
             <Image
@@ -63,13 +71,20 @@ const ProjectBox = () => {
             />
           </Box>
           <Flex
-            position={{ base: `relative`, lg: `absolute` }}
+            position={{
+              base: `relative`,
+              lg: `absolute`,
+            }}
             zIndex={2}
             right={0}
             textTransform={`capitalize`}
             flexDir={`column`}
             textAlign={`right`}
-            transform={`translateX(10rem)`}
+            p={10}
+            transform={{
+              base: `translateX(0)`,
+              lg: `translateX(10rem)`,
+            }}
           >
             <Text
               fontSize={`14px`}
@@ -141,8 +156,15 @@ const ProjectBox = () => {
       );
     });
     return (
-      <Flex justifyContent={`space-between`}>
-        <Text
+      <Flex
+        // flexDir={{base:`column`, '2xl':`row`}}
+        justifyContent={{
+          base: `initial`,
+          lg: `center`,
+          '2xl': `space-between`,
+        }}
+      >
+        <Box
           _before={
             colorMode == `light`
               ? lightSticker
@@ -154,22 +176,28 @@ const ProjectBox = () => {
               : darkSticker
           }
           className='project-view'
-          pos={{ base: `fixed`, lg: `sticky` }}
-          textTransform={`capitalize`}
-          fontWeight={700}
-          textAlign={`right`}
-          fontSize={{
-            base: `32`,
-            sm: `52px`,
-            md: `64px`,
-          }}
-          my={`5rem`}
           width={`fit-content`}
-          // mx={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
         >
-          {language} <br />
-          projects worth <br /> sharing.
-        </Text>
+          <Text
+            pos={{ base: `fixed`, '2xl': `sticky` }}
+            top={{ base: 0, lg: `initial`, '2xl': `60%` }}
+            bottom={{ base: `initial`, lg: 0 }}
+            right={0}
+            mr={`2rem`}
+            zIndex={{ base: 1 }}
+            textTransform={`capitalize`}
+            fontWeight={700}
+            textAlign={`right`}
+            fontSize={{
+              base: `32`,
+              sm: `52px`,
+              md: `64px`,
+            }}
+          >
+            {language} <br />
+            projects worth <br /> sharing.
+          </Text>
+        </Box>
         <FullScrollView>{projectList}</FullScrollView>
       </Flex>
     );
