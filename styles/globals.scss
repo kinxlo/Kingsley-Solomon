@@ -474,22 +474,24 @@ body {
       border: none !important;
     }
 
-    .project_img {
-      filter: sepia(70%) brightness(30%) blur(3px);
-      transition: all .3s;
+    // .project_img_box {
+    //   transition: all 5s;
 
-      &:hover {
-        filter: sepia(0) brightness(70%) blur(0);
-      }
-    }
+    //   .project_img {
+    //     mix-blend-mode: multiply;
+    //     filter: grayscale(50%);
 
-    .project_box {
-      padding: 25px;
-      border-radius: 5px;
-      background-color: #1ebed630;
-      backdrop-filter: blur(10px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-    }
+
+    //     &:hover {
+    //       mix-blend-mode: normal;
+    //       filter: grayscale(0);
+    //     }
+    //   }
+
+    //   &:hover {
+    //     // filter: sepia(0) brightness(70%) blur(0);
+    //   }
+    // }
   }
 }
 

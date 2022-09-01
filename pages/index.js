@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Container,
   Flex,
@@ -15,11 +16,44 @@ import StartControls from '../components/startMenu/StartControls';
 import { AppContext } from '../context/AppContext';
 
 import { TbMenu } from 'react-icons/tb';
-import ProductivityCarousel from '../components/carousel/ProductivityCarousel';
+import FullScrollView from '../components/carousel/FullScrollView';
+import ProductivityLayout from '../components/startMenu/ProductivityLayout';
+
+import {
+  programming_languages,
+  libraries_framework,
+  tools_platform,
+} from '../public/tools';
 
 const MobileLayout = () => {
   const { switchView, showControls, toggleControls } =
     useContext(AppContext);
+
+
+  const skillsView =
+    <FullScrollView>
+      <Box className='section'>
+        <ProductivityLayout
+          className={`section`}
+          title={`Languages`}
+          document={programming_languages}
+        />
+      </Box>
+      <Box className='section'>
+        <ProductivityLayout
+          className={`section`}
+          title={`Libraries & Frameworks`}
+          document={libraries_framework}
+        />
+      </Box>
+      <Box className='section'>
+        <ProductivityLayout
+          className={`section`}
+          title={`Tools & Platforms`}
+          document={tools_platform}
+        />
+      </Box>
+    </FullScrollView>;
 
   const display = () => {
     switch (switchView) {
@@ -32,7 +66,7 @@ const MobileLayout = () => {
       case `search`:
         return <Search />;
       case `tools`:
-        return <ProductivityCarousel />;
+        return skillsView
       default:
         return <Profile />;
     }
@@ -82,7 +116,7 @@ const MobileLayout = () => {
       )}
       <Container
         p={switchView == `tools` ? `1rem!` : 0}
-        pl={showControls ? `3rem!` : `initial`}
+        pl={{ base: showControls ? `3rem` : `initial`, lg: showControls ? 0 : `initial` }}
         maxW={`1440px`}
         className={`hide-scrollbar`}
       >

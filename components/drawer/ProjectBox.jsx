@@ -15,6 +15,7 @@ import {
   darkSticker,
   lightSticker,
 } from '../../theme/customTheme';
+import FullScrollView from '../carousel/FullScrollView';
 
 const ProjectBox = () => {
   const { projects, language } = useContext(AppContext);
@@ -26,10 +27,10 @@ const ProjectBox = () => {
         <Flex
           position={`relative`}
           alignItems={`center`}
-          className='project_'
-          margin={`5rem auto`}
-          width={{ base: `100%`, lg: `80%` }}
-          p={{ base: 10, '2xl': `5rem` }}
+          className='project_ section'
+          // margin={`5rem auto`}
+          // width={{ base: `100%`, lg: `80%` }}
+          // p={{ base: 10, '2xl': `5rem` }}
           key={project.id}
           backgroundImage={{
             base: project.image,
@@ -42,12 +43,21 @@ const ProjectBox = () => {
           <Box
             width={{ lg: `32rem`, xl: `50rem` }}
             height={{ lg: `20rem`, xl: `30rem` }}
-            className={`project_img box-shadow`}
+            className={`project_img_box box-shadow`}
             display={{ base: `none`, lg: `block` }}
+            transform={`translateX(-10rem)`}
+            bg={`accent`}
           >
             <Image
+              className='project_img'
               boxSize={`100%`}
-              objectFit={`cover`}
+              mixBlendMode={`multiply`}
+              filter={`grayscale(50%)`}
+              _hover={{
+                mixBlendMode: `normal`,
+                filter: `grayscale(0)`,
+              }}
+              objectFit={``}
               src={project.image}
               alt=''
             />
@@ -59,6 +69,7 @@ const ProjectBox = () => {
             textTransform={`capitalize`}
             flexDir={`column`}
             textAlign={`right`}
+            transform={`translateX(10rem)`}
           >
             <Text
               fontSize={`14px`}
@@ -72,14 +83,27 @@ const ProjectBox = () => {
             </Text>
             <Box
               my={5}
-              className='project_box box-shadow'
+              p={5}
+              borderRadius={10}
+              bg={
+                colorMode == `light` ? `lightBg` : `darkBg`
+              }
+              className='box-shadow'
               width={{ base: `100%`, lg: `30rem` }}
             >
-              <Text textTransform={`lowercase`}>
+              <Text
+                color={
+                  colorMode == `light`
+                    ? `darkBg`
+                    : `lightBg`
+                }
+                textTransform={`lowercase`}
+                fontWeight={`medium`}
+              >
                 {project.desc}
               </Text>
             </Box>
-            <Flex mb={5} gap={4} justifyContent={`end`}>
+            <Flex mb={5} gap={4} justifyContent={`center`}>
               {project.language.map(function (code, index) {
                 return (
                   <Text
@@ -92,7 +116,7 @@ const ProjectBox = () => {
                 );
               })}
             </Flex>
-            <Flex justifyContent={`end`} gap={3}>
+            <Flex justifyContent={`center`} gap={3}>
               <Link
                 _hover={{
                   color: `rgb(208, 0, 255) !important`,
@@ -117,8 +141,8 @@ const ProjectBox = () => {
       );
     });
     return (
-      <>
-        <Flex
+      <Flex justifyContent={`space-between`}>
+        <Text
           _before={
             colorMode == `light`
               ? lightSticker
@@ -130,28 +154,24 @@ const ProjectBox = () => {
               : darkSticker
           }
           className='project-view'
-          flexDir={`column-reverse`}
-          justifyContent={`end`}
-          alignItems={`end`}
+          pos={{ base: `fixed`, lg: `sticky` }}
+          textTransform={`capitalize`}
+          fontWeight={700}
+          textAlign={`right`}
+          fontSize={{
+            base: `32`,
+            sm: `52px`,
+            md: `64px`,
+          }}
+          my={`5rem`}
+          width={`fit-content`}
+          // mx={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
         >
-          <Text
-            textTransform={`capitalize`}
-            fontWeight={700}
-            textAlign={`right`}
-            fontSize={{
-              base: `32`,
-              sm: `52px`,
-              md: `64px`,
-            }}
-            my={`5rem`}
-            mx={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
-          >
-            {language} <br />
-            projects worth <br /> sharing.
-          </Text>
-        </Flex>
-        {projectList}
-      </>
+          {language} <br />
+          projects worth <br /> sharing.
+        </Text>
+        <FullScrollView>{projectList}</FullScrollView>
+      </Flex>
     );
   } else {
     return <Text>No project at the moment</Text>;
