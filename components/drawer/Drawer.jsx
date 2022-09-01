@@ -8,10 +8,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 
-import { FcAbout } from 'react-icons/fc';
-import CTALayout from './CTALayout';
 import Notification from './Notification';
-import { functions } from '../../public/functions.js';
 import MapView from '../MapView';
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
@@ -32,12 +29,6 @@ export default function DrawerExample() {
 
   return (
     <>
-      {/* <Icon
-        as={FcAbout}
-        onClick={handleClick}
-        w={6}
-        h={6}
-      /> */}
       <Text
         className='font-mono'
         onClick={handleClick}
@@ -52,6 +43,7 @@ export default function DrawerExample() {
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
+        // closeOnOverlayClick={false}
       >
         <DrawerContent
           // className='blur'

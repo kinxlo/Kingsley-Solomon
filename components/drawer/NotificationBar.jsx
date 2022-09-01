@@ -19,7 +19,7 @@ const NotificationBar = ({ comment }) => {
       display={`flex`}
       alignItems={`top`}
       padding={`2rem`}
-      background={{ base: `#00000090`, md: `none` }}
+      // background={{ base: `#00000090`, md: `none` }}
       mb={3}
       gap={3}
     >
