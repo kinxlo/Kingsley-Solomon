@@ -18,9 +18,9 @@
 
 .skills-view {
     &::before {
-        content: 'Skills.';
-        top: 0;
-        left: -4rem;
+        content: 'Skills';
+        bottom: 0;
+        right: -3rem;
         position: fixed;
         font-size: 10rem;
         font-weight: bolder;

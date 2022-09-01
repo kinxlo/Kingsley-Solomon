@@ -1,21 +1,25 @@
 import Head from 'next/head'
 import '../styles/globals.scss'
 import '../axios/global.js'
-import { ChakraProvider } from '@chakra-ui/react'
+import { Chakra } from './Chakra'
 import AppContextProvider from '../context/AppContext';
-
-
+import { Box } from '@chakra-ui/react';
 
 export default function MyApp({ Component, pageProps }) {
 
+
   return (
-    <ChakraProvider >
+    <Chakra  cookies={pageProps.cookies}>
       <Head>
         <title>Kingsley Solomon</title>
       </Head>
       <AppContextProvider>
-        <Component {...pageProps} />
+        <Component  {...pageProps} />
       </AppContextProvider>
-    </ChakraProvider>
+    </Chakra>
+
   )
 }
+
+// re-export the reusable `getServerSideProps` function
+export { getServerSideProps } from "./Chakra";

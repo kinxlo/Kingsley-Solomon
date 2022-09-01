@@ -5,6 +5,7 @@ import {
   Icon,
   Text,
   Flex,
+  useColorMode,
 } from '@chakra-ui/react';
 
 import { FcAbout } from 'react-icons/fc';
@@ -17,6 +18,7 @@ import { AppContext } from '../../context/AppContext';
 import { AiOutlineLeft } from 'react-icons/ai';
 
 export default function DrawerExample() {
+  const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { toggleMapNotice } = useContext(AppContext);
 
@@ -52,7 +54,13 @@ export default function DrawerExample() {
         onClose={onClose}
       >
         <DrawerContent
-          className='blur'
+          // className='blur'
+          background={
+            colorMode == `light` ? `#1a202c` : `#ffffff`
+          }
+          color={
+            colorMode == `light` ? `#ffffff` : `#000000`
+          }
           maxW={{ base: `100vw`, md: `30rem` }}
           padding={`0 1rem 1rem`}
           display={`flex`}

@@ -36,7 +36,7 @@ const ProjectBox = () => {
           <Box
             width={{ lg: `32rem`, xl: `50rem` }}
             height={{ lg: `20rem`, xl: `30rem` }}
-            className={`project_img`}
+            className={`project_img box-shadow`}
             display={{ base: `none`, lg: `block` }}
           >
             <Image
@@ -65,7 +65,7 @@ const ProjectBox = () => {
             </Text>
             <Box
               my={5}
-              className='project_box'
+              className='project_box box-shadow'
               width={{ base: `100%`, lg: `30rem` }}
             >
               <Text

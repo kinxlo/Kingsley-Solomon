@@ -143,7 +143,7 @@ export default function DrawerExample() {
         h={6}
       /> */}
       <Text
-      fontWeight={`bold`}
+        fontWeight={`bold`}
         className='font-mono'
         gap={3}
         display={`flex`}
@@ -167,6 +167,7 @@ export default function DrawerExample() {
         autoFocus={false}
       >
         <DrawerContent
+          className='blur'
           display={`flex`}
           flexDir={`column`}
           justifyContent={`end`}

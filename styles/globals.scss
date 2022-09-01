@@ -86,8 +86,24 @@
   }
 }
 
-
 body {
+
+  .theme{
+     background-color: red !important;
+  }
+
+  .box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+
+  .blur {
+    background: #00000080;
+    backdrop-filter: blur(10px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+  }
 
   .profile-view {
     &::before {
@@ -125,7 +141,7 @@ body {
     &::before {
       content: 'Accolades.';
       top: 0;
-      left: -4rem;
+      left: 0;
       position: fixed;
       font-size: 10rem;
       font-weight: bolder;
@@ -258,6 +274,7 @@ body {
 
       &:hover:before {
         transform: translate(0px, 0px);
+        border: none;
       }
 
       &:hover:after {
@@ -325,15 +342,6 @@ body {
   a {
     text-decoration: none;
   }
-
-  .blur {
-    background: #00000080;
-    backdrop-filter: blur(10px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #fff;
-  }
-
 
   .hide-scrollbar {
     &::-webkit-scrollbar {
@@ -526,7 +534,6 @@ body {
     }
 
     .project_img {
-      box-shadow: 0 10px 30px -10px #000000a0;
       filter: sepia(70%) brightness(30%) blur(3px);
       transition: all .3s;
 
@@ -536,7 +543,6 @@ body {
     }
 
     .project_box {
-      box-shadow: 0 10px 30px -10px #000000a0;
       padding: 25px;
       border-radius: 5px;
       background-color: #1ebed630;

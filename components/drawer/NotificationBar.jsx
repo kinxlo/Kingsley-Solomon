@@ -23,7 +23,7 @@ const NotificationBar = ({ comment }) => {
       mb={3}
       gap={3}
     >
-      <Avatar name={name} src={image} size={`lg`} />
+      <Avatar className='box-shadow' name={name} src={image} size={`lg`} />
       <Box>
         <Flex alignItems={`center`}>
           <Text
@@ -43,7 +43,7 @@ const NotificationBar = ({ comment }) => {
         </Flex>
         <Text
           mt={1}
-          fontSize={{ base: `10px`, md: `12px` }}
+          fontSize={{ base: `12px`, xl: `14px` }}
         >
           {review}
         </Text>

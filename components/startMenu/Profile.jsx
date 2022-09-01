@@ -8,6 +8,7 @@ import {
   Image,
   Link,
   Text,
+  useColorMode,
 } from '@chakra-ui/react';
 import { BsDot } from 'react-icons/bs';
 import BatteryInfo from '../BatteryInfo';
@@ -16,6 +17,7 @@ import DrawerExample from '../drawer/Drawer';
 import Search from '../searchBar/Search';
 
 const Profile = () => {
+  const { colorMode } = useColorMode();
   return (
     <Container className='profile-view' maxW={`100%`}>
       {/* profile */}
@@ -25,6 +27,7 @@ const Profile = () => {
       >
         <Flex mb={`5rem`} alignItems={`center`}>
           <Avatar
+            className='box-shadow'
             name='kingsley solomon'
             src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile1_wqaris.jpg`}
             size={`md`}
@@ -60,17 +63,20 @@ const Profile = () => {
           >
             <Box>
               <Text
-                opacity={`80%`}
-                className='accent'
+                color={
+                  colorMode == `light`
+                    ? `#1a202c`
+                    : `#83868d`
+                }
                 as={`h2`}
                 fontSize={{ base: `4rem`, md: `8rem` }}
-                lineHeight={1.2}
-                fontWeight={700}
+                lineHeight={1.1}
+                fontWeight={`bold`}
               >
                 Frontend <br /> Developer.
               </Text>
               <Text
-                className='font-mono'
+                className='font-mono accent'
                 lineHeight={`1rem`}
                 fontStyle={`italic`}
                 fontSize={{
@@ -85,7 +91,7 @@ const Profile = () => {
             </Box>
             <Box
               display={{ base: `none`, xl: `block` }}
-              className='profile-pic'
+              className='profile-pic box-shadow'
               height={{
                 base: `10rem`,
                 md: `15rem`,
