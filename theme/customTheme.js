@@ -10,7 +10,7 @@ export const customTheme = extendTheme({
     },
 
     colors: {
-        accent: `#f09491`,
+        accent: `#fd8e8e`,
         active: `#d000ff`,
         lightBg: `#111111`,
         darkBg: `#ffffff`,
