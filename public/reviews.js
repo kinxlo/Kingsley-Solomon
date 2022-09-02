@@ -35,4 +35,11 @@ export const reviews = [
         job: `Backend developer`,
         review: `Kingsley has not been a teacher only to me  but a mentor to me in my tech journey. He's  patient and has a special ability to transfer knowledge. He encourages and preaches the "I CAN" attitude to us always. He's accessible and always willing to help. My tech journey will be incomplete without mentioning Kingsley.`
     },
+    {
+        id: 6,
+        name: `Charles`,
+        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662125043/portfolio/Screenshot_2022-09-02_142242_ftjlc9.png`,
+        job: `Fullstack developer`,
+        review: `Kingsley is a natural. He breaks down code from complex layers into something imaginable and that's why my coding skills improved under his tutorship. There's never a dull moment when coding with him.`
+    },
 ]

@@ -26,8 +26,6 @@ import {
   tools_platform,
 } from '../public/tools';
 import {
-  lightSticker,
-  darkSticker,
   lightStickerFunc,
   darkStickerFunc
 } from '../theme/customTheme';
@@ -60,8 +58,8 @@ const MobileLayout = () => {
         <ProductivityLayout
           title={`Tools & Platforms`}
           document={tools_platform}
-        />
-        
+        /> 
+
       </FullScrollView>;
     </Box>
 
