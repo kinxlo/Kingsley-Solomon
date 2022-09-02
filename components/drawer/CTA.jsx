@@ -3,7 +3,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, useColorMode } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext.js';
 
 const CTA = ({
@@ -14,6 +14,7 @@ const CTA = ({
   bgColor,
   children,
 }) => {
+  const { colorMode } = useColorMode();
   const { showProjects, showMapOrNotice } =
     useContext(AppContext);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -79,7 +80,8 @@ const CTA = ({
 
   return (
     <Box
-      className='hoverState'
+      boxShadow={`rgba(0, 0, 0, 0.2) 0px 30px 20px -7px`}
+      border={`1px solid #ffffff10`}
       textAlign={`center`}
       display={`flex`}
       flexDirection={`column`}
@@ -87,8 +89,6 @@ const CTA = ({
       alignItems={`center`}
       width={width}
       height={height}
-      background={bgColor}
-      // padding={`2rem`}
       onClick={handleFunctionClick}
     >
       {/* <section> */}

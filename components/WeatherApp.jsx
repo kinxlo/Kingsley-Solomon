@@ -24,6 +24,7 @@ const WeatherApp = () => {
           justifyContent={`space-around`}
         >
           <Text
+            color={`#fff`}
             fontSize={{ base: `14px`, md: `24px` }}
             fontWeight={`bold`}
             textAlign={`center`}
@@ -41,6 +42,7 @@ const WeatherApp = () => {
               alt={`img`}
             />
             <Text
+              color={`#fff`}
               className='calendarAppText'
               fontSize={`1xl`}
             >
@@ -49,6 +51,7 @@ const WeatherApp = () => {
           </Flex>
           <Flex justifyContent={`center`} gap={10}>
             <Text
+              color={`#fff`}
               fontWeight={`bold`}
               className='calendarAppText font-mono'
               fontSize={`4xl`}
@@ -56,6 +59,7 @@ const WeatherApp = () => {
               {weatherData.current.temp_c}&deg;C
             </Text>
             <Text
+              color={`#fff`}
               fontWeight={`bold`}
               className='calendarAppText font-mono'
               fontSize={`4xl`}

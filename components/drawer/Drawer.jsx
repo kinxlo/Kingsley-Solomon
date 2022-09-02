@@ -5,18 +5,17 @@ import {
   Icon,
   Text,
   Flex,
+  useColorMode,
 } from '@chakra-ui/react';
 
-import { FcAbout } from 'react-icons/fc';
-import CTALayout from './CTALayout';
 import Notification from './Notification';
-import { functions } from '../../public/functions.js';
 import MapView from '../MapView';
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { AiOutlineLeft } from 'react-icons/ai';
 
 export default function DrawerExample() {
+  const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { toggleMapNotice } = useContext(AppContext);
 
@@ -30,12 +29,6 @@ export default function DrawerExample() {
 
   return (
     <>
-      {/* <Icon
-        as={FcAbout}
-        onClick={handleClick}
-        w={6}
-        h={6}
-      /> */}
       <Text
         className='font-mono'
         onClick={handleClick}
@@ -50,9 +43,16 @@ export default function DrawerExample() {
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
+        // closeOnOverlayClick={false}
       >
         <DrawerContent
-          className='theme'
+          // className='blur'
+          background={
+            colorMode == `light` ? `#1a202c` : `#ffffff`
+          }
+          color={
+            colorMode == `light` ? `#ffffff` : `#000000`
+          }
           maxW={{ base: `100vw`, md: `30rem` }}
           padding={`0 1rem 1rem`}
           display={`flex`}
@@ -62,14 +62,12 @@ export default function DrawerExample() {
         >
           <Flex py={5} justifyContent={`space-between`}>
             <Icon
-              color={`#fff`}
               onClick={handleClick}
               boxSize={`1.5rem`}
               as={AiOutlineLeft}
             />
             <Text
               fontWeight={`bold`}
-              color={`#fff`}
               textAlign={`right`}
               as={`h3`}
             >

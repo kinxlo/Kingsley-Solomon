@@ -84,7 +84,6 @@ const CalendarApp = () => {
       {weatherData && (
         <Flex
           onClick={handleClick}
-          // marginX={`1rem`}
           alignItems={`center`}
           cursor={`pointer`}
         >
@@ -95,8 +94,10 @@ const CalendarApp = () => {
             alt='icon'
           />
           <Text
+            // className={`accent`}
             _hover={{ color: `var(--mainActiveColor)` }}
             fontSize={{ base: `sm`, md: `md` }}
+            fontWeight={`medium`}
             ml={1}
           >
             {weatherData.current.temp_c}&deg;C{' '}
@@ -115,7 +116,7 @@ const CalendarApp = () => {
         onClose={onClose}
       >
         <DrawerContent
-          className='theme'
+          className='blur'
           maxW={{ base: `100vw`, md: `27rem` }}
           height={`100vh`}
           display={`flex`}

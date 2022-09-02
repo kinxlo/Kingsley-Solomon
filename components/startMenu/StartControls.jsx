@@ -4,28 +4,30 @@ import {
   Center,
   Icon,
   Link,
+  useColorMode,
 } from '@chakra-ui/react';
-import React, {
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useContext, useState } from 'react';
 import {
   AiOutlineFileText,
   AiOutlineProject,
   AiOutlineUser,
 } from 'react-icons/ai';
-import { RiToolsLine } from 'react-icons/ri';
+import {
+  RiMoonClearFill,
+  RiSunFill,
+  RiToolsLine,
+} from 'react-icons/ri';
 import { TbMenu } from 'react-icons/tb';
 import { AppContext } from '../../context/AppContext';
 import contacts from '../../public/contact.js';
 
 const StartControls = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   const { switchContent, toggleControls, switchView } =
     useContext(AppContext);
   const [active] = useState({
     backgroundColor: `transparent !important`,
-    color: `rgb(208, 0, 255) !important`,
+    color: `active!`,
   });
 
   const handleClick = (e) => {
@@ -38,11 +40,12 @@ const StartControls = () => {
         key={social.id}
         target='_blank'
         href={social.link}
-      >
+        >
         <Icon
           as={social.icon}
-          className={`accent nav-btn`}
+          color={`accent`}
           fontSize={`1.3rem`}
+          _hover={{ color: `active` }}
         />
       </Link>
     );
@@ -50,8 +53,9 @@ const StartControls = () => {
 
   return (
     <Box
-      // background={`#595959`}
-      position={`sticky !important`}
+      width={`3rem`}
+      position={`fixed`}
+      zIndex={999}
       top={0}
       display={`flex`}
       height={`100vh`}
@@ -59,19 +63,13 @@ const StartControls = () => {
       justifyContent={`space-between`}
       padding={3}
     >
-      <Center
-        // className='line-h'
-        display={`flex`}
-        flexDir={`column`}
-        gap={7}
-      >
+      <Center display={`flex`} flexDir={`column`} gap={7}>
         <Button
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
           name='menu'
           onClick={toggleControls}
-          className={`accent nav-btn`}
           size={`xs`}
         >
           <Icon fontSize={`1.3rem`} as={TbMenu} />
@@ -82,7 +80,7 @@ const StartControls = () => {
           backgroundColor={`transparent`}
           name='profile'
           onClick={handleClick}
-          className={`accent nav-btn`}
+          color={`accent`}
           isActive={switchView == `profile` ? true : false}
           _hover={active}
           _active={active}
@@ -97,7 +95,7 @@ const StartControls = () => {
           backgroundColor={`transparent`}
           name='resume'
           onClick={handleClick}
-          className={`accent nav-btn`}
+          color={`accent`}
           isActive={switchView == `resume` ? true : false}
           _hover={active}
           _active={active}
@@ -115,7 +113,7 @@ const StartControls = () => {
           backgroundColor={`transparent`}
           name='projects'
           onClick={handleClick}
-          className={`accent nav-btn`}
+          color={`accent`}
           isActive={switchView == `projects` ? true : false}
           _hover={active}
           _active={active}
@@ -130,7 +128,7 @@ const StartControls = () => {
           backgroundColor={`transparent`}
           name='tools'
           onClick={handleClick}
-          className={`accent nav-btn`}
+          color={`accent`}
           isActive={switchView == `tools` ? true : false}
           _hover={active}
           _active={active}
@@ -140,8 +138,28 @@ const StartControls = () => {
           <Icon as={RiToolsLine} fontSize={`1.3rem`} />
         </Button>
       </Center>
+      <Center>
+        <Button
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
+          name='theme'
+          onClick={toggleColorMode}
+          _hover={active}
+          size={`xs`}
+        >
+          <Icon
+            as={
+              colorMode == `light`
+                ? RiMoonClearFill
+                : RiSunFill
+            }
+            fontSize={`1.3rem`}
+          />
+        </Button>
+      </Center>
       <Center
-        className='line-h'
+        className='line-v1'
         height={`50%`}
         flexDir={`column`}
         justifyContent={`space-between`}
