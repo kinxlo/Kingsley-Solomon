@@ -1,24 +1,23 @@
-
 .skills-view {
     &::before {
-        content: 'Skills';
-        bottom: 0;
-        right: -3rem;
+        content: 'Skills.';
         position: fixed;
-        font-size: 10rem;
+        top: 0;
+        left: 3rem;
+        font-size: 5rem;
         font-weight: bolder;
         z-index: -999;
         writing-mode: vertical-rl;
         -webkit-writing-mode: vertical-rl;
+        line-height: 5rem;
         letter-spacing: 10px;
     }
 }
 
 
 
-@media screen and (min-width: 768px) {
 
-}
+@media screen and (min-width: 768px) {}
 
 @media screen and (min-width: 992px) {
     .skills-view {
@@ -28,12 +27,13 @@
 
         &::after {
             content: 'Skills.';
-            bottom: 0;
-            left: 0;
             position: fixed;
-            font-size: 25rem;
+            top: 0;
+            left: 5rem;
+            font-size: 10rem;
             z-index: -999;
             letter-spacing: 10px;
+            line-height: 10rem;
             font-weight: bolder;
         }
     }

@@ -14,6 +14,8 @@ import {
   Grid,
   Image,
   Text,
+  useColorMode,
+  Button,
 } from '@chakra-ui/react';
 
 import React, { useContext, useState } from 'react';
@@ -30,6 +32,7 @@ import { AiOutlineLeft } from 'react-icons/ai';
 
 export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode } = useColorMode();
 
   const [searchValue, setSearchValue] = useState('');
   const [searchResult, setSearchResult] = useState([]);
@@ -136,13 +139,8 @@ export default function DrawerExample() {
 
   return (
     <>
-      {/* <Icon
-        onClick={handleDialogClick}
-        as={FcSearch}
-        w={6}
-        h={6}
-      /> */}
-      <Text
+      <Button
+        disabled
         fontWeight={`bold`}
         className='font-mono'
         gap={3}
@@ -158,7 +156,7 @@ export default function DrawerExample() {
         fontSize={{ base: `10px`, md: `14px` }}
       >
         Test my search Api <Icon as={GiCog} />
-      </Text>
+      </Button>
 
       <Drawer
         isOpen={isOpen}
@@ -167,7 +165,7 @@ export default function DrawerExample() {
         autoFocus={false}
       >
         <DrawerContent
-          className='blur'
+          bg={colorMode == `light` ? `lightBg` : `darkBg`}
           display={`flex`}
           flexDir={`column`}
           justifyContent={`end`}

@@ -17,7 +17,8 @@ const initialState = {
     showResume: false,
     showControls: true,
     isActive: { name: `profile`, active: true },
-    language: ''
+    language: '',
+    skillStickerName: 'Skills'
 }
 
 const weatherFetcher = async () => {
@@ -65,12 +66,14 @@ const AppContextProvider = ({ children }) => {
         dispatch({ type: 'SHOW_CONTROLS', payload: state.showControls })
     }
     const switchContent = (display) => {
-        console.log(display);
         dispatch({ type: 'SWITCH_VIEW', payload: display })
+    }
+    const setSkillStickerName = (name) => {
+        dispatch({ type: 'SET_SKILL_STICKER', payload: name })
     }
 
     return (
-        <AppContext.Provider value={{ ...state, showProjects, showMapOrNotice, getResume, switchContent, toggleControls }}>
+        <AppContext.Provider value={{ ...state, showProjects, showMapOrNotice, getResume, switchContent, toggleControls, setSkillStickerName }}>
             {children}
         </AppContext.Provider>
     )

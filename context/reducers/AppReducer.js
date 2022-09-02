@@ -56,6 +56,10 @@ export const AppReducer = (state, action) => {
             return {
                 ...state, switchView: action.payload
             }
+        case 'SET_SKILL_STICKER':
+            return {
+                ...state, skillStickerName: action.payload
+            }
 
     }
 }

@@ -32,3 +32,17 @@ export const darkSticker = {
 export const lightSticker = {
     opacity: `10%`,
 };
+
+export function darkStickerFunc(content) {
+    return {
+        content: `'${content}'`,
+        opacity: `5%`,
+    }
+};
+
+export function lightStickerFunc(content) {
+    return {
+        content: `'${content}'`,
+        opacity: `10%`,
+    }
+};

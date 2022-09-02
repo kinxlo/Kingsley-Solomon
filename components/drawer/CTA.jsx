@@ -6,14 +6,7 @@ import React, {
 import { Box, useColorMode } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext.js';
 
-const CTA = ({
-  width,
-  height,
-  name,
-  title,
-  bgColor,
-  children,
-}) => {
+const CTA = ({ width, height, name, title, children }) => {
   const { colorMode } = useColorMode();
   const { showProjects, showMapOrNotice } =
     useContext(AppContext);
@@ -81,7 +74,12 @@ const CTA = ({
   return (
     <Box
       boxShadow={`rgba(0, 0, 0, 0.2) 0px 30px 20px -7px`}
-      border={`1px solid #ffffff10`}
+      border={
+        colorMode == `light`
+          ? `1px solid #00000010`
+          : `1px solid #ffffff10`
+      }
+      bg={colorMode == `light` ? `darkBg` : `lightBg`}
       textAlign={`center`}
       display={`flex`}
       flexDirection={`column`}

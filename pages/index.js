@@ -5,6 +5,7 @@ import {
   Flex,
   Icon,
   Link,
+  useColorMode,
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import ProjectBox from '../components/drawer/ProjectBox';
@@ -24,36 +25,45 @@ import {
   libraries_framework,
   tools_platform,
 } from '../public/tools';
+import {
+  lightSticker,
+  darkSticker,
+  lightStickerFunc,
+  darkStickerFunc
+} from '../theme/customTheme';
 
 const MobileLayout = () => {
-  const { switchView, showControls, toggleControls } =
+  const { switchView, showControls, toggleControls, skillStickerName } =
     useContext(AppContext);
+  const { colorMode } = useColorMode();
 
 
   const skillsView =
-    <FullScrollView>
-      <Box className='section'>
+    <Box _before={
+      colorMode == `light` ? lightStickerFunc(skillStickerName) : darkStickerFunc(skillStickerName)
+    }
+      _after={
+        colorMode == `light` ? lightStickerFunc(skillStickerName) : darkStickerFunc(skillStickerName)
+      } className='section skills-view'>
+
+      <FullScrollView>
         <ProductivityLayout
-          className={`section`}
           title={`Languages`}
           document={programming_languages}
         />
-      </Box>
-      <Box className='section'>
+
         <ProductivityLayout
-          className={`section`}
           title={`Libraries & Frameworks`}
           document={libraries_framework}
         />
-      </Box>
-      <Box className='section'>
+
         <ProductivityLayout
-          className={`section`}
           title={`Tools & Platforms`}
           document={tools_platform}
         />
-      </Box>
-    </FullScrollView>;
+        
+      </FullScrollView>;
+    </Box>
 
   const display = () => {
     switch (switchView) {
