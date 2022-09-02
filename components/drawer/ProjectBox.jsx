@@ -5,58 +5,91 @@ import {
   Image,
   Link,
   Text,
+  useColorMode,
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 
 import { RiGithubLine, RiLink } from 'react-icons/ri';
 import { AppContext } from '../../context/AppContext';
+import {
+  darkSticker,
+  lightSticker,
+} from '../../theme/customTheme';
+import FullScrollView from '../carousel/FullScrollView';
 
 const ProjectBox = () => {
   const { projects, language } = useContext(AppContext);
+  const { colorMode } = useColorMode();
 
   if (projects.length) {
     let projectList = projects.map((project) => {
       return (
         <Flex
+          my={5}
+          className='section project_'
+          key={project.id}
           position={`relative`}
           alignItems={`center`}
-          className='project_'
-          margin={`5rem auto`}
-          width={{ base: `100%`, lg: `80%` }}
-          p={{ base: 10, '2xl': `5rem` }}
-          key={project.id}
           backgroundImage={{
             base: project.image,
             lg: `none`,
           }}
-          backgroundSize={`cover`}
-          backgroundPosition={`right`}
-          backgroundRepeat={`no-repeat`}
+          bgSize={`cover`}
+          bgPosition={`right`}
+          bgRepeat={`no-repeat`}
+          bgColor={{ base: `accent`, lg: `initial` }}
+          bgBlendMode={`multiply`}
+          filter={`grayscale(50%)`}
+          _hover={{
+            bgBlendMode: `normal`,
+            filter: `grayscale(0)`,
+          }}
         >
           <Box
-            width={{ lg: `32rem`, xl: `50rem` }}
-            height={{ lg: `20rem`, xl: `30rem` }}
-            className={`project_img box-shadow`}
+            width={{ lg: `32rem`, '2xl': `50rem` }}
+            height={{ lg: `20rem`, '2xl': `30rem` }}
+            className={`project_img_box box-shadow`}
             display={{ base: `none`, lg: `block` }}
+            transform={{
+              base: `translateX(0)`,
+              lg: `translateX(-10rem)`,
+            }}
+            bg={`accent`}
           >
             <Image
+              className='project_img'
               boxSize={`100%`}
-              objectFit={`cover`}
+              mixBlendMode={`multiply`}
+              filter={`grayscale(50%)`}
+              _hover={{
+                mixBlendMode: `normal`,
+                filter: `grayscale(0)`,
+              }}
+              objectFit={``}
               src={project.image}
               alt=''
             />
           </Box>
           <Flex
-            position={{ base: `relative`, lg: `absolute` }}
+            position={{
+              base: `relative`,
+              lg: `absolute`,
+            }}
             zIndex={2}
             right={0}
             textTransform={`capitalize`}
             flexDir={`column`}
             textAlign={`right`}
+            p={10}
+            transform={{
+              base: `translateX(0)`,
+              lg: `translateX(10rem)`,
+            }}
           >
             <Text
               fontSize={`14px`}
-              className={`accent font-mono`}
+              color={`accent`}
+              className={`font-mono`}
             >
               {project.category}
             </Text>
@@ -65,30 +98,40 @@ const ProjectBox = () => {
             </Text>
             <Box
               my={5}
-              className='project_box box-shadow'
+              p={5}
+              borderRadius={10}
+              bg={
+                colorMode == `light` ? `lightBg` : `darkBg`
+              }
+              className='box-shadow'
               width={{ base: `100%`, lg: `30rem` }}
             >
               <Text
-                color={{ base: `#ffff`, xl: `grey` }}
+                color={
+                  colorMode == `light`
+                    ? `darkBg`
+                    : `lightBg`
+                }
                 textTransform={`lowercase`}
+                fontWeight={`medium`}
               >
                 {project.desc}
               </Text>
             </Box>
-            <Flex mb={5} gap={4} justifyContent={`end`}>
+            <Flex mb={5} gap={4} justifyContent={`center`}>
               {project.language.map(function (code, index) {
                 return (
-                  <Text className='font-mono' key={index}>
+                  <Text
+                    color={`accent`}
+                    className='font-mono'
+                    key={index}
+                  >
                     {code}
                   </Text>
                 );
               })}
             </Flex>
-            <Flex
-              justifyContent={`end`}
-              color={`#fff`}
-              gap={3}
-            >
+            <Flex justifyContent={`center`} gap={3}>
               <Link
                 _hover={{
                   color: `rgb(208, 0, 255) !important`,
@@ -113,14 +156,35 @@ const ProjectBox = () => {
       );
     });
     return (
-      <>
-        <Flex
-        className='project-view'
-          flexDir={`column-reverse`}
-          justifyContent={`end`}
-          alignItems={`end`}
+      <Flex
+        // flexDir={{base:`column`, '2xl':`row`}}
+        justifyContent={{
+          base: `initial`,
+          lg: `center`,
+          '2xl': `space-between`,
+        }}
+      >
+        <Box
+          _before={
+            colorMode == `light`
+              ? lightSticker
+              : darkSticker
+          }
+          _after={
+            colorMode == `light`
+              ? lightSticker
+              : darkSticker
+          }
+          className='project-view'
+          width={`fit-content`}
         >
           <Text
+            pos={{ base: `fixed`, '2xl': `sticky` }}
+            top={{ base: 0, lg: `initial`, '2xl': `60%` }}
+            bottom={{ base: `initial`, lg: 0 }}
+            right={0}
+            mr={`2rem`}
+            zIndex={{ base: 1 }}
             textTransform={`capitalize`}
             fontWeight={700}
             textAlign={`right`}
@@ -129,15 +193,13 @@ const ProjectBox = () => {
               sm: `52px`,
               md: `64px`,
             }}
-            my={`5rem`}
-            mx={{ base: `1rem`, md: `5rem`, lg: `10rem` }}
           >
             {language} <br />
             projects worth <br /> sharing.
           </Text>
-        </Flex>
-        {projectList}
-      </>
+        </Box>
+        <FullScrollView>{projectList}</FullScrollView>
+      </Flex>
     );
   } else {
     return <Text>No project at the moment</Text>;

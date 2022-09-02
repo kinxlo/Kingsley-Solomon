@@ -27,7 +27,7 @@ const StartControls = () => {
     useContext(AppContext);
   const [active] = useState({
     backgroundColor: `transparent !important`,
-    color: `rgb(208, 0, 255) !important`,
+    color: `active!`,
   });
 
   const handleClick = (e) => {
@@ -40,11 +40,12 @@ const StartControls = () => {
         key={social.id}
         target='_blank'
         href={social.link}
-      >
+        >
         <Icon
           as={social.icon}
-          className={`accent nav-btn`}
+          color={`accent`}
           fontSize={`1.3rem`}
+          _hover={{ color: `active` }}
         />
       </Link>
     );
@@ -62,19 +63,13 @@ const StartControls = () => {
       justifyContent={`space-between`}
       padding={3}
     >
-      <Center
-        // className='line-h'
-        display={`flex`}
-        flexDir={`column`}
-        gap={7}
-      >
+      <Center display={`flex`} flexDir={`column`} gap={7}>
         <Button
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
           name='menu'
           onClick={toggleControls}
-          className={`nav-btn`}
           size={`xs`}
         >
           <Icon fontSize={`1.3rem`} as={TbMenu} />
@@ -85,7 +80,7 @@ const StartControls = () => {
           backgroundColor={`transparent`}
           name='profile'
           onClick={handleClick}
-          className={`accent nav-btn`}
+          color={`accent`}
           isActive={switchView == `profile` ? true : false}
           _hover={active}
           _active={active}
@@ -100,7 +95,7 @@ const StartControls = () => {
           backgroundColor={`transparent`}
           name='resume'
           onClick={handleClick}
-          className={`accent nav-btn`}
+          color={`accent`}
           isActive={switchView == `resume` ? true : false}
           _hover={active}
           _active={active}
@@ -118,7 +113,7 @@ const StartControls = () => {
           backgroundColor={`transparent`}
           name='projects'
           onClick={handleClick}
-          className={`accent nav-btn`}
+          color={`accent`}
           isActive={switchView == `projects` ? true : false}
           _hover={active}
           _active={active}
@@ -133,7 +128,7 @@ const StartControls = () => {
           backgroundColor={`transparent`}
           name='tools'
           onClick={handleClick}
-          className={`accent nav-btn`}
+          color={`accent`}
           isActive={switchView == `tools` ? true : false}
           _hover={active}
           _active={active}
@@ -154,13 +149,17 @@ const StartControls = () => {
           size={`xs`}
         >
           <Icon
-            as={colorMode == `light` ? RiMoonClearFill : RiSunFill}
+            as={
+              colorMode == `light`
+                ? RiMoonClearFill
+                : RiSunFill
+            }
             fontSize={`1.3rem`}
           />
         </Button>
       </Center>
       <Center
-        className='line-h'
+        className='line-v1'
         height={`50%`}
         flexDir={`column`}
         justifyContent={`space-between`}

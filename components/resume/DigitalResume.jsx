@@ -1,10 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Box, Link, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Link,
+  Text,
+  useColorMode,
+} from '@chakra-ui/react';
 import React from 'react';
+import {
+  darkSticker,
+  lightSticker,
+} from '../../theme/customTheme';
 
 const DigitalResume = () => {
+  const { colorMode } = useColorMode();
   return (
     <Box
+      _before={
+        colorMode == `light` ? lightSticker : darkSticker
+      }
+      _after={
+        colorMode == `light` ? lightSticker : darkSticker
+      }
       className='resume-view'
       position={`relative`}
       zIndex={3}
@@ -25,7 +41,7 @@ const DigitalResume = () => {
           <Text id='bio'>
             Frontend developer at{' '}
             <Link
-              className='link'
+              color='accent!'
               href='https://www.wewetube.com'
               target='_blank'
             >
@@ -47,21 +63,21 @@ const DigitalResume = () => {
       <section className='section--page'>
         <div id='socials--list'>
           <Link
-            className='link'
+            color='accent!'
             href='https://twitter.com/kinxlo'
             target='_blank'
           >
             Twitter
           </Link>
           <Link
-            className='link'
+            color='accent!'
             href='https://www.linkedin.com/in/kingsley-solomon-b90339b2/'
             target='_blank'
           >
             Linkedin
           </Link>
           <Link
-            className='link'
+            color='accent!'
             href='https://github.com/kinxlo'
             target='_blank'
           >
@@ -69,7 +85,7 @@ const DigitalResume = () => {
           </Link>
           <Link
             download
-            className='link'
+            color='accent!'
             rel='noopener noreferrer'
             href='/KingsleySolomon_Ifijeh_Resume.PDF'
           >
@@ -279,28 +295,28 @@ const DigitalResume = () => {
         <h2 className='h2'>Projects & Accomplishments</h2>
 
         <div className='card--project'>
-          <Link className='link' href='project1.html'>
+          <Link color='accent!' href='project1.html'>
             <span>🏆 </span>Built Link Laboratory management
             system for forensics lab
           </Link>
         </div>
 
         <div className='card--project'>
-          <Link className='link' href='project1.html'>
+          <Link color='accent!' href='project1.html'>
             <span>🏆 </span>Documentation website - Lead
             team to re-build docs for agora.io
           </Link>
         </div>
 
         <div className='card--project'>
-          <Link className='link' href='project1.html'>
+          <Link color='accent!' href='project1.html'>
             <span>🏆 </span>Ecommerce platform using paypal
             and stripe API for payment integration
           </Link>
         </div>
 
         <div className='card--project'>
-          <Link className='link' href='project1.html'>
+          <Link color='accent!' href='project1.html'>
             <span>🏆 </span>Social Network - open source
             project
           </Link>

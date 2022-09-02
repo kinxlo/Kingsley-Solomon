@@ -15,11 +15,25 @@ import BatteryInfo from '../BatteryInfo';
 import CalendarApp from '../calendar/CalendarApp';
 import DrawerExample from '../drawer/Drawer';
 import Search from '../searchBar/Search';
+import {
+  lightSticker,
+  darkSticker,
+} from '../../theme/customTheme';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
+
   return (
-    <Container className='profile-view' maxW={`100%`}>
+    <Container
+      _before={
+        colorMode == `light` ? lightSticker : darkSticker
+      }
+      _after={
+        colorMode == `light` ? lightSticker : darkSticker
+      }
+      className='profile-view'
+      maxW={`100%`}
+    >
       {/* profile */}
       <Box
         m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
@@ -46,7 +60,8 @@ const Profile = () => {
             <Text
               opacity={`70%`}
               fontSize={`sm`}
-              className='font-mono accent'
+              color={`accent`}
+              className='font-mono'
             >
               Hello I&apos;m
             </Text>
@@ -63,11 +78,12 @@ const Profile = () => {
           >
             <Box>
               <Text
-                color={
-                  colorMode == `light`
-                    ? `#1a202c`
-                    : `#83868d`
-                }
+                color={`spacejelly`}
+                // color={
+                //   colorMode == `light`
+                //     ? `#1a202c`
+                //     : `#83868d`
+                // }
                 as={`h2`}
                 fontSize={{ base: `4rem`, md: `8rem` }}
                 lineHeight={1.1}
@@ -76,7 +92,8 @@ const Profile = () => {
                 Frontend <br /> Developer.
               </Text>
               <Text
-                className='font-mono accent'
+                color={`accent`}
+                className='font-mono'
                 lineHeight={`1rem`}
                 fontStyle={`italic`}
                 fontSize={{
@@ -129,7 +146,7 @@ const Profile = () => {
               Good knowledge in API Implementation.
               <Icon
                 display={{ base: `none`, lg: `block` }}
-                className='accent'
+                color='accent'
                 as={BsDot}
               ></Icon>
             </Text>
@@ -146,7 +163,7 @@ const Profile = () => {
               design.{' '}
               <Icon
                 display={{ base: `none`, lg: `block` }}
-                className='accent'
+                color='accent'
                 as={BsDot}
               ></Icon>
             </Text>
@@ -163,7 +180,7 @@ const Profile = () => {
               development.{' '}
               <Icon
                 display={{ base: `none`, lg: `block` }}
-                className='accent'
+                color='accent'
                 as={BsDot}
               ></Icon>
             </Text>

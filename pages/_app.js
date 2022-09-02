@@ -3,7 +3,7 @@ import '../styles/globals.scss'
 import '../axios/global.js'
 import { Chakra } from './Chakra'
 import AppContextProvider from '../context/AppContext';
-import { Box } from '@chakra-ui/react';
+
 
 export default function MyApp({ Component, pageProps }) {
 

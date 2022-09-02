@@ -89,9 +89,6 @@ const CTA = ({
       alignItems={`center`}
       width={width}
       height={height}
-      background={
-        colorMode == `light` ? `#ffffff` : bgColor
-      }
       onClick={handleFunctionClick}
     >
       {/* <section> */}
