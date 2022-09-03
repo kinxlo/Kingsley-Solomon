@@ -16,6 +16,7 @@ import {
   lightSticker,
   darkSticker,
 } from '../../theme/customTheme';
+import Controls from '../Controls';
 import SearchResultDisplay from '../searchBar/Search';
 
 const Profile = () => {
@@ -30,15 +31,20 @@ const Profile = () => {
         colorMode == `light` ? lightSticker : darkSticker
       }
       className='profile-view'
-      maxW={`992px`}
-      // maxW={`100vw`}
+      pos={{ base: `sticky`, xl: `fixed` }}
+      height={{ base: `100vh`, xl: `fit-content` }}
+      maxW={{ base: `100%`, xl: `80%`, '2xl': `50%` }}
+      margin={`0 auto 0 0`}
+      display={{ base: `flex`, xl: `initial` }}
+      alignItems={`center`}
+      justifyContent={`center`}
     >
       {/* profile */}
       <Box
       // m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
       // className={`profile_layout`}
       >
-        <Flex mb={`5rem`} alignItems={`center`}>
+        <Flex alignItems={`center`}>
           <Avatar
             className='box-shadow'
             name='kingsley solomon'
@@ -75,7 +81,11 @@ const Profile = () => {
             flexDir={{ base: `column`, xl: `row` }}
             justifyContent={{ base: `space-between` }}
           >
-            <Box>
+            <Flex
+              mt={`5rem`} mb={{base:`10rem`, xl:`5rem`}}
+              flexDirection={`column`}
+              gap={2}
+            >
               <Text
                 color={`spacejelly`}
                 // color={
@@ -104,9 +114,8 @@ const Profile = () => {
               >
                 Integrating Science, Art, and APIs.
               </Text>
-            </Box>
+            </Flex>
           </Flex>
-
           <Flex
             mt={{ base: `5rem`, xl: `1rem` }}
             flexDir={`column`}
@@ -196,6 +205,10 @@ const Profile = () => {
               </Link>
             </Button>
           </Flex> */}
+
+          <Flex width={`100%`}>
+            <Controls />
+          </Flex>
         </Box>
       </Box>
     </Container>

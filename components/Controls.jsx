@@ -9,20 +9,18 @@ const Controls = () => {
   return (
     // {/* APIs */ }
     <Flex
-      mb={{ base: `1rem`, xl: 0 }}
       gap={10}
       // flexDirection={{ base: `column`, xl: `row` }}
       justifyContent={`space-evenly`}
       // alignItems={{ base: `start`, lg: `center` }}
     >
       <Flex
-        color={`darkBg`}
         flexDir={{ base: `column`, sm: `row` }}
         // alignItems={{ base: `initial`, sm: `center` }}
         justifyContent={`end`}
       >
         <Flex
-          flexDir={{ base: `column`, xl: `row` }}
+          flexDir={{ base: `column`, sm: `row` }}
           alignItems={`center`}
           gap={10}
         >

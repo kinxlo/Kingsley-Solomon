@@ -74,10 +74,7 @@ body {
   }
 
   .profile-view {
-    position: fixed !important;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
 
     &::before {
       content: 'Hello!';
@@ -416,6 +413,7 @@ body {
 @media screen and (min-width: 992px) {
 
   .profile-view {
+
     &::before {
       display: none;
     }
@@ -499,7 +497,14 @@ body {
   }
 }
 
-@media screen and (min-width: 1280px) {}
+@media screen and (min-width: 1280px) {
+  .profile-view {
+    top: 50% !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}
 
 @media screen and (min-width: 1536px) {
   //2xl

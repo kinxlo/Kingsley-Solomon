@@ -86,7 +86,6 @@ const MobileLayout = () => {
   return (
     <>
       <Flex
-
         alignItems={`center`}
         justifyContent={`center`}
         pos={`fixed`}
@@ -127,19 +126,20 @@ const MobileLayout = () => {
           <Icon fontSize={`1.5rem`} as={TbMenu} />
         </Button>
       )}
+      {display()}
 
-      <Container
-
+      {/* <Container
+      border={`1px solid #fff`}
         margin={`0 auto 0 0`}
         maxW={`50%`}
         p={switchView == `tools` ? `1rem!` : 0}
         pl={{ base: showControls ? `3rem` : `initial`, lg: showControls ? 0 : `initial` }}
         className={`hide-scrollbar`}
-      >
-        {display()}
-      </Container>
+      > */}
+      {/* </Container> */}
       <Hero>
         <Image
+          width={`100%`}
           height={`100%`}
           objectFit={`cover`}
           src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile1_wqaris.jpg`}
