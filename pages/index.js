@@ -86,6 +86,7 @@ const MobileLayout = () => {
   return (
     <>
       <Flex
+
         alignItems={`center`}
         justifyContent={`center`}
         pos={`fixed`}
@@ -100,6 +101,7 @@ const MobileLayout = () => {
         className={`line-v2`}
       >
         <Link
+          color={`darkBg`}
           fontSize={{ base: `8px`, md: `14px` }}
           letterSpacing={2}
           className='rotate-90 font-mono'
@@ -127,6 +129,7 @@ const MobileLayout = () => {
       )}
 
       <Container
+
         margin={`0 auto 0 0`}
         maxW={`50%`}
         p={switchView == `tools` ? `1rem!` : 0}
@@ -134,7 +137,6 @@ const MobileLayout = () => {
         className={`hide-scrollbar`}
       >
         {display()}
-        {/* <Controls /> */}
       </Container>
       <Hero>
         <Image

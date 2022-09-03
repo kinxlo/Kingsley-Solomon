@@ -1,7 +1,9 @@
-import { Box } from '@chakra-ui/react';
-import React from 'react';
+import { Box, Flex } from '@chakra-ui/react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
+import Controls from '../Controls';
 
-const hero = ({ children }) => {
+const Hero = ({ children }) => {
   return (
     <Box
       position={`fixed`}
@@ -13,8 +15,20 @@ const hero = ({ children }) => {
       zIndex={-999}
     >
       {children}
+      <Flex
+        justifyContent={`end`}
+        pb={5}
+        px={10}
+        width={`100%`}
+        pos={`fixed`}
+        bottom={0}
+        left={0}
+        zIndex={10}
+      >
+        <Controls />
+      </Flex>
     </Box>
   );
 };
 
-export default hero;
+export default Hero;

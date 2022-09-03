@@ -1,12 +1,13 @@
 import {
   Avatar,
   Box,
+  Button,
   Center,
   Container,
   Flex,
   Heading,
   Icon,
-  LightMode,
+  Link,
   Text,
   useColorMode,
 } from '@chakra-ui/react';
@@ -15,7 +16,7 @@ import {
   lightSticker,
   darkSticker,
 } from '../../theme/customTheme';
-import Controls from '../Controls';
+import SearchResultDisplay from '../searchBar/Search';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
@@ -30,11 +31,12 @@ const Profile = () => {
       }
       className='profile-view'
       maxW={`992px`}
+      // maxW={`100vw`}
     >
       {/* profile */}
       <Box
-        m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
-        className={`profile_layout`}
+      // m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
+      // className={`profile_layout`}
       >
         <Flex mb={`5rem`} alignItems={`center`}>
           <Avatar
@@ -111,6 +113,7 @@ const Profile = () => {
             alignItems={{ base: `end`, lg: `end` }}
             fontStyle={`italic`}
             color={`darkBg`}
+            display={{ base: `none`, xl: `flex` }}
           >
             <Text
               fontSize={{
@@ -164,10 +167,37 @@ const Profile = () => {
               ></Icon>
             </Text>
           </Flex>
-
+          {/* <Flex
+            display={{ base: `none`, lg: `flex` }}
+            py={5}
+            justifyContent={`space-between`}
+            gap={10}
+          >
+            <SearchResultDisplay />
+            <Button
+              border={`1px solid`}
+              padding={{
+                base: `5px 20px`,
+                md: `10px 40px`,
+              }}
+              _hover={{
+                color: `rgb(208, 0, 255) !important`,
+              }}
+              fontSize={{ base: `10px`, md: `14px` }}
+              fontWeight={`bold`}
+              className='font-mono'
+            >
+              <Link
+                download
+                rel='noopener noreferrer'
+                href='/KingsleySolomon_Ifijeh_Resume.PDF'
+              >
+                Resume
+              </Link>
+            </Button>
+          </Flex> */}
         </Box>
       </Box>
-      <Controls />
     </Container>
   );
 };

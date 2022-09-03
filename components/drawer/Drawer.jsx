@@ -35,6 +35,7 @@ export default function DrawerExample() {
         fontWeight={`bolder`}
         cursor={`pointer`}
         _hover={{ color: `#d000ff` }}
+        verticalAlign={`bottom!`}
       >
         Reviews
       </Text>
