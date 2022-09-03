@@ -22,6 +22,9 @@ const DigitalResume = () => {
         colorMode == `light` ? lightSticker : darkSticker
       }
       className='resume-view'
+      maxW={{ base: `100%`, lg: `70%`, xl: `50%` }}
+      px={{ base: `1rem`, sm: `2rem`, xl: `4rem` }}
+      marginX={{ lg: `auto`, xl: `initial` }}
       position={`relative`}
       zIndex={3}
       id='container--main'
