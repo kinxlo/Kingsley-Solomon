@@ -37,9 +37,8 @@ const ProjectBox = () => {
           bgSize={`cover`}
           bgPosition={`right`}
           bgRepeat={`no-repeat`}
-          bgColor={{ base: `accent`, lg: `initial` }}
-          bgBlendMode={`multiply`}
-          filter={`grayscale(50%)`}
+          // bgColor={{ base: `accent`, lg: `initial` }}
+          // bgBlendMode={`screen`}
           _hover={{
             bgBlendMode: `normal`,
             filter: `grayscale(0)`,
@@ -71,6 +70,7 @@ const ProjectBox = () => {
             />
           </Box>
           <Flex
+            color={{ base: `#fff`, lg: `initial` }}
             position={{
               base: `relative`,
               lg: `absolute`,
@@ -79,6 +79,20 @@ const ProjectBox = () => {
             left={{ xl: `5rem` }}
             textTransform={`capitalize`}
             flexDir={`column`}
+            width={{ base: `100%`, lg: `initial` }}
+            height={{ base: `100%`, lg: `initial` }}
+            justifyContent={`center`}
+            backdropFilter={{
+              base: `blur(5px)`,
+              lg: `none`,
+            }}
+            backgroundColor={{
+              base: `rgba(0,0,0,0.8)`,
+              lg: `initial`,
+            }}
+            _hover={{
+              backdropFilter: `blur(0)`,
+            }}
             p={10}
           >
             <Text
@@ -170,8 +184,7 @@ const ProjectBox = () => {
             pos={`fixed`}
             bottom={0}
             right={{ xl: 0 }}
-            mr={`2rem`}
-            // zIndex={{ base: 0: xl: }}
+            m={`1rem 1rem 3rem`}
             opacity={{ base: `5%`, xl: `initial` }}
             textTransform={`capitalize`}
             fontWeight={700}
