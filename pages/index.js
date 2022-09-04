@@ -4,6 +4,7 @@ import {
   Container,
   Flex,
   Icon,
+  Image,
   Link,
   useColorMode,
 } from '@chakra-ui/react';
@@ -11,7 +12,9 @@ import React, { useContext } from 'react';
 import ProjectBox from '../components/drawer/ProjectBox';
 
 import DigitalResume from '../components/resume/DigitalResume';
+import Hero from '../components/startMenu/Hero';
 import Search from '../components/searchBar/Search';
+import Controls from '../components/Controls'
 import Profile from '../components/startMenu/Profile';
 import StartControls from '../components/startMenu/StartControls';
 import { AppContext } from '../context/AppContext';
@@ -58,7 +61,7 @@ const MobileLayout = () => {
         <ProductivityLayout
           title={`Tools & Platforms`}
           document={tools_platform}
-        /> 
+        />
 
       </FullScrollView>;
     </Box>
@@ -97,6 +100,7 @@ const MobileLayout = () => {
         className={`line-v2`}
       >
         <Link
+          color={`darkBg`}
           fontSize={{ base: `8px`, md: `14px` }}
           letterSpacing={2}
           className='rotate-90 font-mono'
@@ -122,16 +126,32 @@ const MobileLayout = () => {
           <Icon fontSize={`1.5rem`} as={TbMenu} />
         </Button>
       )}
-      <Container
+      {display()}
+
+      {/* <Container
+      border={`1px solid #fff`}
+        margin={`0 auto 0 0`}
+        maxW={`50%`}
         p={switchView == `tools` ? `1rem!` : 0}
         pl={{ base: showControls ? `3rem` : `initial`, lg: showControls ? 0 : `initial` }}
-        maxW={`1440px`}
         className={`hide-scrollbar`}
-      >
-        {display()}
-      </Container>
+      > */}
+      {/* </Container> */}
+      <Hero>
+        <Image
+          width={`100%`}
+          height={`100%`}
+          objectFit={`cover`}
+          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile1_wqaris.jpg`}
+          alt={`profile-pic`}
+          mixBlendMode={`multiply`}
+          filter={`grayscale(100%) saturate(0) brightness(0.5)`}
+        />
+      </Hero>
     </>
   );
 };
 
 export default MobileLayout;
+
+

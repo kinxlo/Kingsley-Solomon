@@ -2,24 +2,22 @@ import {
   Avatar,
   Box,
   Button,
+  Center,
   Container,
   Flex,
   Heading,
   Icon,
-  Image,
   Link,
   Text,
   useColorMode,
 } from '@chakra-ui/react';
 import { BsDot } from 'react-icons/bs';
-import BatteryInfo from '../BatteryInfo';
-import CalendarApp from '../calendar/CalendarApp';
-import DrawerExample from '../drawer/Drawer';
-import Search from '../searchBar/Search';
 import {
   lightSticker,
   darkSticker,
 } from '../../theme/customTheme';
+import Controls from '../Controls';
+import SearchResultDisplay from '../searchBar/Search';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
@@ -33,14 +31,20 @@ const Profile = () => {
         colorMode == `light` ? lightSticker : darkSticker
       }
       className='profile-view'
-      maxW={`100%`}
+      pos={{ base: `sticky`, xl: `fixed` }}
+      height={{ base: `100vh`, xl: `fit-content` }}
+      maxW={{ base: `100%`, xl: `80%`, '2xl': `50%` }}
+      margin={`0 auto 0 0`}
+      display={{ base: `flex`, xl: `initial` }}
+      alignItems={`center`}
+      justifyContent={`center`}
     >
       {/* profile */}
       <Box
-        m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
-        className={`profile_layout`}
+      // m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
+      // className={`profile_layout`}
       >
-        <Flex mb={`5rem`} alignItems={`center`}>
+        <Flex alignItems={`center`}>
           <Avatar
             className='box-shadow'
             name='kingsley solomon'
@@ -77,7 +81,11 @@ const Profile = () => {
             flexDir={{ base: `column`, xl: `row` }}
             justifyContent={{ base: `space-between` }}
           >
-            <Box>
+            <Flex
+              mt={`5rem`} mb={{base:`10rem`, xl:`5rem`}}
+              flexDirection={`column`}
+              gap={2}
+            >
               <Text
                 color={`spacejelly`}
                 // color={
@@ -106,34 +114,15 @@ const Profile = () => {
               >
                 Integrating Science, Art, and APIs.
               </Text>
-            </Box>
-            <Box
-              display={{ base: `none`, xl: `block` }}
-              className='profile-pic box-shadow'
-              height={{
-                base: `10rem`,
-                md: `15rem`,
-                xl: `20rem`,
-              }}
-              width={{
-                base: `9rem`,
-                md: `14rem`,
-                xl: `20rem`,
-              }}
-            >
-              <Image
-                height={`100%`}
-                objectFit={`cover`}
-                alt='profile-img'
-                src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile1_wqaris.jpg`}
-              />
-            </Box>
+            </Flex>
           </Flex>
           <Flex
             mt={{ base: `5rem`, xl: `1rem` }}
             flexDir={`column`}
             alignItems={{ base: `end`, lg: `end` }}
             fontStyle={`italic`}
+            color={`darkBg`}
+            display={{ base: `none`, xl: `flex` }}
           >
             <Text
               fontSize={{
@@ -151,6 +140,7 @@ const Profile = () => {
                 as={BsDot}
               ></Icon>
             </Text>
+
             <Text
               fontSize={{
                 base: `10px`,
@@ -186,59 +176,41 @@ const Profile = () => {
               ></Icon>
             </Text>
           </Flex>
+          {/* <Flex
+            display={{ base: `none`, lg: `flex` }}
+            py={5}
+            justifyContent={`space-between`}
+            gap={10}
+          >
+            <SearchResultDisplay />
+            <Button
+              border={`1px solid`}
+              padding={{
+                base: `5px 20px`,
+                md: `10px 40px`,
+              }}
+              _hover={{
+                color: `rgb(208, 0, 255) !important`,
+              }}
+              fontSize={{ base: `10px`, md: `14px` }}
+              fontWeight={`bold`}
+              className='font-mono'
+            >
+              <Link
+                download
+                rel='noopener noreferrer'
+                href='/KingsleySolomon_Ifijeh_Resume.PDF'
+              >
+                Resume
+              </Link>
+            </Button>
+          </Flex> */}
+
+          <Flex width={`100%`}>
+            <Controls />
+          </Flex>
         </Box>
       </Box>
-      {/* APIs */}
-      <Flex
-        mb={{ base: `1rem`, xl: 0 }}
-        gap={10}
-        flexDirection={{ base: `column`, xl: `row` }}
-        justifyContent={`space-between`}
-        alignItems={{ base: `start`, lg: `center` }}
-      >
-        <Flex justifyContent={`space-between`} gap={10}>
-          <Search />
-          <Button
-            border={`1px solid`}
-            padding={{
-              base: `5px 20px`,
-              md: `10px 40px`,
-            }}
-            _hover={{
-              color: `rgb(208, 0, 255) !important`,
-            }}
-            fontSize={{ base: `10px`, md: `14px` }}
-            fontWeight={`bold`}
-            className='font-mono'
-          >
-            <Link
-              download
-              rel='noopener noreferrer'
-              href='/KingsleySolomon_Ifijeh_Resume.PDF'
-            >
-              Resume
-            </Link>
-          </Button>
-        </Flex>
-        <Flex
-          flexDir={{ base: `column`, sm: `row` }}
-          alignItems={{ base: `initial`, sm: `center` }}
-          justifyContent={`end`}
-        >
-          <Flex
-            flexDir={{ base: `column`, md: `row` }}
-            alignItems={{ base: `initial`, md: `center` }}
-            gap={3}
-          >
-            <Flex gap={5} alignItems={`center`}>
-              <BatteryInfo />
-              <CalendarApp />
-              {/* <Text fontWeight={`medium`}>{timeMin}</Text> */}
-            </Flex>
-            <DrawerExample />
-          </Flex>
-        </Flex>
-      </Flex>
     </Container>
   );
 };

@@ -8,6 +8,13 @@ export const reviews = [
     },
     {
         id: 2,
+        name: `Chisom`,
+        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662138395/portfolio/Screenshot_2022-09-02_150422_fjajux.png`,
+        job: `frontend Developer`,
+        review: `My classes with Kingsley have taught me so much. He paces the class so that you are challenged but not overburdened. Kingsley is very engaging; he asks questions and encourages students to respond, which is both enjoyable and expedites learning. He is patient and willing to assist. I'm overjoyed to be in his class!`
+    },
+    {
+        id: 2,
         name: `Funke Olasupo`,
         image: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1661799962/portfolio/Screenshot_2022-08-29_200514_ajftri.png`,
         job: `Backend developer`,

@@ -13,7 +13,7 @@
     "Fira Mono",
     monospace;
 
-  --mainLinkColor-light: #f09491;
+  --mainLinkColor-light: #fd8e8e;
   --mainBorderColor-light: #dadada;
   --mainActiveColor-light: #d000ff;
 
@@ -60,6 +60,10 @@
 
 body {
 
+  // .fullpage-wrapper {
+  //   margin-left: 2rem;
+  // }
+
   .box-shadow {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
       rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -74,6 +78,8 @@ body {
   }
 
   .profile-view {
+    top: 0;
+
     &::before {
       content: 'Hello!';
       top: 0;
@@ -397,6 +403,10 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+   .fullpage-wrapper {
+     width: 100%;
+     margin: 0 auto !important;
+   }
 
   //md
   * {
@@ -410,7 +420,10 @@ body {
 
 @media screen and (min-width: 992px) {
 
+
+
   .profile-view {
+
     &::before {
       display: none;
     }
@@ -418,9 +431,9 @@ body {
     &::after {
       content: 'Hello!';
       position: fixed;
-      bottom: -9rem;
-      left: 0;
-      font-size: 25rem;
+      bottom: 0;
+      left: -30rem;
+      font-size: 10rem;
       font-weight: bolder;
       z-index: -999;
       letter-spacing: 10px;
@@ -472,29 +485,22 @@ body {
       -webkit-backdrop-filter: blur(0) sepia(0) !important;
       border: none !important;
     }
-
-    // .project_img_box {
-    //   transition: all 5s;
-
-    //   .project_img {
-    //     mix-blend-mode: multiply;
-    //     filter: grayscale(50%);
-
-
-    //     &:hover {
-    //       mix-blend-mode: normal;
-    //       filter: grayscale(0);
-    //     }
-    //   }
-
-    //   &:hover {
-    //     // filter: sepia(0) brightness(70%) blur(0);
-    //   }
-    // }
   }
 }
 
-@media screen and (min-width: 1280px) {}
+@media screen and (min-width: 1280px) {
+  .fullpage-wrapper {
+    width: 50%;
+    margin: initial !important;
+  }
+
+  .profile-view {
+    top: 50% !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}
 
 @media screen and (min-width: 1536px) {
   //2xl

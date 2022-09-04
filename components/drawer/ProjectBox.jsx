@@ -37,9 +37,8 @@ const ProjectBox = () => {
           bgSize={`cover`}
           bgPosition={`right`}
           bgRepeat={`no-repeat`}
-          bgColor={{ base: `accent`, lg: `initial` }}
-          bgBlendMode={`multiply`}
-          filter={`grayscale(50%)`}
+          // bgColor={{ base: `accent`, lg: `initial` }}
+          // bgBlendMode={`screen`}
           _hover={{
             bgBlendMode: `normal`,
             filter: `grayscale(0)`,
@@ -52,7 +51,7 @@ const ProjectBox = () => {
             display={{ base: `none`, lg: `block` }}
             transform={{
               base: `translateX(0)`,
-              lg: `translateX(-10rem)`,
+              lg: `translateX(10rem)`,
             }}
             bg={`accent`}
           >
@@ -71,20 +70,30 @@ const ProjectBox = () => {
             />
           </Box>
           <Flex
+            color={{ base: `#fff`, lg: `initial` }}
             position={{
               base: `relative`,
               lg: `absolute`,
             }}
             zIndex={2}
-            right={0}
+            left={{ xl: `5rem` }}
             textTransform={`capitalize`}
             flexDir={`column`}
-            textAlign={`right`}
-            p={10}
-            transform={{
-              base: `translateX(0)`,
-              lg: `translateX(10rem)`,
+            width={{ base: `100%`, lg: `initial` }}
+            height={{ base: `100%`, lg: `initial` }}
+            justifyContent={`center`}
+            backdropFilter={{
+              base: `blur(5px)`,
+              lg: `none`,
             }}
+            backgroundColor={{
+              base: `rgba(0,0,0,0.8)`,
+              lg: `initial`,
+            }}
+            _hover={{
+              backdropFilter: `blur(0)`,
+            }}
+            p={10}
           >
             <Text
               fontSize={`14px`}
@@ -118,11 +127,11 @@ const ProjectBox = () => {
                 {project.desc}
               </Text>
             </Box>
-            <Flex mb={5} gap={4} justifyContent={`center`}>
+            <Flex mb={5} gap={4}>
               {project.language.map(function (code, index) {
                 return (
                   <Text
-                    color={`accent`}
+                    // color={`accent`}
                     className='font-mono'
                     key={index}
                   >
@@ -131,7 +140,7 @@ const ProjectBox = () => {
                 );
               })}
             </Flex>
-            <Flex justifyContent={`center`} gap={3}>
+            <Flex gap={3}>
               <Link
                 _hover={{
                   color: `rgb(208, 0, 255) !important`,
@@ -156,14 +165,7 @@ const ProjectBox = () => {
       );
     });
     return (
-      <Flex
-        // flexDir={{base:`column`, '2xl':`row`}}
-        justifyContent={{
-          base: `initial`,
-          lg: `center`,
-          '2xl': `space-between`,
-        }}
-      >
+      <Flex>
         <Box
           _before={
             colorMode == `light`
@@ -179,15 +181,15 @@ const ProjectBox = () => {
           width={`fit-content`}
         >
           <Text
-            pos={{ base: `fixed`, '2xl': `sticky` }}
-            top={{ base: 0, lg: `initial`, '2xl': `60%` }}
-            bottom={{ base: `initial`, lg: 0 }}
-            right={0}
-            mr={`2rem`}
-            zIndex={{ base: 1 }}
+            pos={`fixed`}
+            bottom={0}
+            right={{ xl: 0 }}
+            m={`1rem 1rem 3rem`}
+            opacity={{ base: `5%`, xl: `initial` }}
             textTransform={`capitalize`}
             fontWeight={700}
             textAlign={`right`}
+            color={{ base: `initial`, xl: `#fff` }}
             fontSize={{
               base: `32`,
               sm: `52px`,

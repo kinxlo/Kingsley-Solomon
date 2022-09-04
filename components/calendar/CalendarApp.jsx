@@ -95,6 +95,7 @@ const CalendarApp = () => {
           />
           <Text
             // className={`accent`}
+            // color={`darkBg`}
             _hover={{ color: `var(--mainActiveColor)` }}
             fontSize={{ base: `sm`, md: `md` }}
             fontWeight={`medium`}
