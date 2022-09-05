@@ -78,7 +78,9 @@ body {
   }
 
   .profile-view {
+    // border: 1px solid green;
     top: 0;
+    // display: flex;
 
     &::before {
       content: 'Hello!';
@@ -91,6 +93,10 @@ body {
       writing-mode: vertical-rl;
       -webkit-writing-mode: vertical-rl;
       letter-spacing: 10px;
+    }
+
+    .profile-box {
+      // border: 1px solid red;
     }
   }
 
@@ -403,10 +409,10 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-   .fullpage-wrapper {
-     width: 100%;
-     margin: 0 auto !important;
-   }
+  .fullpage-wrapper {
+    width: 100%;
+    margin: 0 auto !important;
+  }
 
   //md
   * {
@@ -419,8 +425,6 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-
-
 
   .profile-view {
 
@@ -489,17 +493,15 @@ body {
 }
 
 @media screen and (min-width: 1280px) {
+  #__next {
+    height: 100vh;
+    display: flex;
+  }
+
   .fullpage-wrapper {
     width: 50%;
     margin: initial !important;
   }
-
-  .profile-view {
-    top: 50% !important;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
 }
 
 @media screen and (min-width: 1536px) {

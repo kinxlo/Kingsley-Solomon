@@ -1,9 +1,6 @@
 import {
   Avatar,
   Box,
-  Button,
-  Center,
-  Container,
   Flex,
   Heading,
   Icon,
@@ -23,7 +20,7 @@ const Profile = () => {
   const { colorMode } = useColorMode();
 
   return (
-    <Container
+    <Box
       _before={
         colorMode == `light` ? lightSticker : darkSticker
       }
@@ -31,19 +28,17 @@ const Profile = () => {
         colorMode == `light` ? lightSticker : darkSticker
       }
       className='profile-view'
-      pos={{ base: `sticky`, xl: `fixed` }}
-      height={{ base: `100vh`, xl: `fit-content` }}
-      maxW={{ base: `100%`, xl: `80%`, '2xl': `50%` }}
-      margin={`0 auto 0 0`}
+      maxW={{ base: `100%`, lg: `70%`, '2xl': `50%` }}
+      width={`100%`}
+      height={{ base: `100vh`, xl: `initial` }}
+      margin={{ lg: `auto` }}
       display={{ base: `flex`, xl: `initial` }}
       alignItems={`center`}
       justifyContent={`center`}
+      pos={`sticky`}
     >
       {/* profile */}
-      <Box
-      // m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
-      // className={`profile_layout`}
-      >
+      <Box className='profile-box'>
         <Flex alignItems={`center`}>
           <Avatar
             className='box-shadow'
@@ -73,26 +68,18 @@ const Profile = () => {
             Kingsley Solomon
           </Heading>
         </Flex>
-        <Box
-          marginRight={{ base: 0, xl: `5rem`, '2xl': 0 }}
-        >
+        <Box>
           <Flex
-            gap={10}
             flexDir={{ base: `column`, xl: `row` }}
             justifyContent={{ base: `space-between` }}
           >
             <Flex
-              mt={`5rem`} mb={{base:`10rem`, xl:`5rem`}}
+              mt={`5rem`}
+              mb={{ base: `10rem`, xl: `5rem` }}
               flexDirection={`column`}
               gap={2}
             >
               <Text
-                color={`spacejelly`}
-                // color={
-                //   colorMode == `light`
-                //     ? `#1a202c`
-                //     : `#83868d`
-                // }
                 as={`h2`}
                 fontSize={{ base: `4rem`, md: `8rem` }}
                 lineHeight={1.1}
@@ -211,7 +198,7 @@ const Profile = () => {
           </Flex>
         </Box>
       </Box>
-    </Container>
+    </Box>
   );
 };
 

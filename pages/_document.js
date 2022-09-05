@@ -14,7 +14,7 @@ class MyDocument extends Document {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <body>
-                    <ColorModeScript initialColorMode={customTheme.config.initialColorMode}  />
+                    <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
                     <Main />
                     <NextScript />
                 </body>
