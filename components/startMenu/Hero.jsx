@@ -10,7 +10,7 @@ const Hero = ({ children }) => {
       height={`100vh`}
       width={{ base: `100%`, xl: `50%` }}
       bg={`accent`}
-      zIndex={{ base: 5, xl: -999 }}
+      zIndex={{ base: 5, xl: -10 }}
     >
       {children}
     </Box>
@@ -19,5 +19,4 @@ const Hero = ({ children }) => {
 
 export default Hero;
 {
-
 }

@@ -1,29 +1,18 @@
-import {
-  Box,
-  Button,
-  Center,
-  Icon,
-  Link,
-  useColorMode,
-} from '@chakra-ui/react';
+import { Button, Icon, Link, useColorMode } from '@chakra-ui/react';
 import React, { useContext, useState } from 'react';
 import {
   AiOutlineFileText,
+  AiOutlineLink,
+  AiOutlineMenu,
   AiOutlineProject,
   AiOutlineUser,
 } from 'react-icons/ai';
-import {
-  RiMoonClearFill,
-  RiSunFill,
-  RiToolsLine,
-} from 'react-icons/ri';
-import { TbMenu } from 'react-icons/tb';
+import { RiToolsLine } from 'react-icons/ri';
 import { AppContext } from '../../context/AppContext';
-import contacts from '../../public/contact.js';
 
-const StartControls = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const { switchContent, toggleControls, switchView } =
+const ContactMenu = () => {
+  const { colorMode } = useColorMode();
+  const { switchContent, switchView } =
     useContext(AppContext);
   const [active] = useState({
     backgroundColor: `transparent !important`,
@@ -34,53 +23,31 @@ const StartControls = () => {
     switchContent(e.currentTarget.getAttribute(`name`));
   };
 
-  let socialContacts = contacts.map((social) => {
-    return (
-      <Link
-        key={social.id}
-        target='_blank'
-        href={social.link}
-        >
-        <Icon
-          as={social.icon}
-          color={`accent`}
-          fontSize={`1.3rem`}
-          _hover={{ color: `active` }}
-        />
-      </Link>
-    );
-  });
-
   return (
-    <Box
-      width={`3rem`}
-      position={`fixed`}
-      zIndex={999}
-      top={0}
-      display={`flex`}
-      height={`100vh`}
-      flexDir={`column`}
-      justifyContent={`space-between`}
-      padding={3}
-    >
-      <Center display={`flex`} flexDir={`column`} gap={7}>
+    <div id='menu' className='circular-menu'>
+      <Icon
+        as={AiOutlineMenu}
+        className='floating-btn'
+        onClick={() =>
+          document
+            .getElementById('menu')
+            .classList.toggle('active')
+        }
+      />
+
+      <menu className='items-wrapper'>
         <Button
-          p={0}
-          borderRadius={`100%`}
-          backgroundColor={`transparent`}
-          name='menu'
-          onClick={toggleControls}
-          size={`xs`}
-        >
-          <Icon fontSize={`1.3rem`} as={TbMenu} />
-        </Button>
-        <Button
+          className='menu-item'
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
           name='profile'
           onClick={handleClick}
-          color={`accent`}
+          color={
+            colorMode == `light` ? `accent!` : `lightBg`
+          }
+          fontWeight={600}
+          fontSize={{ base: `12px`, md: `14px` }}
           isActive={switchView == `profile` ? true : false}
           _hover={active}
           _active={active}
@@ -90,6 +57,7 @@ const StartControls = () => {
           <Icon as={AiOutlineUser} fontSize={`1.3rem`} />
         </Button>
         <Button
+          className='menu-item'
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
@@ -108,6 +76,7 @@ const StartControls = () => {
           />
         </Button>
         <Button
+          className='menu-item'
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
@@ -123,6 +92,7 @@ const StartControls = () => {
           <Icon as={AiOutlineProject} fontSize={`1.3rem`} />
         </Button>
         <Button
+          className='menu-item'
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
@@ -137,38 +107,9 @@ const StartControls = () => {
         >
           <Icon as={RiToolsLine} fontSize={`1.3rem`} />
         </Button>
-      </Center>
-      <Center>
-        <Button
-          p={0}
-          borderRadius={`100%`}
-          backgroundColor={`transparent`}
-          name='theme'
-          onClick={toggleColorMode}
-          _hover={active}
-          size={`xs`}
-        >
-          <Icon
-            as={
-              colorMode == `light`
-                ? RiMoonClearFill
-                : RiSunFill
-            }
-            fontSize={`1.3rem`}
-          />
-        </Button>
-      </Center>
-      <Center
-        className='line-v1'
-        height={`50%`}
-        flexDir={`column`}
-        justifyContent={`space-between`}
-        gap={7}
-      >
-        {socialContacts}
-      </Center>
-    </Box>
+      </menu>
+    </div>
   );
 };
 
-export default StartControls;
+export default ContactMenu;

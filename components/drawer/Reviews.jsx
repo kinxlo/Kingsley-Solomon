@@ -44,16 +44,8 @@ export default function DrawerExample() {
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
-        // closeOnOverlayClick={false}
       >
         <DrawerContent
-          // className='blur'
-          background={
-            colorMode == `light` ? `#1a202c` : `#ffffff`
-          }
-          color={
-            colorMode == `light` ? `#ffffff` : `#000000`
-          }
           maxW={{ base: `100vw`, md: `30rem` }}
           padding={`0 1rem 1rem`}
           display={`flex`}
@@ -61,8 +53,9 @@ export default function DrawerExample() {
           justifyContent={`end`}
           gap={`2`}
         >
-          <Flex py={5} justifyContent={`space-between`}>
+          <Flex py={5}>
             <Icon
+              mr={`1rem`}
               onClick={handleClick}
               boxSize={`1.5rem`}
               as={AiOutlineLeft}
@@ -81,11 +74,6 @@ export default function DrawerExample() {
           ) : (
             <Notification />
           )}
-          {/* <CTALayout
-            functions={functions}
-            title={`functions`}
-          /> */}
-          {/* <SliderComponent /> */}
         </DrawerContent>
       </Drawer>
     </>

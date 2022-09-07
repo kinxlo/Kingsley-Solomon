@@ -1,97 +1,88 @@
 import {
-  Avatar,
   Box,
+  Button,
   Flex,
-  Heading,
   Icon,
   Link,
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import { BsDot } from 'react-icons/bs';
+import { MdOutlineDownloading } from 'react-icons/md';
+
 import {
   lightSticker,
   darkSticker,
 } from '../../theme/customTheme';
-import Controls from '../Controls';
-import SearchResultDisplay from '../searchBar/Search';
 
 const Profile = () => {
-  const { colorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box
-      _before={
-        colorMode == `light` ? lightSticker : darkSticker
-      }
-      _after={
-        colorMode == `light` ? lightSticker : darkSticker
-      }
+    <Flex
       className='profile-view'
-      maxW={{ base: `100%`, lg: `70%`, '2xl': `50%` }}
+      maxW={{ base: `100%`, lg: `50%` }}
+      height={`100vh`}
       width={`100%`}
-      height={{ base: `100vh`, xl: `initial` }}
-      margin={{ lg: `auto` }}
-      display={{ base: `flex`, xl: `initial` }}
       alignItems={`center`}
       justifyContent={`center`}
-      pos={`sticky`}
+      px={{
+        base: `2em`,
+        sm: `5em`,
+        xl: `10em`,
+        '2xl': `15em`,
+      }}
+      pos={{ base: `sticky`, xl: `relative` }}
+      top={0}
     >
       {/* profile */}
-      <Box className='profile-box'>
+      <Box>
         <Flex alignItems={`center`}>
-          <Avatar
-            className='box-shadow'
-            name='kingsley solomon'
-            src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile1_wqaris.jpg`}
-            size={`md`}
-          />{' '}
-          <Heading
-            fontSize={{
-              base: `24px`,
-              sm: `32px`,
-              md: `42px`,
-            }}
-            letterSpacing={1}
-            borderLeft={`1px solid`}
-            pl={2}
-            ml={2}
+          <Text
+            fontSize={`16px`}
+            fontWeight={`medium`}
+            color={
+              colorMode == `light` ? `accent` : `initial`
+            }
+            className='font-mono'
           >
-            <Text
-              opacity={`70%`}
-              fontSize={`sm`}
-              color={`accent`}
-              className='font-mono'
-            >
-              Hello I&apos;m
-            </Text>
-            Kingsley Solomon
-          </Heading>
+            Welcome!, I&apos;m
+          </Text>
         </Flex>
-        <Box>
+        <Flex
+          flexDir={`column`}
+          gap={{
+            base: `5rem`,
+            sm: `10rem`,
+            md: `10rem`,
+            xl: `5rem`,
+          }}
+        >
           <Flex
-            flexDir={{ base: `column`, xl: `row` }}
+            flexDir={`column`}
             justifyContent={{ base: `space-between` }}
+            gap={`1rem`}
           >
-            <Flex
-              mt={`5rem`}
-              mb={{ base: `10rem`, xl: `5rem` }}
-              flexDirection={`column`}
-              gap={2}
-            >
+            <Flex flexDirection={`column`} gap={2}>
               <Text
                 as={`h2`}
-                fontSize={{ base: `4rem`, md: `8rem` }}
+                fontSize={{
+                  base: `4rem`,
+                  md: `6rem`,
+                  '2xl': `8rem`,
+                }}
                 lineHeight={1.1}
                 fontWeight={`bold`}
               >
-                Frontend <br /> Developer.
+                Kingsley <br /> Solomon.
               </Text>
+            </Flex>
+            <Box>
               <Text
                 color={`accent`}
-                className='font-mono'
-                lineHeight={`1rem`}
-                fontStyle={`italic`}
+                fontWeight={`bolder`}
+                letterSpacing={`1px`}
+                textTransform={`uppercase`}
+                className=''
                 fontSize={{
                   base: `10px`,
                   sm: `12px`,
@@ -99,106 +90,48 @@ const Profile = () => {
                   xl: `18px`,
                 }}
               >
-                Integrating Science, Art, and APIs.
+                Frontend Developer
               </Text>
-            </Flex>
-          </Flex>
-          <Flex
-            mt={{ base: `5rem`, xl: `1rem` }}
-            flexDir={`column`}
-            alignItems={{ base: `end`, lg: `end` }}
-            fontStyle={`italic`}
-            color={`darkBg`}
-            display={{ base: `none`, xl: `flex` }}
-          >
-            <Text
-              fontSize={{
-                base: `10px`,
-                sm: `12px`,
-                xl: `15px`,
-              }}
-              display={`flex`}
-              alignItems={`center`}
-            >
-              Good knowledge in API Implementation.
-              <Icon
-                display={{ base: `none`, lg: `block` }}
-                color='accent'
-                as={BsDot}
-              ></Icon>
-            </Text>
-
-            <Text
-              fontSize={{
-                base: `10px`,
-                sm: `12px`,
-                xl: `15px`,
-              }}
-              display={`flex`}
-              alignItems={`center`}
-            >
-              Skilled at design patterns & responsive
-              design.{' '}
-              <Icon
-                display={{ base: `none`, lg: `block` }}
-                color='accent'
-                as={BsDot}
-              ></Icon>
-            </Text>
-            <Text
-              fontSize={{
-                base: `10px`,
-                sm: `12px`,
-                xl: `15px`,
-              }}
-              display={`flex`}
-              alignItems={`center`}
-            >
-              Over 3 Years experience with frontend
-              development.{' '}
-              <Icon
-                display={{ base: `none`, lg: `block` }}
-                color='accent'
-                as={BsDot}
-              ></Icon>
-            </Text>
-          </Flex>
-          {/* <Flex
-            display={{ base: `none`, lg: `flex` }}
-            py={5}
-            justifyContent={`space-between`}
-            gap={10}
-          >
-            <SearchResultDisplay />
-            <Button
-              border={`1px solid`}
-              padding={{
-                base: `5px 20px`,
-                md: `10px 40px`,
-              }}
-              _hover={{
-                color: `rgb(208, 0, 255) !important`,
-              }}
-              fontSize={{ base: `10px`, md: `14px` }}
-              fontWeight={`bold`}
-              className='font-mono'
-            >
+              <Text fontSize={`14px`} my={10}>
+                Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Eveniet, vitae
+                perspiciatis ea perferendis nemo corrupti.
+                Doloremque illo amet sapiente minima!
+              </Text>
               <Link
                 download
-                rel='noopener noreferrer'
-                href='/KingsleySolomon_Ifijeh_Resume.PDF'
+                target={`_blank`}
+                href='../../public/KingsleySolomon_Ifijeh_Resume.PDF'
               >
-                Resume
+                <Button
+                  display={`flex`}
+                  gap={5}
+                  alignItems={`center`}
+                  color={
+                    colorMode == `light`
+                      ? `accent`
+                      : `initial`
+                  }
+                  background={`trtnasparent`}
+                  border={`2px solid`}
+                  size={`lg`}
+                  fontSize={`1.3em`}
+                  p={`2rem 3rem`}
+                  borderRadius={`100px`}
+                  borderColor={`accent`}
+                  _hover={{
+                    background: `accent`,
+                    color: `#fff`,
+                  }}
+                >
+                  Resume
+                </Button>
               </Link>
-            </Button>
-          </Flex> */}
-
-          <Flex width={`100%`}>
-            <Controls />
+            </Box>
           </Flex>
-        </Box>
+        </Flex>
       </Box>
-    </Box>
+    </Flex>
   );
 };
 

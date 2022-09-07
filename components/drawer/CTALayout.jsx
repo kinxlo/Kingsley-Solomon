@@ -24,7 +24,6 @@ const CTALayout = ({ functions, title }) => {
 
   return (
     <>
-      {/* <Text textAlign={`end`} mt={`1rem`}>APIs</Text> */}
       <Grid templateColumns='repeat(4, 1fr)' gap={2}>
         {boxs}
       </Grid>

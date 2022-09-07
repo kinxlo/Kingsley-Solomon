@@ -6,21 +6,28 @@ import {
   Heading,
   Image,
   Text,
+  useColorMode,
 } from '@chakra-ui/react';
 import React from 'react';
 import CTA from '../drawer/CTA';
 
 const ProductivityLayout = ({ title, document }) => {
+  const { colorMode } = useColorMode();
   let boxs = document.map((box) => {
     return (
       <CTA
         name={box.name}
-        height={{ base: `7rem`, sm: `9rem`, md: `15rem` }}
+        height={{ base: `10rem`, sm: `14rem`, md: `15rem` }}
         key={box.id}
         title={title}
       >
         <Image
-          filter={`drop-shadow(1px 8px 5px #00000080)`}
+          as={`img`}
+          filter={
+            colorMode == `light`
+              ? `drop-shadow(-4px 2px 2px #A7A7A7)`
+              : null
+          }
           maxW={`30%`}
           src={box.image}
           alt='language'
@@ -29,37 +36,18 @@ const ProductivityLayout = ({ title, document }) => {
     );
   });
   return (
-    <Flex
-      maxW={`1200px`}
-      margin={`0 auto`}
-      flexDir={`column`}
-      justifyContent={`center`}
-      py={`5rem`}
-      className='section'
-      name={title}
-    >
-      <Flex
-        display={`flex`}
-        justifyContent={`end`}
-        alignItems={`center`}
-        marginY={`3rem`}
+    <Box height={`100vh `}>
+      <Grid
+        maxW={{ base: `100%`, lg: `50%` }}
+        width={`100%`}
+        className='section'
+        name={title}
+        templateColumns='repeat(3, 1fr)'
+        gap={1}
       >
-        <hr className='line' />
-
-        <Text
-          fontSize={{ base: `1.5rem`, md: `3rem` }}
-          fontWeight={700}
-          width={`fit-content`}
-        >
-          {title}
-        </Text>
-      </Flex>
-      <Container maxW={`900px`} margin={`0 0 0 auto`} p={0}>
-        <Grid templateColumns='repeat(3, 1fr)' gap={3}>
-          {boxs}
-        </Grid>
-      </Container>
-    </Flex>
+        {boxs}
+      </Grid>
+    </Box>
   );
 };
 

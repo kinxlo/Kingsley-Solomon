@@ -6,7 +6,6 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React from 'react';
-import NotificationControls from './NotificationControls';
 import { BsDot } from 'react-icons/bs';
 
 const NotificationBar = ({ comment }) => {
@@ -53,7 +52,7 @@ const NotificationBar = ({ comment }) => {
           {review}
         </Text>
       </Box>
-      {/* <NotificationControls /> */}
+
     </Box>
   );
 };

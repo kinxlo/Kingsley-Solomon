@@ -2,7 +2,7 @@
 // span,
 // li {
 //     color: var(--secondaryTextColor);
-//     font-size: 1em;
+//     font-size: 10px !important;
 // }
 
 .h2 {
@@ -28,7 +28,7 @@ li {
 #container--main {
     max-width: 700px;
     margin: 0 auto;
-    padding: 0 2em;
+    // padding: 0 2em;
 }
 
 .section--page {
