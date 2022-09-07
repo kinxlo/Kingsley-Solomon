@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import {
   Box,
-  Container,
   Link,
   Text,
   useColorMode,
@@ -36,6 +35,8 @@ const DigitalResume = () => {
         >
           <div>
             <Text
+              className='font-serif'
+              textTransform={`uppercase`}
               fontWeight={900}
               fontSize={`5xl`}
               my={`1.5rem`}

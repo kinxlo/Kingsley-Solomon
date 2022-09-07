@@ -76,8 +76,7 @@
     height: 3em;
     border-radius: 50%;
     text-align: center;
-    background-color: hsla(0, 0%, 0%, .1);
-    // background-color: var(--mainLinkColor);
+    background-color: var(--darkBg);
     transition: transform .3s ease, background .2s ease;
 }
 
@@ -109,9 +108,14 @@
  * The other theme for this menu
  */
 
+
 .circular-menu.circular-menu-left {
     right: auto;
     left: 1.5em;
+}
+
+.circular-menu .menu-item-left {
+    background-color: hsla(0, 0%, 0%, .1);
 }
 
 .circular-menu.circular-menu-left .floating-btn {

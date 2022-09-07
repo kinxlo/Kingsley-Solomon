@@ -38,12 +38,12 @@ const Profile = () => {
       <Box>
         <Flex alignItems={`center`}>
           <Text
+            className='font-serif'
             fontSize={`16px`}
             fontWeight={`medium`}
             color={
               colorMode == `light` ? `accent` : `initial`
             }
-            className='font-mono'
           >
             Welcome!, I&apos;m
           </Text>
@@ -72,6 +72,7 @@ const Profile = () => {
                 }}
                 lineHeight={1.1}
                 fontWeight={`bold`}
+                className='font-serif'
               >
                 Kingsley <br /> Solomon.
               </Text>
@@ -79,20 +80,19 @@ const Profile = () => {
             <Box>
               <Text
                 color={`accent`}
-                fontWeight={`bolder`}
+                fontWeight={900}
                 letterSpacing={`1px`}
                 textTransform={`uppercase`}
-                className=''
-                fontSize={{
-                  base: `10px`,
-                  sm: `12px`,
-                  md: `15px`,
-                  xl: `18px`,
-                }}
+                className='font-serif'
               >
                 Frontend Developer
               </Text>
-              <Text fontSize={`14px`} my={10}>
+              <Text
+                className='font-sans'
+                fontSize={{ base: `12px`, sm: `14px` }}
+                mt={5}
+                mb={10}
+              >
                 Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Eveniet, vitae
                 perspiciatis ea perferendis nemo corrupti.
@@ -107,22 +107,18 @@ const Profile = () => {
                   display={`flex`}
                   gap={5}
                   alignItems={`center`}
-                  color={
-                    colorMode == `light`
-                      ? `accent`
-                      : `initial`
-                  }
                   background={`trtnasparent`}
                   border={`2px solid`}
                   size={`lg`}
                   fontSize={`1.3em`}
-                  p={`2rem 3rem`}
+                  p={`2rem 2.5rem`}
                   borderRadius={`100px`}
                   borderColor={`accent`}
                   _hover={{
                     background: `accent`,
                     color: `#fff`,
                   }}
+                  className='font-serif'
                 >
                   Resume
                 </Button>

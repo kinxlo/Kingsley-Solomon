@@ -13,7 +13,7 @@ const ContactMenu = () => {
   let socials = contacts.map((social) => {
     return (
       <Link
-        className='menu-item'
+        className='menu-item menu-item-left'
         key={social.id}
         target='_blank'
         href={social.link}

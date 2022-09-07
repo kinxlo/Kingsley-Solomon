@@ -28,7 +28,7 @@ const ProductivityLayout = ({ title, document }) => {
               ? `drop-shadow(-4px 2px 2px #A7A7A7)`
               : null
           }
-          maxW={`30%`}
+          maxW={{ base: `25%`, md: `20%` }}
           src={box.image}
           alt='language'
         />
@@ -36,7 +36,7 @@ const ProductivityLayout = ({ title, document }) => {
     );
   });
   return (
-    <Box height={`100vh `}>
+    <Box height={`fit-content`}>
       <Grid
         maxW={{ base: `100%`, lg: `50%` }}
         width={`100%`}

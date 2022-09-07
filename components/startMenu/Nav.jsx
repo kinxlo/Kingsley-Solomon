@@ -1,4 +1,4 @@
-import { Button, Icon, Link, useColorMode } from '@chakra-ui/react';
+import { Button, Icon, Link } from '@chakra-ui/react';
 import React, { useContext, useState } from 'react';
 import {
   AiOutlineFileText,
@@ -11,7 +11,7 @@ import { RiToolsLine } from 'react-icons/ri';
 import { AppContext } from '../../context/AppContext';
 
 const ContactMenu = () => {
-  const { colorMode } = useColorMode();
+  //   const { colorMode, toggleColorMode } = useColorMode();
   const { switchContent, switchView } =
     useContext(AppContext);
   const [active] = useState({
@@ -24,7 +24,10 @@ const ContactMenu = () => {
   };
 
   return (
-    <div id='menu' className='circular-menu'>
+    <div
+      id='menu'
+      className='circular-menu circular-menu-top active'
+    >
       <Icon
         as={AiOutlineMenu}
         className='floating-btn'
@@ -43,11 +46,7 @@ const ContactMenu = () => {
           backgroundColor={`transparent`}
           name='profile'
           onClick={handleClick}
-          color={
-            colorMode == `light` ? `accent!` : `lightBg`
-          }
-          fontWeight={600}
-          fontSize={{ base: `12px`, md: `14px` }}
+          color={`accent`}
           isActive={switchView == `profile` ? true : false}
           _hover={active}
           _active={active}

@@ -92,7 +92,7 @@ const CTA = ({ width, height, name, title, children }) => {
       {/* <section> */}
       {children}
       {title === `Contacts` ? null : (
-        <Text letterSpacing={`2px`} fontWeight={`medium`} className='font-mono'>
+        <Text letterSpacing={`2px`} fontWeight={`400`} className='font-sans'>
           {name}
         </Text>
       )}

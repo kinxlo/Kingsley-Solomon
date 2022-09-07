@@ -10,12 +10,8 @@ import {
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 
-import {
-  RiGithubFill,
-  RiGithubLine,
-  RiLink,
-  RiLinksFill,
-} from 'react-icons/ri';
+import { RiGithubLine } from 'react-icons/ri';
+import { AiOutlineLink } from 'react-icons/ai';
 import { AppContext } from '../../context/AppContext';
 import {
   darkSticker,
@@ -63,7 +59,7 @@ const ProjectBox = () => {
               {project.language.map(function (code, index) {
                 return (
                   <Badge
-                  fontSize={`10px`}
+                    fontSize={`10px`}
                     borderRadius={`10px`}
                     color={
                       colorMode == `light`
@@ -124,9 +120,9 @@ const ProjectBox = () => {
             p={`2em`}
           >
             <Text
-              fontWeight={`bold`}
+              fontWeight={`medium`}
               color={
-                colorMode == `light` ? `accent` : `active`
+                colorMode == `light` ? `darkBg` : `accent`
               }
               fontSize={`14px`}
               className={`font-mono`}
@@ -134,8 +130,10 @@ const ProjectBox = () => {
               {project.category}
             </Text>
             <Text
+              className='font-serif'
+              letterSpacing={`2px`}
               color={
-                colorMode == `light` ? `active` : `accent`
+                colorMode == `light` ? `accent` : `lightBg`
               }
               fontWeight={`bolder`}
               fontSize={`24px`}
@@ -196,14 +194,13 @@ const ProjectBox = () => {
               >
                 <Icon
                   // border={`2px solid var(--mainLinkColor)`}
-
                   color={
                     colorMode == `light`
                       ? `accent`
                       : `lightBg`
                   }
                   borderRadius={`100%`}
-                  fontSize={`2em`}
+                  fontSize={`1.5em`}
                   as={RiGithubLine}
                 />
               </Link>
@@ -216,15 +213,14 @@ const ProjectBox = () => {
               >
                 <Icon
                   // border={`2px solid var(--mainLinkColor)`}
-
                   color={
                     colorMode == `light`
                       ? `accent`
                       : `lightBg`
                   }
                   borderRadius={`100%`}
-                  fontSize={`2em`}
-                  as={RiLinksFill}
+                  fontSize={`1.5em`}
+                  as={AiOutlineLink}
                 />
               </Link>
             </Flex>
@@ -249,10 +245,11 @@ const ProjectBox = () => {
           width={`fit-content`}
         >
           <Text
+            className='font-serif'
             pos={`fixed`}
             top={{ base: `-5rem`, xl: `initial` }}
-            bottom={{ base: `iniial`, xl: 0 }}
-            right={`5rem`}
+            bottom={{ base: `iniial`, xl: `1em` }}
+            right={`.3em`}
             m={`1rem 1rem 3rem`}
             opacity={{ base: `5%`, xl: `initial` }}
             textTransform={`capitalize`}
