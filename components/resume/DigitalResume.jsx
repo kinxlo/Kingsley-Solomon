@@ -13,22 +13,30 @@ import {
 
 const DigitalResume = () => {
   const { colorMode } = useColorMode();
+
+  const bgText = {
+    content: `'Resume'`,
+    position: `fixed`,
+    bottom: `-20rem`,
+    left: 0,
+    fontSize: `40rem`,
+    fontWeight: `bolder`,
+    fontFamily: `var(--font-serif)`,
+    letterSpacing: `1rem`,
+    color: `${colorMode == `light` ? `darkBg` : `lightBg`}`,
+    opacity: `${colorMode == `light` ? `5%` : `3%`}`,
+  };
   return (
     <Box
-      _before={
-        colorMode == `light` ? lightSticker : darkSticker
-      }
-      _after={
-        colorMode == `light` ? lightSticker : darkSticker
-      }
-      className='resume-view'
+      className='resume-view '
       maxW={{ base: `100%`, lg: `70%`, xl: `50%` }}
       px={{ base: `1rem`, sm: `2rem`, xl: `4rem` }}
       marginX={{ lg: `auto`, xl: `initial` }}
       position={`relative`}
       zIndex={3}
+      _before={bgText}
     >
-      <Box id='container--main'>
+      <Box id='container--main' className='hide-scrollbar'>
         <section
           id='wrapper--hero'
           className='section--page'

@@ -23,6 +23,19 @@ const ProjectBox = () => {
   const { projects, language } = useContext(AppContext);
   const { colorMode } = useColorMode();
 
+  const bgText = {
+    content: `'Accolades'`,
+    position: `fixed`,
+    bottom: `-20rem`,
+    left: 0,
+    fontSize: `40rem`,
+    fontWeight: `bolder`,
+    fontFamily: `var(--font-serif)`,
+    letterSpacing: `1rem`,
+    color: `${colorMode == `light` ? `darkBg` : `lightBg`}`,
+    opacity: `${colorMode == `light` ? `5%` : `3%`}`,
+  };
+
   if (projects.length) {
     let projectList = projects.map((project) => {
       return (
@@ -44,16 +57,21 @@ const ProjectBox = () => {
           }}
         >
           <Box
-            width={{ lg: `32rem`, '2xl': `50rem` }}
-            height={{ lg: `20rem`, '2xl': `30rem` }}
+            width={{
+              lg: `40rem`,
+              xl: `32rem`,
+              '2xl': `50rem`,
+            }}
+            height={{
+              lg: `25rem`,
+              xl: `20rem`,
+              '2xl': `30rem`,
+            }}
             display={{ base: `none`, lg: `block` }}
             flexDir={`column`}
             justifyContent={`space-between`}
-            transform={{
-              base: `translateX(0)`,
-              lg: `translateX(10rem)`,
-            }}
-            // bg={`accent`}
+            pos={`absolute`}
+            left={{ lg: `30rem`, xl: `15rem` }}
           >
             <Flex mb={3} justifyContent={`end`} gap={4}>
               {project.language.map(function (code, index) {
@@ -92,7 +110,6 @@ const ProjectBox = () => {
               />
             </Box>
           </Box>
-
           <Flex
             color={{ base: `#fff`, lg: `initial` }}
             position={{
@@ -100,7 +117,7 @@ const ProjectBox = () => {
               lg: `absolute`,
             }}
             zIndex={2}
-            left={{ xl: `5rem` }}
+            left={{ lg: `20%`, xl: `5%` }}
             textTransform={`capitalize`}
             flexDir={`column`}
             width={{ base: `100%`, lg: `initial` }}
@@ -117,7 +134,7 @@ const ProjectBox = () => {
             _hover={{
               backdropFilter: `blur(0)`,
             }}
-            p={`2em`}
+            p={{ base: `2em`, md: `6em`, lg: 0 }}
           >
             <Text
               fontWeight={`medium`}
@@ -147,12 +164,13 @@ const ProjectBox = () => {
               bg={
                 colorMode == `light`
                   ? `#10182090`
-                  : `#80000050`
+                  : `#80000080`
               }
               backdropFilter={`blur(10px)`}
               width={{ base: `100%`, lg: `30rem` }}
             >
               <Text
+                fontSize={{ base: `initial`, xl: `14px` }}
                 textTransform={`capitalize`}
                 color={`lightBg`}
                 fontWeight={`medium`}
@@ -229,7 +247,10 @@ const ProjectBox = () => {
       );
     });
     return (
-      <Box width={{ base: `initial`, xl: `50%` }}>
+      <Box
+        _before={bgText}
+        width={{ base: `initial`, xl: `50%` }}
+      >
         <Box
           _before={
             colorMode == `light`
@@ -246,20 +267,35 @@ const ProjectBox = () => {
         >
           <Text
             className='font-serif'
+            height={`fit-content`}
             pos={`fixed`}
-            top={{ base: `-5rem`, xl: `initial` }}
-            bottom={{ base: `iniial`, xl: `1em` }}
-            right={`.3em`}
+            top={{ lg: `1.5rem`, xl: `initial` }}
+            left={{
+              base: `initial`,
+              lg: `1%`,
+              xl: `initial`,
+            }}
+            bottom={{ base: `8%`, xl: `10%` }}
+            right={{
+              base: `1rem`,
+              lg: `initial`,
+              xl: `1%`,
+            }}
             m={`1rem 1rem 3rem`}
-            opacity={{ base: `5%`, xl: `initial` }}
+            zIndex={100}
             textTransform={`capitalize`}
             fontWeight={700}
-            textAlign={`right`}
-            color={{ base: `initial`, xl: `#fff` }}
+            textAlign={{
+              base: `right`,
+              lg: `left`,
+              xl: `right`,
+            }}
+            color={`lightBg`}
             fontSize={{
-              base: `32`,
-              sm: `52px`,
-              md: `64px`,
+              base: `20px`,
+              sm: `26px`,
+              md: `30px`,
+              lg: `50px`,
             }}
           >
             {language} <br />

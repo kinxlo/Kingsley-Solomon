@@ -31,6 +31,20 @@ const MobileLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
 
+  const image =
+    <Box display={switchView !== `profile` ? `none` : `block`} bg={`accent`} height={`100%`}>
+      <Image
+        width={`100%`}
+        height={`100%`}
+        objectFit={`cover`}
+        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile0_dqiv0d.jpg`}
+        alt={`profile-pic`}
+        mixBlendMode={`darken`}
+        filter={`grayscale(50%)  brightness(0.4)`}
+      />
+    </Box>
+
+
   const display = () => {
     switch (switchView) {
       case `profile`:
@@ -44,6 +58,21 @@ const MobileLayout = () => {
           document={tools} />
       default:
         return <Profile />;
+    }
+  };
+
+  const screen = () => {
+    switch (switchView) {
+      case `profile`:
+        return image;
+      case `resume`:
+        return image;
+      case `projects`:
+        return null;
+      case `tools`:
+        return null
+      default:
+        return image;
     }
   };
 
@@ -76,15 +105,7 @@ const MobileLayout = () => {
       </Button>
       {display()}
       <Hero>
-        <Image
-          width={`100%`}
-          height={`100%`}
-          objectFit={`cover`}
-          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile0_dqiv0d.jpg`}
-          alt={`profile-pic`}
-          mixBlendMode={`darken`}
-          filter={`grayscale(50%)  brightness(0.4)`}
-        />
+        {screen()}
       </Hero>
     </>
   );

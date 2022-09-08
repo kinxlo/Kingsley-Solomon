@@ -26,7 +26,7 @@ const ContactMenu = () => {
   return (
     <div
       id='menu'
-      className='circular-menu circular-menu-top active'
+      className='circular-menu circular-menu-top'
     >
       <Icon
         as={AiOutlineMenu}

@@ -1,5 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 
 const Hero = ({ children }) => {
   return (
@@ -9,7 +10,6 @@ const Hero = ({ children }) => {
       right={0}
       height={`100vh`}
       width={{ base: `100%`, xl: `50%` }}
-      bg={`accent`}
       zIndex={{ base: 5, xl: -10 }}
     >
       {children}
