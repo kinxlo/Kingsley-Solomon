@@ -9,7 +9,7 @@ const Hero = ({ children }) => {
       top={0}
       right={0}
       height={`100vh`}
-      width={{ base: `100%`, xl: `50%` }}
+      width={{ base: `100%`, lg: `40%`, xl: `50%` }}
       zIndex={{ base: 5, xl: -10 }}
     >
       {children}

@@ -35,7 +35,7 @@ const Profile = () => {
   return (
     <Flex
       className='profile-view'
-      maxW={{ base: `100%`, xl: `50%` }}
+      maxW={{ base: `100%`, md: `60%`, xl: `50%` }}
       height={`100vh`}
       width={`100%`}
       alignItems={`center`}
