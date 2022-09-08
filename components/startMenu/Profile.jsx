@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Flex,
-  Icon,
   Link,
   Text,
   useColorMode,
@@ -14,6 +13,7 @@ import {
   lightSticker,
   darkSticker,
 } from '../../theme/customTheme';
+import Background from './Background';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
@@ -35,6 +35,7 @@ const Profile = () => {
       pos={{ base: `sticky`, xl: `relative` }}
       top={0}
     >
+      <Background />
       {/* profile */}
       <Box>
         <Flex alignItems={`center`}>
