@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }) {
 
 
   return (
-    <Chakra  cookies={pageProps.cookies}>
+    <Chakra cookies={pageProps.cookies}>
       <Head>
         <title>Kingsley Solomon</title>
       </Head>

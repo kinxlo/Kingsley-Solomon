@@ -3,9 +3,11 @@ import {
   Button,
   Icon,
   Image,
+  Text,
   useColorMode,
 } from '@chakra-ui/react';
-import React, { useContext } from 'react';
+// import Image from 'next/image'
+import React, { useContext, useEffect, useState } from 'react';
 import ProjectBox from '../components/drawer/ProjectBox';
 import Nav from '../components/startMenu/Nav'
 import { AppContext } from '../context/AppContext';
@@ -14,21 +16,18 @@ import DigitalResume from '../components/resume/DigitalResume';
 import Hero from '../components/startMenu/Hero'
 import ContactMenu from '../components/startMenu/ContactMenu';
 import ProductivityLayout from '../components/startMenu/ProductivityLayout';
-import Reviews from '../components/drawer/Reviews.jsx'
 
 import {
   tools
 } from '../public/tools';
-import {
-  lightStickerFunc,
-  darkStickerFunc
-} from '../theme/customTheme';
+
 import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
 
 const MobileLayout = () => {
-  const { switchView, showControls, toggleControls, skillStickerName } =
+  const { switchView } =
     useContext(AppContext);
   const { colorMode, toggleColorMode } = useColorMode();
+  const [isLoading, setLoading] = useState(true)
 
 
   const image =
@@ -37,10 +36,11 @@ const MobileLayout = () => {
         width={`100%`}
         height={`100%`}
         objectFit={`cover`}
-        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile0_dqiv0d.jpg`}
+        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_500,f_auto,q_auto/v1630322773/hng/profile0_dqiv0d.jpg`}
         alt={`profile-pic`}
         mixBlendMode={`darken`}
         filter={`grayscale(50%)  brightness(0.4)`}
+
       />
     </Box>
 
@@ -76,11 +76,19 @@ const MobileLayout = () => {
     }
   };
 
+  useEffect(() => {
+    window.addEventListener("load", function (event) {
+      setLoading(false)
+    });
+  }, [])
+
+
+  if (isLoading) {
+    return <Text fontSize={`10rem`}>Loading...</Text>
+  }
+
   return (
-    <>
-      {/* <Box pos={`fixed`} top={`3em`} zIndex={999} display={switchView == `profile` || switchView == `tools` ? `none` : `block`}>
-        <Reviews />
-      </Box> */}
+    !isLoading && <>
       <Nav />
       <ContactMenu />
       <Button

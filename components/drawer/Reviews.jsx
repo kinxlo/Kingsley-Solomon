@@ -26,7 +26,7 @@ export default function DrawerExample() {
 
   return (
     <>
-      <Box boxSize={`5em`} className={`quil_box`}>
+      <Box boxSize={`5em`} className={`quil_box`} title={`see what folks are saying about me`}>
         <Image
           as={`img`}
           onClick={handleClick}
