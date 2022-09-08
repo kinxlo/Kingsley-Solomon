@@ -129,14 +129,13 @@ const Profile = () => {
               >
                 <Button
                   display={`flex`}
-                  gap={5}
-                  alignItems={`center`}
                   background={`trtnasparent`}
-                  border={`2px solid`}
-                  size={`lg`}
-                  fontSize={`1.3em`}
-                  p={`2rem 2.5rem`}
-                  borderRadius={`100px`}
+                  border={`1px`}
+                  fontSize={`18px`}
+                  fontWeight={900}
+                  p={`1.5rem 2rem`}
+                  borderRadius={`10px`}
+                  letterSpacing={`1px`}
                   borderColor={`accent`}
                   _hover={{
                     background: `accent`,

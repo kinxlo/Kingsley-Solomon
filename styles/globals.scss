@@ -44,7 +44,6 @@
   }
 }
 
-
 body {
 
   .box-shadow {
@@ -113,5 +112,19 @@ body {
     position: fixed !important;
     top: 0;
     left: 0;
+  }
+
+  .buzz {
+   animation: buzz 1s linear infinite alternate;
+  }
+
+  @keyframes buzz {
+    from {
+      transform: rotate(120deg) scale(0.9);
+    }
+
+    to {
+      transform: rotate(120deg) scale(1.05);
+    }
   }
 }

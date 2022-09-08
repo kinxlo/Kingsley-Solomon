@@ -28,15 +28,6 @@ const DigitalResume = () => {
     zIndex: -999,
   };
   return (
-    // <Box
-    //   className='resume-view'
-    //   maxW={{ base: `100%`, lg: `70%`, xl: `50%` }}
-    //   px={{ base: `1rem`, sm: `2rem`, xl: `4rem` }}
-    //   marginX={{ lg: `auto`, xl: `initial` }}
-    //   position={`relative`}
-    //   zIndex={3}
-    //   _before={bgText}
-    // >
     <Box
       maxW={{
         base: `100%`,
@@ -318,7 +309,6 @@ const DigitalResume = () => {
         </div>
       </section>
     </Box>
-    // </Box>
   );
 };
 
