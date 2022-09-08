@@ -5,7 +5,7 @@ import { AppContext } from '../../context/AppContext';
 const Hero = ({ children }) => {
   return (
     <Box
-      position={{ base: `sticky`, xl: `fixed` }}
+      position={{ base: `sticky`, lg: `fixed` }}
       top={0}
       right={0}
       height={`100vh`}

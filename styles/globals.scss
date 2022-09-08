@@ -37,19 +37,10 @@
   font-size: small;
   text-decoration: none !important;
   font-family: var(--font-sans);
-  // cursor: none;
-  // pointer-events: none;
+  font-size: small;
 
-  @media screen and (min-width: 414px) {
-    * {
-      font-size: medium;
-    }
-  }
-
-  @media screen and (min-width: 1200px) {
-    * {
-      font-size: large;
-    }
+  @media screen and (min-width: 1280px) {
+    font-size: medium;
   }
 }
 

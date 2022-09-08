@@ -35,7 +35,7 @@ const Profile = () => {
   return (
     <Flex
       className='profile-view'
-      maxW={{ base: `100%`, lg: `50%` }}
+      maxW={{ base: `100%`, xl: `50%` }}
       height={`100vh`}
       width={`100%`}
       alignItems={`center`}
@@ -77,15 +77,16 @@ const Profile = () => {
           <Flex
             flexDir={`column`}
             justifyContent={{ base: `space-between` }}
-            gap={`1rem`}
           >
             <Flex alignItems={`end`} gap={2}>
               <Text
                 as={`h2`}
                 fontSize={{
-                  base: `4rem`,
-                  md: `6rem`,
-                  '2xl': `8rem`,
+                  base: `5rem`,
+                  sm: `6rem`,
+                  md: `8rem`,
+                  xl: `5rem`,
+                  '2xl': `7rem`,
                 }}
                 lineHeight={1.1}
                 fontWeight={`bold`}
@@ -102,6 +103,11 @@ const Profile = () => {
                 letterSpacing={`1px`}
                 textTransform={`uppercase`}
                 className='font-serif'
+                fontSize={{
+                  base: `16px`,
+                  md: `18px`,
+                  '2xl': `20px`,
+                }}
               >
                 Frontend Developer
               </Text>
