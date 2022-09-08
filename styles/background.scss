@@ -11,7 +11,7 @@
 
     .line {
         position: absolute;
-        width: 1px;
+        width: 2px;
         height: 100%;
         top: 0;
         left: 50%;
@@ -30,6 +30,8 @@
             animation: drop 7s 0s infinite;
             animation-fill-mode: forwards;
             animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+            filter: invert(50%)
+            opacity(0.3)
         }
 
         &:nth-child(1) {
@@ -48,6 +50,10 @@
             }
         }
     }
+}
+
+.lines_two {
+    transform: translateX(-10rem);
 }
 
 @keyframes drop {

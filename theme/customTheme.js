@@ -13,7 +13,7 @@ export const customTheme = extendTheme({
         md: '768px',
         lg: '992px',
         xl: '1280px',
-        '2xl': '1400px',
+        '2xl': '1440px',
     },
 
     colors: {

@@ -18,6 +18,19 @@ import Background from './Background';
 const Profile = () => {
   const { colorMode } = useColorMode();
 
+  const bgText = {
+    content: `'Hi!'`,
+    position: `fixed`,
+    bottom: `-20rem`,
+    left: 0,
+    fontSize: `40rem`,
+    fontWeight: `bolder`,
+    fontFamily: `var(--font-serif)`,
+    letterSpacing: `1rem`,
+    color: `${colorMode == `light` ? `darkBg` : `lightBg`}`,
+    opacity: `${colorMode == `light` ? `5%` : `3%`}`,
+  };
+
   return (
     <Flex
       className='profile-view'
@@ -34,6 +47,7 @@ const Profile = () => {
       }}
       pos={{ base: `sticky`, xl: `relative` }}
       top={0}
+      _before={bgText}
     >
       <Background />
       {/* profile */}
