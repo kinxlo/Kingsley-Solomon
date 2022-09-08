@@ -1,217 +1,135 @@
 import {
-  Avatar,
   Box,
   Button,
-  Center,
-  Container,
   Flex,
-  Heading,
   Icon,
   Link,
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import { BsDot } from 'react-icons/bs';
+
+import Reviews from '../drawer/Reviews';
+
 import {
   lightSticker,
   darkSticker,
 } from '../../theme/customTheme';
-import Controls from '../Controls';
-import SearchResultDisplay from '../searchBar/Search';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
 
   return (
-    <Container
-      _before={
-        colorMode == `light` ? lightSticker : darkSticker
-      }
-      _after={
-        colorMode == `light` ? lightSticker : darkSticker
-      }
+    <Flex
       className='profile-view'
-      pos={{ base: `sticky`, xl: `fixed` }}
-      height={{ base: `100vh`, xl: `fit-content` }}
-      maxW={{ base: `100%`, xl: `80%`, '2xl': `50%` }}
-      margin={`0 auto 0 0`}
-      display={{ base: `flex`, xl: `initial` }}
+      maxW={{ base: `100%`, lg: `50%` }}
+      height={`100vh`}
+      width={`100%`}
       alignItems={`center`}
       justifyContent={`center`}
+      px={{
+        base: `2em`,
+        sm: `5em`,
+        xl: `10em`,
+        '2xl': `15em`,
+      }}
+      pos={{ base: `sticky`, xl: `relative` }}
+      top={0}
     >
       {/* profile */}
-      <Box
-      // m={{ base: `5rem 0 6rem`, sm: `5rem 0 10rem` }}
-      // className={`profile_layout`}
-      >
+      <Box>
         <Flex alignItems={`center`}>
-          <Avatar
-            className='box-shadow'
-            name='kingsley solomon'
-            src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile1_wqaris.jpg`}
-            size={`md`}
-          />{' '}
-          <Heading
-            fontSize={{
-              base: `24px`,
-              sm: `32px`,
-              md: `42px`,
-            }}
-            letterSpacing={1}
-            borderLeft={`1px solid`}
-            pl={2}
-            ml={2}
+          <Text
+            className='font-serif'
+            fontSize={`16px`}
+            fontWeight={`medium`}
+            color={
+              colorMode == `light` ? `accent` : `initial`
+            }
           >
-            <Text
-              opacity={`70%`}
-              fontSize={`sm`}
-              color={`accent`}
-              className='font-mono'
-            >
-              Hello I&apos;m
-            </Text>
-            Kingsley Solomon
-          </Heading>
+            Welcome!, I&apos;m
+          </Text>
         </Flex>
-        <Box
-          marginRight={{ base: 0, xl: `5rem`, '2xl': 0 }}
+        <Flex
+          flexDir={`column`}
+          gap={{
+            base: `5rem`,
+            sm: `10rem`,
+            md: `10rem`,
+            xl: `5rem`,
+          }}
         >
           <Flex
-            gap={10}
-            flexDir={{ base: `column`, xl: `row` }}
+            flexDir={`column`}
             justifyContent={{ base: `space-between` }}
+            gap={`1rem`}
           >
-            <Flex
-              mt={`5rem`} mb={{base:`10rem`, xl:`5rem`}}
-              flexDirection={`column`}
-              gap={2}
-            >
+            <Flex alignItems={`end`} gap={2}>
               <Text
-                color={`spacejelly`}
-                // color={
-                //   colorMode == `light`
-                //     ? `#1a202c`
-                //     : `#83868d`
-                // }
                 as={`h2`}
-                fontSize={{ base: `4rem`, md: `8rem` }}
+                fontSize={{
+                  base: `4rem`,
+                  md: `6rem`,
+                  '2xl': `8rem`,
+                }}
                 lineHeight={1.1}
                 fontWeight={`bold`}
+                className='font-serif'
               >
-                Frontend <br /> Developer.
+                Kingsley <br /> Solomon.
               </Text>
+              <Reviews />
+            </Flex>
+            <Box>
               <Text
                 color={`accent`}
-                className='font-mono'
-                lineHeight={`1rem`}
-                fontStyle={`italic`}
-                fontSize={{
-                  base: `10px`,
-                  sm: `12px`,
-                  md: `15px`,
-                  xl: `18px`,
-                }}
+                fontWeight={900}
+                letterSpacing={`1px`}
+                textTransform={`uppercase`}
+                className='font-serif'
               >
-                Integrating Science, Art, and APIs.
+                Frontend Developer
               </Text>
-            </Flex>
-          </Flex>
-          <Flex
-            mt={{ base: `5rem`, xl: `1rem` }}
-            flexDir={`column`}
-            alignItems={{ base: `end`, lg: `end` }}
-            fontStyle={`italic`}
-            color={`darkBg`}
-            display={{ base: `none`, xl: `flex` }}
-          >
-            <Text
-              fontSize={{
-                base: `10px`,
-                sm: `12px`,
-                xl: `15px`,
-              }}
-              display={`flex`}
-              alignItems={`center`}
-            >
-              Good knowledge in API Implementation.
-              <Icon
-                display={{ base: `none`, lg: `block` }}
-                color='accent'
-                as={BsDot}
-              ></Icon>
-            </Text>
-
-            <Text
-              fontSize={{
-                base: `10px`,
-                sm: `12px`,
-                xl: `15px`,
-              }}
-              display={`flex`}
-              alignItems={`center`}
-            >
-              Skilled at design patterns & responsive
-              design.{' '}
-              <Icon
-                display={{ base: `none`, lg: `block` }}
-                color='accent'
-                as={BsDot}
-              ></Icon>
-            </Text>
-            <Text
-              fontSize={{
-                base: `10px`,
-                sm: `12px`,
-                xl: `15px`,
-              }}
-              display={`flex`}
-              alignItems={`center`}
-            >
-              Over 3 Years experience with frontend
-              development.{' '}
-              <Icon
-                display={{ base: `none`, lg: `block` }}
-                color='accent'
-                as={BsDot}
-              ></Icon>
-            </Text>
-          </Flex>
-          {/* <Flex
-            display={{ base: `none`, lg: `flex` }}
-            py={5}
-            justifyContent={`space-between`}
-            gap={10}
-          >
-            <SearchResultDisplay />
-            <Button
-              border={`1px solid`}
-              padding={{
-                base: `5px 20px`,
-                md: `10px 40px`,
-              }}
-              _hover={{
-                color: `rgb(208, 0, 255) !important`,
-              }}
-              fontSize={{ base: `10px`, md: `14px` }}
-              fontWeight={`bold`}
-              className='font-mono'
-            >
+              <Text
+                className='font-sans'
+                fontSize={{ base: `12px`, sm: `14px` }}
+                mt={5}
+                mb={10}
+              >
+                Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Eveniet, vitae
+                perspiciatis ea perferendis nemo corrupti.
+                Doloremque illo amet sapiente minima!
+              </Text>
               <Link
                 download
-                rel='noopener noreferrer'
-                href='/KingsleySolomon_Ifijeh_Resume.PDF'
+                target={`_blank`}
+                href='../../public/KingsleySolomon_Ifijeh_Resume.PDF'
               >
-                Resume
+                <Button
+                  display={`flex`}
+                  gap={5}
+                  alignItems={`center`}
+                  background={`trtnasparent`}
+                  border={`2px solid`}
+                  size={`lg`}
+                  fontSize={`1.3em`}
+                  p={`2rem 2.5rem`}
+                  borderRadius={`100px`}
+                  borderColor={`accent`}
+                  _hover={{
+                    background: `accent`,
+                    color: `#fff`,
+                  }}
+                  className='font-serif'
+                >
+                  Resume
+                </Button>
               </Link>
-            </Button>
-          </Flex> */}
-
-          <Flex width={`100%`}>
-            <Controls />
+            </Box>
           </Flex>
-        </Box>
+        </Flex>
       </Box>
-    </Container>
+    </Flex>
   );
 };
 

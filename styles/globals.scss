@@ -1,129 +1,63 @@
 :root {
   --font-sans:
-    "Ubuntu",
-    "Raleway",
-    "Nunito Sans",
-    "Ubuntu Condensed",
+    'Assistant',
+    'Philosopher',
     -apple-system,
     system-ui,
     sans-serif;
+  --font-serif:
+    'Cormorant Garamond',
+    'Lora',
+    serif;
   --font-mono:
-    "Ubuntu Mono",
-    "JetBrains Mono",
-    "Fira Mono",
+    'IBM Plex Mono',
+    'Inconsolata',
     monospace;
 
-  --mainLinkColor-light: #fd8e8e;
+  --mainLinkColor-light: #800000;
   --mainBorderColor-light: #dadada;
-  --mainActiveColor-light: #d000ff;
+  --mainActiveColor-light: #00E1D9;
+  --lightBg: #FCF6F5FF;
+  --darkBg: #101820FF;
 
   --mainLinkColor: var(--mainLinkColor-light);
   --mainBorderColor: var(--mainBorderColor-light);
   --mainActiveColor: var(--mainActiveColor-light);
-
-
 }
 
 @import '../components/resume/index.scss';
-@import './Calendar.css';
-@import '../components/carousel/carousel.scss';
+@import './contactBtn.scss';
 
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--font-sans);
   font-size: small;
   text-decoration: none !important;
-}
+  font-family: var(--font-sans);
+  // cursor: none;
+  // pointer-events: none;
 
-
-.line-v2 {
-  position: relative;
-  z-index: 999;
-
-  &:hover {
-    color: var(--mainActiveColor) !important;
+  @media screen and (min-width: 414px) {
+    * {
+      font-size: medium;
+    }
   }
 
-  &:after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 5rem;
-    margin: 0px auto;
-    background-color: var(--mainLinkColor);
-    opacity: 50%;
+  @media screen and (min-width: 1200px) {
+    * {
+      font-size: large;
+    }
   }
 }
+
 
 body {
 
-  // .fullpage-wrapper {
-  //   margin-left: 2rem;
-  // }
-
   .box-shadow {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-      rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  }
-
-  .blur {
-    background: #00000080;
-    backdrop-filter: blur(10px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #fff;
-  }
-
-  .profile-view {
-    top: 0;
-
-    &::before {
-      content: 'Hello!';
-      top: 0;
-      right: -4rem;
-      position: fixed;
-      font-size: 10rem;
-      z-index: -999;
-      font-weight: bolder;
-      writing-mode: vertical-rl;
-      -webkit-writing-mode: vertical-rl;
-      letter-spacing: 10px;
-    }
-  }
-
-  .resume-view {
-    &::before {
-      content: 'Resume.';
-      top: 0;
-      right: -4rem;
-      position: fixed;
-      font-size: 10rem;
-      font-weight: bolder;
-      z-index: -999;
-
-      writing-mode: vertical-rl;
-      -webkit-writing-mode: vertical-rl;
-      letter-spacing: 10px;
-    }
-  }
-
-  .project-view {
-    &::before {
-      content: 'Accolades.';
-      top: 0;
-      left: 0;
-      position: fixed;
-      font-size: 10rem;
-      font-weight: bolder;
-      z-index: -999;
-
-      writing-mode: vertical-rl;
-      -webkit-writing-mode: vertical-rl;
-      letter-spacing: 10px;
-    }
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 
   .font-mono {
@@ -134,29 +68,13 @@ body {
     font-family: var(--font-sans) !important;
   }
 
+  .font-serif {
+    font-family: var(--font-serif) !important;
+  }
+
 
   .heading {
     font-size: 18px;
-
-  }
-
-  .line {
-    margin-right: 1rem;
-    flex: 1;
-    opacity: 10%;
-  }
-
-  .line-v1 {
-    &:after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 12rem;
-      margin: 0px auto;
-      background-color: var(--mainLinkColor);
-      opacity: 50%;
-
-    }
   }
 
   .rotate-90 {
@@ -164,134 +82,6 @@ body {
     -webkit-writing-mode: vertical-rl;
   }
 
-  .project_ {
-
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0px;
-    //   right: 0px;
-    //   bottom: 0px;
-    //   left: 0px;
-    //   transition: all .2s;
-    //   background-color: rgba(0, 0, 0, 0.8);
-    //   backdrop-filter: blur(10px) sepia(100%);
-    //   -webkit-backdrop-filter: blur(5px) sepia(100%);
-    //   border-bottom: 1px solid var(--mainLinkColor);
-    // }
-
-    // &:hover:before {
-    //   backdrop-filter: blur(0) grayscale(0);
-    //   -webkit-backdrop-filter: blur(0) sepia(0);
-    //   border-bottom: 1px solid var(--mainActiveColor);
-    // }
-  }
-
-  .profile_layout {
-    .profile-pic {
-      position: relative;
-      filter: grayscale(50%);
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border-right: 1px solid var(--mainLinkColor);
-        border-bottom: 1px solid var(--mainLinkColor);
-        transform: translate(10px, 10px);
-        transition: all 0.2s;
-
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border-top: 1px solid var(--mainLinkColor);
-        border-left: 1px solid var(--mainLinkColor);
-        transform: translate(-10px, -10px);
-        background-color: var(--mainLinkColor);
-        filter: opacity(50%);
-        transition: all 0.2s;
-
-      }
-
-      &:hover {
-        filter: grayscale(0);
-      }
-
-      &:hover:before {
-        transform: translate(0px, 0px);
-        border: none;
-      }
-
-      &:hover:after {
-        filter: opacity(0) grayscale(0);
-      }
-    }
-  }
-
-  @-webkit-keyframes kenburns {
-    0% {
-      -webkit-transform-origin: bottom left;
-      transform-origin: bottom left;
-      transform: scale(1);
-      -ms-transform: scale(1);
-      /* IE 9 */
-      -webkit-transform: scale(1);
-      /* Safari and Chrome */
-      -o-transform: scale(1);
-      /* Opera */
-      -moz-transform: scale(1);
-      /* Firefox */
-    }
-
-    100% {
-      transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      /* IE 9 */
-      -webkit-transform: scale(1.2);
-      /* Safari and Chrome */
-      -o-transform: scale(1.2);
-      /* Opera */
-      -moz-transform: scale(1.2);
-      /* Firefox */
-    }
-  }
-
-  @keyframes kenburns {
-    0% {
-      -webkit-transform-origin: bottom left;
-      transform-origin: bottom left;
-      transform: scale(1);
-      -ms-transform: scale(1);
-      /* IE 9 */
-      -webkit-transform: scale(1);
-      /* Safari and Chrome */
-      -o-transform: scale(1);
-      /* Opera */
-      -moz-transform: scale(1);
-      /* Firefox */
-    }
-
-    100% {
-      transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      /* IE 9 */
-      -webkit-transform: scale(1.2);
-      /* Safari and Chrome */
-      -o-transform: scale(1.2);
-      /* Opera */
-      -moz-transform: scale(1.2);
-      /* Firefox */
-    }
-  }
 
   .hide-scrollbar {
     &::-webkit-scrollbar {
@@ -303,205 +93,33 @@ body {
     overflow: -moz-scrollbars-none !important; //for older versions of firefox
   }
 
-  .weatherApp {
-    position: relative;
-    background:
-      url(https://res.cloudinary.com/kingsleysolomon/image/upload/v1660223626/portfolio/wolf-zimmermann-6sf5rf8QYFE-unsplash_l5c3aa.jpg) no-repeat center;
-    background-size: cover;
-
-    &::after {
-      position: absolute;
-      left: 0;
-      top: 0;
-      content: '';
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.99);
-      opacity: 70%;
-      z-index: 1;
-    }
-  }
-
-  #map {
-    background-repeat: no-repeat;
-
-    .ol-zoom {
-      display: flex;
-      flex-direction: column;
-      gap: .2rem;
-      width: fit-content;
-      background-color: var(--mainTextColor);
-      border-radius: 5px;
-      padding: .1rem;
-
-      .ol-zoom-in,
-      .ol-zoom-out {
-        background-color: var(--mainLinkColor);
-        padding: .2rem;
-        width: 2rem;
-        height: 2.5rem;
-      }
-
-      .ol-zoom-in {
-        border-radius: 5px 5px 0 0;
-      }
-
-      .ol-zoom-out {
-        border-radius: 0 0 5px 5px;
-      }
-    }
-
-    .ol-rotate {
-      background-color: var(--mainLinkColor);
-      border-radius: 5px;
-      padding: .1rem;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      display: none;
-
-      .ol-rotate-reset {
-        background-color: var(--mainLinkColor);
-        padding: .2rem;
-        width: 2rem;
-        height: 2.5rem;
-        border-radius: 5px;
-      }
-    }
-
-    .ol-attribution {
-
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      display: none;
-
-      button {
-        background-color: var(--mainLinkColor);
-        padding: .2rem;
-        width: 2rem;
-        height: 2.5rem;
-        border-radius: 5px;
-        margin-left: .2rem;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 400px) {
-
-  //sm
-  .profile_layout {
-    margin: 5rem 0 10rem !important;
-  }
-
-}
-
-@media screen and (min-width: 480px) {
-  //sm
-
-}
-
-@media screen and (min-width: 768px) {
-   .fullpage-wrapper {
-     width: 100%;
-     margin: 0 auto !important;
-   }
-
-  //md
-  * {
-    font-size: initial;
-  }
-
-  .heading {
-    font-size: 24px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-
-
-
-  .profile-view {
-
-    &::before {
-      display: none;
-    }
-
-    &::after {
-      content: 'Hello!';
-      position: fixed;
-      bottom: 0;
-      left: -30rem;
-      font-size: 10rem;
-      font-weight: bolder;
-      z-index: -999;
-      letter-spacing: 10px;
-    }
-  }
-
-  .resume-view {
-    &::before {
-      display: none;
-    }
-
-    &::after {
-      content: 'Resume.';
-      position: fixed;
-      bottom: -9rem;
-      left: 0;
-      font-size: 25rem;
-      font-weight: bolder;
-      z-index: -999;
-      letter-spacing: 10px;
-    }
-  }
-
-  .project-view {
-    &::before {
-      display: none;
-    }
-
-    &::after {
-      content: 'Accolades.';
-      position: fixed;
-      top: -9rem;
-      left: 0;
-      font-size: 25rem;
-      font-weight: bolder;
-      z-index: -999;
-      letter-spacing: 10px;
-    }
-  }
-
-  //lg
-  .project_ {
-
-    &::before {
-      content: "";
-      position: static;
-      background-color: transparent !important;
-      backdrop-filter: blur(0) sepia(0) !important;
-      -webkit-backdrop-filter: blur(0) sepia(0) !important;
-      border: none !important;
-    }
-  }
-}
-
-@media screen and (min-width: 1280px) {
   .fullpage-wrapper {
-    width: 50%;
     margin: initial !important;
   }
 
-  .profile-view {
-    top: 50% !important;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .pbox {
+    &:hover img {
+      transition: all .1s;
+      transform: scale(1.05) translateY(-2px);
+    }
+
   }
 
-}
+  .quil_box {
+    img {
+      transform:
+        rotate(120deg);
+    }
 
-@media screen and (min-width: 1536px) {
-  //2xl
+    &:hover img {
+      transition: all .2s;
+      transform: rotate(120deg) scale(1.2);
+    }
+  }
+
+  .pos-quil_box {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+  }
 }

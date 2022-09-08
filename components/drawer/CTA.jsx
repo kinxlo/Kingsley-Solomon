@@ -3,7 +3,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { Box, useColorMode } from '@chakra-ui/react';
+import { Box, Text, useColorMode } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext.js';
 
 const CTA = ({ width, height, name, title, children }) => {
@@ -73,13 +73,9 @@ const CTA = ({ width, height, name, title, children }) => {
 
   return (
     <Box
-      boxShadow={`rgba(0, 0, 0, 0.2) 0px 30px 20px -7px`}
-      border={
-        colorMode == `light`
-          ? `1px solid #00000010`
-          : `1px solid #ffffff10`
+      backgroundColor={
+        colorMode == `light` ? `#DCDCDC50` : `#DCDCDC10`
       }
-      bg={colorMode == `light` ? `darkBg` : `lightBg`}
       textAlign={`center`}
       display={`flex`}
       flexDirection={`column`}
@@ -88,11 +84,17 @@ const CTA = ({ width, height, name, title, children }) => {
       width={width}
       height={height}
       onClick={handleFunctionClick}
+      _hover={{ bg: `transparent` }}
+      transition={`ease all .2s`}
+      className={`pbox`}
+
     >
       {/* <section> */}
       {children}
       {title === `Contacts` ? null : (
-        <p className='font-mono'>{name}</p>
+        <Text letterSpacing={`2px`} fontWeight={`400`} className='font-sans'>
+          {name}
+        </Text>
       )}
       {/* </section> */}
     </Box>

@@ -6,18 +6,15 @@ import {
   Text,
   Flex,
   useColorMode,
+  Image,
+  Box,
 } from '@chakra-ui/react';
-
 import Notification from './Notification';
-import MapView from '../MapView';
-import { useContext } from 'react';
-import { AppContext } from '../../context/AppContext';
 import { AiOutlineLeft } from 'react-icons/ai';
 
 export default function DrawerExample() {
   const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { toggleMapNotice } = useContext(AppContext);
 
   const handleClick = () => {
     if (isOpen) {
@@ -29,40 +26,43 @@ export default function DrawerExample() {
 
   return (
     <>
-      <Text
-        className='font-mono'
-        onClick={handleClick}
-        fontWeight={`bolder`}
-        cursor={`pointer`}
-        _hover={{ color: `#d000ff` }}
-        verticalAlign={`bottom!`}
-      >
-        Reviews
-      </Text>
+      <Box boxSize={`5em`} className={`quil_box`}>
+        <Image
+          as={`img`}
+          onClick={handleClick}
+          cursor={`pointer`}
+          alt='quill'
+          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1662597051/portfolio/305273_qoa0qn.svg`}
+          filter={
+            colorMode == `light`
+              ? `invert(0)`
+              : `invert(100%)`
+          }
+        />
+      </Box>
 
       <Drawer
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
-        // closeOnOverlayClick={false}
       >
         <DrawerContent
-          // className='blur'
-          background={
-            colorMode == `light` ? `#1a202c` : `#ffffff`
+          backgroundColor={
+            colorMode == `light` ? `darkBg` : `lightBg`
           }
           color={
-            colorMode == `light` ? `#ffffff` : `#000000`
+            colorMode == `light` ? `lightBg` : `darkBg`
           }
-          maxW={{ base: `100vw`, md: `30rem` }}
+          maxW={{ base: `100vw`, md: `40rem` }}
           padding={`0 1rem 1rem`}
           display={`flex`}
           flexDir={`column`}
           justifyContent={`end`}
           gap={`2`}
         >
-          <Flex py={5} justifyContent={`space-between`}>
+          <Flex alignItems={`center`} py={5}>
             <Icon
+              mr={`1rem`}
               onClick={handleClick}
               boxSize={`1.5rem`}
               as={AiOutlineLeft}
@@ -75,17 +75,7 @@ export default function DrawerExample() {
               Reviews
             </Text>
           </Flex>
-
-          {toggleMapNotice.showMap ? (
-            <MapView />
-          ) : (
-            <Notification />
-          )}
-          {/* <CTALayout
-            functions={functions}
-            title={`functions`}
-          /> */}
-          {/* <SliderComponent /> */}
+          <Notification />
         </DrawerContent>
       </Drawer>
     </>

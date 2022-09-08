@@ -5,44 +5,52 @@ import { mode } from '@chakra-ui/theme-tools'
 export const customTheme = extendTheme({
 
     config: {
-        initialColorMode: 'system',
+        initialColorMode: 'dark',
         useSystemColorMode: false,
+    },
+    breakpoints: {
+        sm: '576px',
+        md: '768px',
+        lg: '992px',
+        xl: '1280px',
+        '2xl': '1400px',
     },
 
     colors: {
-        accent: `#fd8e8e`,
-        active: `#d000ff`,
-        lightBg: `#111111`,
-        darkBg: `#ffffff`,
+        accent: `#800000`,
+        active: `#00E1D9`,
+        bg: `#000`,
+        darkBg:`#101820FF`,
+        lightBg:`#FCF6F5FF`,
     },
 
     styles: {
         global: (props) => ({
             body: {
-                bg: mode('darkBg', 'lightBg')(props),
-                color: mode('lightBg', 'darkBg')(props)
+                bg: mode('lightBg', 'darkBg')(props),
+                color: mode('darkBg', 'lightBg')(props)
             },
         }),
     },
 })
 
-export const darkSticker = {
-    opacity: `5%`,
-};
-export const lightSticker = {
-    opacity: `10%`,
-};
+// export const darkSticker = {
+//     opacity: `5%`,
+// };
+// export const lightSticker = {
+//     opacity: `10%`,
+// };
 
-export function darkStickerFunc(content) {
-    return {
-        content: `'${content}'`,
-        opacity: `5%`,
-    }
-};
+// export function darkStickerFunc(content) {
+//     return {
+//         content: `'${content}'`,
+//         opacity: `5%`,
+//     }
+// };
 
-export function lightStickerFunc(content) {
-    return {
-        content: `'${content}'`,
-        opacity: `10%`,
-    }
-};
+// export function lightStickerFunc(content) {
+//     return {
+//         content: `'${content}'`,
+//         opacity: `10%`,
+//     }
+// };

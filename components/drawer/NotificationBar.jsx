@@ -6,7 +6,6 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React from 'react';
-import NotificationControls from './NotificationControls';
 import { BsDot } from 'react-icons/bs';
 
 const NotificationBar = ({ comment }) => {
@@ -31,7 +30,7 @@ const NotificationBar = ({ comment }) => {
       <Box>
         <Flex alignItems={`center`}>
           <Text
-            fontSize={{ base: `12px`, md: `12px` }}
+            fontSize={{ base: `12px`, md: `14px` }}
             fontWeight={700}
           >
             {name}
@@ -41,7 +40,7 @@ const NotificationBar = ({ comment }) => {
             color={`accent`}
             className='font-mono'
             fontSize={{ base: `10px`, md: `12px` }}
-            fontWeight={200}
+            fontWeight={`medium`}
           >
             {job}
           </Text>
@@ -53,7 +52,7 @@ const NotificationBar = ({ comment }) => {
           {review}
         </Text>
       </Box>
-      {/* <NotificationControls /> */}
+
     </Box>
   );
 };

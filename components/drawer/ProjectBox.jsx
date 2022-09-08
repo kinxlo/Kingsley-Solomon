@@ -1,4 +1,5 @@
 import {
+  Badge,
   Box,
   Flex,
   Icon,
@@ -9,7 +10,8 @@ import {
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 
-import { RiGithubLine, RiLink } from 'react-icons/ri';
+import { RiGithubLine } from 'react-icons/ri';
+import { AiOutlineLink } from 'react-icons/ai';
 import { AppContext } from '../../context/AppContext';
 import {
   darkSticker,
@@ -25,7 +27,6 @@ const ProjectBox = () => {
     let projectList = projects.map((project) => {
       return (
         <Flex
-          my={5}
           className='section project_'
           key={project.id}
           position={`relative`}
@@ -37,8 +38,6 @@ const ProjectBox = () => {
           bgSize={`cover`}
           bgPosition={`right`}
           bgRepeat={`no-repeat`}
-          // bgColor={{ base: `accent`, lg: `initial` }}
-          // bgBlendMode={`screen`}
           _hover={{
             bgBlendMode: `normal`,
             filter: `grayscale(0)`,
@@ -47,28 +46,53 @@ const ProjectBox = () => {
           <Box
             width={{ lg: `32rem`, '2xl': `50rem` }}
             height={{ lg: `20rem`, '2xl': `30rem` }}
-            className={`project_img_box box-shadow`}
             display={{ base: `none`, lg: `block` }}
+            flexDir={`column`}
+            justifyContent={`space-between`}
             transform={{
               base: `translateX(0)`,
               lg: `translateX(10rem)`,
             }}
-            bg={`accent`}
+            // bg={`accent`}
           >
-            <Image
-              className='project_img'
-              boxSize={`100%`}
-              mixBlendMode={`multiply`}
-              filter={`grayscale(50%)`}
-              _hover={{
-                mixBlendMode: `normal`,
-                filter: `grayscale(0)`,
-              }}
-              objectFit={``}
-              src={project.image}
-              alt=''
-            />
+            <Flex mb={3} justifyContent={`end`} gap={4}>
+              {project.language.map(function (code, index) {
+                return (
+                  <Badge
+                    fontSize={`10px`}
+                    borderRadius={`10px`}
+                    color={
+                      colorMode == `light`
+                        ? `accent`
+                        : `lightBg`
+                    }
+                    p={`5px 20px`}
+                    // border={`1px solid`}
+                    letterSpacing={`1.5px`}
+                    borderColor={`accent`}
+                    bg={`transparent`}
+                    className='font-mono'
+                    key={index}
+                  >
+                    {code}
+                  </Badge>
+                );
+              })}
+            </Flex>
+            <Box
+              height={`calc(100% - 1em)`}
+              className={`project_img_box`}
+            >
+              <Image
+                className='project_img box-shadow'
+                boxSize={`100%`}
+                objectFit={``}
+                src={project.image}
+                alt=''
+              />
+            </Box>
           </Box>
+
           <Flex
             color={{ base: `#fff`, lg: `initial` }}
             position={{
@@ -93,16 +117,27 @@ const ProjectBox = () => {
             _hover={{
               backdropFilter: `blur(0)`,
             }}
-            p={10}
+            p={`2em`}
           >
             <Text
+              fontWeight={`medium`}
+              color={
+                colorMode == `light` ? `darkBg` : `accent`
+              }
               fontSize={`14px`}
-              color={`accent`}
               className={`font-mono`}
             >
               {project.category}
             </Text>
-            <Text fontWeight={`bolder`} fontSize={`24px`}>
+            <Text
+              className='font-serif'
+              letterSpacing={`2px`}
+              color={
+                colorMode == `light` ? `accent` : `lightBg`
+              }
+              fontWeight={`bolder`}
+              fontSize={`24px`}
+            >
               {project.name}
             </Text>
             <Box
@@ -110,28 +145,37 @@ const ProjectBox = () => {
               p={5}
               borderRadius={10}
               bg={
-                colorMode == `light` ? `lightBg` : `darkBg`
+                colorMode == `light`
+                  ? `#10182090`
+                  : `#80000050`
               }
-              className='box-shadow'
+              backdropFilter={`blur(10px)`}
               width={{ base: `100%`, lg: `30rem` }}
             >
               <Text
-                color={
-                  colorMode == `light`
-                    ? `darkBg`
-                    : `lightBg`
-                }
-                textTransform={`lowercase`}
+                textTransform={`capitalize`}
+                color={`lightBg`}
                 fontWeight={`medium`}
               >
                 {project.desc}
               </Text>
             </Box>
-            <Flex mb={5} gap={4}>
+            <Flex
+              display={{ base: `flex`, lg: `none` }}
+              justifyContent={`start`}
+              flexWrap={`wrap`}
+              mb={5}
+              gap={4}
+            >
               {project.language.map(function (code, index) {
                 return (
                   <Text
-                    // color={`accent`}
+                    color={
+                      colorMode == `light`
+                        ? `accent`
+                        : `lightBg`
+                    }
+                    letterSpacing={`1.5px`}
                     className='font-mono'
                     key={index}
                   >
@@ -148,7 +192,17 @@ const ProjectBox = () => {
                 target={`_blank`}
                 href={project.github}
               >
-                <Icon fontSize={`2rem`} as={RiGithubLine} />
+                <Icon
+                  // border={`2px solid var(--mainLinkColor)`}
+                  color={
+                    colorMode == `light`
+                      ? `accent`
+                      : `lightBg`
+                  }
+                  borderRadius={`100%`}
+                  fontSize={`1.5em`}
+                  as={RiGithubLine}
+                />
               </Link>
               <Link
                 _hover={{
@@ -157,7 +211,17 @@ const ProjectBox = () => {
                 target={`_blank`}
                 href={project.url}
               >
-                <Icon fontSize={`2rem`} as={RiLink} />
+                <Icon
+                  // border={`2px solid var(--mainLinkColor)`}
+                  color={
+                    colorMode == `light`
+                      ? `accent`
+                      : `lightBg`
+                  }
+                  borderRadius={`100%`}
+                  fontSize={`1.5em`}
+                  as={AiOutlineLink}
+                />
               </Link>
             </Flex>
           </Flex>
@@ -165,7 +229,7 @@ const ProjectBox = () => {
       );
     });
     return (
-      <Flex>
+      <Box width={{ base: `initial`, xl: `50%` }}>
         <Box
           _before={
             colorMode == `light`
@@ -181,9 +245,11 @@ const ProjectBox = () => {
           width={`fit-content`}
         >
           <Text
+            className='font-serif'
             pos={`fixed`}
-            bottom={0}
-            right={{ xl: 0 }}
+            top={{ base: `-5rem`, xl: `initial` }}
+            bottom={{ base: `iniial`, xl: `1em` }}
+            right={`.3em`}
             m={`1rem 1rem 3rem`}
             opacity={{ base: `5%`, xl: `initial` }}
             textTransform={`capitalize`}
@@ -201,7 +267,7 @@ const ProjectBox = () => {
           </Text>
         </Box>
         <FullScrollView>{projectList}</FullScrollView>
-      </Flex>
+      </Box>
     );
   } else {
     return <Text>No project at the moment</Text>;

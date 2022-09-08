@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import {
   Box,
-  Container,
   Link,
   Text,
   useColorMode,
@@ -24,7 +23,7 @@ const DigitalResume = () => {
       }
       className='resume-view'
       maxW={{ base: `100%`, lg: `70%`, xl: `50%` }}
-      // px={{ base: `1rem`, sm: `2rem`, xl: `4rem` }}
+      px={{ base: `1rem`, sm: `2rem`, xl: `4rem` }}
       marginX={{ lg: `auto`, xl: `initial` }}
       position={`relative`}
       zIndex={3}
@@ -34,9 +33,10 @@ const DigitalResume = () => {
           id='wrapper--hero'
           className='section--page'
         >
-          {/* <Image boxSize={`7rem`} alt='pp' src='https://res.cloudinary.com/kingsleysolomon/image/upload/v1630322773/hng/profile0_dqiv0d.jpg' /> */}
           <div>
             <Text
+              className='font-serif'
+              textTransform={`uppercase`}
               fontWeight={900}
               fontSize={`5xl`}
               my={`1.5rem`}
@@ -48,7 +48,8 @@ const DigitalResume = () => {
             <Text id='bio'>
               Frontend developer at{' '}
               <Link
-                color='accent!'
+                fontWeight={`medium!`}
+                color='active!'
                 href='https://www.wewetube.com'
                 target='_blank'
               >
@@ -71,21 +72,21 @@ const DigitalResume = () => {
         <section className='section--page'>
           <div id='socials--list'>
             <Link
-              color='accent!'
+              color='active!'
               href='https://twitter.com/kinxlo'
               target='_blank'
             >
               Twitter
             </Link>
             <Link
-              color='accent!'
+              color='active!'
               href='https://www.linkedin.com/in/kingsley-solomon-b90339b2/'
               target='_blank'
             >
               Linkedin
             </Link>
             <Link
-              color='accent!'
+              color='active!'
               href='https://github.com/kinxlo'
               target='_blank'
             >
@@ -93,7 +94,7 @@ const DigitalResume = () => {
             </Link>
             <Link
               download
-              color='accent!'
+              color='active!'
               rel='noopener noreferrer'
               href='/KingsleySolomon_Ifijeh_Resume.PDF'
             >
@@ -304,38 +305,6 @@ const DigitalResume = () => {
             </Text>
           </div>
         </section>
-
-        {/* <section className='section--page'>
-        <h2 className='h2'>Projects & Accomplishments</h2>
-
-        <div className='card--project'>
-          <Link color='accent!' href='project1.html'>
-            <span>🏆 </span>Built Link Laboratory management
-            system for forensics lab
-          </Link>
-        </div>
-
-        <div className='card--project'>
-          <Link color='accent!' href='project1.html'>
-            <span>🏆 </span>Documentation website - Lead
-            team to re-build docs for agora.io
-          </Link>
-        </div>
-
-        <div className='card--project'>
-          <Link color='accent!' href='project1.html'>
-            <span>🏆 </span>Ecommerce platform using paypal
-            and stripe API for payment integration
-          </Link>
-        </div>
-
-        <div className='card--project'>
-          <Link color='accent!' href='project1.html'>
-            <span>🏆 </span>Social Network - open source
-            project
-          </Link>
-        </div>
-      </section> */}
       </Box>
     </Box>
   );
