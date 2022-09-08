@@ -7,7 +7,8 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import { MdOutlineDownloading } from 'react-icons/md';
+
+import Reviews from '../drawer/Reviews';
 
 import {
   lightSticker,
@@ -15,7 +16,7 @@ import {
 } from '../../theme/customTheme';
 
 const Profile = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   return (
     <Flex
@@ -62,7 +63,7 @@ const Profile = () => {
             justifyContent={{ base: `space-between` }}
             gap={`1rem`}
           >
-            <Flex flexDirection={`column`} gap={2}>
+            <Flex alignItems={`end`} gap={2}>
               <Text
                 as={`h2`}
                 fontSize={{
@@ -76,6 +77,7 @@ const Profile = () => {
               >
                 Kingsley <br /> Solomon.
               </Text>
+              <Reviews />
             </Flex>
             <Box>
               <Text

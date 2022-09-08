@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Icon,
   Image,
@@ -13,6 +14,7 @@ import DigitalResume from '../components/resume/DigitalResume';
 import Hero from '../components/startMenu/Hero'
 import ContactMenu from '../components/startMenu/ContactMenu';
 import ProductivityLayout from '../components/startMenu/ProductivityLayout';
+import Reviews from '../components/drawer/Reviews.jsx'
 
 import {
   tools
@@ -47,14 +49,18 @@ const MobileLayout = () => {
 
   return (
     <>
+      {/* <Box pos={`fixed`} top={`3em`} zIndex={999} display={switchView == `profile` || switchView == `tools` ? `none` : `block`}>
+        <Reviews />
+      </Box> */}
       <Nav />
       <ContactMenu />
       <Button
         borderRadius={`100%`}
         boxSize={`3em`}
-        backgroundColor={`transparent`}
+        backgroundColor={`rgba(0,0,0,0.5)`}
+        color={`lightBg`}
         pos={`fixed`}
-        top={`1em`}
+        top={`3em`}
         zIndex={999}
         right={`1em`}
         onClick={toggleColorMode}
