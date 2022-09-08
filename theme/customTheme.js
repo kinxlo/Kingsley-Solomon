@@ -22,6 +22,8 @@ export const customTheme = extendTheme({
         bg: `#000`,
         darkBg:`#101820FF`,
         lightBg:`#FCF6F5FF`,
+        overlay:`hsl(0, 20%, 50%)`,
+        overlayProfile:`hsl(0, 60%, 50%)`
     },
 
     styles: {
@@ -33,24 +35,3 @@ export const customTheme = extendTheme({
         }),
     },
 })
-
-// export const darkSticker = {
-//     opacity: `5%`,
-// };
-// export const lightSticker = {
-//     opacity: `10%`,
-// };
-
-// export function darkStickerFunc(content) {
-//     return {
-//         content: `'${content}'`,
-//         opacity: `5%`,
-//     }
-// };
-
-// export function lightStickerFunc(content) {
-//     return {
-//         content: `'${content}'`,
-//         opacity: `10%`,
-//     }
-// };

@@ -14,11 +14,11 @@
     'Inconsolata',
     monospace;
 
-  --mainLinkColor-light: #800000;
-  --mainBorderColor-light: #dadada;
-  --mainActiveColor-light: #00E1D9;
-  --lightBg: #FCF6F5FF;
-  --darkBg: #101820FF;
+  --mainLinkColor-light: hsl(0, 100%, 25%);
+  --mainBorderColor-light: hsl(0, 0%, 85%);
+  --mainActiveColor-light: hsl(178, 100%, 44%);
+  --lightBg: hsl(9, 54%, 97%);
+  --darkBg: hsl(210, 33%, 9%);
 
   --mainLinkColor: var(--mainLinkColor-light);
   --mainBorderColor: var(--mainBorderColor-light);

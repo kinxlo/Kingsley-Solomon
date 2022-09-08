@@ -25,6 +25,7 @@ const ProductivityLayout = ({ title, document }) => {
     letterSpacing: `1rem`,
     color: `${colorMode == `light` ? `darkBg` : `lightBg`}`,
     opacity: `${colorMode == `light` ? `5%` : `3%`}`,
+    zIndex: -999
   };
 
   let boxs = document.map((box) => {

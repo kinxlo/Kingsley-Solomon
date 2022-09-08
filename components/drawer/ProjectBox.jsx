@@ -34,6 +34,7 @@ const ProjectBox = () => {
     letterSpacing: `1rem`,
     color: `${colorMode == `light` ? `darkBg` : `lightBg`}`,
     opacity: `${colorMode == `light` ? `5%` : `3%`}`,
+    zIndex: -999,
   };
 
   if (projects.length) {
@@ -100,13 +101,17 @@ const ProjectBox = () => {
             <Box
               height={`calc(100% - 1em)`}
               className={`project_img_box`}
+              bg={`overlay`}
             >
               <Image
-                className='project_img box-shadow'
+                loading='eager'
+                className='project_img'
+                boxShadow={`rgba(0, 0, 0, 0.45) 0px 25px 20px -10px`}
                 boxSize={`100%`}
-                objectFit={``}
                 src={project.image}
-                alt=''
+                alt='img'
+                objectFit={`cover`}
+                mixBlendMode={`multiply`}
               />
             </Box>
           </Box>
@@ -290,7 +295,9 @@ const ProjectBox = () => {
               lg: `left`,
               xl: `right`,
             }}
-            color={`lightBg`}
+            color={
+              colorMode == `light` ? `darkBg` : `lightBg`
+            }
             fontSize={{
               base: `20px`,
               sm: `26px`,

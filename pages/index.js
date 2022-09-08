@@ -31,14 +31,15 @@ const MobileLayout = () => {
 
 
   const image =
-    <Box display={switchView !== `profile` ? `none` : `block`} bg={`accent`} height={`100%`}>
+    <Box display={switchView !== `profile` ? `none` : `block`} bg={`overlayProfile`} height={`100%`}>
       <Image
+        loading='eager'
         width={`100%`}
         height={`100%`}
         objectFit={`cover`}
-        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_500,f_auto,q_auto/v1630322773/hng/profile0_dqiv0d.jpg`}
+        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_500,f_auto,q_auto/v1630322773/hng/profile0_dqiv0d.webp`}
         alt={`profile-pic`}
-        mixBlendMode={`darken`}
+        mixBlendMode={`multiply`}
         filter={`grayscale(50%)  brightness(0.4)`}
 
       />
@@ -83,12 +84,13 @@ const MobileLayout = () => {
   }, [])
 
 
-  if (isLoading) {
-    return <Text fontSize={`10rem`}>Loading...</Text>
-  }
+  // if (isLoading) {
+  //   return <Text fontSize={`10rem`}>Loading...</Text>
+  // }
 
   return (
-    !isLoading && <>
+    // !isLoading &&
+    <>
       <Nav />
       <ContactMenu />
       <Button
