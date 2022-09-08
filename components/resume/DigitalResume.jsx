@@ -72,7 +72,6 @@ const DigitalResume = () => {
         <section className='section--page'>
           <div id='socials--list'>
             <Link
-              fontWeight={`medium!`}
               color='active!'
               href='https://twitter.com/kinxlo'
               target='_blank'
@@ -80,7 +79,6 @@ const DigitalResume = () => {
               Twitter
             </Link>
             <Link
-              fontWeight={`medium!`}
               color='active!'
               href='https://www.linkedin.com/in/kingsley-solomon-b90339b2/'
               target='_blank'
@@ -88,7 +86,6 @@ const DigitalResume = () => {
               Linkedin
             </Link>
             <Link
-              fontWeight={`medium!`}
               color='active!'
               href='https://github.com/kinxlo'
               target='_blank'
@@ -96,7 +93,6 @@ const DigitalResume = () => {
               Github
             </Link>
             <Link
-              fontWeight={`medium!`}
               download
               color='active!'
               rel='noopener noreferrer'
