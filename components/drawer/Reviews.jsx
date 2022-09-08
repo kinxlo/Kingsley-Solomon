@@ -65,16 +65,15 @@ export default function DrawerExample() {
           justifyContent={`end`}
           gap={`2`}
         >
-          <Flex alignItems={`center`} py={5}>
+          <Flex alignItems={`center`} p={`2rem`} gap={`3rem`}>
             <Icon
-              mr={`1rem`}
               onClick={handleClick}
               boxSize={`1.5rem`}
               as={AiOutlineLeft}
             />
             <Text
+            fontSize={`large`}
               fontWeight={`bold`}
-              textAlign={`right`}
               as={`h3`}
             >
               Reviews
