@@ -1,126 +1,63 @@
-import {
-  Box,
-  Button,
-  Icon,
-  Image,
-  Text,
-  useColorMode,
-} from '@chakra-ui/react';
-// import Image from 'next/image'
-import React, { useContext, useEffect, useState } from 'react';
-import ProjectBox from '../components/drawer/ProjectBox';
-import Nav from '../components/startMenu/Nav'
-import { AppContext } from '../context/AppContext';
-import Profile from '../components/startMenu/Profile';
-import DigitalResume from '../components/resume/DigitalResume';
-import Hero from '../components/startMenu/Hero'
-import ContactMenu from '../components/startMenu/ContactMenu';
-import ProductivityLayout from '../components/startMenu/ProductivityLayout';
+import { Box, Flex, Text } from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import Router from 'next/router';
 
-import {
-  tools
-} from '../public/tools';
+const Intro = () => {
+  const [title] = useState('Greetings!')
+  const [message] = useState('I hear you are looking for a skilled web developer!')
+  const text_1 = [...title].map((al, index) => {
+    return (
+      <Text
+        id={al}
+        as={`h1`}
+        fontSize={`5rem`}
+        className='letter font-serif'
+        key={index}
+      >
+        {al}
+      </Text>
+    );
+  });
 
-import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
+  const text_2 = [...message].map((al, index) => {
+    return (
+      <Text
+        id={al}
+        fontSize={`2rem`}
+        className='letter font-serif'
+        key={index}
+      >
+        {al}
+      </Text>
+    );
+  });
 
-const MobileLayout = () => {
-  const { switchView } =
-    useContext(AppContext);
-  const { colorMode, toggleColorMode } = useColorMode();
-  const [isLoading, setLoading] = useState(true)
+  const lastElement = text_2[text_2.length - 1].props.id
 
-
-  const image =
-    <Box display={switchView !== `profile` ? `none` : `block`} bg={`overlayProfile`} height={`100%`}>
-      <Image
-        loading='eager'
-        width={`100%`}
-        height={`100%`}
-        objectFit={`cover`}
-        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_500,f_auto,q_auto/v1630322773/hng/profile0_dqiv0d.webp`}
-        alt={`profile-pic`}
-        mixBlendMode={`multiply`}
-        filter={`grayscale(50%)  brightness(0.4)`}
-
-      />
-    </Box>
-
-
-  const display = () => {
-    switch (switchView) {
-      case `profile`:
-        return <Profile />;
-      case `resume`:
-        return <DigitalResume />;
-      case `projects`:
-        return <ProjectBox />;
-      case `tools`:
-        return <ProductivityLayout title={`Languages`}
-          document={tools} />
-      default:
-        return <Profile />;
-    }
-  };
-
-  const screen = () => {
-    switch (switchView) {
-      case `profile`:
-        return image;
-      case `resume`:
-        return image;
-      case `projects`:
-        return null;
-      case `tools`:
-        return null
-      default:
-        return image;
-    }
+  const handleAnimationEnd = (e) => {
+    Router.push({ pathname: `/KS` })
   };
 
   useEffect(() => {
-    window.addEventListener("load", function (event) {
-      setLoading(false)
-    });
-  }, [])
-
-
-  // if (isLoading) {
-  //   return <Text fontSize={`10rem`}>Loading...</Text>
-  // }
+    document.getElementById(lastElement).addEventListener('animationend', handleAnimationEnd)
+  })
 
   return (
-    // !isLoading &&
-    <>
-      <Nav />
-      <ContactMenu />
-      <Button
-        borderRadius={`100%`}
-        boxSize={`3em`}
-        backgroundColor={`rgba(0,0,0,0.5)`}
-        color={`lightBg`}
-        pos={`fixed`}
-        top={`3em`}
-        zIndex={999}
-        right={`1em`}
-        onClick={toggleColorMode}
-      >
-        <Icon
-          as={
-            colorMode == `light`
-              ? RiMoonClearFill
-              : RiSunFill
-          }
-          fontSize={`1.3rem`}
-        />
-      </Button>
-      {display()}
-      <Hero>
-        {screen()}
-      </Hero>
-    </>
+    <Flex
+      flexDir={`column`}
+      justifyContent={`center`}
+      textAlign={`center`}
+      width={`fit-content`}
+      height={`100vh`}
+      m={`auto`}
+      p={`2rem`}
+    >
+      <Box>
+        {text_1}
+      </Box>
+      <Box>{text_2}</Box>
+    </Flex>
   );
 };
 
-export default MobileLayout;
-
-
+export default Intro;
