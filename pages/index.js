@@ -35,7 +35,7 @@ const Intro = () => {
   const lastElement = text_2[text_2.length - 1].props.id
 
   const handleAnimationEnd = (e) => {
-    Router.push({ pathname: `/KS` })
+    // Router.push({ pathname: `/KS` })
   };
 
   useEffect(() => {
@@ -47,10 +47,10 @@ const Intro = () => {
       flexDir={`column`}
       justifyContent={`center`}
       textAlign={`center`}
-      width={`fit-content`}
       height={`100vh`}
       m={`auto`}
       p={`2rem`}
+      overflow={`hidden`}
     >
       <Box>
         {text_1}
