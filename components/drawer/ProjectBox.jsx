@@ -45,6 +45,10 @@ const ProjectBox = () => {
           key={project.id}
           position={`relative`}
           alignItems={`center`}
+          bgColor={{
+            base: `overlayProjectMobile`,
+            lg: `initial`,
+          }}
           backgroundImage={{
             base: project.image,
             lg: `none`,
@@ -52,6 +56,7 @@ const ProjectBox = () => {
           bgSize={`cover`}
           bgPosition={`right`}
           bgRepeat={`no-repeat`}
+          backgroundBlendMode={`multiply`}
           _hover={{
             bgBlendMode: `normal`,
             filter: `grayscale(0)`,
@@ -134,10 +139,10 @@ const ProjectBox = () => {
               base: `blur(5px)`,
               lg: `none`,
             }}
-            backgroundColor={{
-              base: `rgba(0,0,0,0.8)`,
-              lg: `initial`,
-            }}
+            // backgroundColor={{
+            //   base: `rgba(0,0,0,0.5)`,
+            //   lg: `initial`,
+            // }}
             _hover={{
               backdropFilter: `blur(0)`,
             }}

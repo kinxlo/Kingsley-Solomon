@@ -84,15 +84,15 @@ const Intro = () => {
           <Text as={`span`} className={`letter msg`}>e</Text>
           <Text as={`span`} className={`letter msg`}>d</Text>
           <Text as={`span`} className={`letter msg`}>&nbsp;</Text>
-          <Text as={`span`} className={`msg letter`}>d</Text>
-          <Text as={`span`} className={`msg letter`}>e</Text>
-          <Text as={`span`} className={`msg letter`}>v</Text>
-          <Text as={`span`} className={`msg letter`}>e</Text>
+          <Text as={`span`} fontWeight={`medium`} color={`accent`} className={`msg letter`}>D</Text>
+          <Text as={`span`} fontWeight={`medium`} color={`accent`} className={`msg letter`}>E</Text>
+          <Text as={`span`} fontWeight={`medium`} color={`accent`} className={`msg letter`}>V</Text>
+          {/* <Text as={`span`} className={`msg letter`}>e</Text>
           <Text as={`span`} className={`msg letter`}>l</Text>
           <Text as={`span`} className={`msg letter`}>o</Text>
           <Text as={`span`} className={`msg letter`}>p</Text>
           <Text as={`span`} className={`msg letter`}>e</Text>
-          <Text as={`span`} className={`msg letter`}>r</Text>
+          <Text as={`span`} className={`msg letter`}>r</Text> */}
           <Text id='lastElement' as={`span`} className={`msg letter`}>.</Text>
         </Box>
       </Box>

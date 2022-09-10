@@ -96,9 +96,9 @@ const MobileLayout = () => {
         backgroundColor={`rgba(0,0,0,0.5)`}
         color={`lightBg`}
         pos={`fixed`}
-        top={`3em`}
+        top={`1.5em`}
         zIndex={999}
-        right={`1em`}
+        right={`1.5em`}
         onClick={toggleColorMode}
       >
         <Icon
