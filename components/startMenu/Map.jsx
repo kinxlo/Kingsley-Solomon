@@ -32,7 +32,11 @@ const Map = () => {
             zIndex={1}
             m={`1.5em`}
             p={`1em`}
-            backgroundColor={`#80000050`}
+            backgroundColor={
+              colorMode == `light`
+                ? `#10182070`
+                : `#80000050`
+            }
           >
             <Text
               color={`lightBg`}
