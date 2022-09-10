@@ -41,220 +41,49 @@ const ProjectBox = () => {
     let projectList = projects.map((project) => {
       return (
         <Flex
-          className='section project_'
+          className='section'
           key={project.id}
           position={`relative`}
-          alignItems={`center`}
-          bgColor={{
-            base: `overlayProjectMobile`,
-            lg: `initial`,
-          }}
-          backgroundImage={{
-            base: project.image,
-            lg: `none`,
-          }}
-          bgSize={`cover`}
-          bgPosition={`right`}
-          bgRepeat={`no-repeat`}
-          backgroundBlendMode={`multiply`}
-          _hover={{
-            bgBlendMode: `normal`,
-            filter: `grayscale(0)`,
+          transform={{
+            base: `scale(1)`,
+            md: `scale(0.7)`,
+            lg: `scale(0.6)`,
+            xl: `scale(1)`,
           }}
         >
           <Box
-            width={{
-              lg: `40rem`,
-              xl: `32rem`,
-              '2xl': `50rem`,
-            }}
-            height={{
-              lg: `25rem`,
-              xl: `20rem`,
-              '2xl': `30rem`,
-            }}
-            display={{ base: `none`, lg: `block` }}
-            flexDir={`column`}
-            justifyContent={`space-between`}
             pos={`absolute`}
-            left={{ lg: `30rem`, xl: `15rem` }}
+            width={`100%`}
+            transformOrigin={`center`}
+            p={`1.5em`}
           >
-            <Flex mb={3} justifyContent={`end`} gap={4}>
-              {project.language.map(function (code, index) {
-                return (
-                  <Badge
-                    fontSize={`10px`}
-                    borderRadius={`10px`}
-                    color={
-                      colorMode == `light`
-                        ? `accent`
-                        : `lightBg`
-                    }
-                    p={`5px 20px`}
-                    // border={`1px solid`}
-                    letterSpacing={`1.5px`}
-                    borderColor={`accent`}
-                    bg={`transparent`}
-                    className='font-mono'
-                    key={index}
-                  >
-                    {code}
-                  </Badge>
-                );
-              })}
-            </Flex>
-            <Box
-              height={`calc(100% - 1em)`}
-              className={`project_img_box`}
-              bg={`overlay`}
-            >
-              <Image
-                loading='eager'
-                className='project_img'
-                boxShadow={`rgba(0, 0, 0, 0.45) 0px 25px 20px -10px`}
-                boxSize={`100%`}
-                src={project.image}
-                alt='img'
-                objectFit={`cover`}
-                mixBlendMode={`multiply`}
-                transition={`all .3s`}
-                _hover={{ mixBlendMode: `normal` }}
-              />
-            </Box>
+            <Image
+              filter={`drop-shadow(0 1px 3px #00000050)`}
+              width={`100%`}
+              height={`100%`}
+              alt='img'
+              src={project.imageDesktop}
+            />
+            {/* mobile description */}
           </Box>
-          <Flex
-            color={{ base: `#fff`, lg: `initial` }}
-            position={{
-              base: `relative`,
-              lg: `absolute`,
-            }}
-            zIndex={2}
-            left={{ lg: `20%`, xl: `5%` }}
-            textTransform={`capitalize`}
-            flexDir={`column`}
-            width={{ base: `100%`, lg: `initial` }}
-            height={{ base: `100%`, lg: `initial` }}
-            justifyContent={`center`}
-            backdropFilter={{
-              base: `blur(5px)`,
-              lg: `none`,
-            }}
-            // backgroundColor={{
-            //   base: `rgba(0,0,0,0.5)`,
-            //   lg: `initial`,
-            // }}
+          <Box
+            pos={`absolute`}
+            width={`50%`}
+            transform={`scale(0.6) translate(3rem, -10em)`}
+            transformOrigin={`center`}
+            transition={`filter .3s ease-in`}
             _hover={{
-              backdropFilter: `blur(0)`,
+              transform: `scale(0.6) translateY(3rem, -10em)`,
+              filter: `opacity(0)`,
             }}
-            p={{ base: `2em`, md: `6em`, lg: 0 }}
           >
-            <Text
-              fontWeight={`medium`}
-              color={
-                colorMode == `light` ? `darkBg` : `accent`
-              }
-              fontSize={`14px`}
-              className={`font-mono`}
-            >
-              {project.category}
-            </Text>
-            <Text
-              className='font-serif'
-              letterSpacing={`2px`}
-              color={
-                colorMode == `light` ? `accent` : `lightBg`
-              }
-              fontWeight={`bolder`}
-              fontSize={`24px`}
-            >
-              {project.name}
-            </Text>
-            <Box
-              my={5}
-              p={5}
-              borderRadius={10}
-              bg={
-                colorMode == `light`
-                  ? `#10182090`
-                  : `#80000080`
-              }
-              backdropFilter={`blur(10px)`}
-              width={{ base: `100%`, lg: `30rem` }}
-            >
-              <Text
-                fontSize={{ base: `initial`, xl: `14px` }}
-                textTransform={`capitalize`}
-                color={`lightBg`}
-                fontWeight={`medium`}
-              >
-                {project.desc}
-              </Text>
-            </Box>
-            <Flex
-              display={{ base: `flex`, lg: `none` }}
-              justifyContent={`start`}
-              flexWrap={`wrap`}
-              mb={5}
-              gap={4}
-            >
-              {project.language.map(function (code, index) {
-                return (
-                  <Text
-                    color={
-                      colorMode == `light`
-                        ? `accent`
-                        : `lightBg`
-                    }
-                    letterSpacing={`1.5px`}
-                    className='font-mono'
-                    key={index}
-                  >
-                    {code}
-                  </Text>
-                );
-              })}
-            </Flex>
-            <Flex gap={3}>
-              <Link
-                _hover={{
-                  color: `rgb(208, 0, 255) !important`,
-                }}
-                target={`_blank`}
-                href={project.github}
-              >
-                <Icon
-                  // border={`2px solid var(--mainLinkColor)`}
-                  color={
-                    colorMode == `light`
-                      ? `accent`
-                      : `lightBg`
-                  }
-                  borderRadius={`100%`}
-                  fontSize={`1.5em`}
-                  as={RiGithubLine}
-                />
-              </Link>
-              <Link
-                _hover={{
-                  color: `rgb(208, 0, 255) !important`,
-                }}
-                target={`_blank`}
-                href={project.url}
-              >
-                <Icon
-                  // border={`2px solid var(--mainLinkColor)`}
-                  color={
-                    colorMode == `light`
-                      ? `accent`
-                      : `lightBg`
-                  }
-                  borderRadius={`100%`}
-                  fontSize={`1.5em`}
-                  as={AiOutlineLink}
-                />
-              </Link>
-            </Flex>
-          </Flex>
+            <Image
+              width={`100%`}
+              height={`100%`}
+              alt='img'
+              src={project.imageMobile}
+            />
+          </Box>
         </Flex>
       );
     });
