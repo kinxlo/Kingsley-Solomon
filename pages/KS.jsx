@@ -42,7 +42,7 @@ const MobileLayout = () => {
         width={`100%`}
         height={`100%`}
         objectFit={`cover`}
-        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_500,f_auto,q_auto/v1630322773/hng/profile0_dqiv0d.webp`}
+        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_500,f_auto,q_auto/v1630322773/portfolio/profile0_dqiv0d.jpg`}
         alt={`profile-pic`}
         mixBlendMode={`multiply`}
         filter={`grayscale(50%)  brightness(0.4)`}
