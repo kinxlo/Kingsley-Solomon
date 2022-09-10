@@ -52,6 +52,9 @@ const ProjectBox = () => {
           }}
         >
           <Box
+            display={`flex`}
+            flexDir={`column`}
+            gap={5}
             pos={`absolute`}
             width={`100%`}
             transformOrigin={`center`}
@@ -65,6 +68,15 @@ const ProjectBox = () => {
               src={project.imageDesktop}
             />
             {/* mobile description */}
+            <Box>
+              <Text>
+                Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Porro inventore amet, nisi
+                fuga itaque sint optio distinctio. Rem at
+                cum sed voluptate incidunt eius nemo
+                mollitia omnis, odio, voluptatum numquam.
+              </Text>
+            </Box>
           </Box>
           <Box
             pos={`absolute`}
