@@ -112,6 +112,8 @@ const ProjectBox = () => {
                 alt='img'
                 objectFit={`cover`}
                 mixBlendMode={`multiply`}
+                transition={`all .3s`}
+                _hover={{ mixBlendMode: `normal` }}
               />
             </Box>
           </Box>

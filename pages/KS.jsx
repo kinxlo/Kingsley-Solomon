@@ -20,16 +20,16 @@ import DigitalResume from '../components/resume/DigitalResume';
 import Hero from '../components/startMenu/Hero';
 import ContactMenu from '../components/startMenu/ContactMenu';
 import ProductivityLayout from '../components/startMenu/ProductivityLayout';
+import ProjectScreen from '../components/startMenu/ProjectScreen';
 
 import { tools } from '../public/tools';
 
 import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
-
+import Map from '../components/startMenu/Map';
 
 const MobileLayout = () => {
   const { switchView } = useContext(AppContext);
   const { colorMode, toggleColorMode } = useColorMode();
-
 
   const image = (
     <Box
@@ -77,9 +77,9 @@ const MobileLayout = () => {
       case `resume`:
         return image;
       case `projects`:
-        return null;
+        return <ProjectScreen />;
       case `tools`:
-        return null;
+        return <Map />;
       default:
         return image;
     }

@@ -1,7 +1,15 @@
 .letter {
     display: inline-block;
-    text-shadow: 0 0 0 whitesmoke;
-    animation: smoky 5s 3s both;
+    // text-shadow: 0 0 0 whitesmoke;
+    animation: smoky 3s forwards;
+}
+
+.msg {
+    font-size: 14px;
+
+    @media screen and (min-width: 480px) {
+        font-size: 20px;
+    }
 }
 
 .letter:nth-child(even) {
