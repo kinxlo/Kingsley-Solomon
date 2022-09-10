@@ -25,7 +25,7 @@ const DigitalResume = () => {
     letterSpacing: `1rem`,
     color: `${colorMode == `light` ? `darkBg` : `lightBg`}`,
     opacity: `${colorMode == `light` ? `5%` : `3%`}`,
-    zIndex: -999,
+    zIndex: -1,
   };
   return (
     <Box
