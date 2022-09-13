@@ -4,18 +4,24 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import { AppContext } from '../../context/AppContext';
 
 const FullScrollView = ({ children }) => {
-  const { setSkillStickerName } = useContext(AppContext);
-  const handleLeave = (destination) => {
-    console.log(destination.item);
-    let title = destination.item.getAttribute('name');
-    setSkillStickerName(title);
+  const { setProjectInfo } = useContext(AppContext);
+  const handleLoad = (
+    origin,
+    destination,
+    direction,
+    trigger
+  ) => {
+    let info = destination.item.getAttribute('title');
+    console.log(info);
+    setProjectInfo(info);
   };
+
   return (
     <ReactFullpage
       //fullpage options
-      afterLoad={handleLeave}
+      afterLoad={handleLoad}
       licenseKey={''}
-      scrollingSpeed={1000} /* Options here */
+      scrollingSpeed={500} /* Options here */
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>

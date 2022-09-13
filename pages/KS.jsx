@@ -7,11 +7,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 // import Image from 'next/image'
-import React, {
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useContext } from 'react';
 import ProjectBox from '../components/drawer/ProjectBox';
 import Nav from '../components/startMenu/Nav';
 import { AppContext } from '../context/AppContext';
@@ -26,6 +22,7 @@ import { tools } from '../public/tools';
 
 import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
 import Map from '../components/startMenu/Map';
+import Bot from '../components/Bot';
 
 const MobileLayout = () => {
   const { switchView } = useContext(AppContext);
@@ -33,7 +30,11 @@ const MobileLayout = () => {
 
   const image = (
     <Box
-      display={switchView !== `profile` ? `none` : `block`}
+      display={
+        switchView !== `profile` && switchView !== `resume`
+          ? `none`
+          : `block`
+      }
       bg={`overlayProfile`}
       height={`100%`}
     >
@@ -88,6 +89,7 @@ const MobileLayout = () => {
   return (
     // !isLoading &&
     <>
+      <Bot />
       <Nav />
       <ContactMenu />
       <Button

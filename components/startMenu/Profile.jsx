@@ -6,17 +6,15 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 
 import Reviews from '../drawer/Reviews';
 
-import {
-  lightSticker,
-  darkSticker,
-} from '../../theme/customTheme';
-// import Background from './Background';
-
 const Profile = () => {
   const { colorMode } = useColorMode();
+  const { handleMouseEnter, handleMouseLeave } =
+    useContext(AppContext);
 
   const bgText = {
     content: `'Hi!'`,
@@ -52,7 +50,7 @@ const Profile = () => {
     >
       {/* <Background /> */}
       {/* profile */}
-      <Box>
+      <Box className='step-1'>
         <Flex alignItems={`center`}>
           <Text
             className='font-serif'
@@ -75,11 +73,16 @@ const Profile = () => {
           }}
         >
           <Flex
+            className='step-2'
             flexDir={`column`}
             justifyContent={{ base: `space-between` }}
           >
             <Flex alignItems={`end`} gap={2}>
               <Text
+                onMouseEnter={(event) =>
+                  handleMouseEnter(event, 'message')
+                }
+                onMouseLeave={handleMouseLeave}
                 as={`h2`}
                 fontSize={{
                   base: `5rem`,
@@ -96,8 +99,15 @@ const Profile = () => {
               </Text>
               <Reviews />
             </Flex>
-            <Box>
+            <Box width={`fit-content`}>
               <Text
+                onMouseEnter={(event) =>
+                  handleMouseEnter(
+                    event,
+                    'yea, thats what i am, i dont know ui ux'
+                  )
+                }
+                onMouseLeave={handleMouseLeave}
                 color={`accent`}
                 fontWeight={900}
                 letterSpacing={`1px`}
@@ -112,40 +122,43 @@ const Profile = () => {
                 Frontend Developer
               </Text>
               <Text
-                className='font-sans'
+                className='font-sans step-3'
                 fontSize={{ base: `12px`, sm: `14px` }}
                 mt={5}
                 mb={10}
               >
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Eveniet, vitae
-                perspiciatis ea perferendis nemo corrupti.
-                Doloremque illo amet sapiente minima!
+                I really enjoy building Intresting stuffs and give great user expirence
               </Text>
-              <Link
-                download
-                target={`_blank`}
-                href='../../public/KingsleySolomon_Ifijeh_Resume.PDF'
-              >
-                <Button
-                  display={`flex`}
-                  background={`trtnasparent`}
-                  border={`1px`}
-                  fontSize={`18px`}
-                  fontWeight={900}
-                  p={`1.5rem 2rem`}
-                  borderRadius={`10px`}
-                  letterSpacing={`1px`}
-                  borderColor={`accent`}
-                  _hover={{
-                    background: `accent`,
-                    color: `#fff`,
-                  }}
-                  className='font-serif'
+              <Box width={`fit-content`}>
+                <Link
+                  onMouseEnter={(event) =>
+                    handleMouseEnter(event, 'more message')
+                  }
+                  onMouseLeave={handleMouseLeave}
+                  download
+                  target={`_blank`}
+                  href='../../public/KingsleySolomon_Ifijeh_Resume.PDF'
                 >
-                  Resume
-                </Button>
-              </Link>
+                  <Button
+                    display={`flex`}
+                    background={`trtnasparent`}
+                    border={`1px`}
+                    fontSize={`18px`}
+                    fontWeight={900}
+                    p={`1.5rem 2rem`}
+                    borderRadius={`10px`}
+                    letterSpacing={`1px`}
+                    borderColor={`accent`}
+                    _hover={{
+                      background: `accent`,
+                      color: `#fff`,
+                    }}
+                    className='font-serif'
+                  >
+                    Resume
+                  </Button>
+                </Link>
+              </Box>
             </Box>
           </Flex>
         </Flex>

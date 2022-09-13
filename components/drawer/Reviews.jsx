@@ -11,10 +11,13 @@ import {
 } from '@chakra-ui/react';
 import Notification from './Notification';
 import { AiOutlineLeft } from 'react-icons/ai';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 
 export default function DrawerExample() {
   const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { handleMouseEnter } = useContext(AppContext);
 
   const handleClick = () => {
     if (isOpen) {
@@ -32,6 +35,9 @@ export default function DrawerExample() {
         title={`see what folks are saying about me`}
       >
         <Image
+          onMouseEnter={(event) =>
+            handleMouseEnter(event, 'Some Folks said some nice things about me...')
+          }
           className='buzz'
           as={`img`}
           onClick={handleClick}
@@ -65,14 +71,18 @@ export default function DrawerExample() {
           justifyContent={`end`}
           gap={`2`}
         >
-          <Flex alignItems={`center`} p={`2rem`} gap={`3rem`}>
+          <Flex
+            alignItems={`center`}
+            p={`2rem`}
+            gap={`3rem`}
+          >
             <Icon
               onClick={handleClick}
               boxSize={`1.5rem`}
               as={AiOutlineLeft}
             />
             <Text
-            fontSize={`large`}
+              fontSize={`large`}
               fontWeight={`bold`}
               as={`h3`}
             >
