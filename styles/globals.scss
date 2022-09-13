@@ -47,6 +47,19 @@
 
 body {
 
+  // important
+  .fp-table {
+    justify-content: center !important;
+
+    @media screen and (min-width: 992px) {
+      justify-content: end !important;
+    }
+    @media screen and (min-width: 1280px) {
+      justify-content: center !important;
+    }
+
+  }
+
   .box-shadow {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -116,7 +129,7 @@ body {
   }
 
   .buzz {
-   animation: buzz 1s linear infinite alternate;
+    animation: buzz 1s linear infinite alternate;
   }
 
   @keyframes buzz {

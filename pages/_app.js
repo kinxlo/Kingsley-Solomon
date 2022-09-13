@@ -6,8 +6,7 @@ import AppContextProvider from '../context/AppContext';
 
 
 export default function MyApp({ Component, pageProps }) {
-
-
+ 
   return (
     <Chakra cookies={pageProps.cookies}>
       <Head>

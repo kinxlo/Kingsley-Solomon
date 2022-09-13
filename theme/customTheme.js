@@ -5,7 +5,7 @@ import { mode } from '@chakra-ui/theme-tools'
 export const customTheme = extendTheme({
 
     config: {
-        initialColorMode: 'dark',
+        initialColorMode: 'light',
         useSystemColorMode: false,
     },
     breakpoints: {

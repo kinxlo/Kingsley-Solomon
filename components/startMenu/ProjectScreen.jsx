@@ -1,18 +1,71 @@
-import { Box } from '@chakra-ui/react';
-import React from 'react';
+import { Box, Text } from '@chakra-ui/react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
 
-const projectScreen = () => {
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+const ProjectScreen = () => {
+  const { projectInfo } = useContext(AppContext);
+
+  console.log(projectInfo);
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text:  `${projectInfo.name} Chart Stats.`
+      },
+    },
+  };
+
+  const labels = projectInfo.language;
+
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Languages',
+        data: projectInfo.values,
+        backgroundColor: projectInfo.colorCode,
+      },
+    ],
+  };
+
   return (
     <Box
-      border={`1px solid red`}
+      display={`flex`}
+      alignItems={`center`}
+      // border={`1px solid red`}
       color={`lemon`}
-      width={`80%`}
+      // width={`80%`}
+      // height={`30rem`}
       marginLeft={`auto`}
-      height={`30rem`}
+      // px={`2rem`}
+      // m={`5rem 1.5rem 5rem 0`}
     >
-      Screen
+      <Bar options={options} data={data} />
     </Box>
   );
 };
 
-export default projectScreen;
+export default ProjectScreen;

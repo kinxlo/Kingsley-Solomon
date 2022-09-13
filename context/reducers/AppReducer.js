@@ -56,10 +56,23 @@ export const AppReducer = (state, action) => {
             return {
                 ...state, switchView: action.payload
             }
-        case 'SET_SKILL_STICKER':
+        case 'SET_PROJECT_INFO':
+            let projectInfo = projects.find((project) => {
+                return project.name == action.payload
+            })
+
             return {
-                ...state, skillStickerName: action.payload
+                ...state, projectInfo: projectInfo
             }
+        case 'SET_POSITION':
+            return {
+                ...state, mousePos: { codX: action.payload.event.clientX, codY: action.payload.event.clientY }, botMessage: action.payload.arg, opacity: 1
+            }
+        case 'HANDLE_MOUSE_LEAVE':
+            return {
+                ...state, mousePos: { ...state.mousePos, opacity: 0 }, botMessage: state.botMessage,
+            }
+
 
     }
 }
