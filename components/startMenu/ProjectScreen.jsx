@@ -33,7 +33,7 @@ const ProjectScreen = () => {
       },
       title: {
         display: true,
-        text:  `${projectInfo.name} Chart Stats.`
+        text: `${projectInfo.name} Chart Stats.`,
       },
     },
   };
@@ -57,11 +57,8 @@ const ProjectScreen = () => {
       alignItems={`center`}
       // border={`1px solid red`}
       color={`lemon`}
-      // width={`80%`}
-      // height={`30rem`}
-      marginLeft={`auto`}
-      // px={`2rem`}
-      // m={`5rem 1.5rem 5rem 0`}
+      width={{ base: `initial`, '2xl': `80%` }}
+      m={{base:`initial`, lg:`1.5rem 1.5rem 0 auto`}}
     >
       <Bar options={options} data={data} />
     </Box>
