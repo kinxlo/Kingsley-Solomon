@@ -21,12 +21,6 @@ const contacts = [
         link: `https://twitter.com/kinxlo`,
         text: `TW`
     },
-    // {
-    //     id: 4,
-    //     name: `whatsapp`,
-    //     icon: RiWhatsappLine,
-    //     link: ``
-    // },
     {
         id: 5,
         name: `Google`,

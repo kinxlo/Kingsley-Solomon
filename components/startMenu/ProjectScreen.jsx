@@ -33,6 +33,8 @@ ChartJS.register(
 const ProjectScreen = () => {
   const { projectInfo } = useContext(AppContext);
   const { colorMode } = useColorMode();
+  const active =
+    colorMode == `light` ? `darkBg` : `lightBg`;
 
   const options = {
     responsive: true,
@@ -72,17 +74,17 @@ const ProjectScreen = () => {
         pos={{ base: `static`, xl: `fixed` }}
         top={`1.5rem`}
         left={`1.5rem`}
-        color={colorMode == `light` ? `accent` : `lightBg`}
+        color={`accent`}
         className='font-mono'
         textTransform={`capitalize`}
         fontWeight={`bold`}
-        fontSize={{ base: `md`, md: `2xl` }}
+        fontSize={{ base: `md`, md: `2xl`, xl:`2rem` }}
         textAlign={{ base: `center`, xl: `left` }}
       >
         {projectInfo.name}
         <Text
           fontSize={`xs`}
-          color={`active`}
+          color={active}
           className='font-mono'
           textAlign='left'
           mt={{ base: 6, xl: 0 }}

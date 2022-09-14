@@ -1,7 +1,5 @@
 import {
   Box,
-  Button,
-  Collapse,
   Image,
   SlideFade,
   Text,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { reviews } from '../../public/reviews';
 import NotificationBar from './NotificationBar';
 

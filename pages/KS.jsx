@@ -3,10 +3,9 @@ import {
   Button,
   Icon,
   Image,
-  Text,
   useColorMode,
 } from '@chakra-ui/react';
-// import Image from 'next/image'
+
 import React, { useContext } from 'react';
 import ProjectBox from '../components/drawer/ProjectBox';
 import Nav from '../components/startMenu/Nav';
@@ -22,7 +21,6 @@ import { tools } from '../public/tools';
 
 import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
 import Map from '../components/startMenu/Map';
-// import Bot from '../components/Bot';
 
 const MobileLayout = () => {
   const { switchView } = useContext(AppContext);
@@ -89,7 +87,6 @@ const MobileLayout = () => {
   return (
     // !isLoading &&
     <>
-      {/* <Bot /> */}
       <Nav />
       <ContactMenu />
       <Button

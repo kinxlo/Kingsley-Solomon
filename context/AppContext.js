@@ -18,20 +18,7 @@ const initialState = {
     showControls: false,
     isActive: { name: `profile`, active: true },
     language: '',
-    projectInfo: {
-        // id: 1,
-        // title: `audiophile`,
-        // language: [`html`, `scss`, `react`],
-        // colorCode: [`#f0652950`, `#e389b950`, `#61dbfb50`],
-        // values: [1.5, 49.9, 48.6],
-        // imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_500,f_auto,q_auto/v1662843704/portfolio/mobile_13_wkwb2j.webp`,
-        // imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_200,f_auto,q_auto/v1662843702/portfolio/mobile_12_d1cz7e.webp`,
-        // image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_500,f_auto,q_auto/v1629540936/hng/audiophile_rjzmca.webp',
-        // url: `https://k-audiophile.netlify.app`,
-        // github: `https://github.com/kinxlo/audiophile`,
-        // desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
-        // category: `E-Commerce`
-    },
+    projectInfo: {},
     mousePos: {
         codX: 0,
         codY: 0,

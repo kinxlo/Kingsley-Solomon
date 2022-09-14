@@ -1,8 +1,4 @@
-import React, {
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useContext } from 'react';
 import { Box, Text, useColorMode } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext.js';
 
@@ -10,7 +6,6 @@ const CTA = ({ width, height, name, title, children }) => {
   const { colorMode } = useColorMode();
   const { showProjects, showMapOrNotice } =
     useContext(AppContext);
-  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleFunctionClick = (e) => {
     e.stopPropagation();
@@ -54,23 +49,6 @@ const CTA = ({ width, height, name, title, children }) => {
     }
   };
 
-  useEffect(() => {
-    function onFullscreenChange() {
-      setIsFullscreen(Boolean(document.fullscreenElement));
-    }
-
-    document.addEventListener(
-      'fullscreenchange',
-      onFullscreenChange
-    );
-
-    return () =>
-      document.removeEventListener(
-        'fullscreenchange',
-        onFullscreenChange
-      );
-  }, []);
-
   return (
     <Box
       backgroundColor={
@@ -87,12 +65,15 @@ const CTA = ({ width, height, name, title, children }) => {
       _hover={{ bg: `transparent` }}
       transition={`ease all .2s`}
       className={`pbox`}
-
     >
       {/* <section> */}
       {children}
       {title === `Contacts` ? null : (
-        <Text letterSpacing={`2px`} fontWeight={`400`} className='font-sans'>
+        <Text
+          letterSpacing={`2px`}
+          fontWeight={`400`}
+          className='font-sans'
+        >
           {name}
         </Text>
       )}

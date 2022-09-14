@@ -12,6 +12,8 @@ const DigitalResume = () => {
   const { colorMode } = useColorMode();
   const { handleMouseEnter, handleMouseLeave, botMessage } =
     useContext(AppContext);
+  const active =
+    colorMode == `light` ? `matrixDark!` : `matrixLight!`;
 
   const bgText = {
     content: `'"${
@@ -65,7 +67,7 @@ const DigitalResume = () => {
             Frontend developer at{' '}
             <Link
               fontWeight={`medium!`}
-              color='active!'
+              color={active}
               href='https://www.wewetube.com'
               target='_blank'
             >
@@ -87,29 +89,33 @@ const DigitalResume = () => {
       <section className='section--page'>
         <div id='socials--list'>
           <Link
-            color='active!'
+            fontWeight={`bold!`}
+            color={active}
             href='https://twitter.com/kinxlo'
             target='_blank'
           >
             Twitter
           </Link>
           <Link
-            color='active!'
+            fontWeight={`bold!`}
+            color={active}
             href='https://www.linkedin.com/in/kingsley-solomon-b90339b2/'
             target='_blank'
           >
             Linkedin
           </Link>
           <Link
-            color='active!'
+            fontWeight={`bold!`}
+            color={active}
             href='https://github.com/kinxlo'
             target='_blank'
           >
             Github
           </Link>
           <Link
+            fontWeight={`bold!`}
             download
-            color='active!'
+            color={active}
             rel='noopener noreferrer'
             href='/KingsleySolomon_Ifijeh_Resume.PDF'
           >

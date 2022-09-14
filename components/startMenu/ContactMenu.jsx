@@ -10,6 +10,10 @@ import contacts from '../../public/contact.js';
 
 const ContactMenu = () => {
   const { colorMode } = useColorMode();
+  const active = {
+    color:
+      colorMode == `light` ? `matrixDark` : `matrixLight`,
+  };
   let socials = contacts.map((social) => {
     return (
       <Link
@@ -24,7 +28,7 @@ const ContactMenu = () => {
           }
           fontWeight={600}
           fontSize={{ base: `12px`, md: `14px` }}
-          _hover={{ color: `active` }}
+          _hover={active}
         >
           {social.text}
         </Text>

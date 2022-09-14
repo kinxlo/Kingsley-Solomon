@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Icon, Text } from '@chakra-ui/react';
+import { Grid, Icon } from '@chakra-ui/react';
 
 import CTA from './CTA';
 

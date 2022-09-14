@@ -1,8 +1,11 @@
-import { Button, Icon, Link } from '@chakra-ui/react';
+import {
+  Button,
+  Icon,
+  useColorMode,
+} from '@chakra-ui/react';
 import React, { useContext, useState } from 'react';
 import {
   AiOutlineFileText,
-  AiOutlineLink,
   AiOutlineMenu,
   AiOutlineProject,
   AiOutlineUser,
@@ -11,12 +14,13 @@ import { RiToolsLine } from 'react-icons/ri';
 import { AppContext } from '../../context/AppContext';
 
 const ContactMenu = () => {
-  //   const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
   const { switchContent, switchView } =
     useContext(AppContext);
   const [active] = useState({
     backgroundColor: `transparent !important`,
-    color: `active!`,
+    color:
+      colorMode == `light` ? `matrixDark!` : `matrixLight!`,
   });
 
   const handleClick = (e) => {
