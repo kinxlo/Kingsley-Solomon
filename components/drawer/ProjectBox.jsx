@@ -40,7 +40,7 @@ const ProjectBox = () => {
           className='section'
           title={project.name}
           key={project.id}
-          gap={10}
+          gap={5}
           transform={{
             base: `scale(1)`,
             md: `scale(0.7)`,

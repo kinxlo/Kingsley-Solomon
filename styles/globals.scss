@@ -54,6 +54,7 @@ body {
     @media screen and (min-width: 992px) {
       justify-content: end !important;
     }
+
     @media screen and (min-width: 1280px) {
       justify-content: center !important;
     }
@@ -141,4 +142,5 @@ body {
       transform: rotate(120deg) scale(1.05);
     }
   }
+
 }
