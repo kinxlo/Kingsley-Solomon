@@ -23,7 +23,7 @@ const ProductivityLayout = ({ title, document }) => {
     position: { base: `absolute`, lg: `fixed` },
     bottom: `3.5%`,
     left: { base: `25%`, md: `63%`, xl: `53%` },
-    fontSize: `.7em`,
+    fontSize: `11px`,
     fontWeight: `medium`,
     fontFamily: `var(--font-mono)`,
     borderLeft: `3px solid red`,

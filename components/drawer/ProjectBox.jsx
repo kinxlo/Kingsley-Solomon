@@ -29,14 +29,20 @@ const ProjectBox = () => {
       botMessage ||
       'I Have nothing to say here...just read the resume.'
     }'`,
-    width: `20rem`,
+    width: `25rem`,
     padding: `.3rem .7rem`,
     position: `fixed`,
     top: { base: `initial` },
     right: { base: `iniital`, lg: `0` },
-    bottom: { base: `3%` },
-    left: { base: `25%`, xl: `50%`, '2xl': `58%` },
-    fontSize: `.7em`,
+    bottom: { base: `15%`, sm: `10%`, md: `3%` },
+    left: {
+      base: `15%`,
+      sm: `10%`,
+      md: `17%`,
+      xl: `50%`,
+      '2xl': `58%`,
+    },
+    fontSize: { base: `8px`, sm: `10px`, md: `11px` },
     fontWeight: `medium`,
     fontFamily: `var(--font-mono)`,
     borderLeft: `3px solid red`,
@@ -45,9 +51,8 @@ const ProjectBox = () => {
       colorMode == `light` ? `matrixDark` : `matrixLight`
     }`,
     zIndex: 1,
-    display: { base: `none`, sm: `block` },
+    // display: { base: `none`, sm: `block` },
   };
-
   if (projects.length) {
     let projectList = projects.map((project) => {
       return (
@@ -56,15 +61,22 @@ const ProjectBox = () => {
           className='section'
           title={project.name}
           key={project.id}
-          gap={5}
+          // gap={5}
           transform={{
-            base: `scale(1)`,
+            base: `scale(0.8)`,
+            sm: `scale(0.9)`,
             md: `scale(0.7)`,
             lg: `scale(0.6)`,
             xl: `scale(1)`,
           }}
         >
-          <Box>
+          <Box
+            transform={{
+              base: `initial`,
+              sm: `scale(0.8)`,
+              xl:`initial`
+            }}
+          >
             <Box
               display={`flex`}
               justifyContent={`center`}
@@ -93,7 +105,14 @@ const ProjectBox = () => {
               </Box>
             </Box>
           </Box>
-          <Box display={{ lg: `none` }}>
+          <Box
+            transform={{
+              base: `initial`,
+              sm: `scale(0.9)`,
+              md: `initial`,
+            }}
+            display={{ lg: `none` }}
+          >
             <ProjectScreen />
           </Box>
         </Flex>

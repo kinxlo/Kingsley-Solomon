@@ -7,7 +7,6 @@ const projects = [
         values: [1.5, 49.9, 48.6],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_1000,f_auto,q_auto/v1662843704/portfolio/mobile_13_wkwb2j.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_200,f_auto,q_auto/v1662843702/portfolio/mobile_12_d1cz7e.webp`,
-        image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_1000,f_auto,q_auto/v1629540936/hng/audiophile_rjzmca.webp',
         url: `https://k-audiophile.netlify.app`,
         github: `https://github.com/kinxlo/audiophile`,
         desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
@@ -21,7 +20,6 @@ const projects = [
         values: [84.5, 13.2, 0.9, 3.5],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_1000,f_auto,q_auto/v1662843702/portfolio/mobile_7_etaqcv.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_300,f_auto,q_auto/v1662843702/portfolio/mobile_6_oevgbz.webp`,
-        image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_900,f_auto,q_auto/v1629540940/hng/missing_ek5bji.webp',
         url: `https://dreamy-bhaskara-d01fbc.netlify.app`,
         github: null,
         desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
@@ -35,7 +33,6 @@ const projects = [
         values: [4.4, 26.7, 68.9],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_1000,f_auto,q_auto/v1662843702/portfolio/mobile_5_tq51wk.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_300,f_auto,q_auto/v1662843701/portfolio/mobile_4_igfbvb.webp`,
-        image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_900,f_auto,q_auto/v1629540938/hng/periodic_table_hx2tdl.webp',
         url: `https://ks-periodic-table.netlify.app`,
         github: `https://github.com/kinxlo/Elements`,
         desc: `The periodic table of element implemented using react`,
@@ -49,7 +46,7 @@ const projects = [
         values: [84.2, 15.1, 0.7],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_1000,f_auto,q_auto/v1662843705/portfolio/mobile_15_hmtjm5.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_300,f_auto,q_auto/v1662843704/portfolio/mobile_14_iw0u12.webp`,
-        image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_900,f_auto,q_auto/v1629540940/hng/darex_bsti4i.webp',
+
         url: `https://darexengineering.com`,
         github: null,
         desc: `A Client project written in standard html css and bootstrap-3`,
@@ -63,7 +60,7 @@ const projects = [
         values: [4.4, 45.5, 54.9],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_1000,f_auto,q_auto/v1662843705/portfolio/mobile_1_ueueak.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_300,f_auto,q_auto/v1662843703/portfolio/mobile_qlelsy.webp`,
-        image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_900,f_auto,q_auto/v1629614467/hng/fylo_okf9hd.webp',
+
         url: `https://kinxlo.github.io/copyAppLP`,
         github: `https://github.com/kinxlo/copyAppLP`,
         desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
@@ -77,7 +74,7 @@ const projects = [
         values: [79.0, 10.1, 0.9, 10.0],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_1000,f_auto,q_auto/v1662843705/portfolio/mobile_11_lfcupi.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_300,f_auto,q_auto/v1662843702/portfolio/mobile_10_bvlnto.webp`,
-        image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_900,f_auto,q_auto/v1629540939/hng/globalchef_uatyes.webp',
+
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
@@ -91,7 +88,7 @@ const projects = [
         values: [58.6, 37.5, 3.6, 0.3],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662955343/portfolio/mobile_1_wzra6z.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662955346/portfolio/mobile_n8mori.webp`,
-        image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_900,f_auto,q_auto/v1629540939/hng/globalchef_uatyes.webp',
+
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
@@ -105,7 +102,7 @@ const projects = [
         values: [83.9, 13.5, 2.4, 0.2],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662955345/portfolio/mobile_5_zwpbzj.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662955344/portfolio/mobile_4_x629gz.webp`,
-        image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_900,f_auto,q_auto/v1629540939/hng/globalchef_uatyes.webp',
+
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
@@ -119,7 +116,21 @@ const projects = [
         values: [82.9, 13.1, 3.2, 0.8],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662955344/portfolio/mobile_3_g9bcw7.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662955342/portfolio/mobile_2_t9cghk.webp`,
-        image: 'https://res.cloudinary.com/kingsleysolomon/image/upload/w_900,f_auto,q_auto/v1629540939/hng/globalchef_uatyes.webp',
+
+        url: `https://kinxlo.github.io/globalChef/`,
+        github: `https://github.com/kinxlo/globalChef`,
+        desc: `A website that about chefs and there foods.`,
+        category: `Food`
+    },
+    {
+        id: 10,
+        name: `Kingsley Solomon`,
+        language: [`Next`, `SCSS`, `ChakraUI`],
+        colorCode: [`#41b88350`, `#e389b950`, `#f0db4f50`,],
+        values: [82.9, 13.1, 3.2],
+        imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1663162037/portfolio/mobile_8_ylmytx.webp`,
+        imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1663161579/portfolio/mobile_6_rmda1g.webp`,
+
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,

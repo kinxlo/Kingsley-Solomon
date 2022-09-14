@@ -25,7 +25,7 @@ const Profile = () => {
     position: `absolute`,
     top: `5rem`,
     right: `1.5rem`,
-    fontSize: `.7em`,
+    fontSize: `11px`,
     fontWeight: `medium`,
     fontFamily: `var(--font-mono)`,
     borderLeft: `3px solid red`,
@@ -39,7 +39,7 @@ const Profile = () => {
   return (
     <Flex
       className='profile-view'
-      maxW={{ base: `100%`, md: `60%`, xl: `50%` }}
+      maxW={{ base: `100%`, lg: `60%`, xl: `50%` }}
       height={`100vh`}
       width={`100%`}
       alignItems={`center`}

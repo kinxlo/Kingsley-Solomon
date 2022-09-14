@@ -76,16 +76,25 @@ const ProjectScreen = () => {
         className='font-mono'
         textTransform={`capitalize`}
         fontWeight={`bold`}
-        fontSize={`1.5rem`}
-        textAlign='center'
+        fontSize={{ base: `md`, md: `2xl` }}
+        textAlign={{ base: `center`, xl: `left` }}
       >
         {projectInfo.name}
+        <Text
+          fontSize={`xs`}
+          color={`active`}
+          className='font-mono'
+          textAlign='left'
+          mt={{ base: 6, xl: 0 }}
+        >
+          {projectInfo.category}
+        </Text>
       </Text>
       {/* Chart */}
       <Bar options={options} data={data} />
       {/*  */}
       <Flex width={`100%`} flexDir={`column`} gap={3}>
-        <Flex gap={3} alignItems={`end`}>
+        <Flex gap={3} alignItems={`center`}>
           <Box
             width={`2rem`}
             height={`2rem`}
@@ -116,7 +125,7 @@ const ProjectScreen = () => {
         <Flex
           justifyContent={`end`}
           gap={3}
-          alignItems={`end`}
+          alignItems={`center`}
         >
           <Link
             color={
