@@ -22,7 +22,7 @@ import { tools } from '../public/tools';
 
 import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
 import Map from '../components/startMenu/Map';
-import Bot from '../components/Bot';
+// import Bot from '../components/Bot';
 
 const MobileLayout = () => {
   const { switchView } = useContext(AppContext);
@@ -89,7 +89,7 @@ const MobileLayout = () => {
   return (
     // !isLoading &&
     <>
-      <Bot />
+      {/* <Bot /> */}
       <Nav />
       <ContactMenu />
       <Button

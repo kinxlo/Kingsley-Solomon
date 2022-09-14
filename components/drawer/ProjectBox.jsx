@@ -15,21 +15,37 @@ import FullScrollView from '../carousel/FullScrollView';
 import ProjectScreen from '../startMenu/ProjectScreen';
 
 const ProjectBox = () => {
-  const { projects, language } = useContext(AppContext);
   const { colorMode } = useColorMode();
+  const {
+    projects,
+    language,
+    handleMouseEnter,
+    handleMouseLeave,
+    botMessage,
+  } = useContext(AppContext);
 
   const bgText = {
-    content: `'Accolades'`,
+    content: `'"${
+      botMessage ||
+      'I Have nothing to say here...just read the resume.'
+    }'`,
+    width: `20rem`,
+    padding: `.3rem .7rem`,
     position: `fixed`,
-    bottom: `-20rem`,
-    left: 0,
-    fontSize: `40rem`,
-    fontWeight: `bolder`,
-    fontFamily: `var(--font-serif)`,
-    letterSpacing: `1rem`,
-    color: `${colorMode == `light` ? `darkBg` : `lightBg`}`,
-    opacity: `${colorMode == `light` ? `5%` : `3%`}`,
-    zIndex: -1,
+    top: { base: `initial` },
+    right: { base: `iniital`, lg: `0` },
+    bottom: { base: `3%` },
+    left: { base: `25%`, xl: `50%`, '2xl': `58%` },
+    fontSize: `.7em`,
+    fontWeight: `medium`,
+    fontFamily: `var(--font-mono)`,
+    borderLeft: `3px solid red`,
+    animation: `cursor .7s 3s linear infinite alternate`,
+    color: `${
+      colorMode == `light` ? `matrixDark` : `matrixLight`
+    }`,
+    zIndex: 1,
+    display: { base: `none`, sm: `block` },
   };
 
   if (projects.length) {

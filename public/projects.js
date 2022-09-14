@@ -58,7 +58,7 @@ const projects = [
     {
         id: 5,
         name: `dolla`,
-        language: [`html`, `styled-component`, `React`],
+        language: [`html`, `styled-comp...`, `React`],
         colorCode: [`#f0652950`, `#e389b950`, `#61dbfb50`,],
         values: [4.4, 45.5, 54.9],
         imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_1000,f_auto,q_auto/v1662843705/portfolio/mobile_1_ueueak.webp`,
