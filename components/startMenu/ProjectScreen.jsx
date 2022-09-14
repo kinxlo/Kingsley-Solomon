@@ -106,6 +106,7 @@ const ProjectScreen = () => {
             }
             className='font-sans'
             fontWeight={`medium`}
+            fontStyle={`italic`}
             href={projectInfo.github}
           >
             View this project on Github.
@@ -123,6 +124,7 @@ const ProjectScreen = () => {
             }
             className='font-sans'
             fontWeight={`medium`}
+            fontStyle={`italic`}
             href={projectInfo.url}
           >
             Visit this site.

@@ -13,21 +13,27 @@ import Reviews from '../drawer/Reviews';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
-  const { handleMouseEnter, handleMouseLeave } =
+  const { handleMouseEnter, handleMouseLeave, botMessage } =
     useContext(AppContext);
 
   const bgText = {
-    content: `'Hi!'`,
-    position: `fixed`,
-    bottom: `-20rem`,
-    left: 0,
-    fontSize: `40rem`,
-    fontWeight: `bolder`,
-    fontFamily: `var(--font-serif)`,
-    letterSpacing: `1rem`,
-    color: `${colorMode == `light` ? `darkBg` : `lightBg`}`,
-    opacity: `${colorMode == `light` ? `5%` : `3%`}`,
-    zIndex: -999,
+    content: `'"${
+      botMessage || 'Hi!, i would be your Tour guild today.'
+    }'`,
+    width: `20rem`,
+    padding: `.3rem .7rem`,
+    position: `absolute`,
+    top: `5rem`,
+    right: `1.5rem`,
+    fontSize: `.7em`,
+    fontWeight: `medium`,
+    fontFamily: `var(--font-mono)`,
+    borderLeft: `3px solid red`,
+    animation: `cursor .7s 3s linear infinite alternate`,
+    color: `${
+      colorMode == `light` ? `matrixDark` : `matrixLight`
+    }`,
+    zIndex: 1,
   };
 
   return (
@@ -127,7 +133,8 @@ const Profile = () => {
                 mt={5}
                 mb={10}
               >
-                I really enjoy building Intresting stuffs and give great user expirence
+                I really enjoy building Intresting stuffs
+                and give great user expirence
               </Text>
               <Box width={`fit-content`}>
                 <Link

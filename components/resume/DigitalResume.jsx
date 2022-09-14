@@ -5,28 +5,34 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import React from 'react';
-import {
-  darkSticker,
-  lightSticker,
-} from '../../theme/customTheme';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 
 const DigitalResume = () => {
   const { colorMode } = useColorMode();
+  const { handleMouseEnter, handleMouseLeave, botMessage } =
+    useContext(AppContext);
 
   const bgText = {
-    content: `'Resume'`,
+    content: `'"${
+      botMessage ||
+      'I Have nothing to say here...just read the resume.'
+    }'`,
+    width: `20rem`,
+    padding: `.3rem .7rem`,
     position: `fixed`,
-    bottom: `-20rem`,
-    left: 0,
-    fontSize: `40rem`,
-    fontWeight: `bolder`,
-    fontFamily: `var(--font-serif)`,
-    letterSpacing: `1rem`,
-    color: `${colorMode == `light` ? `darkBg` : `lightBg`}`,
-    opacity: `${colorMode == `light` ? `5%` : `3%`}`,
-    zIndex: -1,
+    bottom: `3.5%`,
+    left: { base: `25%`, md: `63%`, xl: `53%` },
+    fontSize: `.7em`,
+    fontWeight: `medium`,
+    fontFamily: `var(--font-mono)`,
+    borderLeft: `3px solid red`,
+    animation: `cursor .7s 3s linear infinite alternate`,
+    color: `${`matrixLight`}`,
+    zIndex: 1,
+    display: { base: `none`, lg: `block` },
   };
+
   return (
     <Box
       maxW={{
@@ -36,10 +42,10 @@ const DigitalResume = () => {
         xl: `50%`,
       }}
       width={`100%`}
+      _before={bgText}
       id='container--main'
       className='hide-scrollbar'
-      _before={bgText}
-      m={{ base: `initial`, md: `0 auto`, xl: `initial` }}
+      m={{ base: `initial`, md: `0 auto`, lg: `initial` }}
       px={`2em`}
     >
       <section id='wrapper--hero' className='section--page'>

@@ -22,6 +22,8 @@ export const customTheme = extendTheme({
         bg: `#000`,
         darkBg:`#101820FF`,
         lightBg:`#FCF6F5FF`,
+        matrixLight: `#00FF41`,
+        matrixDark: `#008F11`,
         overlay:`hsl(0, 20%, 50%)`,
         overlayProjectMobile:`hsl(178, 20%, 50%)`,
         overlayProfile:`hsl(0, 60%, 50%)`

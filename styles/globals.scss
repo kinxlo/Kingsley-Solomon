@@ -143,4 +143,14 @@ body {
     }
   }
 
+  @keyframes cursor {
+    from {
+      border-left: 1px solid transparent;
+    }
+
+    to {
+      border-left: 2px solid red;
+    }
+  }
+
 }

@@ -1,27 +1,29 @@
 import React, { useContext } from 'react';
-import { Box } from '@chakra-ui/react';
+import { Text, useColorMode } from '@chakra-ui/react';
 import { AppContext } from '../context/AppContext';
 
 const Bot = () => {
   const { mousePos, botMessage } = useContext(AppContext);
+  const { colorMode } = useColorMode();
 
   return (
-    <Box
+    <Text
       padding={`.5rem 1rem`}
       margin={`1rem`}
-      borderRadius={10}
       shadow={`lg`}
-      color={`lightBg`}
-      bgColor={`green`}
-      transition={`opacity 1s ease`}
+      transition={`all 1s ease`}
+      fontWeight={`bolder`}
       pos={`fixed`}
-      zIndex={999}
+      zIndex={`-999`}
+      color={`${
+        colorMode == `light` ? `darkBg` : `lightBg`
+      }`}
+      opacity={`${colorMode == `light` ? `5%` : `3%`}`}
       top={`${mousePos.codY}px`}
       left={`${mousePos.codX}px`}
-      opacity={mousePos.opacity}
     >
       {botMessage}
-    </Box>
+    </Text>
   );
 };
 
