@@ -57,6 +57,7 @@ const ProjectBox = () => {
     let projectList = projects.map((project) => {
       return (
         <Flex
+          // border={`1px solid green`}
           px={`1.5rem`}
           className='section'
           title={project.name}
@@ -71,15 +72,18 @@ const ProjectBox = () => {
           }}
         >
           <Box
+            mt={{
+              md: `30rem`,
+              lg: `initial`,
+            }}
             transform={{
               base: `initial`,
               sm: `scale(0.8)`,
-              xl:`initial`
+              xl: `initial`,
             }}
           >
             <Box
               display={`flex`}
-              justifyContent={`center`}
               pos={`relative`}
               width={`100%`}
             >
@@ -111,7 +115,7 @@ const ProjectBox = () => {
               sm: `scale(0.9)`,
               md: `initial`,
             }}
-            display={{ lg: `none` }}
+            display={{ md: `none` }}
           >
             <ProjectScreen />
           </Box>

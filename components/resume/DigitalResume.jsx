@@ -53,7 +53,7 @@ const DigitalResume = () => {
       <section id='wrapper--hero' className='section--page'>
         <div>
           <Text
-            className='font-serif'
+            className='font-sans'
             textTransform={`uppercase`}
             fontWeight={900}
             fontSize={`5xl`}
@@ -61,7 +61,7 @@ const DigitalResume = () => {
             as={`h1`}
             id='user-name'
           >
-            Ifijeh Kingsley Solomon
+            Kingsley Solomon
           </Text>
           <Text id='bio'>
             Frontend developer at{' '}

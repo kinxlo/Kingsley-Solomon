@@ -27,6 +27,8 @@ const Intro = () => {
     Router.push({ pathname: `/KS` })
   };
 
+
+
   useEffect(() => {
     const lastElement = document.getElementById(`lastElement`)
     lastElement.addEventListener('animationend', handleAnimationEnd)

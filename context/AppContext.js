@@ -50,8 +50,8 @@ const AppContextProvider = ({ children }) => {
     const setProjectInfo = (info) => {
         dispatch({ type: 'SET_PROJECT_INFO', payload: info })
     }
-    const handleMouseEnter = (event, arg) => {
-        dispatch({ type: 'SET_POSITION', payload: { event, arg } })
+    const handleMouseEnter = (event) => {
+        dispatch({ type: 'HANDLE_MOUSE_ENTER', payload: event })
     }
     const handleMouseLeave = (event, arg) => {
         dispatch({ type: 'HANDLE_MOUSE_LEAVE', payload: { event, arg } })

@@ -64,9 +64,9 @@ export const AppReducer = (state, action) => {
             return {
                 ...state, projectInfo: projectInfo
             }
-        case 'SET_POSITION':
+        case 'HANDLE_MOUSE_ENTER':
             return {
-                ...state, mousePos: { codX: action.payload.event.clientX, codY: action.payload.event.clientY }, botMessage: action.payload.arg, opacity: 1
+                ...state, mousePos: { codX: action.payload.clientX, codY: action.payload.clientY }, botMessage: action.payload.target.name, opacity: 1
             }
         case 'HANDLE_MOUSE_LEAVE':
             return {

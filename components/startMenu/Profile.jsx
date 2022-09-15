@@ -18,17 +18,17 @@ const Profile = () => {
 
   const bgText = {
     content: `'"${
-      botMessage || 'Hi!, i would be your Tour guild today.'
+      botMessage ||
+      'Greetings!, I would be your guide today. Hover on any content and let me show you the way.'
     }'`,
     width: `20rem`,
     padding: `.3rem .7rem`,
     position: `absolute`,
     top: `5rem`,
     right: `1.5rem`,
-    fontSize: `11px`,
-    fontWeight: `medium`,
+    fontSize: { base: `10px`, lg: `12px` },
+    borderLeft: `1px solid matrixLight`,
     fontFamily: `var(--font-mono)`,
-    borderLeft: `3px solid red`,
     animation: `cursor .7s 3s linear infinite alternate`,
     color: `${
       colorMode == `light` ? `matrixDark` : `matrixLight`
@@ -85,10 +85,6 @@ const Profile = () => {
           >
             <Flex alignItems={`end`} gap={2}>
               <Text
-                onMouseEnter={(event) =>
-                  handleMouseEnter(event, 'message')
-                }
-                onMouseLeave={handleMouseLeave}
                 as={`h2`}
                 fontSize={{
                   base: `5rem`,
@@ -107,13 +103,6 @@ const Profile = () => {
             </Flex>
             <Box width={`fit-content`}>
               <Text
-                onMouseEnter={(event) =>
-                  handleMouseEnter(
-                    event,
-                    'yea, thats what i am, i dont know ui ux'
-                  )
-                }
-                onMouseLeave={handleMouseLeave}
                 color={`accent`}
                 fontWeight={900}
                 letterSpacing={`1px`}
@@ -125,16 +114,25 @@ const Profile = () => {
                   '2xl': `20px`,
                 }}
               >
-                Frontend Developer
+                Web Developer | Tutor
               </Text>
               <Text
+                letterSpacing={`1px`} 
                 className='font-sans step-3'
                 fontSize={{ base: `12px`, sm: `14px` }}
                 mt={5}
                 mb={10}
               >
-                I really enjoy building Intresting stuffs
-                and give great user expirence
+                As a{' '}
+                <Text
+                  fontSize={{ base: `12px`, sm: `14px` }}
+                  as={`span`}
+                >
+                  Frontend focused{' '}
+                </Text>
+                Web developer. Kingsley enjoys converting UI
+                designs to codes. Bring your ideas, lets
+                make it a reality.
               </Text>
               <Box width={`fit-content`}>
                 <Link

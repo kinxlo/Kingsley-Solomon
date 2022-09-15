@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
-import link from '../../assets/pngegg (2).png';
+import link from '../../assets/pngegg (5).png';
 import github from '../../assets/pngegg (4).png';
 import {
   Chart as ChartJS,
@@ -67,8 +67,17 @@ const ProjectScreen = () => {
       display={`flex`}
       flexDir={`column`}
       color={`lemon`}
-      width={{ base: `initial`, '2xl': `80%` }}
-      m={{ base: `initial`, lg: `1.5rem 1.5rem 0 auto` }}
+      width={{
+        base: `initial`,
+        md: `50%`,
+        lg: `100%`,
+        xl: `80%`,
+      }}
+      m={{
+        base: `initial`,
+        md: `1.5rem 0 0 auto`,
+        lg: `1.5rem 1.5rem 0 auto`,
+      }}
     >
       <Text
         pos={{ base: `static`, xl: `fixed` }}
@@ -78,7 +87,7 @@ const ProjectScreen = () => {
         className='font-mono'
         textTransform={`capitalize`}
         fontWeight={`bold`}
-        fontSize={{ base: `md`, md: `2xl`, xl:`2rem` }}
+        fontSize={{ base: `md`, md: `2xl`, xl: `2rem` }}
         textAlign={{ base: `center`, xl: `left` }}
       >
         {projectInfo.name}
@@ -96,7 +105,45 @@ const ProjectScreen = () => {
       <Bar options={options} data={data} />
       {/*  */}
       <Flex width={`100%`} flexDir={`column`} gap={3}>
-        <Flex gap={3} alignItems={`center`}>
+        <Flex
+          justifyContent={`start`}
+          gap={3}
+          alignItems={`center`}
+          flexDir={'row-reverse'}
+        >
+          <Link
+            color={
+              colorMode == `light` ? `accent` : `lightBg`
+            }
+            className='font-sans'
+            fontWeight={`medium`}
+            fontStyle={`italic`}
+            href={projectInfo.url}
+          >
+            Visit this site.
+          </Link>
+          <Box
+            filter={`drop-shadow(1px 1px 1px #00000030)`}
+            width={`2rem`}
+            height={`2rem`}
+            className={`spin`}
+            p={`3px`}
+          >
+            <Image
+              width={`100%`}
+              height={`100%`}
+              alt='img'
+              src={link}
+            />
+          </Box>
+        </Flex>
+        {/*  */}
+        <Flex
+          gap={3}
+          justifyContent={`end`}
+          alignItems={`center`}
+          flexDir={'row-reverse'}
+        >
           <Box
             width={`2rem`}
             height={`2rem`}
@@ -122,42 +169,6 @@ const ProjectScreen = () => {
           >
             View this project on Github.
           </Link>
-        </Flex>
-        {/*  */}
-        <Flex
-          justifyContent={`end`}
-          gap={3}
-          alignItems={`center`}
-        >
-          <Link
-            color={
-              colorMode == `light` ? `accent` : `lightBg`
-            }
-            className='font-sans'
-            fontWeight={`medium`}
-            fontStyle={`italic`}
-            href={projectInfo.url}
-          >
-            Visit this site.
-          </Link>
-          <Box
-            filter={`drop-shadow(1px 1px 1px #00000030) ${
-              colorMode == `light`
-                ? `invert(0)`
-                : `invert(100%)`
-            }`}
-            width={`2rem`}
-            height={`2rem`}
-            className={`spin`}
-            p={`3px`}
-          >
-            <Image
-              width={`100%`}
-              height={`100%`}
-              alt='img'
-              src={link}
-            />
-          </Box>
         </Flex>
       </Flex>
     </Box>

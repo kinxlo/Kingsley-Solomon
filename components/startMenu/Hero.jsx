@@ -4,7 +4,7 @@ import React from 'react';
 const Hero = ({ children }) => {
   return (
     <Box
-      position={{ base: `sticky`, lg: `fixed` }}
+      position={{ base: `sticky`, md: `fixed` }}
       top={0}
       right={0}
       height={`100vh`}

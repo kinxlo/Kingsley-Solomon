@@ -4,12 +4,15 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiOutlineLink } from 'react-icons/ai';
+import { AppContext } from '../../context/AppContext.js';
 import contacts from '../../public/contact.js';
 
 const ContactMenu = () => {
   const { colorMode } = useColorMode();
+  const { handleMouseEnter, handleMouseLeave, botMessage } =
+    useContext(AppContext);
   const active = {
     color:
       colorMode == `light` ? `matrixDark` : `matrixLight`,
@@ -21,6 +24,9 @@ const ContactMenu = () => {
         key={social.id}
         target='_blank'
         href={social.link}
+        name={social.msg}
+        onMouseEnter={(event) => handleMouseEnter(event)}
+        onMouseLeave={handleMouseLeave}
       >
         <Text
           color={

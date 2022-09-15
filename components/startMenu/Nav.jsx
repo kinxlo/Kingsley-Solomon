@@ -15,8 +15,12 @@ import { AppContext } from '../../context/AppContext';
 
 const ContactMenu = () => {
   const { colorMode } = useColorMode();
-  const { switchContent, switchView } =
-    useContext(AppContext);
+  const {
+    switchContent,
+    switchView,
+    handleMouseEnter,
+    handleMouseLeave,
+  } = useContext(AppContext);
   const [active] = useState({
     backgroundColor: `transparent !important`,
     color:
@@ -24,7 +28,7 @@ const ContactMenu = () => {
   });
 
   const handleClick = (e) => {
-    switchContent(e.currentTarget.getAttribute(`name`));
+    switchContent(e.currentTarget.getAttribute(`value`));
   };
 
   return (
@@ -44,11 +48,14 @@ const ContactMenu = () => {
 
       <menu className='items-wrapper'>
         <Button
+          name={`Everything you need to know about kingsley`}
+          onMouseEnter={(event) => handleMouseEnter(event)}
+          onMouseLeave={handleMouseLeave}
           className='menu-item'
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
-          name='profile'
+          value='profile'
           onClick={handleClick}
           color={`accent`}
           isActive={switchView == `profile` ? true : false}
@@ -60,11 +67,14 @@ const ContactMenu = () => {
           <Icon as={AiOutlineUser} fontSize={`1.3rem`} />
         </Button>
         <Button
+          name={`Kingsley's Rap sheet`}
+          onMouseEnter={(event) => handleMouseEnter(event)}
+          onMouseLeave={handleMouseLeave}
           className='menu-item'
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
-          name='resume'
+          value='resume'
           onClick={handleClick}
           color={`accent`}
           isActive={switchView == `resume` ? true : false}
@@ -79,11 +89,14 @@ const ContactMenu = () => {
           />
         </Button>
         <Button
+          name={`Checkout some projects`}
+          onMouseEnter={(event) => handleMouseEnter(event)}
+          onMouseLeave={handleMouseLeave}
           className='menu-item'
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
-          name='projects'
+          value='projects'
           onClick={handleClick}
           color={`accent`}
           isActive={switchView == `projects` ? true : false}
@@ -95,11 +108,14 @@ const ContactMenu = () => {
           <Icon as={AiOutlineProject} fontSize={`1.3rem`} />
         </Button>
         <Button
+          name={`His tools for the job`}
+          onMouseEnter={(event) => handleMouseEnter(event)}
+          onMouseLeave={handleMouseLeave}
           className='menu-item'
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
-          name='tools'
+          value='tools'
           onClick={handleClick}
           color={`accent`}
           isActive={switchView == `tools` ? true : false}

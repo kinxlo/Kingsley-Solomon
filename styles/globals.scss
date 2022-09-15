@@ -28,6 +28,7 @@
 @import '../components/resume/index.scss';
 @import './contactBtn.scss';
 @import './intro.scss';
+@import './cursor.scss';
 
 
 * {
@@ -148,7 +149,7 @@ body {
     }
 
     to {
-      border-left: 2px solid red;
+      border-left: 1px solid #008F11;
     }
   }
 

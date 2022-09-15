@@ -6,7 +6,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ProjectBox from '../components/drawer/ProjectBox';
 import Nav from '../components/startMenu/Nav';
 import { AppContext } from '../context/AppContext';
@@ -25,6 +25,29 @@ import Map from '../components/startMenu/Map';
 const MobileLayout = () => {
   const { switchView } = useContext(AppContext);
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const customCursor = () => {
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.setAttribute(
+        'style',
+        'top: ' +
+          (e.pageY - 10) +
+          'px; left: ' +
+          (e.pageX - 10) +
+          'px;'
+      );
+    });
+
+    document.addEventListener('click', () => {
+      cursor.classList.add('expand');
+
+      setTimeout(() => {
+        cursor.classList.remove('expand');
+      }, 500);
+    });
+  };
 
   const image = (
     <Box
@@ -84,9 +107,14 @@ const MobileLayout = () => {
     }
   };
 
+  useEffect(() => {
+    // customCursor();
+  });
+
   return (
     // !isLoading &&
     <>
+      {/* <div className='cursor'></div> */}
       <Nav />
       <ContactMenu />
       <Button
