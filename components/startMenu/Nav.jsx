@@ -48,7 +48,7 @@ const ContactMenu = () => {
 
       <menu className='items-wrapper'>
         <Button
-          name={`Everything you need to know about kingsley`}
+          data-message={`Everything you need to know about kingsley`}
           onMouseEnter={(event) => handleMouseEnter(event)}
           onMouseLeave={handleMouseLeave}
           className='menu-item'
@@ -67,7 +67,8 @@ const ContactMenu = () => {
           <Icon as={AiOutlineUser} fontSize={`1.3rem`} />
         </Button>
         <Button
-          name={`Kingsley's Rap sheet`}
+          disabled
+          data-message={`Kingsley's Rap sheet`}
           onMouseEnter={(event) => handleMouseEnter(event)}
           onMouseLeave={handleMouseLeave}
           className='menu-item'
@@ -89,7 +90,7 @@ const ContactMenu = () => {
           />
         </Button>
         <Button
-          name={`Checkout some projects`}
+          data-message={`Checkout some projects`}
           onMouseEnter={(event) => handleMouseEnter(event)}
           onMouseLeave={handleMouseLeave}
           className='menu-item'
@@ -108,7 +109,7 @@ const ContactMenu = () => {
           <Icon as={AiOutlineProject} fontSize={`1.3rem`} />
         </Button>
         <Button
-          name={`His tools for the job`}
+          data-message={`His tools for the job`}
           onMouseEnter={(event) => handleMouseEnter(event)}
           onMouseLeave={handleMouseLeave}
           className='menu-item'

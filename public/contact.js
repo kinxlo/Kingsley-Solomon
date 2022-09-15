@@ -26,7 +26,7 @@ const contacts = [
         msg: `...he is a huge fan of twitter...i wonder why he has so little followers`
     },
     {
-        id: 5,
+        id: 4,
         name: `Google`,
         icon: RiMailSendLine,
         link: `mailto:kinxly@gmail.com`,

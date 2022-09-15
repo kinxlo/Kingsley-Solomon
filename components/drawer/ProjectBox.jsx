@@ -22,66 +22,38 @@ const ProjectBox = () => {
     handleMouseEnter,
     handleMouseLeave,
     botMessage,
+    projectInfo,
   } = useContext(AppContext);
 
-  const bgText = {
-    content: `'"${
-      botMessage ||
-      'I Have nothing to say here...just read the resume.'
-    }'`,
-    width: `25rem`,
-    padding: `.3rem .7rem`,
-    position: `fixed`,
-    top: { base: `initial` },
-    right: { base: `iniital`, lg: `0` },
-    bottom: { base: `15%`, sm: `10%`, md: `3%` },
-    left: {
-      base: `15%`,
-      sm: `10%`,
-      md: `17%`,
-      xl: `50%`,
-      '2xl': `58%`,
-    },
-    fontSize: { base: `8px`, sm: `10px`, md: `11px` },
-    fontWeight: `medium`,
-    fontFamily: `var(--font-mono)`,
-    borderLeft: `3px solid red`,
-    animation: `cursor .7s 3s linear infinite alternate`,
-    color: `${
-      colorMode == `light` ? `matrixDark` : `matrixLight`
-    }`,
-    zIndex: 1,
-    // display: { base: `none`, sm: `block` },
-  };
   if (projects.length) {
     let projectList = projects.map((project) => {
       return (
-        <Flex
+        <Box
           // border={`1px solid green`}
-          px={`1.5rem`}
+          p={{ base: `2em`, md: `10em`, lg: `1.5em` }}
           className='section'
           title={project.name}
           key={project.id}
-          // gap={5}
-          transform={{
-            base: `scale(0.8)`,
-            sm: `scale(0.9)`,
-            md: `scale(0.7)`,
-            lg: `scale(0.6)`,
-            xl: `scale(1)`,
-          }}
+          flexDir={`column`}
+          justifyContent={`space-evenly !important`}
         >
-          <Box
-            mt={{
-              md: `30rem`,
-              lg: `initial`,
-            }}
-            transform={{
-              base: `initial`,
-              sm: `scale(0.8)`,
-              xl: `initial`,
-            }}
-          >
+          <Box transform={`scale(0.8)`}>
+            <Text
+              display={{ base: `block`, xl: `none` }}
+              color={`accent`}
+              className='font-mono'
+              textTransform={`capitalize`}
+              fontWeight={`bold`}
+              fontSize={{
+                base: `xl`,
+                md: `2xl`,
+                xl: `2rem`,
+              }}
+              textAlign={{ base: `center`, xl: `left` }}
+              my={2}
+            >
+              {projectInfo.name}
+            </Text>
             <Box
               display={`flex`}
               pos={`relative`}
@@ -109,23 +81,15 @@ const ProjectBox = () => {
               </Box>
             </Box>
           </Box>
-          <Box
-            transform={{
-              base: `initial`,
-              sm: `scale(0.9)`,
-              md: `initial`,
-            }}
-            display={{ md: `none` }}
-          >
+          <Box display={{ lg: `none` }}>
             <ProjectScreen />
           </Box>
-        </Flex>
+        </Box>
       );
     });
     return (
       <Box
-        _before={bgText}
-        width={{ base: `initial`, xl: `50%` }}
+        width={{ base: `initial`, lg: `60%`, xl: `50%` }}
       >
         <Box
           _before={
@@ -145,24 +109,12 @@ const ProjectBox = () => {
             className='font-serif'
             height={`fit-content`}
             pos={`fixed`}
-            top={{ lg: `1.5rem`, xl: `initial` }}
-            left={{
-              base: `2%`,
-              xl: `initial`,
-            }}
-            bottom={{ base: `initial`, xl: `10%` }}
-            right={{
-              base: `initial`,
-              xl: `1%`,
-            }}
-            m={`1rem 1rem 3rem`}
+            top={0}
+            left={0}
             zIndex={100}
             textTransform={`capitalize`}
             fontWeight={700}
-            textAlign={{
-              base: `left`,
-              xl: `right`,
-            }}
+            transform={`translate(.5em, .5em)`}
             color={
               colorMode == `light` ? `darkBg` : `lightBg`
             }
@@ -173,8 +125,7 @@ const ProjectBox = () => {
               lg: `50px`,
             }}
           >
-            {language} <br />
-            projects worth <br /> sharing.
+            {language} projects worth <br /> sharing.
           </Text>
         </Box>
         <FullScrollView>{projectList}</FullScrollView>

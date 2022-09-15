@@ -13,27 +13,6 @@ const ProductivityLayout = ({ title, document }) => {
   const { handleMouseEnter, handleMouseLeave, botMessage } =
     useContext(AppContext);
 
-  const bgText = {
-    content: `'"${
-      botMessage ||
-      'I Have nothing to say here...just read the resume.'
-    }'`,
-    width: `20rem`,
-    padding: `.3rem .7rem`,
-    position: { base: `absolute`, lg: `fixed` },
-    bottom: `3.5%`,
-    left: { base: `25%`, md: `63%`, xl: `53%` },
-    fontSize: `11px`,
-    fontWeight: `medium`,
-    fontFamily: `var(--font-mono)`,
-    borderLeft: `3px solid red`,
-    animation: `cursor .7s 3s linear infinite alternate`,
-    color: `${
-      colorMode == `light` ? `matrixDark` : `matrixLight`
-    }`,
-    zIndex: 1,
-  };
-
   let boxs = document.map((box) => {
     return (
       <CTA
@@ -57,12 +36,12 @@ const ProductivityLayout = ({ title, document }) => {
     );
   });
   return (
-    <Box _before={bgText} height={`fit-content`}>
+    <Box height={`fit-content`} className='hide-scrollbar!'>
       <Grid
         p={1}
         maxW={{ base: `100%`, lg: `60%`, xl: `50%` }}
         width={`100%`}
-        className='section'
+        className='section hide-scrollbar!'
         name={title}
         templateColumns='repeat(3, 1fr)'
         gap={1}

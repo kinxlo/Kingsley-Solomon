@@ -16,26 +16,6 @@ const Profile = () => {
   const { handleMouseEnter, handleMouseLeave, botMessage } =
     useContext(AppContext);
 
-  const bgText = {
-    content: `'"${
-      botMessage ||
-      'Greetings!, I would be your guide today. Hover on any content and let me show you the way.'
-    }'`,
-    width: `20rem`,
-    padding: `.3rem .7rem`,
-    position: `absolute`,
-    top: `5rem`,
-    right: `1.5rem`,
-    fontSize: { base: `10px`, lg: `12px` },
-    borderLeft: `1px solid matrixLight`,
-    fontFamily: `var(--font-mono)`,
-    animation: `cursor .7s 3s linear infinite alternate`,
-    color: `${
-      colorMode == `light` ? `matrixDark` : `matrixLight`
-    }`,
-    zIndex: 1,
-  };
-
   return (
     <Flex
       className='profile-view'
@@ -52,7 +32,6 @@ const Profile = () => {
       }}
       pos={{ base: `sticky`, xl: `relative` }}
       top={0}
-      _before={bgText}
     >
       {/* <Background /> */}
       {/* profile */}
@@ -117,7 +96,7 @@ const Profile = () => {
                 Web Developer | Tutor
               </Text>
               <Text
-                letterSpacing={`1px`} 
+                letterSpacing={`1px`}
                 className='font-sans step-3'
                 fontSize={{ base: `12px`, sm: `14px` }}
                 mt={5}

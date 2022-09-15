@@ -17,7 +17,7 @@
   --mainLinkColor-light: hsl(0, 100%, 25%);
   --mainBorderColor-light: hsl(0, 0%, 85%);
   --mainActiveColor-light: hsl(178, 100%, 44%);
-  --lightBg: rgb(251, 244, 243);
+  --lightBg: #fbf4f3;
   --darkBg: #0f171f;
 
   --mainLinkColor: var(--mainLinkColor-light);
@@ -45,7 +45,22 @@
   }
 }
 
+.hide-scrollbar,
+html {
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  overflow: -moz-scrollbars-none !important; //for older versions of firefox
+}
+
 body {
+
+  .fp-section {
+    display: flex;
+  }
 
   // important
   .fp-table {
@@ -89,15 +104,7 @@ body {
   }
 
 
-  .hide-scrollbar {
-    &::-webkit-scrollbar {
-      display: none !important;
-    }
 
-    -ms-overflow-style: none !important;
-    scrollbar-width: none !important;
-    overflow: -moz-scrollbars-none !important; //for older versions of firefox
-  }
 
   .fullpage-wrapper {
     margin: initial !important;

@@ -26,29 +26,6 @@ const MobileLayout = () => {
   const { switchView } = useContext(AppContext);
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const customCursor = () => {
-    const cursor = document.querySelector('.cursor');
-
-    document.addEventListener('mousemove', (e) => {
-      cursor.setAttribute(
-        'style',
-        'top: ' +
-          (e.pageY - 10) +
-          'px; left: ' +
-          (e.pageX - 10) +
-          'px;'
-      );
-    });
-
-    document.addEventListener('click', () => {
-      cursor.classList.add('expand');
-
-      setTimeout(() => {
-        cursor.classList.remove('expand');
-      }, 500);
-    });
-  };
-
   const image = (
     <Box
       display={
@@ -76,8 +53,8 @@ const MobileLayout = () => {
     switch (switchView) {
       case `profile`:
         return <Profile />;
-      case `resume`:
-        return <DigitalResume />;
+      // case `resume`:
+      //   return <DigitalResume />;
       case `projects`:
         return <ProjectBox />;
       case `tools`:
@@ -106,10 +83,6 @@ const MobileLayout = () => {
         return image;
     }
   };
-
-  useEffect(() => {
-    // customCursor();
-  });
 
   return (
     // !isLoading &&

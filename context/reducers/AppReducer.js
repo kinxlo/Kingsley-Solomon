@@ -66,7 +66,7 @@ export const AppReducer = (state, action) => {
             }
         case 'HANDLE_MOUSE_ENTER':
             return {
-                ...state, mousePos: { codX: action.payload.clientX, codY: action.payload.clientY }, botMessage: action.payload.target.name, opacity: 1
+                ...state, mousePos: { codX: action.payload.clientX, codY: action.payload.clientY }, botMessage: action.payload.target.dataset.message
             }
         case 'HANDLE_MOUSE_LEAVE':
             return {

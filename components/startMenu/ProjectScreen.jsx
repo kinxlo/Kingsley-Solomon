@@ -69,8 +69,6 @@ const ProjectScreen = () => {
       color={`lemon`}
       width={{
         base: `initial`,
-        md: `50%`,
-        lg: `100%`,
         xl: `80%`,
       }}
       m={{
@@ -80,27 +78,22 @@ const ProjectScreen = () => {
       }}
     >
       <Text
-        pos={{ base: `static`, xl: `fixed` }}
-        top={`1.5rem`}
-        left={`1.5rem`}
+        display={{ base: `none`, lg: `block` }}
         color={`accent`}
         className='font-mono'
         textTransform={`capitalize`}
         fontWeight={`bold`}
         fontSize={{ base: `md`, md: `2xl`, xl: `2rem` }}
-        textAlign={{ base: `center`, xl: `left` }}
       >
         {projectInfo.name}
-        <Text
-          fontSize={`xs`}
-          color={active}
-          className='font-mono'
-          textAlign='left'
-          mt={{ base: 6, xl: 0 }}
-        >
-          {projectInfo.category}
-        </Text>
+        <Text textAlign='left'>{projectInfo.category}</Text>
       </Text>
+      <Box
+        display={{ base: `block`, lg: `none` }}
+        textAlign={`right`}
+      >
+        <Text>View Details</Text>
+      </Box>
       {/* Chart */}
       <Bar options={options} data={data} />
       {/*  */}

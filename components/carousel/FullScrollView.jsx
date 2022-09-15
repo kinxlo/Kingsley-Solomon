@@ -19,6 +19,8 @@ const FullScrollView = ({ children }) => {
   return (
     <ReactFullpage
       //fullpage options
+      // navigation={true}
+      verticalCentered={false}
       afterLoad={handleLoad}
       licenseKey={''}
       scrollingSpeed={500} /* Options here */

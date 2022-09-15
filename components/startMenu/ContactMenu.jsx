@@ -24,11 +24,11 @@ const ContactMenu = () => {
         key={social.id}
         target='_blank'
         href={social.link}
-        name={social.msg}
-        onMouseEnter={(event) => handleMouseEnter(event)}
-        onMouseLeave={handleMouseLeave}
       >
         <Text
+          data-message={social.msg}
+          onMouseEnter={(event) => handleMouseEnter(event)}
+          onMouseLeave={handleMouseLeave}
           color={
             colorMode == `light` ? `accent` : `lightBg`
           }
