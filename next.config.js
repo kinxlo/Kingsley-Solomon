@@ -2,6 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
 
+  transpile: ['gsap'],
+
   images: {
     domains: [
       'res.cloudinary.com'

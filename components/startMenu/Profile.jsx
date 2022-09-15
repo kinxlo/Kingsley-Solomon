@@ -8,7 +8,6 @@ import {
 } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
-
 import Reviews from '../drawer/Reviews';
 
 const Profile = () => {

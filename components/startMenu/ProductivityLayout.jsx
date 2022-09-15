@@ -4,9 +4,10 @@ import {
   Image,
   useColorMode,
 } from '@chakra-ui/react';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
 import CTA from '../drawer/CTA';
+import { productivity } from '../../gsap';
 
 const ProductivityLayout = ({ title, document }) => {
   const { colorMode } = useColorMode();
@@ -35,20 +36,30 @@ const ProductivityLayout = ({ title, document }) => {
       </CTA>
     );
   });
+
+  useEffect(() => {
+    productivity();
+  }, []);
+
   return (
-    <Box height={`fit-content`} className='hide-scrollbar!'>
-      <Grid
-        p={1}
-        maxW={{ base: `100%`, lg: `60%`, xl: `50%` }}
-        width={`100%`}
-        className='section hide-scrollbar!'
-        name={title}
-        templateColumns='repeat(3, 1fr)'
-        gap={1}
+    <>
+      <Box
+        height={`fit-content`}
+        className='hide-scrollbar!'
       >
-        {boxs}
-      </Grid>
-    </Box>
+        <Grid
+          p={1}
+          maxW={{ base: `100%`, lg: `60%`, xl: `50%` }}
+          width={`100%`}
+          className='section hide-scrollbar!'
+          name={title}
+          templateColumns='repeat(3, 1fr)'
+          gap={1}
+        >
+          {boxs}
+        </Grid>
+      </Box>
+    </>
   );
 };
 

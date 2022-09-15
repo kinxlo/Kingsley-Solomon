@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Box, Text, useColorMode } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext.js';
 
@@ -45,8 +45,8 @@ const CTA = ({ width, height, name, title, children }) => {
       height={height}
       onClick={handleFunctionClick}
       _hover={{ bg: `transparent` }}
-      transition={`ease all .2s`}
       className={`pbox`}
+      transform={`scale(0)`}
     >
       {/* <section> */}
       {children}
