@@ -37,7 +37,12 @@ const ProjectBox = () => {
           flexDir={`column`}
           justifyContent={`space-evenly !important`}
         >
-          <Box transform={`scale(0.8)`}>
+          <Box
+            transform={{
+              base: `scale(0.8)`,
+              lg: `scale(1)`,
+            }}
+          >
             <Text
               display={{ base: `block`, xl: `none` }}
               color={`accent`}
