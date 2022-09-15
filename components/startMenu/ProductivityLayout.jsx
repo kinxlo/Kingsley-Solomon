@@ -38,7 +38,7 @@ const ProductivityLayout = ({ title, document }) => {
   });
 
   useEffect(() => {
-    productivity();
+    requestAnimationFrame(productivity)
   }, []);
 
   return (
