@@ -14,15 +14,6 @@ const CTA = ({ width, height, name, title, children }) => {
 
   const functions = (name) => {
     switch (name) {
-      case `fullscreen`:
-        // return;
-        break;
-      case `location`:
-        showMapOrNotice('SHOW_MAP');
-        break;
-      case `notification`:
-        showMapOrNotice('SHOW_NOTICE');
-        break;
       case `react`:
         showProjects(name);
         break;
@@ -33,15 +24,6 @@ const CTA = ({ width, height, name, title, children }) => {
         showProjects(name);
         break;
       case `java`:
-        showProjects(name);
-        break;
-      case `html`:
-        showProjects(name);
-        break;
-      case `css`:
-        showProjects(name);
-        break;
-      case `scss`:
         showProjects(name);
         break;
       default:

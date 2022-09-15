@@ -109,7 +109,7 @@ const Profile = () => {
                 >
                   Frontend focused{' '}
                 </Text>
-                Web developer. Kingsley enjoys converting UI
+                Web developer, Kingsley enjoys converting UI
                 designs to codes. Bring your ideas, lets
                 make it a reality.
               </Text>
