@@ -47,7 +47,6 @@ const CTA = ({ width, height, name, title, children }) => {
       _hover={{ bg: `transparent` }}
       className={`pbox`}
       transform={`scale(0)`}
-      willChange={`transform !importsnt`}
     >
       {/* <section> */}
       {children}

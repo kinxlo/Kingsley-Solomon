@@ -8,4 +8,5 @@ export const productivity = () => {
             grid: [4, 3]
         }
     });
+    requestAnimationFrame(productivity)
 }
