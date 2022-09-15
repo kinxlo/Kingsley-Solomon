@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 
-const fps = 120;
+const fps = 5;
 
 export const productivity = () => {
     gsap.to('.pbox', {
