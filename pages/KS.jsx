@@ -16,6 +16,7 @@ import Hero from '../components/startMenu/Hero';
 import ContactMenu from '../components/startMenu/ContactMenu';
 import ProductivityLayout from '../components/startMenu/ProductivityLayout';
 import ProjectScreen from '../components/startMenu/ProjectScreen';
+import { profileAnimation } from '../gsap';
 
 import { tools } from '../public/tools';
 
@@ -48,6 +49,10 @@ const MobileLayout = () => {
       />
     </Box>
   );
+
+  useEffect(() => {
+    profileAnimation();
+  }, []);
 
   const display = () => {
     switch (switchView) {
@@ -110,6 +115,17 @@ const MobileLayout = () => {
           fontSize={`1.3rem`}
         />
       </Button>
+      <Box
+        display={{ base: `none`, lg: `block` }}
+        id='profileBox'
+        width={`100vw`}
+        height={`100vh`}
+        zIndex={500}
+        pos={`fixed`}
+        top={0}
+        left={{ lg: `60%`, xl: `50%` }}
+        bg={colorMode == `light` ? `lightBg` : `darkBg`}
+      ></Box>
       {display()}
       <Hero>{screen()}</Hero>
     </>

@@ -46,7 +46,6 @@ const CTA = ({ width, height, name, title, children }) => {
       onClick={handleFunctionClick}
       _hover={{ bg: `transparent` }}
       className={`pbox`}
-      transform={`scale(0)`}
     >
       {/* <section> */}
       {children}

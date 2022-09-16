@@ -4,7 +4,11 @@ import {
   Image,
   useColorMode,
 } from '@chakra-ui/react';
-import React, { useContext, useEffect } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useRef,
+} from 'react';
 import { AppContext } from '../../context/AppContext';
 import CTA from '../drawer/CTA';
 import { productivity } from '../../gsap';
@@ -13,6 +17,7 @@ const ProductivityLayout = ({ title, document }) => {
   const { colorMode } = useColorMode();
   const { handleMouseEnter, handleMouseLeave, botMessage } =
     useContext(AppContext);
+  const box = useRef(null);
 
   let boxs = document.map((box) => {
     return (
@@ -44,6 +49,8 @@ const ProductivityLayout = ({ title, document }) => {
   return (
     <>
       <Box
+        onMouseEnter={productivity}
+        ref={box}
         height={`fit-content`}
         className='hide-scrollbar!'
       >

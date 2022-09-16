@@ -8,9 +8,6 @@ const Hero = ({ children }) => {
     <Box
       position={{
         base: `sticky`,
-        // md: `${
-        //   switchView == `profile` ? `sticky` : `fixed`
-        // }`,
         lg: `fixed`,
       }}
       top={0}
@@ -24,5 +21,7 @@ const Hero = ({ children }) => {
 };
 
 export default Hero;
-{
-}
+
+// md: `${
+//   switchView == `profile` ? `sticky` : `fixed`
+// }`,

@@ -1,17 +1,13 @@
 import { gsap } from 'gsap';
 
-const fps = 5;
+export const profileAnimation = () => {
+    let tl = gsap.timeline({ delay: 1.5, duration: 0.1 });
+    tl.to('#profileBox', { width: 1, ease:"power3.out" });
+    requestAnimationFrame(profileAnimation);
+}
 
 export const productivity = () => {
-    gsap.to('.pbox', {
-        scale: 1, duration: 1,  stagger: {
-            ease: `power1.out`,
-            amount: 1,
-            grid: [4, 3]
-        }
-    });
-    setTimeout(() => {
-        requestAnimationFrame(productivity);
-    }, 1000 / fps);
+    let tl = gsap.timeline();
 
+    requestAnimationFrame(productivity);
 }

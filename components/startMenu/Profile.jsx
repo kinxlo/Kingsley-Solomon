@@ -6,17 +6,21 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
 import Reviews from '../drawer/Reviews';
+
 
 const Profile = () => {
   const { colorMode } = useColorMode();
   const { handleMouseEnter, handleMouseLeave, botMessage } =
     useContext(AppContext);
 
+
+
   return (
     <Flex
+
       className='profile-view'
       maxW={{ base: `100%`, lg: `60%`, xl: `50%` }}
       height={`100vh`}
