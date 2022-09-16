@@ -14,7 +14,7 @@ export const profileAnimation = () => {
         }
     });
     tl.to(`.action-btn`, { scale: 1, opacity: 1, ease: "elastic.out", duration: 1, stagger: 0.1 })
-    // requestAnimationFrame(profileAnimation);
+    requestAnimationFrame(profileAnimation);
 }
 
 export const productivity = () => {
