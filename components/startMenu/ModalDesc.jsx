@@ -13,7 +13,7 @@ import {
 import React from 'react';
 import ProjectDesc from './ProjectDesc';
 
-const ModalDesc = () => {
+const ModalDesc = ({ contributors }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -33,25 +33,15 @@ const ModalDesc = () => {
         onClose={onClose}
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent m={`1.5em`}>
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <ProjectDesc inModal={true} />
+          <ModalBody py={10}>
+            <ProjectDesc
+              inModal={true}
+              contributors={contributors}
+            />
           </ModalBody>
-
-          <ModalFooter>
-            <Button
-              colorScheme='blue'
-              mr={3}
-              onClick={onClose}
-            >
-              Close
-            </Button>
-            <Button variant='ghost'>
-              Secondary Action
-            </Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>

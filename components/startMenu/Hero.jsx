@@ -4,10 +4,19 @@ import { AppContext } from '../../context/AppContext';
 
 const Hero = ({ children }) => {
   const { switchView } = useContext(AppContext);
+  const display = {
+    base: switchView == `projects` ? `none` : `block`,
+    md: `block`,
+  };
   return (
     <Box
+      bg={`#00000010`}
+      display={display}
       position={{
         base: `sticky`,
+        // md: `${
+        //   switchView == `profile` ? `sticky` : `fixed`
+        // }`,
         lg: `fixed`,
       }}
       top={0}
@@ -21,7 +30,3 @@ const Hero = ({ children }) => {
 };
 
 export default Hero;
-
-// md: `${
-//   switchView == `profile` ? `sticky` : `fixed`
-// }`,

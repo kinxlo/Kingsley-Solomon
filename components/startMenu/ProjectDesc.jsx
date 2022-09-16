@@ -7,9 +7,9 @@ import {
   Image,
   Text,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
 
-const ProjectDesc = ({ projectInfo, inModal }) => {
+const ProjectDesc = ({ contributors, inModal }) => {
   return (
     <Grid
       templateColumns={
@@ -112,27 +112,20 @@ const ProjectDesc = ({ projectInfo, inModal }) => {
           >
             Contributors
           </Text>
-          <AvatarGroup size='sm' max={2}>
-            <Avatar
-              name='Ryan Florence'
-              src='https://bit.ly/ryan-florence'
-            />
-            <Avatar
-              name='Segun Adebayo'
-              src='https://bit.ly/sage-adebayo'
-            />
-            <Avatar
-              name='Kent Dodds'
-              src='https://bit.ly/kent-c-dodds'
-            />
-            <Avatar
-              name='Prosper Otemuyiwa'
-              src='https://bit.ly/prosper-baba'
-            />
-            <Avatar
-              name='Christian Nwamba'
-              src='https://bit.ly/code-beast'
-            />
+          <AvatarGroup size='md' max={2}>
+            {contributors ? (
+              contributors.map((dev) => {
+                return (
+                  <Avatar
+                    key={dev.name}
+                    name={dev.name}
+                    src={dev.img}
+                  />
+                );
+              })
+            ) : (
+              <Text>...</Text>
+            )}
           </AvatarGroup>
         </Box>
       </Flex>

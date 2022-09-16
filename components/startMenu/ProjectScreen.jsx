@@ -103,7 +103,7 @@ const ProjectScreen = () => {
         display={{ base: `block`, lg: `none` }}
         textAlign={`right`}
       >
-        <Modal />
+        <Modal contributors={projectInfo.contributors} />
       </Box>
       {/* Chart */}
       <Bar options={options} data={data} />
@@ -193,7 +193,7 @@ const ProjectScreen = () => {
       <Box display={{ base: `none`, lg: `block` }}>
         <ProjectDesc
           inModal={false}
-          projectInfo={projectInfo}
+          contributors={projectInfo.contributors}
         />
       </Box>
     </Box>

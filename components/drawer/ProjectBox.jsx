@@ -1,3 +1,5 @@
+import React, { Suspense, useContext } from 'react';
+import dynamic from 'next/dynamic';
 import {
   Box,
   Flex,
@@ -5,15 +7,18 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import React, { Suspense, useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import {
   darkSticker,
   lightSticker,
 } from '../../theme/customTheme';
 import FullScrollView from '../carousel/FullScrollView';
-const ProjectScreen = React.lazy(() =>
-  import('../startMenu/ProjectScreen')
+
+const ProjectScreen = dynamic(
+  () => import('../startMenu/ProjectScreen'),
+  {
+    suspense: true,
+  }
 );
 
 const ProjectBox = () => {
