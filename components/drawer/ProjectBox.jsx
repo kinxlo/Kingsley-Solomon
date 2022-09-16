@@ -5,14 +5,16 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import React, { useContext } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import {
   darkSticker,
   lightSticker,
 } from '../../theme/customTheme';
 import FullScrollView from '../carousel/FullScrollView';
-import ProjectScreen from '../startMenu/ProjectScreen';
+const ProjectScreen = React.lazy(() =>
+  import('../startMenu/ProjectScreen')
+);
 
 const ProjectBox = () => {
   const { colorMode } = useColorMode();
@@ -133,7 +135,9 @@ const ProjectBox = () => {
             {language} projects worth <br /> sharing.
           </Text>
         </Box>
-        <FullScrollView>{projectList}</FullScrollView>
+        <Suspense fallback={<div>Loading...</div>}>
+          <FullScrollView>{projectList}</FullScrollView>
+        </Suspense>
       </Box>
     );
   } else {
