@@ -49,7 +49,6 @@ const ProductivityLayout = ({ title, document }) => {
   return (
     <>
       <Box
-        onMouseEnter={productivity}
         ref={box}
         height={`fit-content`}
         className='hide-scrollbar!'

@@ -9,16 +9,11 @@ import {
 import { useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
 import Reviews from '../drawer/Reviews';
-import { profileAnimation } from '../../gsap';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
   const { handleMouseEnter, handleMouseLeave, botMessage } =
     useContext(AppContext);
-
-  useEffect(() => {
-    profileAnimation();
-  }, []);
 
   return (
     <Flex

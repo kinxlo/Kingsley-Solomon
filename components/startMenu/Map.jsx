@@ -14,6 +14,7 @@ const Map = () => {
   return (
     <>
       <Box
+        id='map'
         onClick={onToggle}
         position={`relative`}
         backgroundColor={`lightBg`}

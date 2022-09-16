@@ -10,7 +10,7 @@ const Hero = ({ children }) => {
   };
   return (
     <Box
-      bg={`#00000010`}
+      bg={switchView !== `projects` ? `none` : `#00000010`}
       display={display}
       position={{
         base: `sticky`,

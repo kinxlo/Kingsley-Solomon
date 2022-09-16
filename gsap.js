@@ -2,7 +2,10 @@
 import { gsap } from 'gsap';
 
 export const profileAnimation = () => {
-
+    gsap.set(`.slide-in`, {
+        y: `2rem`, opacity: 0,
+    });
+    gsap.set(`.action-btn`, { scale: 0, opacity: 0 })
     let tl = gsap.timeline({ delay: 1.5, duration: 0.1 });
     tl.to(`#profileBox`, { width: 1, ease: "power3.out" });
     tl.to(`.slide-in`, {
@@ -17,5 +20,9 @@ export const profileAnimation = () => {
 }
 
 export const productivity = () => {
-
+    gsap.set(`.pbox`, { scale: 0, opacity: 0 })
+    gsap.set(`#map`, { opacity: 0 })
+    let tl = gsap.timeline({ delay: 1, duration: 0.1 });
+    tl.to(`.pbox`, { scale: 1, opacity: 1, ease: "elastic.out", duration: 0.5, stagger: 0.1 })
+    tl.to(`#map`, { opacity: 1, duration: 5 })
 }

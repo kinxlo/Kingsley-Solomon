@@ -10,6 +10,7 @@ const projects = [
         url: `https://k-audiophile.netlify.app`,
         github: `https://github.com/kinxlo/audiophile`,
         desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
+        tools:[``],
         category: `E-Commerce`,
         contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
     },
@@ -24,6 +25,7 @@ const projects = [
         url: `https://dreamy-bhaskara-d01fbc.netlify.app`,
         github: null,
         desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
+        tools:[``],
         category: `Security`,
         contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
     },
@@ -38,6 +40,7 @@ const projects = [
         url: `https://ks-periodic-table.netlify.app`,
         github: `https://github.com/kinxlo/Elements`,
         desc: `The periodic table of element implemented using react`,
+        tools:[``],
         category: `Academics`,
         contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
     },
@@ -52,6 +55,7 @@ const projects = [
         url: `https://darexengineering.com`,
         github: null,
         desc: `A Client project written in standard html css and bootstrap-3`,
+        tools:[``],
         category: `Business`,
         contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
     },
@@ -66,6 +70,7 @@ const projects = [
         url: `https://kinxlo.github.io/copyAppLP`,
         github: `https://github.com/kinxlo/copyAppLP`,
         desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
+        tools:[``],
         category: `Landing Page`,
         contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
     },
@@ -80,6 +85,7 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
+        tools:[``],
         category: `Food`,
         contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
     },
@@ -94,12 +100,13 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
+        tools:[``],
         category: `Game`,
-        contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
+        contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }, { name: `Funke`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1661799962/portfolio/Screenshot_2022-08-29_200514_ajftri.png` }]
     },
     {
         id: 8,
-        name: `welain Portal`,
+        name: `welian Portal`,
         language: [`vue`, `javascript`, `scss`, `html`],
         colorCode: [`#41b88350`, `#f0db4f50`, `#e389b950`, `#f0652950`,],
         values: [83.9, 13.5, 2.4, 0.2],
@@ -108,8 +115,9 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
+        tools:[``],
         category: `Dashboard`,
-        contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
+        contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }, { name: `Funke`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1661799962/portfolio/Screenshot_2022-08-29_200514_ajftri.png` },]
     },
     {
         id: 9,
@@ -122,8 +130,9 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
+        tools:[``],
         category: `Social`,
-        contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
+        contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }, { name: `Funke`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1661799962/portfolio/Screenshot_2022-08-29_200514_ajftri.png` },]
     },
     {
         id: 10,
@@ -136,6 +145,7 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
+        tools:[``],
         category: `Portfolio`,
         contributors: [{ name: `kingsley solomon`, img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg` }]
     },

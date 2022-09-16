@@ -16,7 +16,7 @@ import Hero from '../components/startMenu/Hero';
 import ContactMenu from '../components/startMenu/ContactMenu';
 import ProductivityLayout from '../components/startMenu/ProductivityLayout';
 import ProjectScreen from '../components/startMenu/ProjectScreen';
-// import { profileAnimation } from '../gsap';
+import { profileAnimation } from '../gsap';
 import { tools } from '../public/tools';
 
 import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
@@ -84,9 +84,9 @@ const MobileLayout = () => {
     }
   };
 
-  // useEffect(() => {
-  //   profileAnimation();
-  // }, []);
+  useEffect(() => {
+    profileAnimation();
+  }, []);
 
   return (
     // !isLoading &&
