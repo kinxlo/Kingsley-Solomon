@@ -45,11 +45,11 @@ const ContactMenu = () => {
   return (
     <div
       id='contacts'
-      className='circular-menu circular-menu-left'
+      className='circular-menu circular-menu-left action-btn'
     >
       <Icon
         as={AiOutlineLink}
-        className='floating-btn'
+        className='floating-btn '
         onClick={() =>
           document
             .getElementById('contacts')

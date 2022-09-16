@@ -16,8 +16,7 @@ import Hero from '../components/startMenu/Hero';
 import ContactMenu from '../components/startMenu/ContactMenu';
 import ProductivityLayout from '../components/startMenu/ProductivityLayout';
 import ProjectScreen from '../components/startMenu/ProjectScreen';
-import { profileAnimation } from '../gsap';
-
+// import { profileAnimation } from '../gsap';
 import { tools } from '../public/tools';
 
 import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
@@ -49,10 +48,6 @@ const MobileLayout = () => {
       />
     </Box>
   );
-
-  useEffect(() => {
-    profileAnimation();
-  }, []);
 
   const display = () => {
     switch (switchView) {
@@ -89,6 +84,10 @@ const MobileLayout = () => {
     }
   };
 
+  // useEffect(() => {
+  //   profileAnimation();
+  // }, []);
+
   return (
     // !isLoading &&
     <>
@@ -105,6 +104,7 @@ const MobileLayout = () => {
         zIndex={999}
         right={`1.5em`}
         onClick={toggleColorMode}
+        className={`action-btn`}
       >
         <Icon
           as={

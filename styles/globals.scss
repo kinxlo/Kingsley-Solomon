@@ -161,4 +161,14 @@ body {
     }
   }
 
+  // clases and ids for gsap initial states
+  .slide-in {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  .action-btn {
+    opacity: 0;
+    transform: scale(0);
+  }
 }

@@ -9,18 +9,19 @@ import {
 import { useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
 import Reviews from '../drawer/Reviews';
-
+import { profileAnimation } from '../../gsap';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
   const { handleMouseEnter, handleMouseLeave, botMessage } =
     useContext(AppContext);
 
-
+  useEffect(() => {
+    profileAnimation();
+  }, []);
 
   return (
     <Flex
-
       className='profile-view'
       maxW={{ base: `100%`, lg: `60%`, xl: `50%` }}
       height={`100vh`}
@@ -41,7 +42,7 @@ const Profile = () => {
       <Box className='step-1'>
         <Flex alignItems={`center`}>
           <Text
-            className='font-serif'
+            className='font-serif slide-in'
             fontSize={`16px`}
             fontWeight={`medium`}
             color={
@@ -66,21 +67,38 @@ const Profile = () => {
             justifyContent={{ base: `space-between` }}
           >
             <Flex alignItems={`end`} gap={2}>
-              <Text
-                as={`h2`}
-                fontSize={{
-                  base: `5rem`,
-                  sm: `6rem`,
-                  md: `8rem`,
-                  xl: `5rem`,
-                  '2xl': `7rem`,
-                }}
-                lineHeight={1.1}
-                fontWeight={`bold`}
-                className='font-serif'
-              >
-                Kingsley <br /> Solomon.
-              </Text>
+              <Box>
+                <Text
+                  as={`h2`}
+                  fontSize={{
+                    base: `5rem`,
+                    sm: `6rem`,
+                    md: `8rem`,
+                    xl: `5rem`,
+                    '2xl': `7rem`,
+                  }}
+                  lineHeight={1.1}
+                  fontWeight={`bold`}
+                  className='font-serif slide-in'
+                >
+                  Kingsley
+                </Text>
+                <Text
+                  as={`h2`}
+                  fontSize={{
+                    base: `5rem`,
+                    sm: `6rem`,
+                    md: `8rem`,
+                    xl: `5rem`,
+                    '2xl': `7rem`,
+                  }}
+                  lineHeight={1.1}
+                  fontWeight={`bold`}
+                  className='font-serif slide-in'
+                >
+                  Solomon.
+                </Text>
+              </Box>
               <Reviews />
             </Flex>
             <Box width={`fit-content`}>
@@ -89,7 +107,7 @@ const Profile = () => {
                 fontWeight={900}
                 letterSpacing={`1px`}
                 textTransform={`uppercase`}
-                className='font-serif'
+                className='font-serif slide-in'
                 fontSize={{
                   base: `16px`,
                   md: `18px`,
@@ -100,28 +118,21 @@ const Profile = () => {
               </Text>
               <Text
                 letterSpacing={`1px`}
-                className='font-sans step-3'
+                className='font-sans slide-in'
                 fontSize={{ base: `12px`, sm: `14px` }}
                 mt={5}
                 mb={10}
               >
-                As a{' '}
-                <Text
-                  fontSize={{ base: `12px`, sm: `14px` }}
-                  as={`span`}
-                >
-                  Frontend focused{' '}
-                </Text>
-                Web developer, Kingsley enjoys converting UI
-                designs to codes. Bring your ideas, lets
-                make it a reality.
+                Kingsley takes pleasure in turning UI
+                designs into codes as a frontend-focused web
+                developer. Bring your suggestions, and
+                let&apos;s make them a reality.
               </Text>
-              <Box width={`fit-content`}>
+              <Box
+                className='action-btn'
+                width={`fit-content`}
+              >
                 <Link
-                  onMouseEnter={(event) =>
-                    handleMouseEnter(event, 'more message')
-                  }
-                  onMouseLeave={handleMouseLeave}
                   download
                   target={`_blank`}
                   href='../../public/KingsleySolomon_Ifijeh_Resume.PDF'

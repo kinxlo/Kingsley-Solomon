@@ -31,13 +31,11 @@ export default function DrawerExample() {
     <>
       <Box
         boxSize={`5em`}
-        className={`quil_box`}
+        className={`quil_box action-btn`}
         title={`see what folks are saying about me`}
       >
         <Image
-          onMouseEnter={(event) =>
-            handleMouseEnter(event, 'Some Folks said some nice things about me...')
-          }
+         
           className='buzz'
           as={`img`}
           onClick={handleClick}
@@ -65,7 +63,7 @@ export default function DrawerExample() {
             colorMode == `light` ? `lightBg` : `darkBg`
           }
           maxW={{ base: `100vw`, md: `40rem` }}
-          padding={`0 1rem 1rem`}
+          padding={`0 1rem`}
           display={`flex`}
           flexDir={`column`}
           justifyContent={`end`}

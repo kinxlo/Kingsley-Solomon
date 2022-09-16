@@ -20,6 +20,8 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import Image from 'next/image';
+import ProjectDesc from './ProjectDesc';
+import Modal from './ModalDesc';
 
 ChartJS.register(
   CategoryScale,
@@ -77,27 +79,36 @@ const ProjectScreen = () => {
         lg: `1.5rem 1.5rem 0 auto`,
       }}
     >
-      <Text
-        display={{ base: `none`, lg: `block` }}
-        color={`accent`}
-        className='font-mono'
-        textTransform={`capitalize`}
-        fontWeight={`bold`}
-        fontSize={{ base: `md`, md: `2xl`, xl: `2rem` }}
-      >
-        {projectInfo.name}
-        <Text textAlign='left'>{projectInfo.category}</Text>
-      </Text>
+      <Box>
+        <Text
+          display={{ base: `none`, lg: `block` }}
+          color={`accent`}
+          className='font-mono'
+          textTransform={`capitalize`}
+          fontWeight={`bold`}
+          fontSize={{ base: `md`, md: `2xl`, xl: `2rem` }}
+        >
+          {projectInfo.name}
+        </Text>
+        <Text
+          fontWeight={`bold`}
+          fontSize={`xs`}
+          color={`accent`}
+          textAlign='left'
+        >
+          {projectInfo.category}
+        </Text>
+      </Box>
       <Box
         display={{ base: `block`, lg: `none` }}
         textAlign={`right`}
       >
-        <Text>View Details</Text>
+        <Modal />
       </Box>
       {/* Chart */}
       <Bar options={options} data={data} />
       {/*  */}
-      <Flex width={`100%`} flexDir={`column`} gap={3}>
+      <Flex width={`100%`} flexDir={`column`}>
         <Flex
           justifyContent={`start`}
           gap={3}
@@ -109,6 +120,7 @@ const ProjectScreen = () => {
               colorMode == `light` ? `accent` : `lightBg`
             }
             className='font-sans'
+            fontSize={{ base: `xs`, sm: `sm`, md: `md` }}
             fontWeight={`medium`}
             fontStyle={`italic`}
             href={projectInfo.url}
@@ -117,8 +129,15 @@ const ProjectScreen = () => {
           </Link>
           <Box
             filter={`drop-shadow(1px 1px 1px #00000030)`}
-            width={`2rem`}
-            height={`2rem`}
+            width={{
+              base: `1.6em`,
+              sm: `1.9em`,
+              md: `2em`,
+            }}
+            height={{
+              base: `1.6em`,
+              sm: `1.9em`,
+            }}
             className={`spin`}
             p={`3px`}
           >
@@ -134,12 +153,18 @@ const ProjectScreen = () => {
         <Flex
           gap={3}
           justifyContent={`end`}
-          alignItems={`center`}
+          alignItems={`end`}
           flexDir={'row-reverse'}
         >
           <Box
-            width={`2rem`}
-            height={`2rem`}
+            width={{
+              base: `1.6em`,
+              sm: `1.8em`,
+            }}
+            height={{
+              base: `1.6em`,
+              sm: `1.8em`,
+            }}
             p={`3px`}
             filter={`drop-shadow(1px 1px 1px #00000030)`}
           >
@@ -156,6 +181,7 @@ const ProjectScreen = () => {
               colorMode == `light` ? `accent` : `lightBg`
             }
             className='font-sans'
+            fontSize={{ base: `xs`, sm: `sm`, md: `md` }}
             fontWeight={`medium`}
             fontStyle={`italic`}
             href={projectInfo.github}
@@ -164,6 +190,12 @@ const ProjectScreen = () => {
           </Link>
         </Flex>
       </Flex>
+      <Box display={{ base: `none`, lg: `block` }}>
+        <ProjectDesc
+          inModal={false}
+          projectInfo={projectInfo}
+        />
+      </Box>
     </Box>
   );
 };

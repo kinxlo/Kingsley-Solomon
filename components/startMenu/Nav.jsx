@@ -34,11 +34,11 @@ const ContactMenu = () => {
   return (
     <div
       id='menu'
-      className='circular-menu circular-menu-top'
+      className='circular-menu circular-menu-top action-btn'
     >
       <Icon
         as={AiOutlineMenu}
-        className='floating-btn'
+        className='floating-btn '
         onClick={() =>
           document
             .getElementById('menu')

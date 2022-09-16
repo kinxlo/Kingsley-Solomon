@@ -10,7 +10,8 @@ const projects = [
         url: `https://k-audiophile.netlify.app`,
         github: `https://github.com/kinxlo/audiophile`,
         desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
-        category: `E-Commerce`
+        category: `E-Commerce`,
+        contributors: [`kingsley solomon`]
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ const projects = [
         url: `https://dreamy-bhaskara-d01fbc.netlify.app`,
         github: null,
         desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
-        category: `Security`
+        category: `Security`,
+        contributors: [`kingsley solomon`]
     },
     {
         id: 3,
@@ -36,7 +38,8 @@ const projects = [
         url: `https://ks-periodic-table.netlify.app`,
         github: `https://github.com/kinxlo/Elements`,
         desc: `The periodic table of element implemented using react`,
-        category: `Academics`
+        category: `Academics`,
+        contributors: [`kingsley solomon`]
     },
     {
         id: 4,
@@ -49,7 +52,8 @@ const projects = [
         url: `https://darexengineering.com`,
         github: null,
         desc: `A Client project written in standard html css and bootstrap-3`,
-        category: `Business`
+        category: `Business`,
+        contributors: [`kingsley solomon`]
     },
     {
         id: 5,
@@ -62,7 +66,8 @@ const projects = [
         url: `https://kinxlo.github.io/copyAppLP`,
         github: `https://github.com/kinxlo/copyAppLP`,
         desc: `An ecommerce frontend mentor challenge...implemented with the react technology.`,
-        category: `Landing Page`
+        category: `Landing Page`,
+        contributors: [`kingsley solomon`]
     },
     {
         id: 6,
@@ -75,7 +80,8 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
-        category: `Food`
+        category: `Food`,
+        contributors: [`kingsley solomon`]
     },
     {
         id: 7,
@@ -88,7 +94,8 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
-        category: `Food`
+        category: `Game`,
+        contributors: [`kingsley solomon`]
     },
     {
         id: 8,
@@ -101,7 +108,8 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
-        category: `Food`
+        category: `Dashboard`,
+        contributors: [`kingsley solomon`]
     },
     {
         id: 9,
@@ -114,7 +122,8 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
-        category: `Food`
+        category: `Social`,
+        contributors: [`kingsley solomon`]
     },
     {
         id: 10,
@@ -127,7 +136,8 @@ const projects = [
         url: `https://kinxlo.github.io/globalChef/`,
         github: `https://github.com/kinxlo/globalChef`,
         desc: `A website that about chefs and there foods.`,
-        category: `Food`
+        category: `Portfolio`,
+        contributors: [`kingsley solomon`]
     },
 ]
 
