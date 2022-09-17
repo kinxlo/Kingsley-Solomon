@@ -110,7 +110,8 @@ const DigitalResume = () => {
             download
             color={active}
             rel='noopener noreferrer'
-            href='/KingsleySolomon_Ifijeh_Resume.PDF'
+            href='/KingsleySolomon_Ifijeh_Resume.pdf
+            '
           >
             Download Resume
           </Link>

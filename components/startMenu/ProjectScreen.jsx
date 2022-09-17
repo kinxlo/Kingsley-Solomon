@@ -101,7 +101,7 @@ const ProjectScreen = () => {
           className='font-mono'
           textTransform={`capitalize`}
           fontWeight={`bold`}
-          fontSize={{ base: `md`, md: `2xl`, xl: `2rem` }}
+          fontSize={{ base: `md`, md: `2xl` }}
         >
           {projectInfo.name}
         </Text>
@@ -133,11 +133,11 @@ const ProjectScreen = () => {
           <Link
             onMouseEnter={spinUrl}
             color={
-              colorMode == `light` ? `accent` : `lightBg`
+              colorMode == `light` ? `#339adb` : `lightBg`
             }
             className='font-sans'
-            fontSize={{ base: `xs`, sm: `sm`, md: `md` }}
-            fontWeight={`bold`}
+            fontSize={{ base: `xs`, sm: `sm` }}
+            fontWeight={`medium`}
             fontStyle={`italic`}
             href={projectInfo.url}
           >
@@ -195,11 +195,11 @@ const ProjectScreen = () => {
           <Link
             onMouseEnter={spinGithub}
             color={
-              colorMode == `light` ? `accent` : `lightBg`
+              colorMode == `light` ? `#339adb` : `lightBg`
             }
             className='font-sans'
-            fontSize={{ base: `xs`, sm: `sm`, md: `md` }}
-            fontWeight={`bold`}
+            fontSize={{ base: `xs`, sm: `sm` }}
+            fontWeight={`medium`}
             fontStyle={`italic`}
             href={projectInfo.github}
           >

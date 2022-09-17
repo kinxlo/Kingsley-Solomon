@@ -9,9 +9,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext';
-import PreLoader from './PreLoader';
-// import Reviews from '../drawer/Reviews';
-// import { Suspense } from 'react';
+// import PreLoader from './PreLoader';
 const Reviews = dynamic(() => import('../drawer/Reviews'), {
   suspense: true,
 });
@@ -152,14 +150,12 @@ const Profile = () => {
                 width={`fit-content`}
               >
                 <Link
-                  download
+                  rel='noopener noreferrer'
                   target={`_blank`}
-                  href='../../public/KingsleySolomon_Ifijeh_Resume.PDF'
+                  href='/KingsleySolomon_Ifijeh_Resume.pdf'
                 >
                   <Button
                     display={`flex`}
-                    background={`trtnasparent`}
-                    border={`1px`}
                     fontSize={`18px`}
                     fontWeight={900}
                     p={`1.5rem 2rem`}
@@ -167,14 +163,14 @@ const Profile = () => {
                     letterSpacing={`1px`}
                     borderColor={`accent`}
                     _hover={{
-                      background: `accent`,
-                      color: `#fff`,
+                      background: `#80000050`,
                     }}
                     className='font-serif'
                   >
                     Resume
                   </Button>
                 </Link>
+                {/* <PreLoader /> */}
               </Box>
             </Box>
           </Flex>

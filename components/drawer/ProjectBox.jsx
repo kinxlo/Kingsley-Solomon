@@ -122,7 +122,7 @@ const ProjectBox = () => {
       >
         <Box className='project-view' width={`fit-content`}>
           <Text
-            className='font-serif'
+            className='font-display'
             height={`fit-content`}
             pos={`fixed`}
             top={0}
@@ -135,10 +135,10 @@ const ProjectBox = () => {
               colorMode == `light` ? `darkBg` : `lightBg`
             }
             fontSize={{
-              base: `20px`,
-              sm: `26px`,
-              md: `30px`,
-              lg: `50px`,
+              base: `3xl`,
+              sm: ``,
+              md: ``,
+              lg: ``,
             }}
           >
             {language} projects worth <br /> sharing.

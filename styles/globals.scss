@@ -59,23 +59,13 @@ html {
 
 body {
 
-  .fp-section {
+  // !====== super important, yh, i always have one of this.===
+  .css-wl2t6g {
+    // border: 1px solid red;
     display: flex;
-  }
-
-  // important
-  .fp-table {
     justify-content: center !important;
-
-    @media screen and (min-width: 992px) {
-      justify-content: end !important;
-    }
-
-    @media screen and (min-width: 1280px) {
-      justify-content: center !important;
-    }
-
   }
+  // !=========================================================
 
   .box-shadow {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -94,10 +84,11 @@ body {
     font-family: var(--font-serif) !important;
   }
 
-.font-display{
-  font-family: 'Bowlby One SC', cursive !important;
+  .font-display {
+    font-family: 'Bowlby One SC', cursive !important;
 
-}
+  }
+
   .heading {
     font-size: 18px;
   }

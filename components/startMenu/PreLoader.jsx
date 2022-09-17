@@ -1,22 +1,25 @@
-// import { Image } from '@chakra-ui/react';
-import { Flex, Image } from '@chakra-ui/react';
+// import Image from 'next/image';
+import { Flex, Text, useColorMode } from '@chakra-ui/react';
 import React from 'react';
-// import loader from '../../assets/loader.svg';
 
 const PreLoader = () => {
+  const { colorMode } = useColorMode();
   return (
     <Flex
       alignItems={`center`}
       justifyContent={`center`}
-    //   border={`2px solid red`}
       w={`100%`}
       h={`100vh`}
     >
-      <Image
-      boxSize={`7rem`}
-        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1663411110/portfolio/Ball-1s-200px_1_ltp8ll.gif`}
-        alt={`loader`}
-      />
+      <Text
+        textAlign={`center`}
+        className='font-mono'
+        fontSize={`md`}
+        fontWeight={`bold`}
+        color={colorMode == `light` ? `accent` : `lightBg`}
+      >
+        ...Go, grab a coffee
+      </Text>
     </Flex>
   );
 };
