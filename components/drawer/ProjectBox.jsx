@@ -13,6 +13,7 @@ import {
   lightSticker,
 } from '../../theme/customTheme';
 import FullScrollView from '../carousel/FullScrollView';
+import PreLoader from '../startMenu/PreLoader';
 
 const ProjectScreen = dynamic(
   () => import('../startMenu/ProjectScreen'),
@@ -140,7 +141,7 @@ const ProjectBox = () => {
             {language} projects worth <br /> sharing.
           </Text>
         </Box>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<PreLoader />}>
           <FullScrollView>{projectList}</FullScrollView>
         </Suspense>
       </Box>

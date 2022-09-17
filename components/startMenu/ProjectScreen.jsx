@@ -5,7 +5,7 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { AppContext } from '../../context/AppContext';
 import link from '../../assets/pngegg (5).png';
 import github from '../../assets/pngegg (4).png';
@@ -34,6 +34,8 @@ ChartJS.register(
 
 const ProjectScreen = () => {
   const { projectInfo } = useContext(AppContext);
+  const url = useRef();
+  const gitHub = useRef();
   const { colorMode } = useColorMode();
   const active =
     colorMode == `light` ? `darkBg` : `lightBg`;
@@ -62,6 +64,19 @@ const ProjectScreen = () => {
         backgroundColor: projectInfo.colorCode,
       },
     ],
+  };
+
+  const spinUrl = () => {
+    url.current.classList.add(`spin`);
+    url.current.addEventListener(`animationend`, () => {
+      url.current.classList.remove(`spin`);
+    });
+  };
+  const spinGithub = () => {
+    gitHub.current.classList.add(`spin`);
+    gitHub.current.addEventListener(`animationend`, () => {
+      gitHub.current.classList.remove(`spin`);
+    });
   };
 
   return (
@@ -116,6 +131,7 @@ const ProjectScreen = () => {
           flexDir={'row-reverse'}
         >
           <Link
+            onMouseEnter={spinUrl}
             color={
               colorMode == `light` ? `accent` : `lightBg`
             }
@@ -128,6 +144,7 @@ const ProjectScreen = () => {
             Visit this site.
           </Link>
           <Box
+            ref={url}
             filter={`drop-shadow(1px 1px 1px #00000030)`}
             width={{
               base: `1.6em`,
@@ -138,7 +155,6 @@ const ProjectScreen = () => {
               base: `1.6em`,
               sm: `1.9em`,
             }}
-            className={`spin`}
             p={`3px`}
           >
             <Image
@@ -157,6 +173,7 @@ const ProjectScreen = () => {
           flexDir={'row-reverse'}
         >
           <Box
+            ref={gitHub}
             width={{
               base: `1.6em`,
               sm: `1.8em`,
@@ -169,7 +186,6 @@ const ProjectScreen = () => {
             filter={`drop-shadow(1px 1px 1px #00000030)`}
           >
             <Image
-              className={`spin`}
               width={`100%`}
               height={`100%`}
               alt='img'
@@ -177,6 +193,7 @@ const ProjectScreen = () => {
             />
           </Box>
           <Link
+            onMouseEnter={spinGithub}
             color={
               colorMode == `light` ? `accent` : `lightBg`
             }

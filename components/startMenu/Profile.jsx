@@ -1,3 +1,5 @@
+import { useContext, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import {
   Box,
   Button,
@@ -6,9 +8,13 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import { useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
-import Reviews from '../drawer/Reviews';
+import PreLoader from './PreLoader';
+// import Reviews from '../drawer/Reviews';
+// import { Suspense } from 'react';
+const Reviews = dynamic(() => import('../drawer/Reviews'), {
+  suspense: true,
+});
 
 const Profile = () => {
   const { colorMode } = useColorMode();
@@ -94,7 +100,9 @@ const Profile = () => {
                   Solomon.
                 </Text>
               </Box>
+              {/* <Suspense fallback={`Loading...`}> */}
               <Reviews />
+              {/* </Suspense> */}
             </Flex>
             <Box width={`fit-content`}>
               <Text
