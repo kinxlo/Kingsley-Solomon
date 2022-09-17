@@ -81,6 +81,7 @@ const ProjectScreen = () => {
 
   return (
     <Box
+      pl={{ lg: 5, xl: 0 }}
       display={`flex`}
       flexDir={`column`}
       color={`lemon`}
@@ -94,9 +95,8 @@ const ProjectScreen = () => {
         lg: `1.5rem 1.5rem 0 auto`,
       }}
     >
-      <Box>
+      <Box display={{ base: `none`, lg: `block` }}>
         <Text
-          display={{ base: `none`, lg: `block` }}
           color={`accent`}
           className='font-mono'
           textTransform={`capitalize`}
@@ -137,7 +137,7 @@ const ProjectScreen = () => {
             }
             className='font-sans'
             fontSize={{ base: `xs`, sm: `sm`, md: `md` }}
-            fontWeight={`medium`}
+            fontWeight={`bold`}
             fontStyle={`italic`}
             href={projectInfo.url}
           >
@@ -199,7 +199,7 @@ const ProjectScreen = () => {
             }
             className='font-sans'
             fontSize={{ base: `xs`, sm: `sm`, md: `md` }}
-            fontWeight={`medium`}
+            fontWeight={`bold`}
             fontStyle={`italic`}
             href={projectInfo.github}
           >

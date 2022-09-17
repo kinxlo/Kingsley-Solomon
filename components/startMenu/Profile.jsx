@@ -46,9 +46,7 @@ const Profile = () => {
             className='font-serif slide-in'
             fontSize={`16px`}
             fontWeight={`medium`}
-            color={
-              colorMode == `light` ? `accent` : `initial`
-            }
+            color={`accent`}
           >
             Welcome!, I&apos;m
           </Text>
@@ -71,33 +69,50 @@ const Profile = () => {
               <Box>
                 <Text
                   as={`h2`}
+                  textTransform={`uppercase`}
                   fontSize={{
-                    base: `5rem`,
-                    sm: `6rem`,
-                    md: `8rem`,
-                    xl: `5rem`,
-                    '2xl': `7rem`,
+                    base: `32px`,
+                    sm: `3.5em`,
+                    md: `4.5em`,
+                    xl: `4em`,
+                    '2xl': `4.5em`,
                   }}
                   lineHeight={1.1}
+                  // px={{ base: `10px`, sm: `20px` }}
+                  letterSpacing={`5px`}
                   fontWeight={`bold`}
-                  className='font-serif slide-in'
+                  className='font-display slide-in'
                 >
-                  Kingsley
+                  Ifijeh
                 </Text>
                 <Text
                   as={`h2`}
                   fontSize={{
-                    base: `5rem`,
-                    sm: `6rem`,
-                    md: `8rem`,
-                    xl: `5rem`,
-                    '2xl': `7rem`,
+                    base: `32px`,
+                    sm: `3.5em`,
+                    md: `4.5em`,
+                    xl: `4em`,
+                    '2xl': `4.5em`,
                   }}
+                  textTransform={`uppercase`}
                   lineHeight={1.1}
+                  px={{ base: `10px`, sm: `20px` }}
+                  py={1}
+                  bg={
+                    colorMode == `light`
+                      ? `darkBg`
+                      : `lightBg`
+                  }
+                  color={
+                    colorMode == `light`
+                      ? `lightBg`
+                      : `darkBg`
+                  }
+                  letterSpacing={`5px`}
                   fontWeight={`bold`}
-                  className='font-serif slide-in'
+                  className={`slide-in font-display`}
                 >
-                  Solomon.
+                  Kingsley
                 </Text>
               </Box>
               {/* <Suspense fallback={`Loading...`}> */}
@@ -106,6 +121,7 @@ const Profile = () => {
             </Flex>
             <Box width={`fit-content`}>
               <Text
+                mt={3}
                 color={`accent`}
                 fontWeight={900}
                 letterSpacing={`1px`}
@@ -126,7 +142,7 @@ const Profile = () => {
                 mt={5}
                 mb={10}
               >
-                Kingsley takes pleasure in turning UI
+                Kingsley takes pleasure in converting UI
                 designs into codes as a frontend-focused web
                 developer. Bring your suggestions, and
                 let&apos;s make them a reality.

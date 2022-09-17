@@ -8,14 +8,13 @@ const PreLoader = () => {
     <Flex
       alignItems={`center`}
       justifyContent={`center`}
-      border={`2px solid red`}
+    //   border={`2px solid red`}
       w={`100%`}
       h={`100vh`}
     >
       <Image
-        width={`10rem`}
-        height={`10rem`}
-        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1663402007/portfolio/Double_Ring-1s-200px_gq3dn1.svg`}
+      boxSize={`7rem`}
+        src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1663411110/portfolio/Ball-1s-200px_1_ltp8ll.gif`}
         alt={`loader`}
       />
     </Flex>

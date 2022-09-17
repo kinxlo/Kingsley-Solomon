@@ -94,7 +94,10 @@ body {
     font-family: var(--font-serif) !important;
   }
 
+.font-display{
+  font-family: 'Bowlby One SC', cursive !important;
 
+}
   .heading {
     font-size: 18px;
   }
@@ -121,10 +124,10 @@ body {
   }
 
   .quil_box {
-    img {
-      transform:
-        rotate(120deg);
-    }
+    // img {
+    //   transform:
+    //     rotate(120deg);
+    // }
 
     &:hover img {
       transition: all .2s;
@@ -139,16 +142,16 @@ body {
   }
 
   .buzz {
-    animation: buzz 1s linear infinite alternate;
+    animation: buzz 1s 7s linear infinite alternate;
   }
 
   @keyframes buzz {
     from {
-      transform: rotate(120deg) scale(0.9);
+      transform: scale(0.9);
     }
 
     to {
-      transform: rotate(120deg) scale(1.05);
+      transform: scale(1.05);
     }
   }
 

@@ -29,26 +29,30 @@ export default function DrawerExample() {
 
   return (
     <>
-      <Box
-        boxSize={`5em`}
+      <Flex
+        alignItems={`end`}
+        boxSize={{
+          base: `3em`,
+          sm: `5em`,
+        }}
+        margin={`auto 0 0 0`}
         className={`quil_box action-btn`}
         title={`see what folks are saying about me`}
       >
         <Image
-         
           className='buzz'
           as={`img`}
           onClick={handleClick}
           cursor={`pointer`}
           alt='quill'
-          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1662597051/portfolio/305273_qoa0qn.svg`}
-          filter={
-            colorMode == `light`
-              ? `invert(0)`
-              : `invert(100%)`
-          }
+          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1663409792/portfolio/pngegg_7_yvaqdw.png`}
+          // filter={
+          //   colorMode == `light`
+          //     ? `invert(0)`
+          //     : `invert(100%)`
+          // }
         />
-      </Box>
+      </Flex>
 
       <Drawer
         isOpen={isOpen}

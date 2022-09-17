@@ -51,22 +51,38 @@ const ProjectBox = () => {
               lg: `scale(1)`,
             }}
           >
-            <Text
-              display={{ base: `block`, xl: `none` }}
-              color={`accent`}
-              className='font-mono'
-              textTransform={`capitalize`}
-              fontWeight={`bold`}
-              fontSize={{
-                base: `xl`,
-                md: `2xl`,
-                xl: `2rem`,
-              }}
-              textAlign={{ base: `center`, xl: `left` }}
-              my={2}
-            >
-              {projectInfo.name}
-            </Text>
+            <Box>
+              <Text
+                display={{ base: `block`, lg: `none` }}
+                color={`accent`}
+                className='font-mono'
+                textTransform={`capitalize`}
+                fontWeight={`bold`}
+                fontSize={{
+                  base: `xl`,
+                  md: `2xl`,
+                  xl: `2rem`,
+                }}
+                textAlign={{ base: `center`, xl: `left` }}
+              >
+                {projectInfo.name}
+              </Text>
+              <Text
+                display={{ base: `block`, lg: `none` }}
+                color={`accent`}
+                className='font-mono'
+                textTransform={`capitalize`}
+                fontWeight={`bold`}
+                fontSize={{
+                  base: `sm`,
+                  md: `xl`,
+                  // xl: `2rem`,
+                }}
+                textAlign={{ base: `center`, xl: `left` }}
+              >
+                {projectInfo.category}
+              </Text>
+            </Box>
             <Box
               display={`flex`}
               pos={`relative`}
@@ -104,20 +120,7 @@ const ProjectBox = () => {
       <Box
         width={{ base: `initial`, lg: `60%`, xl: `50%` }}
       >
-        <Box
-          _before={
-            colorMode == `light`
-              ? lightSticker
-              : darkSticker
-          }
-          _after={
-            colorMode == `light`
-              ? lightSticker
-              : darkSticker
-          }
-          className='project-view'
-          width={`fit-content`}
-        >
+        <Box className='project-view' width={`fit-content`}>
           <Text
             className='font-serif'
             height={`fit-content`}

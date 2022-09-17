@@ -23,6 +23,7 @@ const ModalDesc = ({ contributors }) => {
         color={`accent`}
         cursor={`pointer`}
         onClick={onOpen}
+        fontWeight={`bold`}
         fontSize={{ base: `xs`, sm: `sm`, md: `md` }}
       >
         View Details
@@ -36,9 +37,7 @@ const ModalDesc = ({ contributors }) => {
       >
         <ModalOverlay />
         <ModalContent
-          color={
-            colorMode == `dark` ? `darkBg` : `lightBg`
-          }
+          color={colorMode == `dark` ? `darkBg` : `lightBg`}
           bg={colorMode == `light` ? `darkBg` : `lightBg`}
           m={`1.5em`}
         >
