@@ -19,6 +19,13 @@ const ProductivityLayout = ({ title, document }) => {
     useContext(AppContext);
   const box = useRef(null);
 
+  const spin = (e) => {
+    e.target.classList.add(`spin`);
+    e.target.addEventListener(`animationend`, () => {
+      e.target.classList.remove(`spin`);
+    });
+  };
+
   let boxs = document.map((box) => {
     return (
       <CTA
@@ -28,6 +35,7 @@ const ProductivityLayout = ({ title, document }) => {
         title={title}
       >
         <Image
+          onMouseEnter={spin}
           as={`img`}
           filter={
             colorMode == `light`

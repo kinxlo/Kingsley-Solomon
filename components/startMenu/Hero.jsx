@@ -14,9 +14,6 @@ const Hero = ({ children }) => {
       display={display}
       position={{
         base: `sticky`,
-        // md: `${
-        //   switchView == `profile` ? `sticky` : `fixed`
-        // }`,
         lg: `fixed`,
       }}
       top={0}

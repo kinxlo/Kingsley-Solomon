@@ -45,7 +45,7 @@ export default function DrawerExample() {
           onClick={handleClick}
           cursor={`pointer`}
           alt='quill'
-          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1663409792/portfolio/pngegg_7_yvaqdw.png`}
+          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto/v1663409792/portfolio/pngegg_7_yvaqdw.png`}
           // filter={
           //   colorMode == `light`
           //     ? `invert(0)`
