@@ -25,8 +25,10 @@ export const projectAnimation = () => {
     gsap.set(`.slide-project`, {
         y: `2rem`, opacity: 0,
     });
-   
+
     let tl = gsap.timeline({ delay: 0.1, duration: 0.1 });
+    tl.to(`#project-image`, { opacity: 1, y: `initial`, duration: 1 })
+    tl.to(`#profileBox`, { width: 1, ease: "power3.out" });
     tl.to(`.slide-project`, {
         y: `initial`, opacity: 1, stagger: {
             each: 0.2,
@@ -35,8 +37,6 @@ export const projectAnimation = () => {
             ease: "power2.inOut",
         }
     });
-    tl.to(`#project-image`, { opacity: 1, y: `initial`, duration: 2 })
-    tl.to(`#profileBox`, { width: 1, ease: "power3.out" });
 }
 
 export const productivity = () => {
