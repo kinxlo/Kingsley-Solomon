@@ -9,7 +9,11 @@ import {
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 
-const ProjectDesc = ({ contributors, inModal }) => {
+const ProjectDesc = ({
+  contributors,
+  packages,
+  inModal,
+}) => {
   return (
     <Grid
       templateColumns={
@@ -36,24 +40,17 @@ const ProjectDesc = ({ contributors, inModal }) => {
             Tools and Packages
           </Text>
           <Flex gap={3}>
-            <Box>
-              <Image
-                src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1661784165/portfolio/ICONS8_1_j5h5hz.png`}
-                alt='img'
-              />
-            </Box>
-            <Box>
-              <Image
-                src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1661784165/portfolio/ICONS8_1_j5h5hz.png`}
-                alt='img'
-              />
-            </Box>
-            <Box>
-              <Image
-                src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1661784165/portfolio/ICONS8_1_j5h5hz.png`}
-                alt='img'
-              />
-            </Box>
+            {packages ? (
+              packages.map((tools, index) => {
+                return (
+                  <Box key={index}>
+                    <Image src='' alt='img' />
+                  </Box>
+                );
+              })
+            ) : (
+              <Text>N/A</Text>
+            )}
           </Flex>
         </Box>
         {/* release */}

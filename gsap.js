@@ -19,6 +19,26 @@ export const profileAnimation = () => {
     tl.to(`.action-btn`, { scale: 1, opacity: 1, ease: "elastic.out", duration: 1, stagger: 0.1 })
 }
 
+export const projectAnimation = () => {
+    gsap.set(`#profileBox`, { width: `100%` });
+    gsap.set(`#project-image`, { y: `3rem`, opacity: 0, });
+    gsap.set(`.slide-project`, {
+        y: `2rem`, opacity: 0,
+    });
+   
+    let tl = gsap.timeline({ delay: 0.1, duration: 0.1 });
+    tl.to(`.slide-project`, {
+        y: `initial`, opacity: 1, stagger: {
+            each: 0.2,
+            from: "end",
+            grid: "auto",
+            ease: "power2.inOut",
+        }
+    });
+    tl.to(`#project-image`, { opacity: 1, y: `initial`, duration: 2 })
+    tl.to(`#profileBox`, { width: 1, ease: "power3.out" });
+}
+
 export const productivity = () => {
     gsap.set(`.pbox`, { scale: 0, opacity: 0 })
     gsap.set(`#map`, { opacity: 0 })

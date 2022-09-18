@@ -29,31 +29,6 @@ export default function DrawerExample() {
 
   return (
     <>
-      <Flex
-        alignItems={`end`}
-        boxSize={{
-          base: `3em`,
-          sm: `5em`,
-        }}
-        margin={`auto 0 0 0`}
-        className={`quil_box action-btn`}
-        title={`see what folks are saying about me`}
-      >
-        <Image
-          className='buzz'
-          as={`img`}
-          onClick={handleClick}
-          cursor={`pointer`}
-          alt='quill'
-          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto/v1663409792/portfolio/pngegg_7_yvaqdw.png`}
-          // filter={
-          //   colorMode == `light`
-          //     ? `invert(0)`
-          //     : `invert(100%)`
-          // }
-        />
-      </Flex>
-
       <Drawer
         isOpen={isOpen}
         placement='right'

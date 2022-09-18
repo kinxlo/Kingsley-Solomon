@@ -1,7 +1,6 @@
 import {
   Box,
   Image,
-  SlideFade,
   Text,
   useColorMode,
   useDisclosure,
@@ -21,31 +20,28 @@ const Map = () => {
         marginLeft={`auto`}
         height={`100vh`}
       >
-        <SlideFade in={isOpen} offsetY='20px'>
-          <Box
-            width={`50%`}
-            height={`20%`}
-            borderRadius={`10px`}
-            pos={`absolute`}
-            bottom={0}
-            zIndex={1}
-            m={`1.5em`}
-            p={`1em`}
-            backgroundColor={
-              colorMode == `light`
-                ? `#10182070`
-                : `#80000050`
-            }
+        <Box
+          width={`50%`}
+          height={`20%`}
+          borderRadius={`10px`}
+          pos={`absolute`}
+          top={0}
+          zIndex={1}
+          m={`1.5em`}
+          p={`1em`}
+          backgroundColor={
+            colorMode == `light` ? `#10182070` : `#80000050`
+          }
+        >
+          <Text
+            color={`lightBg`}
+            textTransform={`capitalize`}
           >
-            <Text
-              color={`lightBg`}
-              textTransform={`capitalize`}
-            >
-              No 10, tunde yaya street, iselewu orelope,
-              igbogbo, ikorodu, lagos state nigeria
-            </Text>
-          </Box>
-        </SlideFade>
+            No 10, tunde yaya street, iselewu orelope,
+            igbogbo, ikorodu, lagos state nigeria
+          </Text>
+        </Box>
+
         <Image
           height={`100%`}
           objectFit={`cover`}

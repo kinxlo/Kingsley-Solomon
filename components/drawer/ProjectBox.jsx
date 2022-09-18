@@ -1,4 +1,8 @@
-import React, { Suspense, useContext } from 'react';
+import React, {
+  Suspense,
+  useContext,
+  useEffect,
+} from 'react';
 import dynamic from 'next/dynamic';
 import {
   Box,
@@ -8,10 +12,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext';
-import {
-  darkSticker,
-  lightSticker,
-} from '../../theme/customTheme';
+import { projectAnimation } from '../../gsap';
 import FullScrollView from '../carousel/FullScrollView';
 import PreLoader from '../startMenu/PreLoader';
 
@@ -32,6 +33,10 @@ const ProjectBox = () => {
     botMessage,
     projectInfo,
   } = useContext(AppContext);
+
+  useEffect(() => {
+    projectAnimation();
+  }, []);
 
   if (projects.length) {
     let projectList = projects.map((project) => {
@@ -120,17 +125,18 @@ const ProjectBox = () => {
       <Box
         width={{ base: `initial`, lg: `60%`, xl: `50%` }}
       >
-        <Box className='project-view' width={`fit-content`}>
+        <Box
+          pos={`fixed`}
+          top={`1.5em`}
+          left={`1.5em`}
+          zIndex={100}
+          className='project-view'
+          width={{ base: `80%`, lg: `40%` }}
+        >
           <Text
-            className='font-display'
-            height={`fit-content`}
-            pos={`fixed`}
-            top={0}
-            left={0}
-            zIndex={100}
+            className='font-display slide-project'
             textTransform={`capitalize`}
             fontWeight={700}
-            transform={`translate(.5em, .5em)`}
             color={
               colorMode == `light` ? `darkBg` : `lightBg`
             }
@@ -141,12 +147,28 @@ const ProjectBox = () => {
               lg: ``,
             }}
           >
-            {language} projects worth <br /> sharing.
+            {language} projects
+          </Text>
+          <Text
+            className='slide-project'
+            fontSize={{
+              base: `8px`,
+              sm: `10px`,
+              lg: `12px`,
+            }}
+          >
+            Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Cum modi quas quod incidunt!
+            Odio perferendis, earum assumenda vel suscipit
+            nulla quaerat illo harum architecto minus
+            accusantium quo, blanditiis officia atque.
           </Text>
         </Box>
-        <Suspense fallback={<PreLoader />}>
-          <FullScrollView>{projectList}</FullScrollView>
-        </Suspense>
+        <Box id='project-image'>
+          <Suspense fallback={<PreLoader />}>
+            <FullScrollView>{projectList}</FullScrollView>
+          </Suspense>
+        </Box>
       </Box>
     );
   } else {

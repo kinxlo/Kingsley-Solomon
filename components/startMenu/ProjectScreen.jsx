@@ -95,7 +95,10 @@ const ProjectScreen = () => {
         lg: `1.5rem 1.5rem 0 auto`,
       }}
     >
-      <Box display={{ base: `none`, lg: `block` }}>
+      <Box
+        className='slide-in'
+        display={{ base: `none`, lg: `block` }}
+      >
         <Text
           color={`accent`}
           className='font-mono'
@@ -118,7 +121,10 @@ const ProjectScreen = () => {
         display={{ base: `block`, lg: `none` }}
         textAlign={`right`}
       >
-        <Modal contributors={projectInfo.contributors} />
+        <Modal
+          title={projectInfo.name}
+          contributors={projectInfo.contributors}
+        />
       </Box>
       {/* Chart */}
       <Bar options={options} data={data} />
@@ -211,6 +217,7 @@ const ProjectScreen = () => {
         <ProjectDesc
           inModal={false}
           contributors={projectInfo.contributors}
+          packages={projectInfo.tools}
         />
       </Box>
     </Box>

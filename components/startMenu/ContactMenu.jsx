@@ -1,5 +1,6 @@
 import {
   Icon,
+  Image,
   Link,
   Text,
   useColorMode,
@@ -56,7 +57,6 @@ const ContactMenu = () => {
             .classList.toggle('active')
         }
       />
-
       <menu className='items-wrapper'>{socials}</menu>
     </div>
   );

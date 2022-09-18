@@ -4,15 +4,14 @@ import {
   Box,
   Button,
   Flex,
+  Image,
   Link,
   Text,
   useColorMode,
 } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext';
 // import PreLoader from './PreLoader';
-const Reviews = dynamic(() => import('../drawer/Reviews'), {
-  suspense: true,
-});
+import Reviews from '../drawer/Reviews';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
@@ -46,7 +45,7 @@ const Profile = () => {
             fontWeight={`medium`}
             color={`accent`}
           >
-            Welcome!, I&apos;m
+            Greetings!, I&apos;m
           </Text>
         </Flex>
         <Flex
@@ -113,9 +112,7 @@ const Profile = () => {
                   Kingsley
                 </Text>
               </Box>
-              {/* <Suspense fallback={`Loading...`}> */}
               <Reviews />
-              {/* </Suspense> */}
             </Flex>
             <Box width={`fit-content`}>
               <Text
@@ -134,6 +131,7 @@ const Profile = () => {
                 Web Developer | Tutor
               </Text>
               <Text
+                // color={`darkBg`}
                 letterSpacing={`1px`}
                 className='font-sans slide-in'
                 fontSize={{ base: `12px`, sm: `14px` }}
@@ -154,21 +152,25 @@ const Profile = () => {
                   target={`_blank`}
                   href='/KingsleySolomon_Ifijeh_Resume.pdf'
                 >
-                  <Button
-                    display={`flex`}
-                    fontSize={`18px`}
-                    fontWeight={900}
-                    p={`1.5rem 2rem`}
-                    borderRadius={`10px`}
-                    letterSpacing={`1px`}
-                    borderColor={`accent`}
-                    _hover={{
-                      background: `#80000050`,
-                    }}
-                    className='font-serif'
+                  <Box
+                    className={`quil_box action-btn`}
+                    title={`see what folks are saying about me`}
+                    width={`5rem`}
                   >
-                    Resume
-                  </Button>
+                    <Image
+                      boxSize={`100%`}
+                      className='buzz'
+                      as={`img`}
+                      cursor={`pointer`}
+                      alt='quill'
+                      src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto,c_fill/v1663409792/portfolio/pngegg_7_yvaqdw.png`}
+                      // filter={
+                      //   colorMode == `light`
+                      //     ? `invert(0)`
+                      //     : `invert(100%)`
+                      // }
+                    />
+                  </Box>
                 </Link>
                 {/* <PreLoader /> */}
               </Box>

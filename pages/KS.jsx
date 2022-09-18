@@ -86,6 +86,7 @@ const MobileLayout = () => {
 
   useEffect(() => {
     profileAnimation();
+
   }, []);
 
   return (

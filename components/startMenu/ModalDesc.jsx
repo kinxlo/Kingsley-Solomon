@@ -14,7 +14,7 @@ import {
 import React from 'react';
 import ProjectDesc from './ProjectDesc';
 
-const ModalDesc = ({ contributors }) => {
+const ModalDesc = ({ title, contributors }) => {
   const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -41,7 +41,9 @@ const ModalDesc = ({ contributors }) => {
           bg={colorMode == `light` ? `darkBg` : `lightBg`}
           m={`1.5em`}
         >
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader textTransform={`capitalize`} className='font-sans'>
+            {title}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody py={10}>
             <ProjectDesc

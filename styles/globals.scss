@@ -65,6 +65,7 @@ body {
     display: flex;
     justify-content: center !important;
   }
+
   // !=========================================================
 
   .box-shadow {
@@ -112,18 +113,6 @@ body {
     //   transform: scale(1.05) translateY(-2px);
     // }
 
-  }
-
-  .quil_box {
-    // img {
-    //   transform:
-    //     rotate(120deg);
-    // }
-
-    &:hover img {
-      transition: all .2s;
-      transform: rotate(120deg) scale(1.2);
-    }
   }
 
   .pos-quil_box {
