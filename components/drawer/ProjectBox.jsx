@@ -164,11 +164,11 @@ const ProjectBox = () => {
             accusantium quo, blanditiis officia atque.
           </Text>
         </Box>
-        <Box id='project-image'>
-          <Suspense fallback={<PreLoader />}>
+        <Suspense fallback={<PreLoader />}>
+          <Box id='project-image'>
             <FullScrollView>{projectList}</FullScrollView>
-          </Suspense>
-        </Box>
+          </Box>
+        </Suspense>
       </Box>
     );
   } else {
