@@ -1,5 +1,4 @@
-import { useContext, useEffect } from 'react';
-import dynamic from 'next/dynamic';
+import { useContext } from 'react';
 import {
   Box,
   Button,
@@ -10,8 +9,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { AppContext } from '../../context/AppContext';
-// import PreLoader from './PreLoader';
-import Reviews from '../drawer/Reviews';
+import References from '../References';
 
 const Profile = () => {
   const { colorMode } = useColorMode();
@@ -38,7 +36,7 @@ const Profile = () => {
       {/* <Background /> */}
       {/* profile */}
       <Box className='step-1'>
-        <Flex alignItems={`center`}>
+        <Flex mb={5} alignItems={`center`}>
           <Text
             className='font-serif slide-in'
             fontSize={`16px`}
@@ -112,7 +110,6 @@ const Profile = () => {
                   Kingsley
                 </Text>
               </Box>
-              <Reviews />
             </Flex>
             <Box width={`fit-content`}>
               <Text
@@ -135,13 +132,27 @@ const Profile = () => {
                 letterSpacing={`1px`}
                 className='font-sans slide-in'
                 fontSize={{ base: `12px`, sm: `14px` }}
-                mt={5}
-                mb={10}
+                my={5}
               >
                 Kingsley takes pleasure in converting UI
                 designs into codes as a frontend-focused web
                 developer. Bring your suggestions, and
                 let&apos;s make them a reality.
+                <Text
+                  bg={`#00000010`}
+                  color={`matrixDark`}
+                  px={2}
+                  borderRadius={`5px`}
+                  fontStyle={`italic`}
+                  fontWeight={`bold`}
+                  id='scroll'
+                  as={`span`}
+                  fontSize={{ base: `10px`, sm: `10px` }}
+                  opacity={0}
+                >
+                  Contained within the scroll below is my
+                  resume.
+                </Text>
               </Text>
               <Box
                 className='action-btn'
@@ -158,17 +169,12 @@ const Profile = () => {
                     width={`5rem`}
                   >
                     <Image
+                      filter={`drop-shadow(1px 2px 3px #00000060)`}
                       boxSize={`100%`}
-                      className='buzz'
                       as={`img`}
                       cursor={`pointer`}
                       alt='quill'
                       src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto,c_fill/v1663409792/portfolio/pngegg_7_yvaqdw.png`}
-                      // filter={
-                      //   colorMode == `light`
-                      //     ? `invert(0)`
-                      //     : `invert(100%)`
-                      // }
                     />
                   </Box>
                 </Link>
@@ -178,6 +184,19 @@ const Profile = () => {
           </Flex>
         </Flex>
       </Box>
+      <Flex
+        px={`1.5em`}
+        width={`100%`}
+        pos={`absolute`}
+        bottom={`1.5em`}
+        zIndex={999}
+        as={`span`}
+        letterSpacing={`1px`}
+        // border={`1px solid red`}
+        justifyContent={{ base: `center`, lg: `end` }}
+      >
+        <References />
+      </Flex>
     </Flex>
   );
 };

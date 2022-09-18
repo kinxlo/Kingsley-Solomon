@@ -86,7 +86,6 @@ const MobileLayout = () => {
 
   useEffect(() => {
     profileAnimation();
-
   }, []);
 
   return (
@@ -100,6 +99,7 @@ const MobileLayout = () => {
         boxSize={`3em`}
         backgroundColor={`rgba(0,0,0,0.5)`}
         color={`lightBg`}
+        p={0}
         pos={`fixed`}
         top={`1.5em`}
         zIndex={999}
@@ -107,13 +107,13 @@ const MobileLayout = () => {
         onClick={toggleColorMode}
         className={`action-btn`}
       >
-        <Icon
-          as={
+        <Image
+          src={
             colorMode == `light`
-              ? RiMoonClearFill
-              : RiSunFill
+              ? 'https://img.icons8.com/officel/30/000000/moon.png'
+              : 'https://img.icons8.com/officel/30/000000/sun.png'
           }
-          fontSize={`1.3rem`}
+          alt='img'
         />
       </Button>
       <Box

@@ -1,18 +1,14 @@
 import {
+  Box,
   Button,
-  Icon,
+  Flex,
   Image,
+  Text,
   useColorMode,
 } from '@chakra-ui/react';
 import React, { useContext, useState } from 'react';
-import {
-  AiOutlineFileText,
-  AiOutlineMenu,
-  AiOutlineProject,
-  AiOutlineUser,
-} from 'react-icons/ai';
-import { RiToolsLine } from 'react-icons/ri';
 import { AppContext } from '../../context/AppContext';
+import Reviews from '../drawer/Reviews';
 
 const ContactMenu = () => {
   const { colorMode } = useColorMode();
@@ -37,21 +33,19 @@ const ContactMenu = () => {
       id='menu'
       className='circular-menu circular-menu-top action-btn'
     >
-      <Icon
-        as={AiOutlineMenu}
+      <Image
         className='floating-btn '
         onClick={() =>
           document
             .getElementById('menu')
             .classList.toggle('active')
         }
+        src='https://img.icons8.com/officel/30/000000/hamburger.png'
+        alt='img'
       />
 
       <menu className='items-wrapper'>
         <Button
-          data-message={`Everything you need to know about kingsley`}
-          onMouseEnter={(event) => handleMouseEnter(event)}
-          onMouseLeave={handleMouseLeave}
           className='menu-item'
           p={0}
           borderRadius={`100%`}
@@ -65,19 +59,34 @@ const ContactMenu = () => {
           _focus={active}
           size={`xs`}
         >
-          <Icon as={AiOutlineUser} fontSize={`1.3rem`} />
+          <Flex
+            transform={`scale(0.8)`}
+            flexDir={`column`}
+            justifyContent={`center`}
+            gap={1}
+          >
+            <Image
+              src='https://img.icons8.com/officel/30/000000/user-male-skin-type-5.png'
+              alt='img'
+            />
+            <Text
+              color={
+                colorMode == `light` &&
+                switchView !== `profile`
+                  ? `darkBg`
+                  : `lightBg`
+              }
+              fontSize={`xs`}
+            >
+              profile
+            </Text>
+          </Flex>
         </Button>
         <Button
-          disabled
-          data-message={`Kingsley's Rap sheet`}
-          onMouseEnter={(event) => handleMouseEnter(event)}
-          onMouseLeave={handleMouseLeave}
           className='menu-item'
           p={0}
           borderRadius={`100%`}
           backgroundColor={`transparent`}
-          value='resume'
-          onClick={handleClick}
           color={`accent`}
           isActive={switchView == `resume` ? true : false}
           _hover={active}
@@ -85,15 +94,27 @@ const ContactMenu = () => {
           _focus={active}
           size={`xs`}
         >
-          <Icon
-            as={AiOutlineFileText}
-            fontSize={`1.3rem`}
-          />
+          <Flex
+            transform={`scale(0.8)`}
+            flexDir={`column`}
+            justifyContent={`center`}
+            gap={1}
+          >
+            <Reviews />
+            <Text
+              color={
+                colorMode == `light` &&
+                switchView !== `profile`
+                  ? `darkBg!`
+                  : `lightBg!`
+              }
+              fontSize={`xs`}
+            >
+              Reviews
+            </Text>
+          </Flex>
         </Button>
         <Button
-          data-message={`Checkout some projects`}
-          onMouseEnter={(event) => handleMouseEnter(event)}
-          onMouseLeave={handleMouseLeave}
           className='menu-item'
           p={0}
           borderRadius={`100%`}
@@ -107,12 +128,30 @@ const ContactMenu = () => {
           _focus={active}
           size={`xs`}
         >
-          <Icon as={AiOutlineProject} fontSize={`1.3rem`} />
+          <Flex
+            transform={`scale(0.65)`}
+            flexDir={`column`}
+            justifyContent={`center`}
+            gap={1}
+          >
+            <Image
+              src='https://img.icons8.com/officel/30/000000/web-design.png'
+              alt='img'
+            />
+            <Text
+              color={
+                colorMode == `light` &&
+                switchView !== `profile`
+                  ? `darkBg`
+                  : `lightBg`
+              }
+              fontSize={`xs`}
+            >
+              Projects
+            </Text>
+          </Flex>
         </Button>
         <Button
-          data-message={`His tools for the job`}
-          onMouseEnter={(event) => handleMouseEnter(event)}
-          onMouseLeave={handleMouseLeave}
           className='menu-item'
           p={0}
           borderRadius={`100%`}
@@ -126,7 +165,28 @@ const ContactMenu = () => {
           _focus={active}
           size={`xs`}
         >
-          <Icon as={RiToolsLine} fontSize={`1.3rem`} />
+          <Flex
+            transform={`scale(0.65)`}
+            flexDir={`column`}
+            justifyContent={`center`}
+            gap={1}
+          >
+            <Image
+              src='https://img.icons8.com/officel/30/000000/drafting-compass2.png'
+              alt='img'
+            />
+            <Text
+              color={
+                colorMode == `light` &&
+                switchView !== `profile`
+                  ? `darkBg`
+                  : `lightBg`
+              }
+              fontSize={`xs`}
+            >
+              Languages
+            </Text>
+          </Flex>
         </Button>
       </menu>
     </div>

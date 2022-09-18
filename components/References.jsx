@@ -3,6 +3,7 @@ import {
   DrawerContent,
   useDisclosure,
   Icon,
+  Text,
 } from '@chakra-ui/react';
 
 import { MdAnnouncement } from 'react-icons/md';
@@ -12,22 +13,17 @@ export default function DrawerExample() {
 
   return (
     <>
-      <Icon
-        as={MdAnnouncement}
-        onClick={onOpen}
-        w={{ base: `4`, sm: `6` }}
-        h={{ base: `4`, sm: `6` }}
-      />
-
+      <Text onClick={onOpen} fontSize={`xs`}>
+        Reference
+      </Text>
       <Drawer
         isOpen={isOpen}
         placement='bottom'
         onClose={onClose}
       >
         <DrawerContent
-          className='theme'
-          w={{ base: `100vw`, sm: `60rem` }}
-          h={{ base: `90vh`, sm: `50rem` }}
+          bg={`lightBg`}
+          h={{ base: `90vh`, sm: `50%` }}
           padding={`.5rem`}
           paddingBottom={`3.4rem`}
           display={`flex`}

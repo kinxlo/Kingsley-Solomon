@@ -29,18 +29,27 @@ export default function DrawerExample() {
 
   return (
     <>
+      <Flex
+        justifyContent={`center`}
+        onClick={handleClick}
+        className={`quil_box action-btn`}
+      >
+        <Image
+          as={`img`}
+          cursor={`pointer`}
+          alt='scroll'
+          src='https://img.icons8.com/officel/30/000000/magical-scroll.png'
+        />
+      </Flex>
+
       <Drawer
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
       >
         <DrawerContent
-          backgroundColor={
-            colorMode == `light` ? `darkBg` : `lightBg`
-          }
-          color={
-            colorMode == `light` ? `lightBg` : `darkBg`
-          }
+          backgroundColor={`lightBg`}
+          color={`darkBg`}
           maxW={{ base: `100vw`, md: `40rem` }}
           padding={`0 1rem`}
           display={`flex`}

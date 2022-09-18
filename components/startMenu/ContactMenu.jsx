@@ -1,4 +1,5 @@
 import {
+  Box,
   Icon,
   Image,
   Link,
@@ -27,9 +28,6 @@ const ContactMenu = () => {
         href={social.link}
       >
         <Text
-          data-message={social.msg}
-          onMouseEnter={(event) => handleMouseEnter(event)}
-          onMouseLeave={handleMouseLeave}
           color={
             colorMode == `light` ? `accent` : `lightBg`
           }
@@ -44,21 +42,22 @@ const ContactMenu = () => {
   });
 
   return (
-    <div
+    <Box
+      onClick={() =>
+        document
+          .getElementById('contacts')
+          .classList.toggle('active')
+      }
       id='contacts'
       className='circular-menu circular-menu-left action-btn'
     >
-      <Icon
-        as={AiOutlineLink}
+      <Image
         className='floating-btn '
-        onClick={() =>
-          document
-            .getElementById('contacts')
-            .classList.toggle('active')
-        }
+        src="https://img.icons8.com/officel/30/000000/email.png"
+        alt='socials'
       />
       <menu className='items-wrapper'>{socials}</menu>
-    </div>
+    </Box>
   );
 };
 
