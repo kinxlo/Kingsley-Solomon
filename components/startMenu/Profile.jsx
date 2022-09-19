@@ -145,7 +145,7 @@ const Profile = () => {
                   fontWeight={`bold`}
                   id='scroll'
                   as={`span`}
-                  fontSize={{ base: `10px`, sm: `10px` }}
+                  fontSize={{ base: `10px`, sm: `12px` }}
                 >
                   frontend-focused
                 </Text>{' '}
@@ -160,7 +160,7 @@ const Profile = () => {
                   fontWeight={`bold`}
                   id='scroll'
                   as={`span`}
-                  fontSize={{ base: `10px`, sm: `10px` }}
+                  fontSize={{ base: `10px`, sm: `12px` }}
                 >
                   Contained within the scroll below is my
                   resume.
