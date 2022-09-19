@@ -149,7 +149,7 @@ const Profile = () => {
                 >
                   frontend-focused
                 </Text>{' '}
-                web developer. Bring your ideas, and
+                web developer. Bring your ideas,
                 let&apos;s make them a reality.
                 <Text
                   bg={`#00000010`}

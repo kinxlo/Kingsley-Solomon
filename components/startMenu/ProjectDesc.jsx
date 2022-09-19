@@ -35,7 +35,6 @@ const ProjectDesc = ({
             fontSize={`sm`}
             fontWeight={`bold`}
             className={`font-sans`}
-
           >
             Tools and Packages
           </Text>
@@ -59,7 +58,7 @@ const ProjectDesc = ({
             fontSize={`sm`}
             fontWeight={`bold`}
             className={`font-sans`}
-
+            mb={`1.2em`}
           >
             Release
           </Text>
@@ -86,7 +85,6 @@ const ProjectDesc = ({
             fontSize={`sm`}
             fontWeight={`bold`}
             className={`font-sans`}
-
           >
             About
           </Text>

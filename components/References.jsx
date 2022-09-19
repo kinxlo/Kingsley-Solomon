@@ -4,35 +4,44 @@ import {
   useDisclosure,
   Icon,
   Text,
+  Center,
+  Flex,
+  useColorMode,
 } from '@chakra-ui/react';
 
 import { MdAnnouncement } from 'react-icons/md';
 
 export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode } = useColorMode();
 
   return (
     <>
-      <Text
-        color={`blue`}
-        textDecorationStyle={`dashed`}
-        textDecoration={`underline`}
-        textTransform={`capitalize`}
-        fontWeight={`light`}
-        fontSize={{ base: `sm`, lg: `xs` }}
+      <Flex
+        color={colorMode == `light` ? `blue` : `lightBg`}
+        gap={{ base: 0, sm: 2 }}
+        flexDir={{ base: `column`, sm: `row` }}
+        alignItems={`center`}
       >
         <Text
-          fontSize={{ base: `sm`, lg: `xs` }}
+          textDecor={`underline`}
+          fontSize={{ base: `xs`, lg: `xs` }}
+          fontWeight={`light`}
           cursor={`pointer`}
           onClick={onOpen}
           as={`span`}
         >
-          Reference
-        </Text>{' '}
-        | &copy;
-        {new Date().getFullYear()}
-      </Text>
-
+          Inspiration & Reference
+        </Text>
+        <Text
+          textTransform={`capitalize`}
+          fontWeight={`light`}
+          fontSize={{ base: `xs`, lg: `xs` }}
+        >
+          &copy;
+          {new Date().getFullYear()} Kingsley Ifijeh
+        </Text>
+      </Flex>
       <Drawer
         isOpen={isOpen}
         placement='bottom'
@@ -42,12 +51,11 @@ export default function DrawerExample() {
           bg={`lightBg`}
           h={{ base: `90vh`, sm: `50%` }}
           padding={`.5rem`}
-          paddingBottom={`3.4rem`}
-          display={`flex`}
-          flexDir={`column`}
-          justifyContent={`end`}
-          gap={`2`}
-        ></DrawerContent>
+        >
+          <Center>
+            <Text>Coming Soon...</Text>
+          </Center>
+        </DrawerContent>
       </Drawer>
     </>
   );

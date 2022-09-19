@@ -157,9 +157,10 @@ const ProjectBox = () => {
             }}
           >
             I encountered several fantastic developers while
-            searching for ways to challenge myself. We spoke
-            and sipped tea (coffee was for debugging), and here are some of the
-            concepts we made into reality.
+            searching for ways to challenge and improve
+            myself. We spoke, sipped tea (coffee was for
+            debugging), and here are some of the concepts we
+            made into reality.
           </Text>
         </Box>
         <Suspense fallback={<PreLoader />}>
