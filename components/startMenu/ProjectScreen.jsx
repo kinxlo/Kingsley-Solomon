@@ -1,14 +1,13 @@
 import {
   Box,
   Link,
+  Image,
   Flex,
   Text,
   useColorMode,
 } from '@chakra-ui/react';
 import React, { useContext, useRef } from 'react';
 import { AppContext } from '../../context/AppContext';
-import link from '../../assets/pngegg (5).png';
-import github from '../../assets/pngegg (4).png';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -19,7 +18,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import Image from 'next/image';
+// import Image from 'next/image';
 import ProjectDesc from './ProjectDesc';
 import Modal from './ModalDesc';
 
@@ -151,7 +150,7 @@ const ProjectScreen = () => {
           </Link>
           <Box
             ref={url}
-            filter={`drop-shadow(1px 1px 1px #00000030)`}
+            // filter={`drop-shadow(1px 1px 1px #00000030)`}
             width={{
               base: `1.6em`,
               sm: `1.9em`,
@@ -167,7 +166,7 @@ const ProjectScreen = () => {
               width={`100%`}
               height={`100%`}
               alt='img'
-              src={link}
+              src='https://img.icons8.com/officel/30/000000/cloud-link--v1.png'
             />
           </Box>
         </Flex>
@@ -189,13 +188,13 @@ const ProjectScreen = () => {
               sm: `1.8em`,
             }}
             p={`3px`}
-            filter={`drop-shadow(1px 1px 1px #00000030)`}
+            // filter={`drop-shadow(1px 1px 1px #00000030)`}
           >
             <Image
               width={`100%`}
               height={`100%`}
               alt='img'
-              src={github}
+              src='https://img.icons8.com/color/48/000000/github--v1.png'
             />
           </Box>
           <Link

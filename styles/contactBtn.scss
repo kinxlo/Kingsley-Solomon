@@ -6,6 +6,7 @@
 }
 
 .circular-menu .floating-btn {
+    border: 1px solid #fbf4f310;
     display: block;
     width: 3.5em;
     height: 3.5em;
@@ -70,13 +71,14 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: hsl(0, 0%, 100%);
+    // color: hsl(0, 0%, 100%);
+    // border: 1px solid red;
     font-size: 1em;
     width: 3em;
     height: 3em;
     border-radius: 50%;
     text-align: center;
-    background-color: var(--darkBg);
+    background-color: transparent;
     transition: transform .3s ease, background .2s ease;
 }
 
@@ -119,7 +121,8 @@
 }
 
 .circular-menu.circular-menu-left .floating-btn {
-    background-color: var(--mainLinkColor);
+    background-color: var(--darkBg);
+    border: 1px solid #fbf4f310;
 }
 
 .circular-menu.circular-menu-left:after {
