@@ -152,16 +152,14 @@ const ProjectBox = () => {
           <Text
             className='slide-project'
             fontSize={{
-              base: `8px`,
-              sm: `10px`,
-              lg: `12px`,
+              base: `10px`,
+              lg: `14px`,
             }}
           >
-            Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Cum modi quas quod incidunt!
-            Odio perferendis, earum assumenda vel suscipit
-            nulla quaerat illo harum architecto minus
-            accusantium quo, blanditiis officia atque.
+            I encountered several fantastic developers while
+            searching for ways to challenge myself. We spoke
+            and sipped tea (coffee was for debugging), and here are some of the
+            concepts we made into reality.
           </Text>
         </Box>
         <Suspense fallback={<PreLoader />}>

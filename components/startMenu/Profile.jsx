@@ -41,7 +41,7 @@ const Profile = () => {
             className='font-serif slide-in'
             fontSize={`16px`}
             fontWeight={`medium`}
-            color={`accent`}
+            // color={`accent`}
           >
             Greetings!, I&apos;m
           </Text>
@@ -114,7 +114,7 @@ const Profile = () => {
             <Box width={`fit-content`}>
               <Text
                 mt={3}
-                color={`accent`}
+                // color={`matrixDark`}
                 fontWeight={900}
                 letterSpacing={`1px`}
                 textTransform={`uppercase`}
@@ -135,8 +135,21 @@ const Profile = () => {
                 my={5}
               >
                 Kingsley takes pleasure in converting UI
-                designs into codes as a frontend-focused web
-                developer. Bring your suggestions, and
+                designs into codes as a{' '}
+                <Text
+                  bg={`#00000010`}
+                  color={`matrixDark`}
+                  px={2}
+                  borderRadius={`5px`}
+                  fontStyle={`italic`}
+                  fontWeight={`bold`}
+                  id='scroll'
+                  as={`span`}
+                  fontSize={{ base: `10px`, sm: `10px` }}
+                >
+                  frontend-focused
+                </Text>{' '}
+                web developer. Bring your ideas, and
                 let&apos;s make them a reality.
                 <Text
                   bg={`#00000010`}
@@ -148,7 +161,6 @@ const Profile = () => {
                   id='scroll'
                   as={`span`}
                   fontSize={{ base: `10px`, sm: `10px` }}
-                  opacity={0}
                 >
                   Contained within the scroll below is my
                   resume.
@@ -188,7 +200,7 @@ const Profile = () => {
         px={`1.5em`}
         width={`100%`}
         pos={`absolute`}
-        bottom={`1.5em`}
+        bottom={{ base: `3em`, lg: `1.5em` }}
         zIndex={999}
         as={`span`}
         letterSpacing={`1px`}

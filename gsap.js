@@ -18,9 +18,7 @@ export const profileAnimation = () => {
     });
     tl.to(`.action-btn`, { scale: 1, opacity: 1, ease: "elastic.out", duration: 1, stagger: 0.1 })
     tl.to(`#scroll`, {
-        delay: 0.5, opacity: 1, yoyo: true, repeat: 5, duration: 2, onComplete: function () {
-            tl.to(`#scroll`, { opacity: 1 })
-        },
+        delay: 0.5, color: `#800000`, yoyo: true, repeat: 5, duration: 2
     })
 }
 

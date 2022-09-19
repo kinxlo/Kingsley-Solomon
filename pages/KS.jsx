@@ -1,8 +1,10 @@
 import {
   Box,
   Button,
+  Flex,
   Icon,
   Image,
+  Text,
   useColorMode,
 } from '@chakra-ui/react';
 
@@ -18,8 +20,6 @@ import ProductivityLayout from '../components/startMenu/ProductivityLayout';
 import ProjectScreen from '../components/startMenu/ProjectScreen';
 import { profileAnimation } from '../gsap';
 import { tools } from '../public/tools';
-
-import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
 import Map from '../components/startMenu/Map';
 
 const MobileLayout = () => {
@@ -46,6 +46,20 @@ const MobileLayout = () => {
         mixBlendMode={`multiply`}
         filter={`grayscale(50%)  brightness(0.4)`}
       />
+      <Flex
+        px={`1.5em`}
+        width={`100%`}
+        pos={`absolute`}
+        bottom={`1.5em`}
+        zIndex={999}
+        as={`span`}
+        letterSpacing={`1px`}
+        justifyContent={{ base: `center`, lg: `start` }}
+      >
+        <Text color={`lightBg`} fontSize={`xs`}>
+          Photo Credit: @kinxlo
+        </Text>
+      </Flex>
     </Box>
   );
 
@@ -110,8 +124,8 @@ const MobileLayout = () => {
         <Image
           src={
             colorMode == `light`
-              ? 'https://img.icons8.com/officel/30/000000/moon.png'
-              : 'https://img.icons8.com/officel/30/000000/sun.png'
+              ? `https://img.icons8.com/officel/20/000000/moon.png`
+              : `https://img.icons8.com/officel/20/000000/sun.png`
           }
           alt='img'
         />

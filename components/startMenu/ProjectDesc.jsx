@@ -32,10 +32,10 @@ const ProjectDesc = ({
         <Box>
           <Text
             mb={2}
-            fontSize={`lg`}
+            fontSize={`sm`}
             fontWeight={`bold`}
             className={`font-sans`}
-            color={`accent`}
+
           >
             Tools and Packages
           </Text>
@@ -56,10 +56,10 @@ const ProjectDesc = ({
         {/* release */}
         <Box>
           <Text
-            fontSize={`lg`}
+            fontSize={`sm`}
             fontWeight={`bold`}
             className={`font-sans`}
-            color={`accent`}
+
           >
             Release
           </Text>
@@ -83,10 +83,10 @@ const ProjectDesc = ({
         {/* about */}
         <Box>
           <Text
-            fontSize={`lg`}
+            fontSize={`sm`}
             fontWeight={`bold`}
             className={`font-sans`}
-            color={`accent`}
+
           >
             About
           </Text>
@@ -102,10 +102,10 @@ const ProjectDesc = ({
         <Box>
           <Text
             mb={2}
-            fontSize={`lg`}
+            fontSize={`sm`}
             fontWeight={`bold`}
             className={`font-sans`}
-            color={`accent`}
+            // color={`blue`}
           >
             Contributors
           </Text>

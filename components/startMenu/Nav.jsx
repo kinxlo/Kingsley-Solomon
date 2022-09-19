@@ -18,11 +18,20 @@ const ContactMenu = () => {
     handleMouseEnter,
     handleMouseLeave,
   } = useContext(AppContext);
+
   const [active] = useState({
     backgroundColor: `transparent !important`,
     color:
       colorMode == `light` ? `matrixDark!` : `matrixLight!`,
   });
+
+  const navColor = {
+    base: colorMode == `light` ? `darkBg` : `lightBg`,
+    lg:
+      colorMode == `light` && switchView !== `profile`
+        ? `darkBg`
+        : `lightBg`,
+  };
 
   const handleClick = (e) => {
     switchContent(e.currentTarget.getAttribute(`value`));
@@ -69,85 +78,8 @@ const ContactMenu = () => {
               src='https://img.icons8.com/officel/30/000000/user-male-skin-type-5.png'
               alt='img'
             />
-            <Text
-              color={
-                colorMode == `light` &&
-                switchView !== `profile`
-                  ? `darkBg`
-                  : `lightBg`
-              }
-              fontSize={`xs`}
-            >
+            <Text color={navColor} fontSize={`xs`}>
               profile
-            </Text>
-          </Flex>
-        </Button>
-        <Button
-          className='menu-item'
-          p={0}
-          borderRadius={`100%`}
-          backgroundColor={`transparent`}
-          color={`accent`}
-          isActive={switchView == `resume` ? true : false}
-          _hover={active}
-          _active={active}
-          _focus={active}
-          size={`xs`}
-        >
-          <Flex
-            transform={`scale(0.8)`}
-            flexDir={`column`}
-            justifyContent={`center`}
-            gap={1}
-          >
-            <Reviews />
-            <Text
-              color={
-                colorMode == `light` &&
-                switchView !== `profile`
-                  ? `darkBg!`
-                  : `lightBg!`
-              }
-              fontSize={`xs`}
-            >
-              Reviews
-            </Text>
-          </Flex>
-        </Button>
-        <Button
-          className='menu-item'
-          p={0}
-          borderRadius={`100%`}
-          backgroundColor={`transparent`}
-          value='projects'
-          onClick={handleClick}
-          color={`accent`}
-          isActive={switchView == `projects` ? true : false}
-          _hover={active}
-          _active={active}
-          _focus={active}
-          size={`xs`}
-        >
-          <Flex
-            transform={`scale(0.65)`}
-            flexDir={`column`}
-            justifyContent={`center`}
-            gap={1}
-          >
-            <Image
-              src='https://img.icons8.com/officel/30/000000/web-design.png'
-              alt='img'
-            />
-            <Text
-              color={
-                colorMode == `light` &&
-                switchView !== `profile`
-                  ? `darkBg`
-                  : `lightBg`
-              }
-              fontSize={`xs`}
-            >
-              Projects
             </Text>
           </Flex>
         </Button>
@@ -175,16 +107,61 @@ const ContactMenu = () => {
               src='https://img.icons8.com/officel/30/000000/drafting-compass2.png'
               alt='img'
             />
-            <Text
-              color={
-                colorMode == `light` &&
-                switchView !== `profile`
-                  ? `darkBg`
-                  : `lightBg`
-              }
-              fontSize={`xs`}
-            >
+            <Text color={navColor} fontSize={`xs`}>
               Languages
+            </Text>
+          </Flex>
+        </Button>
+        <Button
+          className='menu-item'
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
+          value='projects'
+          onClick={handleClick}
+          color={`accent`}
+          isActive={switchView == `projects` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
+          size={`xs`}
+        >
+          <Flex
+            transform={`scale(0.65)`}
+            flexDir={`column`}
+            justifyContent={`center`}
+            gap={1}
+          >
+            <Image
+              src='https://img.icons8.com/officel/30/000000/web-design.png'
+              alt='img'
+            />
+            <Text color={navColor} fontSize={`xs`}>
+              Projects
+            </Text>
+          </Flex>
+        </Button>
+        <Button
+          className='menu-item'
+          p={0}
+          borderRadius={`100%`}
+          backgroundColor={`transparent`}
+          color={`accent`}
+          isActive={switchView == `resume` ? true : false}
+          _hover={active}
+          _active={active}
+          _focus={active}
+          size={`xs`}
+        >
+          <Flex
+            transform={`scale(0.8)`}
+            flexDir={`column`}
+            justifyContent={`center`}
+            gap={1}
+          >
+            <Reviews />
+            <Text color={navColor} fontSize={`xs`}>
+              Reviews
             </Text>
           </Flex>
         </Button>

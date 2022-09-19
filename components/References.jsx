@@ -13,9 +13,26 @@ export default function DrawerExample() {
 
   return (
     <>
-      <Text onClick={onOpen} fontSize={`xs`}>
-        Reference
+      <Text
+        color={`blue`}
+        textDecorationStyle={`dashed`}
+        textDecoration={`underline`}
+        textTransform={`capitalize`}
+        fontWeight={`light`}
+        fontSize={{ base: `sm`, lg: `xs` }}
+      >
+        <Text
+          fontSize={{ base: `sm`, lg: `xs` }}
+          cursor={`pointer`}
+          onClick={onOpen}
+          as={`span`}
+        >
+          Reference
+        </Text>{' '}
+        | &copy;
+        {new Date().getFullYear()}
       </Text>
+
       <Drawer
         isOpen={isOpen}
         placement='bottom'

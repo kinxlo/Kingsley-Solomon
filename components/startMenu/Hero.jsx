@@ -22,18 +22,6 @@ const Hero = ({ children }) => {
       width={{ base: `100%`, lg: `40%`, xl: `50%` }}
     >
       {children}
-      <Flex
-        px={`1.5em`}
-        width={`100%`}
-        pos={`absolute`}
-        bottom={`1.5em`}
-        zIndex={999}
-        as={`span`}
-        letterSpacing={`1px`}
-        justifyContent={{ base: `center`, lg: `start` }}
-      >
-        <Text fontSize={`xs`}>Photo Credit: @kinxlo</Text>
-      </Flex>
     </Box>
   );
 };
