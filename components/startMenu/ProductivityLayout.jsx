@@ -139,6 +139,7 @@ const ProductivityLayout = ({
             }}
             className={`font-display`}
           >
+            
             Area of Focus
           </Text>
           <Text

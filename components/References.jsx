@@ -67,8 +67,8 @@ export default function DrawerExample() {
           display={`flex`}
           flexDir={`column`}
           justifyContent={`space-between`}
-          alignItems={`end`}
-          overflow={`scroll`}
+          alignItems={`center`}
+          // overflow={`scroll`}
           bg={colorMode == `light` ? `darkBg` : `lightBg`}
           w={{ base: `100%`, lg: `60%`, xl: `50%` }}
           h={{ base: `90vh`, sm: `50%` }}
