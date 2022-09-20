@@ -16,7 +16,10 @@ const ProjectDesc = ({
 }) => {
   return (
     <Flex flexDir={`column`} gap={5} mt={5}>
-      <Flex gap={10}>
+      <Flex
+        flexDir={{ base: `column`, lg: `row` }}
+        gap={10}
+      >
         {/* about */}
         <Box flex={`1`}>
           <Text
@@ -56,7 +59,10 @@ const ProjectDesc = ({
           </>
         </Box>
       </Flex>
-      <Flex gap={10}>
+      <Flex
+        flexDir={{ base: `column`, lg: `row` }}
+        gap={10}
+      >
         {/* package */}
         <Box flex={`1`}>
           <Text
