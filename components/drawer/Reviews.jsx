@@ -8,6 +8,7 @@ import {
   useColorMode,
   Image,
   Box,
+  Button,
 } from '@chakra-ui/react';
 import Notification from './Notification';
 import { AiOutlineLeft } from 'react-icons/ai';
@@ -58,15 +59,18 @@ export default function DrawerExample() {
           gap={`2`}
         >
           <Flex
-            alignItems={`center`}
+            alignItems={`start`}
             p={`2rem`}
             gap={`3rem`}
           >
-            <Icon
+            <Image
               onClick={handleClick}
-              boxSize={`1.5rem`}
-              as={AiOutlineLeft}
+              borderRadius={`100%`}
+              cursor={`pointer`}
+              alt='img'
+              src='https://img.icons8.com/officel/20/000000/back.png'
             />
+
             <Box>
               <Text
                 className='font-display slide-project'
@@ -83,7 +87,7 @@ export default function DrawerExample() {
               >
                 Reviews
               </Text>
-              <Text
+              {/* <Text
                 className='slide-project'
                 fontSize={{
                   base: `12px`,
@@ -94,7 +98,7 @@ export default function DrawerExample() {
                 adipisicing elit. Praesentium iure nobis
                 quas placeat voluptatem, consequuntur
                 provident iusto tenetur aliquam accusamus!
-              </Text>
+              </Text> */}
             </Box>
           </Flex>
           <Notification />

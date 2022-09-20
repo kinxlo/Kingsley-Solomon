@@ -2,6 +2,7 @@ import {
   Box,
   Flex,
   Image,
+  Link,
   Text,
   useColorMode,
   useDisclosure,
@@ -15,29 +16,22 @@ const Map = () => {
     <>
       <Flex
         bg={colorMode == `light` ? `lightBg` : `darkBg`}
-        alignItems={`center`}
+        alignItems={`start`}
+        justifyContent={`center`}
         id='map'
         onClick={onToggle}
         position={`relative`}
-        // backgroundColor={`lightBg`}
+        flexDir={`column`}
         marginLeft={`auto`}
         height={`100vh`}
       >
         <Flex
-          width={`50%`}
           gap={2}
           alignItems={`center`}
-          borderRadius={`10px`}
           pos={`absolute`}
           top={0}
           zIndex={1}
           m={`1.5em`}
-          p={`1em`}
-          // backgroundColor={
-          //   colorMode == `light`
-          //     ? `transparent`
-          //     : `#80000050`
-          // }
         >
           <Image
             alt='img'
@@ -62,13 +56,42 @@ const Map = () => {
             src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1663635679/portfolio/pngegg_15_fula8u.png`}
             alt='map'
           ></Image>
-          {/* <Box
+          <Box
             pos={`absolute`}
-            top={`202px`}
-            left={`348px`}
+            top={`58%`}
+            left={`50%`}
             className='marker'
-          ></Box> */}
+          ></Box>
         </Box>
+        <Link
+          target={`_blank`}
+          textDecor={`none !important`}
+          m={`1.5em`}
+          href='https://wa.me/08100792853'
+        >
+          <Flex alignItems={`start`} gap={2}>
+            <Image
+              alt='img'
+              src='https://img.icons8.com/officel/20/000000/whatsapp.png'
+            />
+            <Text
+              // bg={`#00000010`}
+              color={
+                colorMode == `light` ? `darkbg` : `lightBg`
+              }
+              px={2}
+              borderRadius={`5px`}
+              fontStyle={`italic`}
+              fontWeight={`bold`}
+              fontSize={{ base: `10px`, sm: `12px` }}
+              _hover={{ color: `matrixDark` }}
+            >
+              Have any questions?, want to talk codes? or
+              just feel like collaborating...I&apos;m your
+              guy.
+            </Text>
+          </Flex>
+        </Link>
       </Flex>
     </>
   );

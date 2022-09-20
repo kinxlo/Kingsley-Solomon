@@ -113,10 +113,23 @@ const ProductivityLayout = ({
           {language}
         </Grid>
         <Center
+          gap={3}
           textAlign={`center`}
           flexDir={`column`}
           p={5}
         >
+          <Text
+            opacity={0.7}
+            px={2}
+            borderRadius={`5px`}
+            fontWeight={`bold`}
+            fontSize={{
+              base: `10px`,
+              lg: `12px`,
+            }}
+          >
+            Languages & Frameworks
+          </Text>
           <Text
             fontSize={{
               base: `xs`,
@@ -129,15 +142,16 @@ const ProductivityLayout = ({
             Area of Focus
           </Text>
           <Text
+            opacity={0.7}
+            px={2}
+            borderRadius={`5px`}
+            fontWeight={`bold`}
             fontSize={{
               base: `10px`,
-              lg: `14px`,
+              lg: `12px`,
             }}
           >
-            Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Minus error consequatur
-            dignissimos quo natus dicta? Omnis quam totam
-            dicta neque.
+            Tools & platforms
           </Text>
         </Center>
         <Grid

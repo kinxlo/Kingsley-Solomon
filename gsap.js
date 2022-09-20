@@ -7,7 +7,7 @@ export const profileAnimation = () => {
     });
     gsap.set(`.action-btn`, { scale: 0, opacity: 0 })
     let tl = gsap.timeline({ delay: 1.5, duration: 0.1 });
-    tl.to(`#profileBox`, { width: 1, ease: "power3.out" });
+    tl.to(`#profileBox`, { width: 0, ease: "power3.out" });
     tl.to(`.slide-in`, {
         y: `initial`, opacity: 1, stagger: {
             each: 0.2,
