@@ -1,7 +1,9 @@
 import {
   Box,
+  Center,
   Grid,
   Image,
+  Text,
   useColorMode,
 } from '@chakra-ui/react';
 import React, {
@@ -13,7 +15,11 @@ import { AppContext } from '../../context/AppContext';
 import CTA from '../drawer/CTA';
 import { productivity } from '../../gsap';
 
-const ProductivityLayout = ({ title, document }) => {
+const ProductivityLayout = ({
+  title,
+  tools,
+  languages,
+}) => {
   const { colorMode } = useColorMode();
   const { handleMouseEnter, handleMouseLeave, botMessage } =
     useContext(AppContext);
@@ -26,11 +32,44 @@ const ProductivityLayout = ({ title, document }) => {
     });
   };
 
-  let boxs = document.map((box) => {
+  let language = languages.map((box) => {
     return (
       <CTA
         name={box.name}
-        height={{ base: `10rem`, sm: `14rem`, md: `15rem` }}
+        height={{
+          base: `10rem`,
+          sm: `12rem`,
+          md: `15rem`,
+          xl: `13rem`,
+        }}
+        key={box.id}
+        title={title}
+      >
+        <Image
+          onMouseEnter={spin}
+          as={`img`}
+          filter={
+            colorMode == `light`
+              ? `drop-shadow(-4px 2px 2px #A7A7A7)`
+              : null
+          }
+          maxW={{ base: `25%`, md: `20%` }}
+          src={box.image}
+          alt='language'
+        />
+      </CTA>
+    );
+  });
+  let tool = tools.map((box) => {
+    return (
+      <CTA
+        name={box.name}
+        height={{
+          base: `10rem`,
+          sm: `12rem`,
+          md: `15rem`,
+          xl: `13rem`,
+        }}
         key={box.id}
         title={title}
       >
@@ -57,20 +96,59 @@ const ProductivityLayout = ({ title, document }) => {
   return (
     <>
       <Box
+        // border={`1px solid red`}
         ref={box}
+        maxW={{ base: `100%`, lg: `60%`, xl: `50%` }}
         height={`fit-content`}
         className='hide-scrollbar!'
       >
         <Grid
           p={1}
-          maxW={{ base: `100%`, lg: `60%`, xl: `50%` }}
           width={`100%`}
           className='section hide-scrollbar!'
           name={title}
           templateColumns='repeat(3, 1fr)'
           gap={1}
         >
-          {boxs}
+          {language}
+        </Grid>
+        <Center
+          textAlign={`center`}
+          flexDir={`column`}
+          p={5}
+        >
+          <Text
+            fontSize={{
+              base: `xs`,
+              sm: `xl`,
+              lg: `2xl`,
+              '2xl': `3xl`,
+            }}
+            className={`font-display`}
+          >
+            Area of Focus
+          </Text>
+          <Text
+            fontSize={{
+              base: `10px`,
+              lg: `14px`,
+            }}
+          >
+            Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Minus error consequatur
+            dignissimos quo natus dicta? Omnis quam totam
+            dicta neque.
+          </Text>
+        </Center>
+        <Grid
+          p={1}
+          width={`100%`}
+          className='section hide-scrollbar!'
+          name={title}
+          templateColumns='repeat(3, 1fr)'
+          gap={1}
+        >
+          {tool}
         </Grid>
       </Box>
     </>

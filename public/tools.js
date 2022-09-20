@@ -24,12 +24,16 @@ export const tools = [
         name: `Google`,
         image: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto/v1661784401/portfolio/icons8-google-144_bziwps.png`
     },
-
     {
-        id: 6,
-        name: `Java`,
-        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto/v1659187104/portfolio/icons8-java-480_mnxi62.svg`
+        id: 12,
+        name: `Next`,
+        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto/v1659185662/portfolio/nextjs-icon_jgx16m.svg`
     },
+
+
+]
+
+export const languages = [
     {
         id: 7,
         name: `Javascript`,
@@ -46,8 +50,6 @@ export const tools = [
         image: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto/v1661783619/portfolio/icons8-css3-144_hl51cd.png`
     },
 
-
-
     {
         id: 10,
         name: `Vue`,
@@ -59,10 +61,11 @@ export const tools = [
         image: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto/v1659187332/portfolio/icons8-react-480_frahil.svg`
     },
     {
-        id: 12,
-        name: `Next`,
-        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto/v1659185662/portfolio/nextjs-icon_jgx16m.svg`
+        id: 6,
+        name: `Java`,
+        image: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto/v1659187104/portfolio/icons8-java-480_mnxi62.svg`
     },
+
     // {
     //     id: 13,
     //     name: `who knows whats next`,

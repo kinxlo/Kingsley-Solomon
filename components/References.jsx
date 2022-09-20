@@ -18,7 +18,7 @@ export default function DrawerExample() {
   return (
     <>
       <Flex
-        color={colorMode == `light` ? `blue` : `lightBg`}
+        color={colorMode == `light` ? `darkBg` : `lightBg`}
         gap={{ base: 0, sm: 2 }}
         flexDir={{ base: `column`, sm: `row` }}
         alignItems={`center`}
@@ -26,16 +26,17 @@ export default function DrawerExample() {
         <Text
           textDecor={`underline`}
           fontSize={{ base: `xs`, lg: `xs` }}
-          fontWeight={`light`}
+          fontWeight={`medium`}
           cursor={`pointer`}
           onClick={onOpen}
           as={`span`}
         >
           Inspiration & Reference
         </Text>
+        |
         <Text
           textTransform={`capitalize`}
-          fontWeight={`light`}
+          fontWeight={`medium`}
           fontSize={{ base: `xs`, lg: `xs` }}
         >
           &copy;

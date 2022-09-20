@@ -48,6 +48,7 @@
 
 .hide-scrollbar,
 html {
+
   &::-webkit-scrollbar {
     display: none !important;
   }
@@ -58,6 +59,7 @@ html {
 }
 
 body {
+
 
   // !====== super important, yh, i always have one of this.===
   .css-wl2t6g {

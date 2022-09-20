@@ -67,13 +67,35 @@ export default function DrawerExample() {
               boxSize={`1.5rem`}
               as={AiOutlineLeft}
             />
-            <Text
-              fontSize={`large`}
-              fontWeight={`bold`}
-              as={`h3`}
-            >
-              Reviews
-            </Text>
+            <Box>
+              <Text
+                className='font-display slide-project'
+                textTransform={`capitalize`}
+                fontWeight={700}
+                color={`darkBg`}
+                letterSpacing={`1px`}
+                fontSize={{
+                  base: `xl`,
+                  sm: ``,
+                  md: ``,
+                  lg: ``,
+                }}
+              >
+                Reviews
+              </Text>
+              <Text
+                className='slide-project'
+                fontSize={{
+                  base: `12px`,
+                  lg: `14px`,
+                }}
+              >
+                Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Praesentium iure nobis
+                quas placeat voluptatem, consequuntur
+                provident iusto tenetur aliquam accusamus!
+              </Text>
+            </Box>
           </Flex>
           <Notification />
         </DrawerContent>

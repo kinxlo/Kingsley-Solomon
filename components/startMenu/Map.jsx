@@ -1,5 +1,6 @@
 import {
   Box,
+  Flex,
   Image,
   Text,
   useColorMode,
@@ -20,9 +21,10 @@ const Map = () => {
         marginLeft={`auto`}
         height={`100vh`}
       >
-        <Box
+        <Flex
           width={`50%`}
-          height={`20%`}
+          gap={2}
+          alignItems={`start`}
           borderRadius={`10px`}
           pos={`absolute`}
           top={0}
@@ -30,17 +32,25 @@ const Map = () => {
           m={`1.5em`}
           p={`1em`}
           backgroundColor={
-            colorMode == `light` ? `#10182070` : `#80000050`
+            colorMode == `light`
+              ? `transparent`
+              : `#80000050`
           }
         >
+          <Image
+            alt='img'
+            src='https://img.icons8.com/officel/25/000000/address.png'
+          />
           <Text
-            color={`lightBg`}
+            color={
+              colorMode == `light` ? `darkBg` : `lightBg`
+            }
             textTransform={`capitalize`}
           >
             No 10, tunde yaya street, iselewu orelope,
             igbogbo, ikorodu, lagos state nigeria
           </Text>
-        </Box>
+        </Flex>
 
         <Image
           height={`100%`}

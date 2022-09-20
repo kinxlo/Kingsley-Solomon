@@ -149,8 +149,8 @@ const Profile = () => {
                 >
                   frontend-focused
                 </Text>{' '}
-                web developer. Bring your ideas,
-                let&apos;s make them a reality.
+                web developer. Bring your ideas, let&apos;s
+                make them a reality.
                 <Text
                   bg={`#00000010`}
                   color={`matrixDark`}
@@ -171,6 +171,7 @@ const Profile = () => {
                 width={`fit-content`}
               >
                 <Link
+                  download
                   rel='noopener noreferrer'
                   target={`_blank`}
                   href='/KingsleySolomon_Ifijeh_Resume.pdf'

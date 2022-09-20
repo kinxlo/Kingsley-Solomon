@@ -19,7 +19,7 @@ import ContactMenu from '../components/startMenu/ContactMenu';
 import ProductivityLayout from '../components/startMenu/ProductivityLayout';
 import ProjectScreen from '../components/startMenu/ProjectScreen';
 import { profileAnimation } from '../gsap';
-import { tools } from '../public/tools';
+import { tools, languages } from '../public/tools';
 import Map from '../components/startMenu/Map';
 
 const MobileLayout = () => {
@@ -75,7 +75,8 @@ const MobileLayout = () => {
         return (
           <ProductivityLayout
             title={`Languages`}
-            document={tools}
+            tools={tools}
+            languages={languages}
           />
         );
       default:
