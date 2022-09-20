@@ -41,7 +41,11 @@ const ModalDesc = ({ title, contributors }) => {
           bg={colorMode == `light` ? `darkBg` : `lightBg`}
           m={`1.5em`}
         >
-          <ModalHeader textTransform={`capitalize`} className='font-sans'>
+          <ModalHeader
+            letterSpacing={`1px`}
+            textTransform={`capitalize`}
+            className='font-display'
+          >
             {title}
           </ModalHeader>
           <ModalCloseButton />

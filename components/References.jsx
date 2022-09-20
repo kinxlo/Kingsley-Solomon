@@ -33,8 +33,9 @@ export default function DrawerExample() {
         >
           Inspiration & Reference
         </Text>
-        |
         <Text
+          borderLeft={`1px solid grey`}
+          pl={2}
           textTransform={`capitalize`}
           fontWeight={`medium`}
           fontSize={{ base: `xs`, lg: `xs` }}

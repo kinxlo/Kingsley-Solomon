@@ -205,7 +205,7 @@ const Profile = () => {
         zIndex={999}
         as={`span`}
         letterSpacing={`1px`}
-        // border={`1px solid red`}
+        display={{base:`none`, sm:`flex`}}
         justifyContent={{ base: `center`, lg: `end` }}
       >
         <References />

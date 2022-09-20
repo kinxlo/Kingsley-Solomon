@@ -15,23 +15,52 @@ const ProjectDesc = ({
   inModal,
 }) => {
   return (
-    <Grid
-      templateColumns={
-        inModal ? 'repeat(1, 1fr)' : 'repeat(2, 1fr)'
-      }
-      gap={5}
-      mt={5}
-    >
-      <Flex
-        flexDir={`column`}
-        justifyContent={`space-between`}
-        flex={1}
-        gap={10}
-      >
-        {/* package */}
-        <Box>
+    <Flex flexDir={`column`} gap={5} mt={5}>
+      <Flex gap={10}>
+        {/* about */}
+        <Box flex={`1`}>
           <Text
-            mb={2}
+            mb={1}
+            fontSize={`sm`}
+            fontWeight={`bold`}
+            className={`font-sans`}
+          >
+            About
+          </Text>
+          <Text fontSize={{ base: `xs` }}>
+            Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Optio animi earum quidem
+            maiores. Nemo sit rem nesciunt suscipit eligendi
+            tenetur beatae recusandae libero temporibus
+          </Text>
+        </Box>
+
+        {/* release */}
+        <Box flex={`1`}>
+          <Text
+            mb={1}
+            fontSize={`sm`}
+            fontWeight={`bold`}
+            className={`font-sans`}
+          >
+            Release
+          </Text>
+          <>
+            <Text
+              className='font-mono'
+              fontSize={{ base: `xs` }}
+            >
+              12-5-2020 12:00
+            </Text>
+            <Text fontSize={{ base: `xs` }}>V 2.0.0</Text>
+          </>
+        </Box>
+      </Flex>
+      <Flex gap={10}>
+        {/* package */}
+        <Box flex={`1`}>
+          <Text
+            mb={1}
             fontSize={`sm`}
             fontWeight={`bold`}
             className={`font-sans`}
@@ -52,54 +81,10 @@ const ProjectDesc = ({
             )}
           </Flex>
         </Box>
-        {/* release */}
-        <Box>
-          <Text
-            fontSize={`sm`}
-            fontWeight={`bold`}
-            className={`font-sans`}
-            mb={`1.2em`}
-          >
-            Release
-          </Text>
-          <>
-            <Text
-              className='font-mono'
-              fontSize={{ base: `xs` }}
-            >
-              12-5-2020 12:00
-            </Text>
-            <Text fontSize={{ base: `xs` }}>V 2.0.0</Text>
-          </>
-        </Box>
-      </Flex>
-      <Flex
-        flexDir={`column`}
-        justifyContent={`space-between`}
-        flex={1}
-        gap={10}
-      >
-        {/* about */}
-        <Box>
-          <Text
-            fontSize={`sm`}
-            fontWeight={`bold`}
-            className={`font-sans`}
-          >
-            About
-          </Text>
-          <Text fontSize={{ base: `xs` }}>
-            Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Optio animi earum quidem
-            maiores. Nemo sit rem nesciunt suscipit eligendi
-            tenetur beatae recusandae libero temporibus
-          </Text>
-        </Box>
-
         {/* contributors */}
-        <Box>
+        <Box flex={`1`}>
           <Text
-            mb={2}
+            mb={1}
             fontSize={`sm`}
             fontWeight={`bold`}
             className={`font-sans`}
@@ -124,7 +109,7 @@ const ProjectDesc = ({
           </AvatarGroup>
         </Box>
       </Flex>
-    </Grid>
+    </Flex>
   );
 };
 
