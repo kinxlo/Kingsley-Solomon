@@ -49,8 +49,10 @@ export default function DrawerExample() {
         onClose={onClose}
       >
         <DrawerContent
-          backgroundColor={`lightBg`}
-          color={`darkBg`}
+          backgroundColor={
+            colorMode == `light` ? `darkBg` : `lightBg`
+          }
+          color={colorMode == `dark` ? `darkBg` : `lightBg`}
           maxW={{ base: `100vw`, md: `40rem` }}
           padding={`0 1rem`}
           display={`flex`}
@@ -76,7 +78,9 @@ export default function DrawerExample() {
                 className='font-display slide-project'
                 textTransform={`capitalize`}
                 fontWeight={700}
-                color={`darkBg`}
+                color={
+                  colorMode == `dark` ? `darkBg` : `lightBg`
+                }
                 letterSpacing={`1px`}
                 fontSize={{
                   base: `xl`,

@@ -67,7 +67,7 @@ const Map = () => {
           target={`_blank`}
           textDecor={`none !important`}
           m={`1.5em`}
-          href='https://wa.me/08100792853'
+          href='https://wa.me/+2348100792853'
         >
           <Flex alignItems={`start`} gap={2}>
             <Image

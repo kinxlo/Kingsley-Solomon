@@ -132,7 +132,7 @@ const ProductivityLayout = ({
           </Text>
           <Text
             fontSize={{
-              base: `xs`,
+              base: `lg`,
               sm: `xl`,
               lg: `2xl`,
               '2xl': `3xl`,

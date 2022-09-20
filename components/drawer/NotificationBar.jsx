@@ -10,6 +10,17 @@ import { BsDot } from 'react-icons/bs';
 
 const NotificationBar = ({ comment }) => {
   const { name, image, job, review } = comment;
+  const tag = {
+    bg: `#00000010`,
+    color: `matrixDark`,
+    px: 2,
+    borderRadius: `5px`,
+    fontStyle: `italic`,
+    fontWeight: `bold`,
+    as: `span`,
+    fontSize: { base: `10px`, sm: `12px` },
+    width: `fit-content`,
+  };
   return (
     <Box
       width={`100%`}
@@ -36,12 +47,7 @@ const NotificationBar = ({ comment }) => {
             {name}
           </Text>
           <Icon as={BsDot} />
-          <Text
-            color={`accent`}
-            className='font-mono'
-            fontSize={{ base: `10px`, md: `12px` }}
-            fontWeight={`medium`}
-          >
+          <Text textTransform={`capitalize`} sx={tag}>
             {job}
           </Text>
         </Flex>
@@ -52,7 +58,6 @@ const NotificationBar = ({ comment }) => {
           {review}
         </Text>
       </Box>
-
     </Box>
   );
 };

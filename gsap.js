@@ -31,7 +31,7 @@ export const projectAnimation = () => {
 
     let tl = gsap.timeline({ delay: 0.1, duration: 0.1 });
     // tl.to(`#project-image`, { opacity: 1, y: `initial`, duration: 1 })
-    tl.to(`#profileBox`, { width: 1, ease: "power3.out" });
+    tl.to(`#profileBox`, { width: 0, ease: "power3.out" });
     tl.to(`.slide-project`, {
         y: `initial`, opacity: 1, stagger: {
             each: 0.2,
