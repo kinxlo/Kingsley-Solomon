@@ -156,7 +156,7 @@ const Profile = () => {
                 </Text>
               </Text>
               <Box className="action-btn" width={`fit-content`}>
-                <Link
+                <a
                   rel="noopener noreferrer"
                   target={`_blank`}
                   href="/KingsleySolomon_Ifijeh_Resume.pdf"
@@ -175,7 +175,7 @@ const Profile = () => {
                       src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto,c_fill/v1663409792/portfolio/pngegg_7_yvaqdw.png`}
                     />
                   </Box>
-                </Link>
+                </a>
                 {/* <PreLoader /> */}
               </Box>
             </Box>
