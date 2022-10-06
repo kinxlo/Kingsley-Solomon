@@ -159,7 +159,7 @@ const Profile = () => {
                 <a
                   rel="noopener noreferrer"
                   target={`_blank`}
-                  href="/KingsleySolomon_Ifijeh_Resume.pdf"
+                  href="KingsleySolomon_Ifijeh_Resume.pdf"
                 >
                   <Box
                     className={`quil_box action-btn`}
