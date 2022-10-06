@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext } from "react";
 import {
   Box,
   Button,
@@ -7,9 +7,9 @@ import {
   Link,
   Text,
   useColorMode,
-} from '@chakra-ui/react';
-import { AppContext } from '../../context/AppContext';
-import References from '../References';
+} from "@chakra-ui/react";
+import { AppContext } from "../../context/AppContext";
+import References from "../References";
 
 const Profile = () => {
   const { colorMode } = useColorMode();
@@ -18,7 +18,7 @@ const Profile = () => {
 
   return (
     <Flex
-      className='profile-view'
+      className="profile-view"
       maxW={{ base: `100%`, lg: `60%`, xl: `50%` }}
       height={`100vh`}
       width={`100%`}
@@ -28,17 +28,17 @@ const Profile = () => {
         base: `2em`,
         sm: `5em`,
         xl: `10em`,
-        '2xl': `15em`,
+        "2xl": `15em`,
       }}
       pos={{ base: `sticky`, xl: `relative` }}
       top={0}
     >
       {/* <Background /> */}
       {/* profile */}
-      <Box className='step-1'>
+      <Box className="step-1">
         <Flex mb={5} alignItems={`center`}>
           <Text
-            className='font-serif slide-in'
+            className="font-serif slide-in"
             fontSize={`16px`}
             fontWeight={`medium`}
             // color={`accent`}
@@ -56,7 +56,7 @@ const Profile = () => {
           }}
         >
           <Flex
-            className='step-2'
+            className="step-2"
             flexDir={`column`}
             justifyContent={{ base: `space-between` }}
           >
@@ -70,13 +70,13 @@ const Profile = () => {
                     sm: `3.5em`,
                     md: `4.5em`,
                     xl: `4em`,
-                    '2xl': `4.5em`,
+                    "2xl": `4.5em`,
                   }}
                   lineHeight={1.1}
                   // px={{ base: `10px`, sm: `20px` }}
                   letterSpacing={`5px`}
                   fontWeight={`bold`}
-                  className='font-display slide-in'
+                  className="font-display slide-in"
                 >
                   Ifijeh
                 </Text>
@@ -87,22 +87,14 @@ const Profile = () => {
                     sm: `3.5em`,
                     md: `4.5em`,
                     xl: `4em`,
-                    '2xl': `4.5em`,
+                    "2xl": `4.5em`,
                   }}
                   textTransform={`uppercase`}
                   lineHeight={1.1}
                   px={{ base: `10px`, sm: `20px` }}
                   py={1}
-                  bg={
-                    colorMode == `light`
-                      ? `darkBg`
-                      : `lightBg`
-                  }
-                  color={
-                    colorMode == `light`
-                      ? `lightBg`
-                      : `darkBg`
-                  }
+                  bg={colorMode == `light` ? `darkBg` : `lightBg`}
+                  color={colorMode == `light` ? `lightBg` : `darkBg`}
                   letterSpacing={`5px`}
                   fontWeight={`bold`}
                   className={`slide-in font-display`}
@@ -118,11 +110,11 @@ const Profile = () => {
                 fontWeight={900}
                 letterSpacing={`1px`}
                 textTransform={`uppercase`}
-                className='font-serif slide-in'
+                className="font-serif slide-in"
                 fontSize={{
                   base: `16px`,
                   md: `18px`,
-                  '2xl': `20px`,
+                  "2xl": `20px`,
                 }}
               >
                 Web Developer | Tutor
@@ -130,12 +122,11 @@ const Profile = () => {
               <Text
                 // color={`darkBg`}
                 letterSpacing={`1px`}
-                className='font-sans slide-in'
+                className="font-sans slide-in"
                 fontSize={{ base: `12px`, sm: `14px` }}
                 my={5}
               >
-                Kingsley takes pleasure in converting UI
-                designs into codes as a{' '}
+                Kingsley takes pleasure in converting UI designs into codes as a{" "}
                 <Text
                   bg={`#00000010`}
                   color={`matrixDark`}
@@ -143,14 +134,13 @@ const Profile = () => {
                   borderRadius={`5px`}
                   fontStyle={`italic`}
                   fontWeight={`bold`}
-                  id='scroll'
+                  id="scroll"
                   as={`span`}
                   fontSize={{ base: `10px`, sm: `12px` }}
                 >
                   frontend-focused
-                </Text>{' '}
-                web developer. Bring your ideas, let&apos;s
-                make them a reality.
+                </Text>{" "}
+                web developer. Bring your ideas, let&apos;s make them a reality.
                 <Text
                   bg={`#00000010`}
                   color={`matrixDark`}
@@ -158,23 +148,18 @@ const Profile = () => {
                   borderRadius={`5px`}
                   fontStyle={`italic`}
                   fontWeight={`bold`}
-                  id='scroll'
+                  id="scroll"
                   as={`span`}
                   fontSize={{ base: `10px`, sm: `12px` }}
                 >
-                  Contained within the scroll below is my
-                  resume.
+                  Contained within the scroll below is my resume.
                 </Text>
               </Text>
-              <Box
-                className='action-btn'
-                width={`fit-content`}
-              >
+              <Box className="action-btn" width={`fit-content`}>
                 <Link
-                  download
-                  rel='noopener noreferrer'
+                  rel="noopener noreferrer"
                   target={`_blank`}
-                  href='/KingsleySolomon_Ifijeh_Resume.pdf'
+                  href="/KingsleySolomon_Ifijeh_Resume.pdf"
                 >
                   <Box
                     className={`quil_box action-btn`}
@@ -186,7 +171,7 @@ const Profile = () => {
                       boxSize={`100%`}
                       as={`img`}
                       cursor={`pointer`}
-                      alt='quill'
+                      alt="quill"
                       src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto,c_fill/v1663409792/portfolio/pngegg_7_yvaqdw.png`}
                     />
                   </Box>
@@ -205,7 +190,7 @@ const Profile = () => {
         zIndex={999}
         as={`span`}
         letterSpacing={`1px`}
-        display={{base:`none`, sm:`flex`}}
+        display={{ base: `none`, sm: `flex` }}
         justifyContent={{ base: `center`, lg: `end` }}
       >
         <References />

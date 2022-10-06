@@ -6,21 +6,21 @@ import {
   Image,
   Text,
   useColorMode,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
-import React, { useContext, useEffect } from 'react';
-import ProjectBox from '../components/drawer/ProjectBox';
-import Nav from '../components/startMenu/Nav';
-import { AppContext } from '../context/AppContext';
-import Profile from '../components/startMenu/Profile';
-import DigitalResume from '../components/resume/DigitalResume';
-import Hero from '../components/startMenu/Hero';
-import ContactMenu from '../components/startMenu/ContactMenu';
-import ProductivityLayout from '../components/startMenu/ProductivityLayout';
-import ProjectScreen from '../components/startMenu/ProjectScreen';
-import { profileAnimation } from '../gsap';
-import { tools, languages } from '../public/tools';
-import Map from '../components/startMenu/Map';
+import React, { useContext, useEffect } from "react";
+import ProjectBox from "../components/drawer/ProjectBox";
+import Nav from "../components/startMenu/Nav";
+import { AppContext } from "../context/AppContext";
+import Profile from "../components/startMenu/Profile";
+import DigitalResume from "../components/resume/DigitalResume";
+import Hero from "../components/startMenu/Hero";
+import ContactMenu from "../components/startMenu/ContactMenu";
+import ProductivityLayout from "../components/startMenu/ProductivityLayout";
+import ProjectScreen from "../components/startMenu/ProjectScreen";
+import { profileAnimation } from "../gsap";
+import { tools, languages } from "../public/tools";
+import Map from "../components/startMenu/Map";
 
 const MobileLayout = () => {
   const { switchView } = useContext(AppContext);
@@ -29,15 +29,13 @@ const MobileLayout = () => {
   const image = (
     <Box
       display={
-        switchView !== `profile` && switchView !== `resume`
-          ? `none`
-          : `block`
+        switchView !== `profile` && switchView !== `resume` ? `none` : `block`
       }
       bg={`overlayProfile`}
       height={`100%`}
     >
       <Image
-        loading='eager'
+        loading="eager"
         width={`100%`}
         height={`100%`}
         objectFit={`cover`}
@@ -128,12 +126,12 @@ const MobileLayout = () => {
               ? `https://img.icons8.com/officel/20/000000/moon.png`
               : `https://img.icons8.com/officel/20/000000/sun.png`
           }
-          alt='img'
+          alt="img"
         />
       </Button>
       <Box
         display={{ base: `none`, lg: `block` }}
-        id='profileBox'
+        id="profileBox"
         width={`100vw`}
         height={`100vh`}
         zIndex={500}
