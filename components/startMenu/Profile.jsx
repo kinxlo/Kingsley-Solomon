@@ -156,14 +156,14 @@ const Profile = () => {
                 </Text>
               </Text>
               <Box className="action-btn" width={`fit-content`}>
-                <a
+                <Link
                   rel="noopener noreferrer"
                   target={`_blank`}
-                  href="KingsleySolomon_Ifijeh_Resume.pdf"
+                  href="https://drive.google.com/file/d/1Dggn96cqeGGY22eq99HBddOxFJPDg8cd/view?usp=sharing"
                 >
                   <Box
                     className={`quil_box action-btn`}
-                    title={`see what folks are saying about me`}
+                    title={`Experience as a Web developer`}
                     width={`5rem`}
                   >
                     <Image
@@ -175,7 +175,7 @@ const Profile = () => {
                       src={`https://res.cloudinary.com/kingsleysolomon/image/upload/w_100,f_auto,q_auto,c_fill/v1663409792/portfolio/pngegg_7_yvaqdw.png`}
                     />
                   </Box>
-                </a>
+                </Link>
                 {/* <PreLoader /> */}
               </Box>
             </Box>
