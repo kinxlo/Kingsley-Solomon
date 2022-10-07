@@ -124,8 +124,8 @@ const ProductivityLayout = ({
             borderRadius={`5px`}
             fontWeight={`bold`}
             fontSize={{
-              base: `10px`,
-              lg: `12px`,
+              base: `12px`,
+              lg: `14px`,
             }}
           >
             Languages & Frameworks
@@ -139,7 +139,7 @@ const ProductivityLayout = ({
             }}
             className={`font-display`}
           >
-            
+
             Area of Focus
           </Text>
           <Text
@@ -148,8 +148,8 @@ const ProductivityLayout = ({
             borderRadius={`5px`}
             fontWeight={`bold`}
             fontSize={{
-              base: `10px`,
-              lg: `12px`,
+              base: `12px`,
+              lg: `14px`,
             }}
           >
             Tools & platforms

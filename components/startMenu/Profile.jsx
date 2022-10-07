@@ -124,6 +124,7 @@ const Profile = () => {
                 letterSpacing={`1px`}
                 className="font-sans slide-in"
                 fontSize={{ base: `12px`, sm: `14px` }}
+                // textAlign={`justify`}
                 my={5}
               >
                 Kingsley takes pleasure in converting UI designs into codes as a{" "}

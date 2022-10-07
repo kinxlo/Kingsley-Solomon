@@ -1,13 +1,6 @@
-import {
-  Box,
-  Link,
-  Image,
-  Flex,
-  Text,
-  useColorMode,
-} from '@chakra-ui/react';
-import React, { useContext, useRef } from 'react';
-import { AppContext } from '../../context/AppContext';
+import { Box, Link, Image, Flex, Text, useColorMode } from "@chakra-ui/react";
+import React, { useContext, useRef } from "react";
+import { AppContext } from "../../context/AppContext";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,11 +9,11 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 // import Image from 'next/image';
-import ProjectDesc from './ProjectDesc';
-import Modal from './ModalDesc';
+import ProjectDesc from "./ProjectDesc";
+import Modal from "./ModalDesc";
 
 ChartJS.register(
   CategoryScale,
@@ -36,14 +29,13 @@ const ProjectScreen = () => {
   const url = useRef();
   const gitHub = useRef();
   const { colorMode } = useColorMode();
-  const active =
-    colorMode == `light` ? `darkBg` : `lightBg`;
+  const active = colorMode == `light` ? `darkBg` : `lightBg`;
 
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
       },
       title: {
         display: true,
@@ -58,7 +50,7 @@ const ProjectScreen = () => {
     labels: labels,
     datasets: [
       {
-        label: 'Languages',
+        label: "Languages",
         data: projectInfo.values,
         backgroundColor: projectInfo.colorCode,
       },
@@ -94,13 +86,10 @@ const ProjectScreen = () => {
         lg: `1.5rem 1.5rem 0 auto`,
       }}
     >
-      <Box
-        className='slide-in'
-        display={{ base: `none`, lg: `block` }}
-      >
+      <Box className="slide-in" display={{ base: `none`, lg: `block` }}>
         <Text
           color={`accent`}
-          className='font-mono'
+          className="font-mono"
           textTransform={`capitalize`}
           fontWeight={`bold`}
           fontSize={{ base: `md`, md: `2xl` }}
@@ -111,15 +100,12 @@ const ProjectScreen = () => {
           fontWeight={`bold`}
           fontSize={`xs`}
           color={`accent`}
-          textAlign='left'
+          textAlign="left"
         >
           {projectInfo.category}
         </Text>
       </Box>
-      <Box
-        display={{ base: `block`, lg: `none` }}
-        textAlign={`right`}
-      >
+      <Box display={{ base: `block`, lg: `none` }} textAlign={`right`}>
         <Modal
           title={projectInfo.name}
           contributors={projectInfo.contributors}
@@ -128,19 +114,17 @@ const ProjectScreen = () => {
       {/* Chart */}
       <Bar options={options} data={data} />
       {/*  */}
-      <Flex width={`100%`} flexDir={`column`}>
+      <Flex width={`100%`} justifyContent={`space-between`} mt={5}>
         <Flex
           justifyContent={`start`}
           gap={3}
           alignItems={`center`}
-          flexDir={'row-reverse'}
+          flexDir={"row-reverse"}
         >
           <Link
             onMouseEnter={spinUrl}
-            color={
-              colorMode == `light` ? `#339adb` : `lightBg`
-            }
-            className='font-sans'
+            color={colorMode == `light` ? `#339adb` : `lightBg`}
+            className="font-sans"
             fontSize={{ base: `xs`, sm: `sm` }}
             fontWeight={`medium`}
             fontStyle={`italic`}
@@ -165,8 +149,8 @@ const ProjectScreen = () => {
             <Image
               width={`100%`}
               height={`100%`}
-              alt='img'
-              src='https://img.icons8.com/officel/30/000000/cloud-link--v1.png'
+              alt="img"
+              src="https://img.icons8.com/officel/30/000000/cloud-link--v1.png"
             />
           </Box>
         </Flex>
@@ -174,8 +158,8 @@ const ProjectScreen = () => {
         <Flex
           gap={3}
           justifyContent={`end`}
-          alignItems={`end`}
-          flexDir={'row-reverse'}
+          alignItems={`center`}
+          flexDir={"row-reverse"}
         >
           <Box
             ref={gitHub}
@@ -188,21 +172,18 @@ const ProjectScreen = () => {
               sm: `1.8em`,
             }}
             p={`3px`}
-            // filter={`drop-shadow(1px 1px 1px #00000030)`}
           >
             <Image
               width={`100%`}
               height={`100%`}
-              alt='img'
-              src='https://img.icons8.com/color/48/000000/github--v1.png'
+              alt="img"
+              src="https://img.icons8.com/color/48/000000/github--v1.png"
             />
           </Box>
           <Link
             onMouseEnter={spinGithub}
-            color={
-              colorMode == `light` ? `#339adb` : `lightBg`
-            }
-            className='font-sans'
+            color={colorMode == `light` ? `#339adb` : `lightBg`}
+            className="font-sans"
             fontSize={{ base: `xs`, sm: `sm` }}
             fontWeight={`medium`}
             fontStyle={`italic`}
@@ -212,7 +193,7 @@ const ProjectScreen = () => {
           </Link>
         </Flex>
       </Flex>
-      <Box display={{ base: `none`, lg: `block` }}>
+      <Box display={{ base: `none`, lg: `block` }} mt={10}>
         <ProjectDesc
           inModal={false}
           contributors={projectInfo.contributors}
