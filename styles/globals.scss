@@ -1,18 +1,7 @@
 :root {
-  --font-sans:
-    'Assistant',
-    'Philosopher',
-    -apple-system,
-    system-ui,
-    sans-serif;
-  --font-serif:
-    'Cormorant Garamond',
-    'Lora',
-    serif;
-  --font-mono:
-    'IBM Plex Mono',
-    'Inconsolata',
-    monospace;
+  --font-sans: "Assistant", "Philosopher", -apple-system, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Lora", serif;
+  --font-mono: "IBM Plex Mono", "Inconsolata", monospace;
 
   --mainLinkColor-light: hsl(0, 100%, 25%);
   --mainBorderColor-light: hsl(0, 0%, 85%);
@@ -25,12 +14,8 @@
   --mainActiveColor: var(--mainActiveColor-light);
 }
 
-@import '../components/resume/index.scss';
-@import './contactBtn.scss';
-@import './intro.scss';
-@import './cursor.scss';
-@import './loader.scss';
-
+@import "./contactBtn.scss";
+@import "./intro.scss";
 
 * {
   padding: 0;
@@ -48,7 +33,6 @@
 
 .hide-scrollbar,
 html {
-
   &::-webkit-scrollbar {
     display: none !important;
   }
@@ -59,16 +43,16 @@ html {
 }
 
 body {
+  cursor: url("/public/cursor.png"), auto;
 
-
-  // !====== super important, yh, i always have one of this.===
+  //====== super important, yh, i always have one of this.===
   .css-wl2t6g {
     // border: 1px solid red;
     display: flex;
     justify-content: center !important;
   }
 
-  // !=========================================================
+  //========================================================
 
   .box-shadow {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -88,8 +72,7 @@ body {
   }
 
   .font-display {
-    font-family: 'Bowlby One SC', cursive !important;
-
+    font-family: "Bowlby One SC", cursive !important;
   }
 
   .heading {
@@ -101,20 +84,8 @@ body {
     -webkit-writing-mode: vertical-rl;
   }
 
-
-
-
   .fullpage-wrapper {
     margin: initial !important;
-  }
-
-  .pbox {
-    // border: 1px solid red;
-    // &:hover img {
-    //   transition: all .1s;
-    //   transform: scale(1.05) translateY(-2px);
-    // }
-
   }
 
   .pos-quil_box {
@@ -143,12 +114,12 @@ body {
     }
 
     to {
-      border-left: 1px solid #008F11;
+      border-left: 1px solid #008f11;
     }
   }
 
   .spin {
-    animation: spinner-8k6ao5md 3s forwards
+    animation: spinner-8k6ao5md 3s forwards;
   }
 
   @keyframes spinner-8k6ao5md {
@@ -189,13 +160,12 @@ body {
   }
 
   .marker {
-
-    background-color: #DB2828;
-    height: .7em;
-    width: .7em;
+    background-color: #db2828;
+    height: 0.7em;
+    width: 0.7em;
     border-radius: 50%;
-    -webkit-animation: grow .4s 1 linear;
-    animation: grow .4s 1 linear;
+    -webkit-animation: grow 0.4s 1 linear;
+    animation: grow 0.4s 1 linear;
     transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
   }
@@ -203,20 +173,20 @@ body {
   .marker:before {
     position: absolute;
     content: "";
-    height: .7em;
-    width: .7em;
+    height: 0.7em;
+    width: 0.7em;
     left: 0;
     top: 0;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0px 0px 2px 2px #DB2828;
+    box-shadow: 0px 0px 2px 2px #db2828;
     -webkit-animation: active 2s infinite linear;
     animation: active 2s infinite linear;
   }
 
   @-webkit-keyframes grow {
     0% {
-      -webkit-transform: scale(.1);
+      -webkit-transform: scale(0.1);
     }
 
     100% {
@@ -226,7 +196,7 @@ body {
 
   @keyframes grow {
     0% {
-      transform: scale(.1);
+      transform: scale(0.1);
     }
 
     100% {
@@ -236,7 +206,7 @@ body {
 
   @-webkit-keyframes active {
     0% {
-      -webkit-transform: scale(.1);
+      -webkit-transform: scale(0.1);
       opacity: 1;
     }
 
@@ -252,7 +222,7 @@ body {
 
   @keyframes active {
     0% {
-      transform: scale(.1);
+      transform: scale(0.1);
       opacity: 1;
     }
 
@@ -265,5 +235,4 @@ body {
       opacity: 0;
     }
   }
-
 }

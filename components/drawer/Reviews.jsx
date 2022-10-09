@@ -53,7 +53,7 @@ export default function DrawerExample() {
             colorMode == `light` ? `darkBg` : `lightBg`
           }
           color={colorMode == `dark` ? `darkBg` : `lightBg`}
-          maxW={{ base: `100vw`, md: `40rem` }}
+          maxW={{ base: `100vw`, md: `50%` }}
           padding={`0 1rem`}
           display={`flex`}
           flexDir={`column`}
@@ -61,7 +61,7 @@ export default function DrawerExample() {
           gap={`2`}
         >
           <Flex
-            alignItems={`start`}
+            alignItems={`center`}
             p={`2rem`}
             gap={`3rem`}
           >
