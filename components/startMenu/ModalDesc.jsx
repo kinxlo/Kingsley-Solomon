@@ -10,11 +10,11 @@ import {
   Text,
   useDisclosure,
   useColorMode,
-} from '@chakra-ui/react';
-import React from 'react';
-import ProjectDesc from './ProjectDesc';
+} from "@chakra-ui/react";
+import React from "react";
+import ProjectDesc from "./ProjectDesc";
 
-const ModalDesc = ({ title, contributors }) => {
+const ModalDesc = ({ title, contributors, status, about, date}) => {
   const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -44,7 +44,7 @@ const ModalDesc = ({ title, contributors }) => {
           <ModalHeader
             letterSpacing={`1px`}
             textTransform={`capitalize`}
-            className='font-display'
+            className="font-display"
           >
             {title}
           </ModalHeader>
@@ -53,6 +53,9 @@ const ModalDesc = ({ title, contributors }) => {
             <ProjectDesc
               inModal={true}
               contributors={contributors}
+              status={status}
+              about={about}
+              date={date}
             />
           </ModalBody>
         </ModalContent>

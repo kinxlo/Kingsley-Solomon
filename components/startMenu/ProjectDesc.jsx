@@ -49,10 +49,17 @@ const ProjectDesc = ({ contributors, about, status, date, inModal }) => {
           >
             Contributors
           </Text>
-          <AvatarGroup size="md" max={2}>
+          <AvatarGroup size="md" max={3}>
             {contributors ? (
               contributors.map((dev) => {
-                return <Avatar key={dev.name} name={dev.name} src={dev.img} />;
+                return (
+                  <Avatar
+                    color={`black`}
+                    key={dev.name}
+                    name={dev.name}
+                    src={dev.img}
+                  />
+                );
               })
             ) : (
               <Text>...</Text>

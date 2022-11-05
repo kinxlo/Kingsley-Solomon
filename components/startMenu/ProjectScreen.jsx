@@ -109,6 +109,9 @@ const ProjectScreen = () => {
         <Modal
           title={projectInfo.name}
           contributors={projectInfo.contributors}
+          status={projectInfo.status}
+          about={projectInfo.desc}
+          date={projectInfo.date}
         />
       </Box>
       {/* Chart */}
