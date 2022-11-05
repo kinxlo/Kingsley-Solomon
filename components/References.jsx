@@ -11,7 +11,7 @@ import {
   ListItem,
   UnorderedList,
   Link,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
 export default function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -32,7 +32,7 @@ export default function DrawerExample() {
   return (
     <>
       <Flex
-        color={colorMode == `light` ? `darkBg` : `lightBg`}
+        color={colorMode === `light` ? `darkBg` : `lightBg`}
         gap={{ base: 0, sm: 2 }}
         flexDir={{ base: `column`, sm: `row` }}
         alignItems={`center`}
@@ -58,11 +58,7 @@ export default function DrawerExample() {
           {new Date().getFullYear()} me
         </Text>
       </Flex>
-      <Drawer
-        isOpen={isOpen}
-        placement='bottom'
-        onClose={onClose}
-      >
+      <Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
         <DrawerContent
           display={`flex`}
           flexDir={`column`}
@@ -82,14 +78,11 @@ export default function DrawerExample() {
             gap={3}
           >
             <Box textAlign={`center`} flex={1}>
-              <Text className='font-display'>
-                Reference
-              </Text>
+              <Text className="font-display">Reference</Text>
               <Text fontSize={`xs`}>
-                There are many excellent resources on the
-                Internet; I used a few of them in the
-                creation of this project. You could have a
-                look at them.
+                There are many excellent resources on the Internet; I used a few
+                of them in the creation of this project. You could have a look
+                at them.
               </Text>
               <UnorderedList
                 display={`flex`}
@@ -99,45 +92,20 @@ export default function DrawerExample() {
                 styleType={`none`}
                 gap={3}
               >
-                <Link
-                  color={`blue`}
-                  href={`https://icons8.com/`}
-                >
-                  <ListItem  sx={tag}>
-                    Icon8
-                  </ListItem>
+                <Link color={`blue`} href={`https://icons8.com/`}>
+                  <ListItem sx={tag}>Icon8</ListItem>
                 </Link>
-                <Link
-                  color={`blue`}
-                  href={`https://greensock.com/`}
-                >
-                  <ListItem  sx={tag}>
-                    Gsap
-                  </ListItem>
+                <Link color={`blue`} href={`https://greensock.com/`}>
+                  <ListItem sx={tag}>Gsap</ListItem>
                 </Link>
-                <Link
-                  color={`blue`}
-                  href={`https://www.pngegg.com/`}
-                >
-                  <ListItem  sx={tag}>
-                    PNGegg
-                  </ListItem>
+                <Link color={`blue`} href={`https://www.pngegg.com/`}>
+                  <ListItem sx={tag}>PNGegg</ListItem>
                 </Link>
-                <Link
-                  color={`blue`}
-                  href={`https://fonts.google.com/`}
-                >
-                  <ListItem  sx={tag}>
-                    Google Fonts
-                  </ListItem>
+                <Link color={`blue`} href={`https://fonts.google.com/`}>
+                  <ListItem sx={tag}>Google Fonts</ListItem>
                 </Link>
-                <Link
-                  color={`blue`}
-                  href={`https://www.chartjs.org/`}
-                >
-                  <ListItem  sx={tag}>
-                    Chartjs
-                  </ListItem>
+                <Link color={`blue`} href={`https://www.chartjs.org/`}>
+                  <ListItem sx={tag}>Chartjs</ListItem>
                 </Link>
               </UnorderedList>
             </Box>

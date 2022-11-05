@@ -53,7 +53,7 @@ export default function DrawerExample() {
             colorMode == `light` ? `darkBg` : `lightBg`
           }
           color={colorMode == `dark` ? `darkBg` : `lightBg`}
-          maxW={{ base: `100vw`, md: `50%` }}
+          maxW={{ base: `100vw`, md: `30%` }}
           padding={`0 1rem`}
           display={`flex`}
           flexDir={`column`}

@@ -113,6 +113,14 @@ const ProjectScreen = () => {
       </Box>
       {/* Chart */}
       <Bar options={options} data={data} />
+      <Text color={`accent`} mt="2" fontStyle={`italic`} fontSize={`xs`}>
+        <Text mr={2} fontWeight={`bolder`} as="span">
+          N.B:
+        </Text>{" "}
+        The approximate figure above shows how much of the language or framework
+        was utilized throughout the project&apos;s development. It in no way
+        reflects the language&apos;s proficiency.
+      </Text>
       {/*  */}
       <Flex width={`100%`} justifyContent={`space-between`} mt={5}>
         <Flex
@@ -197,7 +205,9 @@ const ProjectScreen = () => {
         <ProjectDesc
           inModal={false}
           contributors={projectInfo.contributors}
-          packages={projectInfo.tools}
+          status={projectInfo.status}
+          about={projectInfo.desc}
+          date={projectInfo.date}
         />
       </Box>
     </Box>

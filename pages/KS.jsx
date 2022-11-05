@@ -122,7 +122,7 @@ const MobileLayout = () => {
       >
         <Image
           src={
-            colorMode == `light`
+            colorMode === `light`
               ? `https://img.icons8.com/officel/20/000000/moon.png`
               : `https://img.icons8.com/officel/20/000000/sun.png`
           }
