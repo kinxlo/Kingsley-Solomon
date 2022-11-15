@@ -81,6 +81,28 @@ const projects = [
   },
   {
     id: 4,
+    name: `Metabnb`,
+    language: [`React/js`, `Chakra`, `SCSS`],
+    status: `production`,
+    colorCode: [`#61dbfb50`, `#f0db4f50`, `#e389b950`],
+    values: [99, 70.5, 11],
+    imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_1000,f_auto,q_auto/v1668496974/portfolio/mobile_11_rdczj0.webp`,
+    imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/w_300,f_auto,q_auto/v1668496972/portfolio/mobile_12_riqwy1.webp`,
+    url: `https://postit-kfbz5uwp4-kinxlo.vercel.app/`,
+    github: `https://github.com/kinxlo/Postit/tree/api-init`,
+    desc: `A virtual service that provides you access to luxury and affordable houses in the metaverse.`,
+    tools: ``,
+    date: `4 days ago`,
+    category: `Metaverse`,
+    contributors: [
+      {
+        name: `kingsley solomon`,
+        img: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1662471346/portfolio/WhatsApp_Image_2021-03-31_at_5.27.13_PM_nbmhus.jpg`,
+      },
+    ],
+  },
+  {
+    id: 5,
     name: `LinkTree clone`,
     language: [`HTML`, `CSS`, `React/Js`, `Chakra`],
     colorCode: [`#f0652950`, `#2965f150`, `#61dbfb50`, `#f0db4f50`],
@@ -102,7 +124,7 @@ const projects = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: `Kingsley Solomon`,
     language: [`Next/Js`, `SCSS`, `Chakra`],
     status: `Production`,
@@ -124,7 +146,7 @@ const projects = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     name: `Welian Dashboard`,
     language: [`Vue`, `Javascript`, `SCSS`, `HTML`],
     status: `Production-RC (Private)`,
@@ -150,7 +172,7 @@ const projects = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     name: `WeRocket`,
     language: [`Vue`, `Blade`, `PHP`],
     status: `Production-RC (Private)`,

@@ -2,6 +2,7 @@
   "name": "kinx",
   "version": "0.1.0",
   "private": true,
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,6 +16,7 @@
     "@fullpage/react-fullpage": "^0.1.27",
     "axios": "^0.27.2",
     "chart.js": "^3.0.0",
+    "custom-curses": "^0.1.6",
     "framer-motion": "^6",
     "gsap": "./gsap-bonus.tgz",
     "next": "12.2.0",
