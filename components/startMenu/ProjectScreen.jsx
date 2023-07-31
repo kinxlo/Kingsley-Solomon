@@ -133,6 +133,7 @@ const ProjectScreen = () => {
           flexDir={"row-reverse"}
         >
           <Link
+            target="_blank"
             onMouseEnter={spinUrl}
             color={colorMode == `light` ? `#339adb` : `lightBg`}
             className="font-sans"
