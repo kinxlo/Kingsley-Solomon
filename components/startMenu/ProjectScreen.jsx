@@ -108,6 +108,7 @@ const ProjectScreen = () => {
                     flexDir={"row-reverse"}
                     // color={colorMode == `light` ? projectInfo.status.includes(`Development`) ? `grey` :`#339adb` : `lightBg`}
                     colorScheme={projectInfo.status?.includes(`Development`) ? `yellow` : `green`}
+                    disabled={projectInfo.status?.includes(`Development`) ? true : false}
                     className='font-sans'
                     size={`sm`}
                     fontSize={`xs`}

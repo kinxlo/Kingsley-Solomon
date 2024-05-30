@@ -80,7 +80,7 @@ const projects = [
         status: `Development (Active)`,
         colorCode: [`#61dbfb50`],
         values: [99, 11, 70.5],
-        imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1716714983/portfolio/Macbook-Air-tsa-productize.vercel.app_x0xz6b.webp`,
+        imageDesktop: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1717055387/portfolio/Macbook-Air-productize-git-development-techstudioconsults.vercel.app_qijtch.webp`,
         imageMobile: `https://res.cloudinary.com/kingsleysolomon/image/upload/v1716714983/portfolio/iPhone-12-PRO-tsa-productize.vercel.app_bpddmg.webp`,
         url: `https://tsa-productize.vercel.app/`,
         github: null,
