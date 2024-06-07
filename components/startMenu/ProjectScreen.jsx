@@ -100,7 +100,7 @@ const ProjectScreen = () => {
             {/*  */}
             <Flex width={`100%`} justifyContent={`space-between`} mt={5}>
                 <Button
-                    as={Link}
+                    as={projectInfo.status?.includes(`Development`) ? null : Link}
                     onMouseEnter={spinUrl}
                     justifyContent={`start`}
                     gap={3}
